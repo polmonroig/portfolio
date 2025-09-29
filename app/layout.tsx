@@ -28,6 +28,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer className={"fixed left-0 bottom-6 w-full text-center"}>
+          <div className="hover:underline-offset-4" >
+            Made with ❤️ by Pol Monroig Company
+          </div>
+        </footer>
       </body>
     </html>
   );

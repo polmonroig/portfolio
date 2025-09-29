@@ -6,8 +6,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html{
+  height: 100%
+}
 
 body {
+  height: 100%;
   background: var(--background);
   color: var(--foreground);
   font-family: Inter, Helvetica, sans-serif;
