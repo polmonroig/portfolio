@@ -39,8 +39,8 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <footer className={"fixed left-0 bottom-6 w-full text-center"}>
-          <div className="hover:underline-offset-4" >
+        <footer className={"fixed left-0 bottom-0 w-full text-center "}>
+          <div className="hover:underline-offset-4 py-6" >
             Made with ❤️ by Pol Monroig Company
           </div>
         </footer>

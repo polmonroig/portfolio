@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About(){
 
@@ -21,6 +22,10 @@ export default function About(){
                     </div>
                     <div>
                         I'm a Full-Spectrum Digital Consultant and Developer who turns complex business needs into high-impact products. My development stack is language-agnostic, spanning Node.js, Python, R, C++ and beyond. Expertise includes scalable cloud architecture, machine learning/data science and web development.
+                    </div>
+                    <div>
+                        You might be wondering where does Company come from (and no, it doesn't mean a real company), it is a very old Catalan last name that is translated as colleague.
+                        In case you are <Link className={"underline"} target={"_blank"} href={"https://www.blasonari.net/apellidos/Compa%C3%B1i-Compa%C3%B1y-Compani-Company.html"}>curious</Link>
                     </div>
                 </div>
 
