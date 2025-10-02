@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed top-0 w-full text-center left-0 bg-white">
+        <header className=" w-full text-center bg-white">
           <div className={"inline-block"}>
             <div className="flex flex-row gap-12 mx-auto text-lg text-center mx-auto mt-12">
                 <Link href={"/"} className={"hover:underline text-center block w-24"}>Home</Link>

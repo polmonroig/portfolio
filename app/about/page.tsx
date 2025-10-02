@@ -2,18 +2,28 @@ import Image from "next/image";
 
 export default function About(){
 
-    const imageWidth: number = 3212;
-    const imageHeight: number = 3458;
-    const scale: number = 0.25
+    const imageWidth: number = 2046;
+    const imageHeight: number = 1536;
+    const scale: number = 0.3
 
     return(
-        <div>
-            <div>
+        <div className={"h-full font-sans "}>
+            <div className={"flex flex-col lg:flex-row gap-12 p-8 text-center items-center mx-auto my-auto pt-80"} style={{maxWidth : "1500px"}}>
                 <Image
                     alt={"Profile Image"}
-                    src={"/profile-image-cropped.jpg"}
+                    src={"/profile_image_02.jpg"}
                     width={imageWidth * scale}
+                    style={{width : imageWidth * scale, height: imageHeight * scale}}
                     height={imageHeight * scale}/>
+                <div className={"text-xl flex flex-col gap-12"}>
+                    <div>
+                        Hey I'm Pol 👋 Happy to meet you!
+                    </div>
+                    <div>
+                        I'm a Full-Spectrum Digital Consultant and Developer who turns complex business needs into high-impact products. My development stack is language-agnostic, spanning Node.js, Python, R, C++ and beyond. Expertise includes scalable cloud architecture, machine learning/data science and web development.
+                    </div>
+                </div>
+
             </div>
         </div>
     )
