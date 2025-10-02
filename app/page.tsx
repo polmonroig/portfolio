@@ -2,14 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center h-full p-8 pb-20 gap-16 sm:p-20">
-      <div>
-        <div className="mt-12 flex flex-row gap-12 mx-auto text-lg text-center">
-            <Link href={"/about"} className={"hover:underline text-center block w-24"}>About</Link>
-            <Link href={"/projects"} className={"hover:underline  block w-24 text-center"}>Projects</Link>
-            <Link href={"/contact"} className={"hover:underline  block w-24"}>Contact Me</Link>
-        </div>
-      </div>
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center h-full p-8 pb-20 gap-16 sm:p-20 overflow-y-auto">
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div>
           <div className="text-5xl text-center mb-10">
@@ -23,9 +16,11 @@ export default function Home() {
              I am a full-spectrum digital consultant and developer, creating data-powered applications and scalable web solutions
           </div>
         </div>
-
-
       </div>
+
+        <div>
+
+        </div>
 
     </div>
   );
