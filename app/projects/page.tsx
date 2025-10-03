@@ -126,7 +126,7 @@ export default function Projects(){
                 {
                     projects.map((project, index) => {
                         return (
-                            <div className={"border p-4 rounded hover:bg-gray-200 hover:cursor-pointer"} key={index}>
+                            <div className={"border p-4 rounded hover:bg-gray-200 hover:cursor-pointer bg-white"} key={index}>
                                 <div>
                                     {project.title}
                                 </div>
