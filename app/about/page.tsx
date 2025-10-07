@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function About(){
@@ -10,7 +9,7 @@ export default function About(){
     return(
         <div className={"h-full font-sans "}>
             <div className={"flex flex-col lg:flex-row gap-12 p-8 text-center items-center mx-auto my-auto pt-80"} style={{maxWidth : "1500px"}}>
-                <Image
+                <img
                     alt={"Profile Image"}
                     src={"/profile_image_02.jpg"}
                     width={imageWidth * scale}

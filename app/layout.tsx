@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +35,7 @@ export default function RootLayout({
     <header className=" w-full text-center">
       <div className={"inline-block"}>
         <div className={"absolute top-10 left-4"}>
-          <Image width={logoWidth} height={logoHeight} src={"/logo.png"} alt={"logo"}></Image>
+          <img width={logoWidth} height={logoHeight} src={"/logo.png"} alt={"logo"}></img>
         </div>
         <div className="flex flex-row gap-12 mx-auto text-lg text-center mx-auto mt-12">
           <Link href={"/"} className={"hover:underline text-center block w-24"}>Home</Link>
