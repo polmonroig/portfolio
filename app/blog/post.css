@@ -9,6 +9,10 @@
     margin-bottom: 20px;
 }
 
+#post h1{
+    font-size: 30px;
+}
+
 iframe{
     max-width: 100%;
 }
@@ -17,15 +21,16 @@ iframe{
     text-align: center;
     font-weight: bold;
     font-size: 45px;
+    padding-bottom: 20px;
 }
 
 .meta_button{
-    margin-left: 20px;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -101,7 +106,6 @@ table, th, td {
     border: 2px solid black;
     border-radius: 3px;
     background-color: white;
-    cursor: pointer;
 }
 
 .tag:hover{
@@ -136,7 +140,7 @@ table, th, td {
 
 .post_header:hover{
     cursor: pointer;
-    background-color: black;
+    background-color: #444;
     color: white;
     transition: 0.5s;
 }

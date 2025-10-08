@@ -50,8 +50,8 @@ export default function Blog() {
     if (openPost) {
         return (
             <>
-                <div onClick={resetPage} id="title">{title}</div>
                 <Post content={data.body_html} title={data.title}
+                      coverImage={data.cover_image}
                       tags={data.tags}
                       url={data.url}
                       mainMenu={resetPage}></Post>
@@ -59,8 +59,7 @@ export default function Blog() {
         );
     } else if (isLoaded) {
         return (
-            <>
-                <div id="title">{title}</div>
+            <div className={"mx-auto w-1/2 py-12"}>
                 <div id="post_list">
                     {data.map(item => (
                         <PostHeader onClick={() => fetchPost(item.id)}
@@ -71,12 +70,11 @@ export default function Blog() {
                         ></PostHeader>
                     ))}
                 </div>
-            </>
+            </div>
         );
     } else {
         return (
             <>
-                <div id="title">{title}</div>
                 Loading
             </>
         );

@@ -6,19 +6,19 @@ export const Post = (props) => {
     const tags = props.tags;
     return (
         <>
-            <div id="post_meta">
-                <button id="back_button" className="meta_button" onClick={props.mainMenu}>
-                    BACK
+            <div id="post">
+                <button  className="meta_button" onClick={props.mainMenu}>
+                    Back
                 </button>
                 <a href={props.url}>
-                    <button id="dev_button" className="meta_button">
-                        DEV
+                    <button className="meta_button">
+                        Dev.to
                     </button>
                 </a>
-            </div>
-            <div id="post">
-                <div id="post_title">{props.title}</div>
-                <div className={"mx-auto"}>
+                <div id="post_title" >
+                    {props.title}
+                </div>
+                <div className={"mx-auto mb-4"}>
                     {tags.map((tagName: string) => (
                         <span className="tag noselect" key={tagName}>
                       {tagName}
@@ -38,7 +38,7 @@ export const PostHeader = (props) => {
     return (
         <>
             <div className="post_header" onClick={props.onClick}>
-                <h2>{props.title}</h2>
+                <h2 className={"text-xl font-bold"}>{props.title}</h2>
                 <p>{props.content}</p>
                 <b>Date </b>{props.date}<br/>
                 <b>Comments </b> {props.comments}
