@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-colors`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
     <header className=" w-full text-center">
       <div className={"inline-block"}>
