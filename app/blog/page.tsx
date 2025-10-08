@@ -1,13 +1,24 @@
 'use client'
 import {useState, useEffect} from "react";
-import {Post, PostHeader} from "@/app/blog/post";
+import {Post, PostHeader, PostType, PostMetadataType} from "@/app/blog/post";
 import './post.css';
+
+
+
+const emptyPost: PostType = {
+    body_html: '',
+    title: '',
+    cover_image: '',
+    tags: [],
+    url: ''
+};
 
 export default function Blog() {
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [data, setData] = useState([]);
+    const [postList, setPostList] = useState<PostMetadataType[]>([]);
+    const [selectedPost, setSelectedPost] = useState<PostType>(emptyPost);
     const [openPost, setOpenPost] = useState(false);
 
     const title = "The Silicon Corner";
@@ -19,19 +30,19 @@ export default function Blog() {
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    setData(result);
+                    setPostList(result);
                 }
             )
     }
 
-    const fetchPost = (id: string) => {
+    const fetchPost = (id: number) => {
         setIsLoaded(false);
         const url = 'https://dev.to/api/articles/' + id;
         fetch(url)
             .then(res => res.json())
             .then(
                 (result) => {
-                    setData(result);
+                    setSelectedPost(result);
                     setOpenPost(true);
                 }
             )
@@ -39,8 +50,6 @@ export default function Blog() {
 
     const resetPage = () => {
         setOpenPost(false);
-        setIsLoaded(false);
-        fetchAllPosts();
     };
 
     useEffect(() => {
@@ -50,10 +59,10 @@ export default function Blog() {
     if (openPost) {
         return (
             <>
-                <Post content={data.body_html} title={data.title}
-                      coverImage={data.cover_image}
-                      tags={data.tags}
-                      url={data.url}
+                <Post content={selectedPost.body_html} title={selectedPost.title}
+                      coverImage={selectedPost.cover_image}
+                      tags={selectedPost.tags}
+                      url={selectedPost.url}
                       mainMenu={resetPage}></Post>
             </>
         );
@@ -61,7 +70,7 @@ export default function Blog() {
         return (
             <div className={"mx-auto w-1/2 py-12"}>
                 <div id="post_list">
-                    {data.map(item => (
+                    {postList.map(item => (
                         <PostHeader onClick={() => fetchPost(item.id)}
                                     key={item.title} title={item.title} content={item.description}
                                     comments={item.comments_count}

@@ -1,4 +1,22 @@
-export const Post = (props) => {
+
+
+export type PostType = {
+    body_html: string,
+    title: string,
+    cover_image: string,
+    tags: [],
+    url: string
+}
+export type PostMetadataType = {
+    id: number,
+    title: string,
+    description: string,
+    comments_count: string,
+    public_reactions_count: string,
+    readable_publish_date: string
+}
+
+export const Post = (props:any) => {
 
     //<a href={this.props.url}>
     //  <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Post at dev.to" height="40" width="40"></img>
@@ -34,7 +52,7 @@ export const Post = (props) => {
 };
 
 
-export const PostHeader = (props) => {
+export const PostHeader = (props: any) => {
     return (
         <>
             <div className="post_header" onClick={props.onClick}>
