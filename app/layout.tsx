@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 import Link from "next/link";
 
@@ -27,6 +28,8 @@ export default function RootLayout({
   const logoWidth = 230 * 0.2;
   const logoHeight = 230 * 0.2;
 
+
+
   return (
     <html lang="en">
     <body
@@ -41,6 +44,7 @@ export default function RootLayout({
           <Link href={"/"} className={"hover:underline text-center block w-24"}>Home</Link>
           <Link href={"/about"} className={"hover:underline text-center block w-24"}>About</Link>
           <Link href={"/projects"} className={"hover:underline  block w-24 text-center"}>Projects</Link>
+          <Link href={"/blog"} className={"hover:underline  block w-24 text-center"}>Blog</Link>
           <Link href={"mailto:hello@pol.company"} className={"hover:underline  block w-24"}>Contact</Link>
         </div>
       </div>
@@ -52,6 +56,7 @@ export default function RootLayout({
       </div>
     </footer>
     </body>
+    <GoogleAnalytics gaId="G-1N9YMC8PZ2" />
     </html>
   );
 }
