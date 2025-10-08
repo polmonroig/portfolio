@@ -50,9 +50,12 @@ export default function Blog() {
 
     const resetPage = () => {
         setOpenPost(false);
+        setIsLoaded(true);
     };
 
     useEffect(() => {
+        setIsLoaded(true);
+        setOpenPost(false);
         fetchAllPosts();
     }, []);
 
