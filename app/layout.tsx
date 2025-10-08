@@ -44,7 +44,7 @@ export default function RootLayout({
           <Link href={"/"} className={"hover:underline text-center block w-24"}>Home</Link>
           <Link href={"/about"} className={"hover:underline text-center block w-24"}>About</Link>
           <Link href={"/projects"} className={"hover:underline  block w-24 text-center"}>Projects</Link>
-          <Link href={"/blog"} className={"hover:underline  block w-24 text-center"}>Blog</Link>
+          <Link href={"https://blog.pol.company"} className={"hover:underline  block w-24 text-center"}>Blog</Link>
           <Link href={"mailto:hello@pol.company"} className={"hover:underline  block w-24"}>Contact</Link>
         </div>
       </div>
