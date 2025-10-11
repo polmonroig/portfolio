@@ -47,11 +47,11 @@ export default function RootLayout({
           <img width={logoWidth} height={logoHeight} src={"/logo-white-bg-transparent.webp"} alt={"logo"}></img>
         </div>
         <div className="flex flex-row gap-12 mx-auto text-lg text-center mx-auto mt-4 pt-4 pb-8 font-sans2 uppercase">
-          <Link href={"/"} className={"hover:underline text-center block w-24"}>Home</Link>
-          <Link href={"/about"} className={"hover:underline text-center block w-24"}>About</Link>
-          <Link href={"/projects"} className={"hover:underline  block w-24 text-center"}>Projects</Link>
-          <Link href={"https://blog.pol.company"} className={"hover:underline  block w-24 text-center"}>Blog</Link>
-          <Link href={"mailto:hello@pol.company"} className={"hover:underline  block w-24"}>Contact</Link>
+          <Link href={"/"} className={"hover:underline decoration-4 text-center block w-24"}>Home</Link>
+          <Link href={"/about"} className={"hover:underline  decoration-4 text-center block w-24"}>About</Link>
+          <Link href={"/projects"} className={"hover:underline decoration-4  block w-24 text-center"}>Projects</Link>
+          <Link href={"https://blog.pol.company"} className={"hover:underline decoration-4  block w-24 text-center"}>Blog</Link>
+          <Link href={"mailto:hello@pol.company"} className={"hover:underline decoration-4  block w-24"}>Contact</Link>
         </div>
       </div>
     </header>

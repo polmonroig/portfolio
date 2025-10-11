@@ -8,7 +8,7 @@ export default function About(){
 
     return(
         <div className={"h-full font-sans "}>
-            <div className={"flex flex-col lg:flex-row gap-12 p-8 text-center items-center mx-auto my-auto pt-80"} style={{maxWidth : "1500px"}}>
+            <div className={"flex flex-col lg:flex-row gap-12 p-8 text-center items-center mx-auto my-auto mt-80"} style={{maxWidth : "1500px"}}>
                 <img
                     alt={"Profile Image"}
                     src={"/profile_image_02.jpg"}
@@ -17,7 +17,7 @@ export default function About(){
                     style={{width : imageWidth * scale, height: imageHeight * scale}}
                     height={imageHeight * scale}/>
                 <div className={"text-xl flex flex-col gap-12"}>
-                    <div>
+                    <div className={"text-3xl"}>
                         Hey I'm Pol 👋 Happy to meet you!
                     </div>
                     <div>
