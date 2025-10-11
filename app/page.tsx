@@ -21,7 +21,6 @@ export default function Home() {
       <div className={"w-full h-4 bg-black mt-10 line-transition"}></div>
       <div className={"w-full h-4 bg-black mt-10 line-transition"}></div>
       <div className={"w-full h-4 bg-black mt-10 line-transition"}></div>
-      <div className={"w-full h-4 bg-black mt-10 line-transition"}></div>
     </div>
   );
 }
