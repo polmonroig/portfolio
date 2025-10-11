@@ -35,12 +35,12 @@ export default function RootLayout({
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased bg-texture`}
     >
-    <header className=" w-full text-center">
+    <header className=" w-full text-center bg-black text-white">
       <div className={"inline-block"}>
-        <div className={"absolute top-10 left-4"}>
-          <img width={logoWidth} height={logoHeight} src={"/logo-bg-transparent.webp"} alt={"logo"}></img>
+        <div className={"absolute top-4 left-4"}>
+          <img width={logoWidth} height={logoHeight} src={"/logo-white-bg-transparent.webp"} alt={"logo"}></img>
         </div>
-        <div className="flex flex-row gap-12 mx-auto text-lg text-center mx-auto mt-12">
+        <div className="flex flex-row gap-12 mx-auto text-lg text-center mx-auto mt-4 pt-4 pb-8">
           <Link href={"/"} className={"hover:underline text-center block w-24"}>Home</Link>
           <Link href={"/about"} className={"hover:underline text-center block w-24"}>About</Link>
           <Link href={"/projects"} className={"hover:underline  block w-24 text-center"}>Projects</Link>
