@@ -1,6 +1,24 @@
-import Link from "next/link";
+'use client'
+import {useEffect, useState} from "react";
+
 
 export default function Home() {
+
+  const [headerIndex, setHeaderIndex] = useState<number>(0);
+
+
+  const headerList = ["Freelance Developer", "Web Developer",
+                      "Data Scientist", "Computer Engineer"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeaderIndex((prevIndex) => (prevIndex + 1) % headerList.length);
+    }, 1500)
+
+    return () => clearInterval(interval);
+  }, [])
+
+
   return (
     <div className="font-sans flex flex-col items-center justify-items-center h-full pt-80">
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -10,11 +28,11 @@ export default function Home() {
           </div>
           <div/>
           <div className="text-6xl pb-2 text-center font-bold">
-            Freelance Developer
+            {headerList[headerIndex]}
           </div>
-          <div className="text-2xl mt-5 text-center text" style={{width: "600px"}}>
-            I am a full-spectrum digital consultant and developer, creating data-powered applications and scalable web
-            solutions
+          <div className="text-2xl/10 mt-5 text-center " style={{width: "600px", maxWidth: "600px"}}>
+            <mark className={"bg-black text-white"}>I am a full-spectrum digital consultant and developer, creating data-powered applications and scalable web
+            solutions</mark>
           </div>
         </div>
       </div>
