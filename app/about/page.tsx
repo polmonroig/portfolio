@@ -12,6 +12,7 @@ export default function About(){
                 <img
                     alt={"Profile Image"}
                     src={"/profile_image_02.jpg"}
+                    className={"border-8"}
                     width={imageWidth * scale}
                     style={{width : imageWidth * scale, height: imageHeight * scale}}
                     height={imageHeight * scale}/>

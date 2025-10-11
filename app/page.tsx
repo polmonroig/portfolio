@@ -30,7 +30,7 @@ export default function Home() {
           <div className="text-6xl pb-2 text-center font-bold">
             {headerList[headerIndex]}
           </div>
-          <div className="text-2xl/10 mt-5 text-center " style={{width: "600px", maxWidth: "600px"}}>
+          <div className="text-2xl/10 mt-5 text-center " style={{maxWidth: "600px"}}>
             <mark className={"bg-black text-white"}>I am a full-spectrum digital consultant and developer, creating data-powered applications and scalable web
             solutions</mark>
           </div>

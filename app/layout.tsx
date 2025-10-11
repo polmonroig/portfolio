@@ -35,7 +35,7 @@ export default function RootLayout({
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased bg-texture`}
     >
-    <header className=" w-full text-center bg-black text-white">
+    <header className=" w-full text-center bg-black text-white fixed top-0">
       <div className={"inline-block"}>
         <div className={"absolute top-4 left-4"}>
           <img width={logoWidth} height={logoHeight} src={"/logo-white-bg-transparent.webp"} alt={"logo"}></img>
