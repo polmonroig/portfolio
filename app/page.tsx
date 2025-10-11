@@ -23,14 +23,14 @@ export default function Home() {
     <div className="font-sans flex flex-col items-center justify-items-center h-full pt-80">
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div>
-          <div className="text-5xl text-center mb-10">
+          <div className="text-8xl text-center mb-24 font-bold font-strong">
             Pol Company
           </div>
           <div/>
-          <div className="text-6xl pb-2 text-center font-bold">
+          <div className="text-5xl mb-12 text-center mx-auto">
             {headerList[headerIndex]}
           </div>
-          <div className="text-2xl/10 mt-5 text-center " style={{maxWidth: "600px"}}>
+          <div className="text-2xl/10 mt-5 text-center mx-auto" style={{maxWidth: "600px"}}>
             <mark className={"bg-black text-white"}>I am a full-spectrum digital consultant and developer, creating data-powered applications and scalable web
             solutions</mark>
           </div>

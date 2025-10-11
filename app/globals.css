@@ -4,7 +4,8 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-sans2: var(--font-alfa-slab-one)
+  --font-strong: var(--font-alfa-slab-one);
+  --font-pacifico: var(--font-pacifico);
 }
 
 html{
