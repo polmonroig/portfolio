@@ -1,4 +1,6 @@
+'use client'
 import Link from "next/link";
+import {useEffect, useState} from "react";
 
 
 export const AppBody = ({
@@ -7,8 +9,23 @@ export const AppBody = ({
   children: React.ReactNode;
 }>) => {
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 2000);
+  }, []);
+
   const logoWidth = 230 * 0.2;
   const logoHeight = 230 * 0.2;
+
+  if(isLoading){
+    return(
+      <div>
+        Loading
+      </div>
+    )
+  }
 
   return (
     <div>
