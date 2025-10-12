@@ -35,8 +35,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    triggerFadeInText();
-    triggerHeaderChange();
+    setTimeout(() => {
+      triggerFadeInText();
+      triggerHeaderChange();
+    }, 1000)
 
   }, [])
 

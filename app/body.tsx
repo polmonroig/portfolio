@@ -13,23 +13,26 @@ export const AppBody = ({
 
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 2000);
+    setTimeout(() => setIsLoading(false), 1500);
   }, []);
 
   const logoWidth = 230 * 0.2;
   const logoHeight = 230 * 0.2;
 
-  if(isLoading){
-    return(
-      <div>
-        Loading
-      </div>
-    )
-  }
+
 
   return (
-    <div>
-      <header className=" w-full text-center bg-black text-white fixed top-0">
+    <div className={"relative"}>
+      <div className={"bg-black w-screen h-screen z-25 absolute transition-transform duration-1500 ease-in-out" + (isLoading ? "" : " -translate-y-full")}>
+         <img
+           width={logoWidth}
+           height={logoHeight}
+           className={"mx-auto top-1/3 absolute left-1/2 animate-pulse"}
+           style={{width: logoWidth}}
+           src={"/logo-white-bg-transparent.webp"}
+           alt={"logo"}></img>
+      </div>
+      <header className={" w-full text-center bg-black text-white fixed top-0"}>
         <div className={"inline-block"}>
           <div className={"absolute top-4 left-4"}>
             <img width={logoWidth} height={logoHeight} src={"/logo-white-bg-transparent.webp"} alt={"logo"}></img>
