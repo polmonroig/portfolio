@@ -15,7 +15,7 @@ export default function About() {
                     src={"/profile_image_02.jpg"}
                     className={"border-8"}
                     width={imageWidth * scale}
-                    style={{width: imageWidth * scale, height: imageHeight * scale}}
+                    style={{width: imageWidth * scale}}
                     height={imageHeight * scale}/>
                 <div className={"text-xl flex flex-col gap-12"}>
                     <div className={"text-3xl"}>
