@@ -22,8 +22,8 @@ export const AppBody = ({
 
 
   return (
-    <div className={"relative"}>
-      <div className={"bg-black w-screen h-screen z-25 absolute transition-transform duration-1500 ease-in-out" + (isLoading ? "" : " -translate-y-full")}>
+    <div className={"relative w-full h-full"}>
+      <div className={"bg-black w-full h-full z-25 absolute transition-transform duration-1500 ease-in-out" + (isLoading ? "" : " -translate-y-full")}>
          <img
            width={logoWidth}
            height={logoHeight}
@@ -32,7 +32,7 @@ export const AppBody = ({
            src={"/logo-white-bg-transparent.webp"}
            alt={"logo"}></img>
       </div>
-      <header className={" w-full text-center bg-black text-white fixed top-0"}>
+      <header className={" w-full text-center bg-black text-white sticky top-0"}>
         <div className={"inline-block"}>
           <div className={"absolute top-4 left-4"}>
             <img width={logoWidth} height={logoHeight} src={"/logo-white-bg-transparent.webp"} alt={"logo"}></img>
