@@ -44,7 +44,7 @@ export default function Home() {
 
 
   return (
-    <div className="font-sans flex flex-col items-center justify-items-center h-full pt-80">
+    <div className="font-sans flex flex-col items-center justify-items-center pt-80">
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div>
           <div className="text-8xl text-center mb-24 font-bold font-strong">
