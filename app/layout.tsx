@@ -1,8 +1,7 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono, Alfa_Slab_One, Pacifico} from "next/font/google";
-import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
-import {AppBody} from "@/app/body";
+import {AppBody, UmamiAnalytics} from "@/app/body";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,8 +41,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${alfaSlabOneFont.variable} ${pacificoFont.variable} antialiased bg-texture`}
     >
       <AppBody children={children}/>
+      <UmamiAnalytics/>
     </body>
-    <GoogleAnalytics gaId="G-1N9YMC8PZ2" />
     </html>
   );
 }

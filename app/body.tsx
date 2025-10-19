@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import {useEffect, useState} from "react";
+import Script from 'next/script';
 
 
 export const AppBody = ({
@@ -13,7 +14,7 @@ export const AppBody = ({
 
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1500);
+    setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
   const logoWidth = 230 * 0.2;
@@ -57,4 +58,8 @@ export const AppBody = ({
       </footer>
     </div>
   )
+}
+
+export const UmamiAnalytics = () => {
+  return <Script async src="https://cloud.umami.is/script.js" data-website-id="e6a04351-01ff-487c-bd4e-e829dde57d3e"></Script>
 }
