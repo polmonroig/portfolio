@@ -28,7 +28,7 @@ export const AppBody = ({
                 <div className={"inline-block"}>
                     <a className={"text-gray-500 text-lg font-bold absolute top-4 right-8 flex flex-row gap-2 " +
                         "cursor-pointer  hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}
-                       href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}>
+                       href={"#contact"}>
                         <span>Hire me</span>
                         <ChatBubbleLeftIcon width={24} height={24} className={"inline-block my-auto "}/>
                     </a>
