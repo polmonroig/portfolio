@@ -19,7 +19,7 @@ export const AppBody = ({
                 className={`w-full h-full bg-teal-500 fixed z-20 transition-transform duration-800 ${menu ? 'translate-y-0' : '-translate-y-full'}`}>
 
             </div>
-            <header className={" w-full text-center   sticky top-0 h-12 z-30"}>
+            <header className={" w-full text-center  sticky top-0 h-12 z-30"}>
                 <div onClick={() => setMenu(!menu)}
                      className={" top-4 left-8 text-gray-500 text-lg font-bold cursor-pointer absolute " +
                          "hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}>
