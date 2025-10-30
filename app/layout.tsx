@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono, Alfa_Slab_One, Pacifico} from "next/font/google";
 import "./globals.css";
 import {AppBody, UmamiAnalytics} from "@/app/body";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
-      className={`${geistSans.variable} ${geistMono.variable} ${alfaSlabOneFont.variable} ${pacificoFont.variable} antialiased bg-texture`}
+      className={`${geistSans.variable} ${geistMono.variable} ${alfaSlabOneFont.variable} ${pacificoFont.variable} antialiased `}
     >
       <AppBody children={children}/>
       <UmamiAnalytics/>

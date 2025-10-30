@@ -23,7 +23,7 @@ export const AppBody = ({
 
 
   return (
-    <div className={"relative w-full h-full"}>
+    <div className={"relative w-full h-full bg-gray-200"}>
       <div className={"bg-black w-full h-full z-25 absolute transition-transform duration-1500 ease-in-out" + (isLoading ? "" : " -translate-y-full")}>
          <img
            width={logoWidth}
@@ -45,7 +45,7 @@ export const AppBody = ({
             <Link href={"/projects"} className={"hover:underline decoration-4  block w-24 text-center"}>Projects</Link>
             <Link href={"https://blog.pol.company"}
                   className={"hover:underline decoration-4  block w-24 text-center"}>Blog</Link>
-            <Link href={"mailto:hello@pol.company"}
+            <Link href={"/blog"}
                   className={"hover:underline decoration-4  block w-24"}>Contact</Link>
           </div>
         </div>

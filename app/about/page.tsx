@@ -12,7 +12,7 @@ export default function About() {
                  style={{maxWidth: "1500px"}}>
                 <img
                     alt={"Profile Image"}
-                    src={"/profile_image_02.jpg"}
+                    src={"/profile_image_01.jpg"}
                     className={"border-8"}
                     width={imageWidth * scale}
                     style={{width: imageWidth * scale}}

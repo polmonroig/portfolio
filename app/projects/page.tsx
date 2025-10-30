@@ -64,7 +64,7 @@ const projects = [
     },
     {
         title : "Light In Solstice",
-        descrption : "Currently in-development 2D Game coded in Godot",
+        description : "Currently in-development 2D Game coded in Godot",
         tags : ["game development"]
     },
     {
