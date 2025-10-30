@@ -11,7 +11,7 @@ export default function Home() {
     <div className="font-sans flex flex-col items-center justify-items-center pt-96 h-screen relative">
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-star h-screen">
         <div>
-          <div className="text-8xl text-center mb-12 font-bold font-average text-teal-500 slide-animation">
+          <div className="text-8xl text-center mb-12 font-average text-teal-500 slide-animation">
             Hi, I'm Pol
           </div>
           <div/>

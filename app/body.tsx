@@ -15,14 +15,19 @@ export const AppBody = ({
 
     return (
         <div className={"relative w-full h-full bg-white font-average"}>
-            <header className={" w-full text-center   sticky top-0 h-12"}>
-                <div className={" top-4 left-8 text-gray-500 text-lg font-bold cursor-pointer absolute " +
-                    "hover:text-teal-500 hover:tracking-widest transition-all"}>
+            <div
+                className={`w-full h-full bg-teal-500 fixed z-20 transition-transform duration-800 ${menu ? 'translate-y-0' : '-translate-y-full'}`}>
+
+            </div>
+            <header className={" w-full text-center   sticky top-0 h-12 z-30"}>
+                <div onClick={() => setMenu(!menu)}
+                     className={" top-4 left-8 text-gray-500 text-lg font-bold cursor-pointer absolute " +
+                         "hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}>
                     Menu
                 </div>
                 <div className={"inline-block"}>
                     <a className={"text-gray-500 text-lg font-bold absolute top-4 right-8 flex flex-row gap-2 " +
-                        "cursor-pointer  hover:text-teal-500 hover:tracking-widest transition-all"}
+                        "cursor-pointer  hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}
                        href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}>
                         <span>Hire me</span>
                         <ChatBubbleLeftIcon width={24} height={24} className={"inline-block my-auto "}/>
