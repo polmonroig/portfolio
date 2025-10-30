@@ -40,6 +40,14 @@ body {
     animation-fill-mode: backwards; /* Keep element at 0% keyframe during the delay */
 }
 
+.img-frame {
+    box-shadow:
+            -50px -50px 0 -40px oklch(70.4% 0.14 182.503),
+            50px 50px 0 -40px oklch(70.4% 0.14 182.503);
+}
+
+
+
 .bg-colors {
     width: 100%;
     height: 100%;

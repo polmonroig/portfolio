@@ -5,9 +5,9 @@ import {GithubIcon, LinkedinIcon} from "@/app/icons";
 
 export default function Home() {
 
-    const imageWidth: number = 2046;
-    const imageHeight: number = 1536;
-    const scale: number = 0.25
+    const imageWidth: number = 3212;
+    const imageHeight: number = 3458;
+    const scale: number = 0.18
 
 
     return (
@@ -40,10 +40,10 @@ export default function Home() {
                         <img
                             alt={"Profile Image"}
                             src={"/profile_image_01.jpg"}
-                            className={""}
-                            width={imageWidth * scale}
-                            style={{width: imageWidth * scale}}
-                            height={imageHeight * scale}/>
+                            className={"img-frame"}
+                            width={"100%"}
+                            style={{maxWidth: imageWidth * scale}}
+                            height={"auto"}/>
                         <div className={"text-2xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
                             <span className={"font-bold text-4xl text-center text-gray-800"}>About me 👋</span>
                             <br/><br/>
