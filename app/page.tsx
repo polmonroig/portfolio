@@ -34,14 +34,14 @@ export default function Home() {
                  style={{paddingTop: "20%"}}>
                 <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-star h-screen">
                     <div>
-                        <div className="text-8xl text-center mb-12 font-average text-teal-500 slide-animation">
+                        <div className="text-8xl text-center mb-12 font-average  slide-animation bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-teal-500">
                             Hi, I'm Pol
                         </div>
                         <div/>
                         <div
                             className="text-2xl/10 mt-5 text-center mx-auto text-gray-500 font-average slide-animation-delay"
                             style={{maxWidth: "600px"}}>
-                            A multidisciplinary <span className={"text-teal-500"}>developer</span> with a passion for
+                            A freelance <span className={"text-teal-500"}>developer</span> with a passion for
                             building machine learning solutions and software applications.
                         </div>
                     </div>
@@ -50,14 +50,16 @@ export default function Home() {
                     className={"w-12 h-12 mx-auto animate-bounce text-gray-500 absolute bottom-24 text-teal-500"}/>
 
             </div>
-            <div className={" h-2 bg-teal-500 mx-auto"} style={{width : `${Math.min(100, (scrollPosition * 100) * 1.25)}%`}}>
+            <div className={" h-2 bg-gradient-to-r from-teal-500 via-teal-300 to-teal-500 mx-auto"}
+                 style={{width: `${Math.min(100, (scrollPosition * 100) * 1.25)}%`}}>
             </div>
 
             {/** Projects Section **/}
-            <div id={"projects"} className={"w-full py-24 bg-teal-50"}>
+            <div id={"projects"} className={"w-full py-52 bg-teal-50"}>
                 <div className={"max-w-6xl mx-auto px-6"}>
                     <div className="text-center">
-                        <h2 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Selected Projects</h2>
+                        <h2 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Selected
+                            Projects</h2>
                         <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
                             A snapshot of products and experiments I have built across web, games, and machine learning.
                         </p>
@@ -65,12 +67,36 @@ export default function Home() {
 
                     <div className="mt-12 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                         {[
-                            { title: "Portfolio", description: "I built my own portfolio using Next.js", tags: ["web development", "webgl"] },
-                            { title: "BCN Studio", description: "VFX cloud infrastructure management platform for artists.", tags: ["web development", "aws"] },
-                            { title: "Web3D", description: "Anamorphic 3D platform for billboards.", tags: ["web development", "webgl"] },
-                            { title: "Aiart", description: "AI-powered composition and color harmony advisor for artwork.", tags: ["web development", "image segmentation"] },
-                            { title: "Timelines", description: "Project and Gantt timelines application consulting.", tags: ["web development", "webgl"] },
-                            { title: "Cloud Segmentation", description: "Deep learning CNN for cloud segmentation (Kaggle).", tags: ["machine learning"] },
+                            {
+                                title: "Genetic Brushes",
+                                description: "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
+                                tags: ["aritificial intelligence"]
+                            },
+                            {
+                                title: "BCN Studio",
+                                description: "VFX cloud infrastructure management platform for artists.",
+                                tags: ["web development", "aws"]
+                            },
+                            {
+                                title: "Web3D",
+                                description: "Anamorphic 3D platform for billboards.",
+                                tags: ["web development", "webgl"]
+                            },
+                            {
+                                title: "Aiart",
+                                description: "AI-powered composition and color harmony advisor for artwork.",
+                                tags: ["web development", "image segmentation"]
+                            },
+                            {
+                                title: "Timelines",
+                                description: "Project and Gantt timelines application consulting.",
+                                tags: ["web development", "webgl"]
+                            },
+                            {
+                                title: "Cloud Segmentation",
+                                description: "Deep learning CNN for cloud segmentation (Kaggle).",
+                                tags: ["machine learning"]
+                            },
                         ].map((project, idx) => (
                             <div
                                 key={idx}
@@ -80,7 +106,8 @@ export default function Home() {
                                     <h3 className="text-xl font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
                                         {project.title}
                                     </h3>
-                                    <span className="ml-3 inline-block h-2 w-2 rounded-full bg-teal-500 opacity-70 group-hover:opacity-100" />
+                                    <span
+                                        className="ml-3 inline-block h-2 w-2 rounded-full bg-teal-500 opacity-70 group-hover:opacity-100"/>
                                 </div>
                                 <p className="mt-3 text-gray-600 text-sm leading-6">{project.description}</p>
                                 <div className="mt-4 flex flex-wrap gap-2">
@@ -110,7 +137,7 @@ export default function Home() {
 
             {/** About Section **/}
             <div>
-                <div className={"h-full w-full py-24  flex flex-col items-center justify-center x"}>
+                <div className={"h-full w-full py-96  flex flex-col items-center justify-center x"}>
                     <div className={"flex flex-col lg:flex-row gap-4 mt-12 mx-auto justify-center"}>
                         <img
                             alt={"Profile Image"}
