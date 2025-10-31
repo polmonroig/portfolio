@@ -1,7 +1,7 @@
 'use client'
 import Script from 'next/script';
 import {ChatBubbleLeftIcon} from "@heroicons/react/16/solid";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 export const AppBody = ({
@@ -12,14 +12,39 @@ export const AppBody = ({
 
 
     const [menu, setMenu] = useState<boolean>(false);
+    const [isScrolling, setIsScrolling] = useState<boolean>(false);
+
+    const handleScroll = () => {
+        setIsScrolling(window.scrollY > 0);
+    }
+
+    useEffect(() => {
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [])
+
+
+    let headerClass = "w-full text-center  fixed top-0 h-16 z-30";
+    if(menu){
+        headerClass += " "
+    }
+    else if(isScrolling){
+        headerClass += " bg-white shadow-md"
+    }
+    else{
+        headerClass += " bg-white"
+    }
 
     return (
-        <div className={"relative w-full h-full bg-white font-average"}>
+        <div className={"relative w-full h-full bg-white font-average "}>
             <div
-                className={`w-full h-full bg-teal-500 fixed z-20 transition-transform duration-800 ${menu ? 'translate-y-0' : '-translate-y-full'}`}>
+                className={`w-full h-full bg-teal-500 fixed z-20 transition-transform duration-800 ease-in-out ${menu ? 'translate-y-0' : '-translate-y-full'}`}>
 
             </div>
-            <header className={" w-full text-center  sticky top-0 h-12 z-30"}>
+            <header className={headerClass}>
                 <div onClick={() => setMenu(!menu)}
                      className={" top-4 left-8 text-gray-500 text-lg font-bold cursor-pointer absolute " +
                          "hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}>
@@ -28,7 +53,7 @@ export const AppBody = ({
                 <div className={"inline-block"}>
                     <a className={"text-gray-500 text-lg font-bold absolute top-4 right-8 flex flex-row gap-2 " +
                         "cursor-pointer  hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}
-                       href={"#contact"}>
+                       href={"#contact"} onClick={() => setMenu(false)}>
                         <span>Hire me</span>
                         <ChatBubbleLeftIcon width={24} height={24} className={"inline-block my-auto "}/>
                     </a>

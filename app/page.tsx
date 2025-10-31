@@ -24,7 +24,7 @@ export default function Home() {
                             className="text-2xl/10 mt-5 text-center mx-auto text-gray-500 font-average slide-animation-delay"
                             style={{maxWidth: "600px"}}>
                             A multidisciplinary <span className={"text-teal-500"}>developer</span> with a passion for
-                            building machine learning solutions and web applications.
+                            building machine learning solutions and software applications.
                         </div>
                     </div>
                 </div>
@@ -36,11 +36,11 @@ export default function Home() {
             {/** About Section **/}
             <div>
                 <div className={"h-full w-full py-24  flex flex-col items-center justify-center x"}>
-                    <div className={"flex flex-row gap-4 mt-12 mx-auto justify-center"}>
+                    <div className={"flex flex-col lg:flex-row gap-4 mt-12 mx-auto justify-center"}>
                         <img
                             alt={"Profile Image"}
                             src={"/profile_image_01.jpg"}
-                            className={"img-frame"}
+                            className={"img-frame mx-auto"}
                             width={"100%"}
                             style={{maxWidth: imageWidth * scale}}
                             height={"auto"}/>
