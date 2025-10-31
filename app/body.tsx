@@ -27,7 +27,7 @@ export const AppBody = ({
     }, [])
 
 
-    let headerClass = "w-full text-center  fixed top-0 h-16 z-30";
+    let headerClass = "w-full text-center  fixed top-0 h-16 z-30 transition-shadow duration-300";
     if(menu){
         headerClass += " "
     }
