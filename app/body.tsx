@@ -27,31 +27,29 @@ export const AppBody = ({
     }, [])
 
 
-    let headerClass = "w-full text-center  fixed top-0 h-16 z-30 transition-shadow duration-300";
-    if(menu){
+    let headerClass = "w-full text-center  fixed top-0 h-16 z-10 transition-shadow duration-300";
+    if (menu) {
         headerClass += " "
-    }
-    else if(isScrolling){
+    } else if (isScrolling) {
         headerClass += " bg-white shadow-md"
-    }
-    else{
+    } else {
         headerClass += " bg-white"
     }
 
     return (
         <div className={"relative w-full h-full bg-white font-average "}>
-            <div
-                className={`w-full h-full bg-teal-500 fixed z-20 transition-transform duration-800 ease-in-out ${menu ? 'translate-y-0' : '-translate-y-full'}`}>
 
-            </div>
             <header className={headerClass}>
+                <div
+                    className={`w-full h-full bg-teal-500 fixed z-20 transition-transform  ease-in-out ${menu ? 'translate-y-0 duration-800' : '-translate-y-full duration-600'}`}>
+                </div>
                 <div onClick={() => setMenu(!menu)}
-                     className={" top-4 left-8 text-gray-500 text-lg font-bold cursor-pointer absolute " +
-                         "hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}>
+                     className={"z-20 top-4 left-8 text-lg font-bold cursor-pointer absolute " +
+                         "hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500 text-gray-500 ')}>
                     Menu
                 </div>
-                <div className={"inline-block"}>
-                    <a className={"text-gray-500 text-lg font-bold absolute top-4 right-8 flex flex-row gap-2 " +
+                <div className={"z-20 absolute top-4 right-8"}>
+                    <a className={"text-gray-500 text-lg font-bold flex flex-row gap-2 " +
                         "cursor-pointer  hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}
                        href={"#contact"} onClick={() => setMenu(false)}>
                         <span>Hire me</span>
