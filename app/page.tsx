@@ -1,6 +1,7 @@
 'use client'
 import {ChevronDownIcon, EnvelopeIcon} from "@heroicons/react/16/solid";
 import {GithubIcon, LinkedinIcon} from "@/app/icons";
+import {useEffect, useState} from "react";
 
 
 export default function Home() {
@@ -8,6 +9,23 @@ export default function Home() {
     const imageWidth: number = 3212;
     const imageHeight: number = 3458;
     const scale: number = 0.18
+
+    const [scrollPosition, setScrollPosition] = useState<number>(0);
+
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY / window.innerHeight);
+    }
+
+    useEffect(() => {
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [])
+
+
+    console.log(scrollPosition);
 
 
     return (
@@ -31,6 +49,63 @@ export default function Home() {
                 <ChevronDownIcon
                     className={"w-12 h-12 mx-auto animate-bounce text-gray-500 absolute bottom-24 text-teal-500"}/>
 
+            </div>
+            <div className={" h-2 bg-teal-500 mx-auto"} style={{width : `${(scrollPosition * 100) * 1.25}%`}}>
+            </div>
+
+            {/** Projects Section **/}
+            <div id={"projects"} className={"w-full py-24 bg-gray-100 inset-shadow-sm inset-shadow-gray-200"}>
+                <div className={"max-w-6xl mx-auto px-6"}>
+                    <div className="text-center">
+                        <h2 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Selected Projects</h2>
+                        <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
+                            A snapshot of products and experiments I have built across web, games, and machine learning.
+                        </p>
+                    </div>
+
+                    <div className="mt-12 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                        {[
+                            { title: "Portfolio", description: "I built my own portfolio using Next.js", tags: ["web development", "webgl"] },
+                            { title: "BCN Studio", description: "VFX cloud infrastructure management platform for artists.", tags: ["web development", "aws"] },
+                            { title: "Web3D", description: "Anamorphic 3D platform for billboards.", tags: ["web development", "webgl"] },
+                            { title: "Aiart", description: "AI-powered composition and color harmony advisor for artwork.", tags: ["web development", "image segmentation"] },
+                            { title: "Timelines", description: "Project and Gantt timelines application consulting.", tags: ["web development", "webgl"] },
+                            { title: "Cloud Segmentation", description: "Deep learning CNN for cloud segmentation (Kaggle).", tags: ["machine learning"] },
+                        ].map((project, idx) => (
+                            <div
+                                key={idx}
+                                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-teal-200 transition-all cursor-pointer"
+                            >
+                                <div className="flex items-start justify-between">
+                                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
+                                        {project.title}
+                                    </h3>
+                                    <span className="ml-3 inline-block h-2 w-2 rounded-full bg-teal-500 opacity-70 group-hover:opacity-100" />
+                                </div>
+                                <p className="mt-3 text-gray-600 text-sm leading-6">{project.description}</p>
+                                <div className="mt-4 flex flex-wrap gap-2">
+                                    {project.tags.map((tag, i) => (
+                                        <span
+                                            key={i}
+                                            className="text-xs px-2 py-1 rounded-full border border-gray-200 text-gray-600 bg-gray-50"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-10">
+                        <a
+                            href="/projects"
+                            className="inline-block px-5 py-3 bg-teal-500 text-white rounded-lg text-base sm:text-lg hover:bg-teal-600 transition-colors"
+                        >
+                            View all projects
+                        </a>
+                    </div>
+                </div>
             </div>
 
             {/** About Section **/}
