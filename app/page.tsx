@@ -50,11 +50,11 @@ export default function Home() {
                     className={"w-12 h-12 mx-auto animate-bounce text-gray-500 absolute bottom-24 text-teal-500"}/>
 
             </div>
-            <div className={" h-2 bg-teal-500 mx-auto"} style={{width : `${(scrollPosition * 100) * 1.25}%`}}>
+            <div className={" h-2 bg-teal-500 mx-auto"} style={{width : `${Math.min(100, (scrollPosition * 100) * 1.25)}%`}}>
             </div>
 
             {/** Projects Section **/}
-            <div id={"projects"} className={"w-full py-24 bg-gray-100 inset-shadow-sm inset-shadow-gray-200"}>
+            <div id={"projects"} className={"w-full py-24 bg-teal-50"}>
                 <div className={"max-w-6xl mx-auto px-6"}>
                     <div className="text-center">
                         <h2 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Selected Projects</h2>
@@ -119,7 +119,7 @@ export default function Home() {
                             width={"100%"}
                             style={{maxWidth: imageWidth * scale}}
                             height={"auto"}/>
-                        <div className={"text-2xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
+                        <div className={"text-xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
                             <span className={"font-bold text-4xl text-center text-gray-800"}>About me 👋</span>
                             <br/><br/>
                             I'm a Full-Spectrum Digital Consultant and Developer who turns complex business needs
