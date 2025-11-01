@@ -34,7 +34,8 @@ export default function Home() {
                  style={{paddingTop: "20%"}}>
                 <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-star h-screen">
                     <div>
-                        <div className="text-8xl text-center mb-12 font-average  slide-animation bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-teal-500">
+                        <div
+                            className="text-8xl text-center mb-12 font-average  slide-animation bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-teal-500">
                             Hi, I'm Pol
                         </div>
                         <div/>
@@ -55,7 +56,8 @@ export default function Home() {
             </div>
 
             {/** Projects Section **/}
-            <div id={"projects"} className={"w-full py-52 bg-teal-50"}>
+            <div id={"projects"}
+                 className={"w-full py-52 bg-gradient-to-r from-teal-100  via-teal-50 to-teal-100 shadow-lg"}>
                 <div className={"max-w-6xl mx-auto px-6"}>
                     <div className="text-center">
                         <h2 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Selected
@@ -136,29 +138,27 @@ export default function Home() {
             </div>
 
             {/** About Section **/}
-            <div>
-                <div className={"h-full w-full py-96  flex flex-col items-center justify-center x"}>
-                    <div className={"flex flex-col lg:flex-row gap-4 mt-12 mx-auto justify-center"}>
-                        <img
-                            alt={"Profile Image"}
-                            src={"/profile_image_01.jpg"}
-                            className={"img-frame mx-auto"}
-                            width={"100%"}
-                            style={{maxWidth: imageWidth * scale}}
-                            height={"auto"}/>
-                        <div className={"text-xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
-                            <span className={"font-bold text-4xl text-center text-gray-800"}>About me 👋</span>
-                            <br/><br/>
-                            I'm a Full-Spectrum Digital Consultant and Developer who turns complex business needs
-                            into
-                            high-impact products. My development stack is language-agnostic, spanning Node.js,
-                            Python,
-                            R, C++ and beyond. Expertise includes scalable cloud architecture, machine learning/data
-                            science and web development.
-                        </div>
+            <div className={"h-full w-full py-96  flex flex-col items-center justify-center x"}>
+                <div className={"flex flex-col lg:flex-row gap-4 mt-12 mx-auto justify-center"}>
+                    <img
+                        alt={"Profile Image"}
+                        src={"/profile_image_01.jpg"}
+                        className={"img-frame mx-auto"}
+                        width={"100%"}
+                        style={{maxWidth: imageWidth * scale}}
+                        height={"auto"}/>
+                    <div className={"text-xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
+                        <span className={"font-bold text-4xl text-center text-gray-800"}>About me 👋</span>
+                        <br/><br/>
+                        I'm a Full-Spectrum Digital Consultant and Developer who turns complex business needs
+                        into
+                        high-impact products. My development stack is language-agnostic, spanning Node.js,
+                        Python,
+                        R, C++ and beyond. Expertise includes scalable cloud architecture, machine learning/data
+                        science and web development.
                     </div>
-
                 </div>
+
             </div>
 
 
