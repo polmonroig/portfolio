@@ -45,7 +45,16 @@ export const AppBody = ({
                     <div className={`text-white float-left  mt-24 ml-12 flex flex-col gap-12 text-left`}>
                         <div
                             className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1000 duration-300' : 'opacity-0'}`}>
-                            <a className={"hover:underline cursor-pointer"}>
+                            <a className={"hover:underline cursor-pointer"} href={"/"}>
+                                Home
+                            </a>
+                            <div className={"text-left text-xl my-auto ml-24"}>
+                                Back to home page
+                            </div>
+                        </div>
+                        <div
+                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1200 duration-300' : 'opacity-0'}`}>
+                            <a className={"hover:underline cursor-pointer"} href={"/projects"}>
                                 Projects
                             </a>
                             <div className={"text-left text-xl my-auto ml-24"}>
@@ -53,7 +62,7 @@ export const AppBody = ({
                             </div>
                         </div>
                         <div
-                            className={`grid grid-cols-2 col-span-12 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1200 duration-300' : 'opacity-0'}`}>
+                            className={`grid grid-cols-2 col-span-12 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1400 duration-300' : 'opacity-0'}`}>
                             <a className={"hover:underline cursor-pointer"}>
                                 About
                             </a>
@@ -62,8 +71,8 @@ export const AppBody = ({
                             </div>
                         </div>
                         <div
-                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1400 duration-300' : 'opacity-0'}`}>
-                            <a className={"hover:underline cursor-pointer"}>
+                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1600 duration-300' : 'opacity-0'}`}>
+                            <a className={"hover:underline cursor-pointer"} target={"_blank"} href={"https://blog.pol.company"}>
                                 Blog
                             </a>
                             <div className={"text-left text-xl my-auto ml-24"}>
