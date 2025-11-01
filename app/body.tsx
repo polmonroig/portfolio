@@ -42,13 +42,42 @@ export const AppBody = ({
             <header className={headerClass}>
                 <div
                     className={`w-full h-full bg-teal-500 fixed z-20 transition-transform  ease-in-out ${menu ? 'translate-y-0 duration-800' : '-translate-y-full duration-600'}`}>
+                    <div className={`text-white float-left  mt-24 ml-12 flex flex-col gap-12 text-left`}>
+                        <div
+                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1000 duration-300' : 'opacity-0'}`}>
+                            <a className={"hover:underline cursor-pointer"}>
+                                Projects
+                            </a>
+                            <div className={"text-left text-xl my-auto ml-24"}>
+                                Checkout my projects
+                            </div>
+                        </div>
+                        <div
+                            className={`grid grid-cols-2 col-span-12 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1200 duration-300' : 'opacity-0'}`}>
+                            <a className={"hover:underline cursor-pointer"}>
+                                About
+                            </a>
+                            <div className={"text-left text-xl my-auto ml-24"}>
+                                Get to know me better
+                            </div>
+                        </div>
+                        <div
+                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1400 duration-300' : 'opacity-0'}`}>
+                            <a className={"hover:underline cursor-pointer"}>
+                                Blog
+                            </a>
+                            <div className={"text-left text-xl my-auto ml-24"}>
+                                My latest writing
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div onClick={() => setMenu(!menu)}
-                     className={"z-20 top-4 left-8 text-lg font-bold cursor-pointer absolute " +
+                     className={"z-20 top-4 left-12 text-lg font-bold cursor-pointer absolute " +
                          "hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500 text-gray-500 ')}>
                     Menu
                 </div>
-                <div className={"z-20 absolute top-4 right-8"}>
+                <div className={"z-20 absolute top-4 right-12"}>
                     <a className={"text-gray-500 text-lg font-bold flex flex-row gap-2 " +
                         "cursor-pointer  hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}
                        href={"#contact"} onClick={() => setMenu(false)}>
@@ -56,6 +85,7 @@ export const AppBody = ({
                         <ChatBubbleLeftIcon width={24} height={24} className={"inline-block my-auto "}/>
                     </a>
                 </div>
+
             </header>
             {children}
             <footer className={"left-0 bottom-0 w-full text-center "}>
