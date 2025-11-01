@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 export default function Home() {
 
     const imageWidth: number = 3212;
-    const imageHeight: number = 3458;
+    // const imageHeight: number = 3458;
     const scale: number = 0.18
 
     const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -49,7 +49,7 @@ export default function Home() {
                     </div>
                 </div>
                 <ChevronDownIcon
-                    className={"w-12 h-12 mx-auto animate-bounce text-gray-500 absolute bottom-24 text-teal-500"}/>
+                    className={"w-12 h-12 mx-auto animate-bounce absolute bottom-24 text-teal-500"}/>
 
             </div>
             <div className={" h-2 bg-gradient-to-r from-teal-500 via-teal-300 to-teal-500 mx-auto"}
