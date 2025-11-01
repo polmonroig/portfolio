@@ -171,17 +171,10 @@ export default function Home() {
             {/** About Section **/}
             <div className={"h-full w-full py-96  flex flex-col items-center justify-center x"}>
                 <div className={"flex flex-col lg:flex-row gap-4 mt-12 mx-auto justify-center"}>
-                    <img
-                        alt={"Profile Image"}
-                        src={"/profile_image_01.jpg"}
-                        className={"img-frame mx-auto"}
-                        width={"100%"}
-                        style={{maxWidth: imageWidth * scale}}
-                        height={"auto"}/>
-                    <div className={"text-xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
-                        <div className={"font-bold text-4xl text-left text-gray-800 mb-12"}>About me 👋</div>
+                    <div className={"text-xl my-auto mr-12 text-gray-500 max-w-2xl text-justify"}>
+                        <div className={"font-bold text-5xl text-left text-gray-800 mb-12"}>About me 👋</div>
                         <div className={"flex flex-col gap-4 text-xl/7"}>
-                            <div>
+                            <div >
                                 I'm a Digital Consultant and Developer who loves transforming complex business ideas
                                 into
                                 impactful products. Think of me as the person who bridges the gap between a great vision
@@ -210,6 +203,13 @@ export default function Home() {
                         </div>
 
                     </div>
+                    <img
+                        alt={"Profile Image"}
+                        src={"/profile_image_01.jpg"}
+                        className={"img-frame mx-auto"}
+                        width={"100%"}
+                        style={{maxWidth: imageWidth * scale}}
+                        height={"auto"}/>
                 </div>
 
             </div>
