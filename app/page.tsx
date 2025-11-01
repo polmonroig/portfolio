@@ -1,5 +1,5 @@
 'use client'
-import {ChevronDownIcon, EnvelopeIcon} from "@heroicons/react/16/solid";
+import {ChevronDownIcon, EnvelopeIcon, ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/16/solid";
 import {GithubIcon, LinkedinIcon} from "@/app/icons";
 import {useEffect, useState} from "react";
 
@@ -11,6 +11,7 @@ export default function Home() {
     const scale: number = 0.18
 
     const [scrollPosition, setScrollPosition] = useState<number>(0);
+    const [projectIndex, setProjectIndex] = useState<number>(0);
 
     const handleScroll = () => {
         setScrollPosition(window.scrollY / window.innerHeight);
@@ -67,64 +68,93 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="mt-12 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                        {[
+                    {/* Carousel of 3 key projects (no scrollbar) */}
+                    {(() => {
+
+                        const coverWidth: number = 1200;
+                        const coverHeight: number = 600;
+
+                        const projects = [
+                            {
+                                title: "Aiart",
+                                description: "AI-powered composition and color harmony advisor for artwork.",
+                                img: '/projects/aiart/cover.png'
+                            },
                             {
                                 title: "Genetic Brushes",
                                 description: "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
-                                tags: ["aritificial intelligence"]
+                                img: `https://placehold.co/${coverWidth}x${coverHeight}?text=Genetic Brushes`
                             },
                             {
                                 title: "BCN Studio",
                                 description: "VFX cloud infrastructure management platform for artists.",
-                                tags: ["web development", "aws"]
+                                img: `https://placehold.co/${coverWidth}x${coverHeight}?text=BCN Studio`
                             },
-                            {
-                                title: "Web3D",
-                                description: "Anamorphic 3D platform for billboards.",
-                                tags: ["web development", "webgl"]
-                            },
-                            {
-                                title: "Aiart",
-                                description: "AI-powered composition and color harmony advisor for artwork.",
-                                tags: ["web development", "image segmentation"]
-                            },
-                            {
-                                title: "Timelines",
-                                description: "Project and Gantt timelines application consulting.",
-                                tags: ["web development", "webgl"]
-                            },
-                            {
-                                title: "Cloud Segmentation",
-                                description: "Deep learning CNN for cloud segmentation (Kaggle).",
-                                tags: ["machine learning"]
-                            },
-                        ].map((project, idx) => (
-                            <div
-                                key={idx}
-                                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-teal-200 transition-all cursor-pointer"
-                            >
-                                <div className="flex items-start justify-between">
-                                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
-                                        {project.title}
-                                    </h3>
-                                    <span
-                                        className="ml-3 inline-block h-2 w-2 rounded-full bg-teal-500 opacity-70 group-hover:opacity-100"/>
+                        ];
+                        const clampIndex = (i: number) => (i + projects.length) % projects.length;
+                        const goPrev = () => setProjectIndex(prev => clampIndex(prev - 1));
+                        const goNext = () => setProjectIndex(prev => clampIndex(prev + 1));
+                        return (
+                            <div className="mt-12 relative select-none">
+                                {/* Viewport */}
+                                <div className="overflow-hidden rounded-xl">
+                                    {/* Track */}
+                                    <div
+                                        className="flex transition-transform duration-500 ease-out"
+                                        style={{ transform: `translateX(-${projectIndex * 100}%)` }}
+                                    >
+                                        {projects.map((project, idx) => {
+                                            return (
+                                                <div key={idx} className="min-w-full">
+                                                    <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                                                    style={{width: coverWidth}}>
+                                                        <img
+                                                            src={project.img}
+                                                            alt={`${project.title} preview`}
+                                                            style={{width: coverWidth, height: coverHeight}}
+                                                            width={coverWidth}
+                                                            height={coverHeight}
+                                                            className="w-full h-auto rounded-t-xl object-cover"
+                                                        />
+                                                        <div className="p-6 border-t-2 border-gray-300">
+                                                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+                                                            <p className="text-gray-600 leading-6">{project.description}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
-                                <p className="mt-3 text-gray-600 text-sm leading-6">{project.description}</p>
-                                <div className="mt-4 flex flex-wrap gap-2">
-                                    {project.tags.map((tag, i) => (
-                                        <span
+                                {/* Controls */}
+                                <button
+                                    aria-label="Previous project"
+                                    onClick={goPrev}
+                                    className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow border border-gray-200 backdrop-blur text-teal-600"
+                                >
+                                    <ChevronLeftIcon className="w-6 h-6" />
+                                </button>
+                                <button
+                                    aria-label="Next project"
+                                    onClick={goNext}
+                                    className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow border border-gray-200 backdrop-blur text-teal-600"
+                                >
+                                    <ChevronRightIcon className="w-6 h-6" />
+                                </button>
+                                {/* Dots */}
+                                <div className="flex items-center justify-center gap-2 mt-4">
+                                    {projects.map((_, i) => (
+                                        <button
                                             key={i}
-                                            className="text-xs px-2 py-1 rounded-full border border-gray-200 text-gray-600 bg-gray-50"
-                                        >
-                                            {tag}
-                                        </span>
+                                            aria-label={`Go to slide ${i + 1}`}
+                                            onClick={() => setProjectIndex(i)}
+                                            className={`h-2.5 rounded-full transition-all ${projectIndex === i ? 'w-6 bg-teal-500' : 'w-2.5 bg-gray-300'}`}
+                                        />
                                     ))}
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        );
+                    })()}
 
                     <div className="text-center mt-10">
                         <a
