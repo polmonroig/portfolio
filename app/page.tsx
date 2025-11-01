@@ -101,13 +101,14 @@ export default function Home() {
                                     {/* Track */}
                                     <div
                                         className="flex transition-transform duration-500 ease-out"
-                                        style={{ transform: `translateX(-${projectIndex * 100}%)` }}
+                                        style={{transform: `translateX(-${projectIndex * 100}%)`}}
                                     >
                                         {projects.map((project, idx) => {
                                             return (
                                                 <div key={idx} className="min-w-full">
-                                                    <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                                                    style={{width: coverWidth}}>
+                                                    <div
+                                                        className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                                                        style={{width: coverWidth}}>
                                                         <img
                                                             src={project.img}
                                                             alt={`${project.title} preview`}
@@ -132,14 +133,14 @@ export default function Home() {
                                     onClick={goPrev}
                                     className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow border border-gray-200 backdrop-blur text-teal-600"
                                 >
-                                    <ChevronLeftIcon className="w-6 h-6" />
+                                    <ChevronLeftIcon className="w-6 h-6"/>
                                 </button>
                                 <button
                                     aria-label="Next project"
                                     onClick={goNext}
                                     className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow border border-gray-200 backdrop-blur text-teal-600"
                                 >
-                                    <ChevronRightIcon className="w-6 h-6" />
+                                    <ChevronRightIcon className="w-6 h-6"/>
                                 </button>
                                 {/* Dots */}
                                 <div className="flex items-center justify-center gap-2 mt-4">
@@ -178,14 +179,36 @@ export default function Home() {
                         style={{maxWidth: imageWidth * scale}}
                         height={"auto"}/>
                     <div className={"text-xl my-auto ml-12 text-gray-500 max-w-2xl text-justify"}>
-                        <span className={"font-bold text-4xl text-center text-gray-800"}>About me 👋</span>
-                        <br/><br/>
-                        I'm a Full-Spectrum Digital Consultant and Developer who turns complex business needs
-                        into
-                        high-impact products. My development stack is language-agnostic, spanning Node.js,
-                        Python,
-                        R, C++ and beyond. Expertise includes scalable cloud architecture, machine learning/data
-                        science and web development.
+                        <div className={"font-bold text-4xl text-left text-gray-800 mb-12"}>About me 👋</div>
+                        <div className={"flex flex-col gap-4 text-xl/7"}>
+                            <div>
+                                I'm a Digital Consultant and Developer who loves transforming complex business ideas
+                                into
+                                impactful products. Think of me as the person who bridges the gap between a great vision
+                                and
+                                a
+                                high-performing digital reality.
+                            </div>
+
+                            <div>
+
+                                While I handle a wide range of technologies (from Node.js and Python to data science and
+                                scalable cloud systems), I'm really all about finding the right solution to deliver real
+                                value.
+                            </div>
+
+                            <div>
+                                Beyond the code, I'm a firm believer in work-life balance. I live in Barcelona, Spain,
+                                and
+                                when
+                                I switch off the screen, you can often find me out on the water sailing ⛵, getting my
+                                hands
+                                dirty gardening 🌿, whipping up something delicious in the kitchen 🍳, or diving into a
+                                good
+                                gaming session 🎮.
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
