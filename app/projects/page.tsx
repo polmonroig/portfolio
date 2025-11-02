@@ -1,6 +1,3 @@
-
-
-
 type Project = {
     title: string;
     description: string;
@@ -137,6 +134,15 @@ const imageMap: Record<string, string> = {
     "Aiart": "/projects/aiart/cover.png",
     "Genetic Brushes": "/projects/genetic_brushes/cover.png",
     "BCN Studio": "/projects/studio/cover.png",
+    "Baba Is You": "/projects/babaisyou/cover.png",
+    "Earthquake Prediction": "/projects/earthquake/cover.png",
+    "Cloud Segmentation": "/projects/cloud_segmentation/cover.png",
+    "Portfolio": "/projects/portfolio/cover.png",
+    "StarFox64": "/projects/starfox64/cover.png",
+    "Timelines": "/projects/timelines/cover.png",
+    "DX Performance Demo": "/projects/dx/cover.png",
+    "Cokoon": "/projects/cokoon/cover.png",
+    "Light In Solstice": "/projects/light_in_solstice/cover.png",
 };
 
 function categorize(tags: string[]): string {
@@ -179,14 +185,16 @@ export default function Projects() {
                     <div className="text-center">
                         <h1 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">All Projects</h1>
                         <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
-                            Explore a complete list of my work across web, games, algorithms and machine learning — neatly
+                            Explore a complete list of my work across web, games, algorithms and machine learning —
+                            neatly
                             organized by category.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap gap-2 justify-center mt-6">
                         {categories.map((c) => (
-                            <a key={c} href={`#${c.replace(/\s+/g, "-").toLowerCase()}`} className="px-3 py-2 text-sm rounded-full border border-teal-300 text-teal-700 hover:bg-teal-50">
+                            <a key={c} href={`#${c.replace(/\s+/g, "-").toLowerCase()}`}
+                               className="px-3 py-2 text-sm rounded-full border border-teal-300 text-teal-700 hover:bg-teal-50">
                                 {c}
                             </a>
                         ))}
@@ -203,13 +211,13 @@ export default function Projects() {
                                 <div
                                     key={`${cat}-${idx}`}
                                     className="cursor-pointer bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow duration-300 mx-auto"
-                                    style={{ width: coverWidth }}
+                                    style={{width: coverWidth}}
                                 >
                                     {imageMap[project.title] ? (
                                         <img
                                             src={imageMap[project.title]}
                                             alt={`${project.title} preview`}
-                                            style={{ width: coverWidth, height: coverHeight }}
+                                            style={{width: coverWidth, height: coverHeight}}
                                             width={coverWidth}
                                             height={coverHeight}
                                             className="w-full h-auto rounded-t-xl object-cover"
@@ -217,7 +225,7 @@ export default function Projects() {
                                     ) : (
                                         <div
                                             className="w-full rounded-t-xl bg-gray-100 flex items-center justify-center text-gray-400"
-                                            style={{ width: coverWidth, height: coverHeight }}
+                                            style={{width: coverWidth, height: coverHeight}}
                                         >
                                             No cover
                                         </div>
@@ -227,7 +235,8 @@ export default function Projects() {
                                         <p className="text-gray-600 leading-6">{project.description}</p>
                                         <div className="mt-3 flex flex-wrap gap-2">
                                             {project.tags.map((tag, tIdx) => (
-                                                <span key={tIdx} className="border px-2 py-1 text-xs rounded text-gray-600">
+                                                <span key={tIdx}
+                                                      className="border px-2 py-1 text-xs rounded text-gray-600">
                                                     {tag}
                                                 </span>
                                             ))}
