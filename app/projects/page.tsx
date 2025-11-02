@@ -159,9 +159,9 @@ function categorize(tags: string[]): string {
 }
 
 const categoryOrder = [
-    "Web Development",
-    "Game Development",
     "Machine Learning & AI",
+    "Game Development",
+    "Web Development",
     "Algorithms & Data Structures",
     "Desktop & Tools",
     "Other",
