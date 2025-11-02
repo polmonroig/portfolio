@@ -42,40 +42,40 @@ export const AppBody = ({
             <header className={headerClass}>
                 <div
                     className={`w-full h-full bg-teal-500 fixed z-20 transition-transform  ease-in-out ${menu ? 'translate-y-0 duration-800' : '-translate-y-full duration-600'}`}>
-                    <div className={`text-white float-left  mt-24 ml-12 flex flex-col gap-12 text-left`}>
+                    <div className={`text-white float-none  mt-24 mx-12 flex flex-col gap-12 text-center md:float-left md:text-left`}>
                         <div
-                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1000 duration-300' : 'opacity-0'}`}>
+                            className={`grid grid-cols-1 md:grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-800 duration-300' : 'opacity-0'}`}>
                             <a className={"hover:underline cursor-pointer"} href={"/"}>
                                 Home
                             </a>
-                            <div className={"text-left text-xl my-auto ml-24"}>
+                            <div className={"text-left text-xl my-auto ml-24 hidden md:block"}>
                                 Back to home page
                             </div>
                         </div>
                         <div
-                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1200 duration-300' : 'opacity-0'}`}>
+                            className={`grid grid-cols-1 md:grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1000 duration-300' : 'opacity-0'}`}>
                             <a className={"hover:underline cursor-pointer"} href={"/projects"}>
                                 Projects
                             </a>
-                            <div className={"text-left text-xl my-auto ml-24"}>
+                            <div className={"text-left text-xl my-auto ml-24 hidden md:block"}>
                                 Checkout my projects
                             </div>
                         </div>
                         <div
-                            className={`grid grid-cols-2 col-span-12 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1400 duration-300' : 'opacity-0'}`}>
+                            className={`grid grid-cols-1 md:grid-cols-2 col-span-12 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1200 duration-300' : 'opacity-0'}`}>
                             <a className={"hover:underline cursor-pointer"}>
                                 About
                             </a>
-                            <div className={"text-left text-xl my-auto ml-24"}>
+                            <div className={"text-left text-xl my-auto ml-24 hidden md:block"}>
                                 Get to know me better
                             </div>
                         </div>
                         <div
-                            className={`grid grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1600 duration-300' : 'opacity-0'}`}>
+                            className={`grid grid-cols-1 md:grid-cols-2 text-6xl transition-opacity  ${menu ? 'opacity-100 delay-1400 duration-300' : 'opacity-0'}`}>
                             <a className={"hover:underline cursor-pointer"} target={"_blank"} href={"https://blog.pol.company"}>
                                 Blog
                             </a>
-                            <div className={"text-left text-xl my-auto ml-24"}>
+                            <div className={"text-left text-xl my-auto ml-24 hidden md:block"}>
                                 My latest writing
                             </div>
                         </div>
@@ -106,7 +106,7 @@ export const AppBody = ({
     )
 }
 
-export const UmamiAnalytics = () => {
+export const UmamiAnalytics = () => {1
     return <Script async src="https://cloud.umami.is/script.js"
                    data-website-id="e6a04351-01ff-487c-bd4e-e829dde57d3e"></Script>
 }
