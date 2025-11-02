@@ -194,7 +194,8 @@ export default function Projects() {
                     <div className="flex flex-wrap gap-2 justify-center mt-6">
                         {categories.map((c) => (
                             <a key={c} href={`#${c.replace(/\s+/g, "-").toLowerCase()}`}
-                               className="px-3 py-2 text-sm rounded-full border border-teal-300 text-teal-700 hover:bg-teal-50">
+                               className="px-3 py-2 text-sm rounded-full border border-teal-300 text-teal-700 hover:bg-teal-500 hover:text-white
+                               transition-colors duration-200">
                                 {c}
                             </a>
                         ))}
