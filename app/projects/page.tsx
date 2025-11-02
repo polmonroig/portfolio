@@ -120,10 +120,10 @@ const projects: Project[] = [
         tags: ["algorithm"],
     },
     {
-        title: "MMM Bayesian Model Builder",
+        title: "Bayesian Model Builder",
         description:
             "This is a bayesian code builder that generates stan code, that I built to simplify Media Mix Modeling, it has marketing concepts integrated such as adstock and diminishing returns, it is built with R on top of cmdstan which enables for state-of-art bayesian model.",
-        tags: ["algorithm"],
+        tags: ["machine learning"],
     },
 ];
 
@@ -143,6 +143,7 @@ const imageMap: Record<string, string> = {
     "DX Performance Demo": "/projects/dx/cover.png",
     "Cokoon": "/projects/cokoon/cover.png",
     "Light In Solstice": "/projects/light_in_solstice/cover.png",
+    "Bayesian Model Builder" : '/projects/mmm_model_builder/cover.png',
 };
 
 function categorize(tags: string[]): string {
@@ -228,7 +229,7 @@ export default function Projects() {
                                             className="w-full rounded-t-xl bg-gray-100 flex items-center justify-center text-gray-400"
                                             style={{width: coverWidth, height: coverHeight}}
                                         >
-                                            No cover
+                                            {project.title}
                                         </div>
                                     )}
                                     <div className="p-6 border-t-2 border-gray-300">
