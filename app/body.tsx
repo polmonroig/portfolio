@@ -89,7 +89,7 @@ export const AppBody = ({
                 <div className={"z-20 absolute top-4 right-12"}>
                     <a className={"text-gray-500 text-lg font-bold flex flex-row gap-2 " +
                         "cursor-pointer  hover:tracking-widest transition-all" + (menu ? '  text-white' : ' hover:text-teal-500')}
-                       href={"#contact"} onClick={() => setMenu(false)}>
+                       href={"/#contact"} onClick={() => setMenu(false)}>
                         <span>Hire me</span>
                         <ChatBubbleLeftIcon width={24} height={24} className={"inline-block my-auto "}/>
                     </a>
