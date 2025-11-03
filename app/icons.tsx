@@ -1,4 +1,4 @@
-import { JSX, SVGProps } from "react"
+
 
 export const LinkedinIcon = () => {
     return(
