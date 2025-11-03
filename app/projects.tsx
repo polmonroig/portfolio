@@ -150,7 +150,7 @@ const imageMap: Record<string, string> = {
     "DX Performance Demo": "/projects/dx/cover.png",
     "Cokoon": "/projects/cokoon/cover.png",
     "Light In Solstice": "/projects/light_in_solstice/cover.png",
-    "Bayesian Model Builder" : '/projects/mmm_model_builder/cover.png',
+    "Bayesian Model Builder": '/projects/mmm_model_builder/cover.png',
 };
 
 function categorize(tags: string[]): string {
@@ -164,7 +164,6 @@ function categorize(tags: string[]): string {
     if (t.includes("web development") || t.includes("webgl") || t.includes("aws")) return "Web Development";
     return "Other";
 }
-
 
 
 export default function Projects() {
@@ -190,7 +189,7 @@ export default function Projects() {
         "Algorithms & Data Structures"
     ];
 
-    const categoryDescription: string[] = {
+    const categoryDescription = {
         "Selected Projects": "A snapshot of products and experiments I have built across web, games, and machine learning.",
         "Machine Learning & AI": "Projects focused on artificial intelligence, computer vision, and machine learning algorithms.",
         "Game Development": "Video game projects built with various engines like Unity, Godot, and OpenGL.",
@@ -201,6 +200,7 @@ export default function Projects() {
 
     // state variables
     const [categorySelected, setCategorySelected] = useState<string>("Selected Projects");
+    const [selectedProject, setSelectedProject] = useState<number>(-1);
 
 
     const filteredGrouped = grouped[categorySelected];
@@ -219,9 +219,12 @@ export default function Projects() {
                     <div className="flex flex-wrap gap-2 justify-center mt-6">
                         {categories.map((c) => (
                             <button key={c}
-                                    onClick={() => setCategorySelected(c)}
-                               className={`px-3 py-2 text-sm rounded-full border border-teal-300  hover:bg-teal-500 hover:text-white cursor-pointer
-                               transition-colors duration-200 ${(categorySelected === c ? 'text-white bg-teal-500' : 'text-teal-700')}`}>
+                                    onClick={() => {
+                                        setCategorySelected(c);
+                                        setSelectedProject(-1);
+                                    }}
+                                    className={`px-3 py-2 text-sm rounded-full border border-teal-300  hover:bg-teal-500 hover:text-white cursor-pointer
+                               transition-colors duration-200 ${(selectedProject === -1 && categorySelected === c ? 'text-white bg-teal-500' : 'text-teal-700')}`}>
                                 {c}
                             </button>
                         ))}
@@ -230,17 +233,16 @@ export default function Projects() {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 pb-24">
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                    {filteredGrouped.map((project, idx) => (
+                {
+                    selectedProject !== -1 ?
                         <div
-                            key={`${idx}`}
-                            className="cursor-pointer bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow duration-300 mx-auto"
+                            className="cursor-pointer bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow duration-300 mx-auto mt-8"
                             style={{width: coverWidth}}
                         >
-                            {imageMap[project.title] ? (
+                            {imageMap[filteredGrouped[selectedProject].title] ? (
                                 <img
-                                    src={imageMap[project.title]}
-                                    alt={`${project.title} preview`}
+                                    src={imageMap[filteredGrouped[selectedProject].title]}
+                                    alt={`${filteredGrouped[selectedProject].title} preview`}
                                     style={{width: coverWidth, height: coverHeight}}
                                     width={coverWidth}
                                     height={coverHeight}
@@ -251,24 +253,66 @@ export default function Projects() {
                                     className="w-full rounded-t-xl bg-gray-100 flex items-center justify-center text-gray-400"
                                     style={{width: coverWidth, height: coverHeight}}
                                 >
-                                    {project.title}
+                                    {filteredGrouped[selectedProject].title}
                                 </div>
                             )}
                             <div className="p-6 border-t-2 border-gray-300">
-                                <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h3>
-                                <p className="text-gray-600 leading-6">{project.description}</p>
+                                <h3 className="text-2xl font-semibold text-gray-800 mb-2">{filteredGrouped[selectedProject].title}</h3>
+                                <p className="text-gray-600 leading-6">{filteredGrouped[selectedProject].description}</p>
                                 <div className="mt-3 flex flex-wrap gap-2">
-                                    {project.tags.map((tag, tIdx) => (
+                                    {filteredGrouped[selectedProject].tags.map((tag, tIdx) => (
                                         <span key={tIdx}
                                               className="border px-2 py-1 text-xs rounded text-gray-600">
-                                                    {tag}
-                                                </span>
+                                                        {tag}
+                                                    </span>
                                     ))}
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div>
+
+                        :
+                        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                            {filteredGrouped.map((project, idx) => (
+                                <div
+                                    key={`${idx}`}
+                                    onClick={() => setSelectedProject(idx)}
+                                    className="cursor-pointer bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow duration-300 mx-auto"
+                                    style={{width: coverWidth}}
+                                >
+                                    {imageMap[project.title] ? (
+                                        <img
+                                            src={imageMap[project.title]}
+                                            alt={`${project.title} preview`}
+                                            style={{width: coverWidth, height: coverHeight}}
+                                            width={coverWidth}
+                                            height={coverHeight}
+                                            className="w-full h-auto rounded-t-xl object-cover"
+                                        />
+                                    ) : (
+                                        <div
+                                            className="w-full rounded-t-xl bg-gray-100 flex items-center justify-center text-gray-400"
+                                            style={{width: coverWidth, height: coverHeight}}
+                                        >
+                                            {project.title}
+                                        </div>
+                                    )}
+                                    <div className="p-6 border-t-2 border-gray-300">
+                                        <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+                                        <p className="text-gray-600 leading-6">{project.description}</p>
+                                        <div className="mt-3 flex flex-wrap gap-2">
+                                            {project.tags.map((tag, tIdx) => (
+                                                <span key={tIdx}
+                                                      className="border px-2 py-1 text-xs rounded text-gray-600">
+                                                        {tag}
+                                                    </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                }
             </div>
         </div>
     );

@@ -48,11 +48,7 @@ export const AppBody = ({
 
             </header>
             {children}
-            <footer className={"left-0 bottom-0 w-full text-center "}>
-                <div className="hover:underline-offset-4 py-6 text-white bg-teal-500 font-bold text-lg">
-                    Made with ❤️ by Pol Monroig Company
-                </div>
-            </footer>
+
         </div>
     )
 }

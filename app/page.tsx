@@ -36,7 +36,7 @@ export default function Home() {
                 <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-star h-screen">
                     <div>
                         <div
-                            className="text-8xl text-center mb-12 font-average  slide-animation bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-teal-500">
+                            className="text-8xl text-center mb-12 font-average  slide-animation bg-clip-text text-transparent bg-teal-500">
                             Hi, I'm Pol
                         </div>
                         <div/>
@@ -52,7 +52,7 @@ export default function Home() {
                     className={"w-12 h-12 mx-auto animate-bounce absolute bottom-24 text-teal-500"}/>
 
             </div>
-            <div className={" h-2 bg-gradient-to-r from-teal-500 via-teal-300 to-teal-500 mx-auto"}
+            <div className={" h-2 bg-teal-500 mx-auto"}
                  style={{width: `${Math.min(100, (scrollPosition * 100) * 1.25)}%`}}>
             </div>
 
@@ -130,6 +130,11 @@ export default function Home() {
                             Contact me
                         </a>
                     </div>
+                </div>
+            </div>
+            <div className={"left-0 bottom-0 w-full text-center "}>
+                <div className="hover:underline-offset-4 py-6  bg-gray-200 text-lg">
+                    Made with ❤️ by Pol Monroig Company
                 </div>
             </div>
         </div>
