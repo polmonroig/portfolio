@@ -2,6 +2,7 @@
 import {ChevronDownIcon, EnvelopeIcon, ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/16/solid";
 import {GithubIcon, LinkedinIcon} from "@/app/icons";
 import {useEffect, useState} from "react";
+import Projects from "@/app/projects";
 
 
 export default function Home() {
@@ -57,74 +58,8 @@ export default function Home() {
 
             {/** Projects Section **/}
             <div id={"projects"}
-                 className={"w-full py-52 bg-gradient-to-r from-teal-100  via-teal-50 to-teal-100 shadow-lg"}>
-                <div className={"max-w-7xl mx-auto px-6"}>
-                    <div className="text-center">
-                        <h2 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Selected
-                            Projects</h2>
-                        <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
-                            A snapshot of products and experiments I have built across web, games, and machine learning.
-                        </p>
-                    </div>
-                    {(() => {
-                        const coverWidth: number = 400;
-                        const coverHeight: number = 200;
-
-                        const projects = [
-                            {
-                                title: "Aiart",
-                                description: "AI-powered composition and color harmony advisor for artwork.",
-                                img: '/projects/aiart/cover.png'
-                            },
-                            {
-                                title: "Genetic Brushes",
-                                description: "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
-                                img: '/projects/genetic_brushes/cover.png'
-                            },
-                            {
-                                title: "BCN Studio",
-                                description: "VFX cloud infrastructure management platform for artists.",
-                                img: '/projects/studio/cover.png'
-                            },
-                        ];
-                        return (
-                            <div className="mt-12 relative select-none">
-                                <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 ">
-                                    {projects.map((project, idx) => {
-                                        return (
-                                            <div
-                                                key={idx}
-                                                className="cursor-pointer bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow duration-300 mx-auto"
-                                                style={{width: coverWidth}}>
-                                                <img
-                                                    src={project.img}
-                                                    alt={`${project.title} preview`}
-                                                    style={{width: coverWidth, height: coverHeight}}
-                                                    width={coverWidth}
-                                                    height={coverHeight}
-                                                    className="w-full h-auto rounded-t-xl object-cover"
-                                                />
-                                                <div className="p-6 border-t-2 border-gray-300">
-                                                    <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h3>
-                                                    <p className="text-gray-600 leading-6">{project.description}</p>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        );
-                    })()}
-
-                    <div className="text-center mt-10">
-                        <a
-                            href="/projects"
-                            className="inline-block px-5 py-3 bg-teal-500 text-white rounded-lg text-base sm:text-lg hover:bg-teal-600 transition-colors"
-                        >
-                            View all projects
-                        </a>
-                    </div>
-                </div>
+                 className={"w-full  bg-teal-50"}>
+                    <Projects/>
             </div>
 
             {/** About Section **/}

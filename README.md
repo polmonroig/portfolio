@@ -71,11 +71,11 @@ Defined in `package.json`:
 ## Entry Points and Routing
 
 - `app/layout.tsx` — root layout (sets fonts and wraps all pages; injects Umami analytics script)
-- `app/page.tsx` — home page
-- `app/about/page.tsx` — About
-- `app/projects/page.tsx` — Projects
-- `app/blog/page.tsx` — Blog (internal landing; external blog link also used in header)
-- `app/contact/page.tsx` — Contact
+- `app/projects.tsx` — home page
+- `app/about/projects.tsx` — About
+- `app/projects/projects.tsx` — Projects
+- `app/blog/projects.tsx` — Blog (internal landing; external blog link also used in header)
+- `app/contact/projects.tsx` — Contact
 - `app/body.tsx` — client component for header/footer/loading screen and analytics helper
 - `public/` — static assets (e.g., `logo-white-bg-transparent.webp`)
 
@@ -138,16 +138,16 @@ Notes:
 .
 ├─ app/
 │  ├─ layout.tsx           # Root layout
-│  ├─ page.tsx             # Home page
+│  ├─ projects.tsx             # Home page
 │  ├─ body.tsx             # App shell (header/footer/loading/analytics)
 │  ├─ about/
-│  │  └─ page.tsx
+│  │  └─ projects.tsx
 │  ├─ projects/
-│  │  └─ page.tsx
+│  │  └─ projects.tsx
 │  ├─ blog/
-│  │  └─ page.tsx
+│  │  └─ projects.tsx
 │  └─ contact/
-│     └─ page.tsx
+│     └─ projects.tsx
 ├─ public/                 # Static assets
 ├─ next.config.ts          # Next.js config (static export to build/)
 ├─ postcss.config.mjs      # Tailwind CSS v4 via PostCSS

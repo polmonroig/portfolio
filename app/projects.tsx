@@ -14,7 +14,7 @@ const projects: Project[] = [
         title: "BCN Studio",
         description:
             "Studio is a VFX cloud infrastucture management platform specifically designed to make the job for artists easier by decoupling the complexity behind a cloud architecture.",
-        tags: ["web development", "aws"],
+        tags: ["web development", "aws", "selected"],
     },
     {
         title: "Collab",
@@ -46,7 +46,7 @@ const projects: Project[] = [
         title: "Aiart",
         description:
             "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. With aiart you can instantly obtain a detailed analysis of its composition balance and color harmony.",
-        tags: ["web development", "image segmentation"],
+        tags: ["web development", "image segmentation", "selected"],
     },
     {
         title: "Network Designer",
@@ -57,7 +57,7 @@ const projects: Project[] = [
         title: "Genetic Brushes",
         description:
             "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
-        tags: ["aritificial intelligence"],
+        tags: ["aritificial intelligence", "selected"],
     },
     {
         title: "Baba Is You",
@@ -125,6 +125,11 @@ const projects: Project[] = [
             "This is a bayesian code builder that generates stan code, that I built to simplify Media Mix Modeling, it has marketing concepts integrated such as adstock and diminishing returns, it is built with R on top of cmdstan which enables for state-of-art bayesian model.",
         tags: ["machine learning"],
     },
+    {
+        title: "Ratings Prediction",
+        description: "This project is a webapp connected to an API that estimates rating star ratings using machine learning",
+        tags: ["machine learning"],
+    }
 ];
 
 const coverWidth = 400;
@@ -159,12 +164,11 @@ function categorize(tags: string[]): string {
 }
 
 const categoryOrder = [
+    "Selected",
     "Machine Learning & AI",
     "Game Development",
     "Web Development",
-    "Algorithms & Data Structures",
-    "Desktop & Tools",
-    "Other",
+    "Algorithms & Data Structures"
 ];
 
 export default function Projects() {
@@ -181,10 +185,10 @@ export default function Projects() {
 
     return (
         <div>
-            <div className="w-full py-24 bg-gradient-to-r from-teal-100 via-teal-50 to-teal-100 shadow-lg">
+            <div className="w-full py-24 ">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center">
-                        <h1 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">All Projects</h1>
+                        <h1 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Projects</h1>
                         <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
                             Explore a complete list of my work across web, games, algorithms and machine learning —
                             neatly
