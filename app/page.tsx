@@ -1,5 +1,5 @@
 'use client'
-import {ChevronDownIcon, EnvelopeIcon, ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/16/solid";
+import {ChevronDownIcon, EnvelopeIcon} from "@heroicons/react/16/solid";
 import {GithubIcon, LinkedinIcon} from "@/app/icons";
 import {useEffect, useState} from "react";
 import Projects from "@/app/projects";

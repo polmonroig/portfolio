@@ -10,9 +10,11 @@ export const LinkedinIcon = () => {
     )
 }
 
-export const GithubIcon = () => {
+export const GithubIcon = (props: { slug: string }) => {
+    let slug = props.slug;
+    if(slug === undefined) slug = ""
     return (
-        <a href={"https://github.com/polmonroig"} target={"_blank"}>
+        <a href={"https://github.com/polmonroig/" + slug} target={"_blank"}>
             <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="30" data-view-component="true"
                  className="octicon octicon-mark-github v-align-middle">
                 <path
