@@ -204,7 +204,7 @@ export default function Projects() {
         projects[1]
     ]
 
-    const categories = [
+    const categories: string[] = [
         "Selected Projects",
         "Machine Learning & AI",
         "Game Development",
@@ -212,13 +212,14 @@ export default function Projects() {
         "Algorithms & Data Structures"
     ];
 
-    const categoryDescription = {
+    const categoryDescription: {[key: string]: string} = {
         "Selected Projects": "A snapshot of products and experiments I have built across web, games, and machine learning.",
         "Machine Learning & AI": "Projects focused on artificial intelligence, computer vision, and machine learning algorithms.",
         "Game Development": "Video game projects built with various engines like Unity, Godot, and OpenGL.",
         "Web Development": "Web applications and interactive experiences created using modern frameworks and WebGL.",
         "Algorithms & Data Structures": "Implementation of core computer science concepts and data processing tools."
     }
+
 
 
     // state variables
