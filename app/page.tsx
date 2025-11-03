@@ -120,7 +120,7 @@ export default function Home() {
                     </div>
                     <div className={"flex flex-row gap-4 mt-12 mx-auto justify-center"}>
                         <LinkedinIcon/>
-                        <GithubIcon/>
+                        <GithubIcon slug={""}/>
                         <EnvelopeIcon width={30} className={"text-gray-800"}/>
                     </div>
                     <div className={"flex gap-4 mt-12"}>
