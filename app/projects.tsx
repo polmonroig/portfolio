@@ -176,23 +176,31 @@ export default function Projects() {
     }, {} as Record<string, Project[]>);
 
 
-    grouped['Selected'] = [
+    grouped['Selected Projects'] = [
         projects[7],
         projects[9],
         projects[1]
     ]
 
     const categories = [
-        "Selected",
+        "Selected Projects",
         "Machine Learning & AI",
         "Game Development",
         "Web Development",
         "Algorithms & Data Structures"
     ];
 
+    const categoryDescription: string[] = {
+        "Selected Projects": "A snapshot of products and experiments I have built across web, games, and machine learning.",
+        "Machine Learning & AI": "Projects focused on artificial intelligence, computer vision, and machine learning algorithms.",
+        "Game Development": "Video game projects built with various engines like Unity, Godot, and OpenGL.",
+        "Web Development": "Web applications and interactive experiences created using modern frameworks and WebGL.",
+        "Algorithms & Data Structures": "Implementation of core computer science concepts and data processing tools."
+    }
+
 
     // state variables
-    const [categorySelected, setCategorySelected] = useState<string>("Selected");
+    const [categorySelected, setCategorySelected] = useState<string>("Selected Projects");
 
 
     const filteredGrouped = grouped[categorySelected];
@@ -202,11 +210,9 @@ export default function Projects() {
             <div className="w-full pt-24 pb-4">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center">
-                        <h1 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">Projects</h1>
-                        <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
-                            Explore a complete list of my work across web, games, algorithms and machine learning —
-                            neatly
-                            organized by category.
+                        <h1 className="font-average text-4xl sm:text-5xl font-semibold text-teal-500">{categorySelected}</h1>
+                        <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto h-16">
+                            {categoryDescription[categorySelected]}
                         </p>
                     </div>
 
