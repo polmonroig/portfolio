@@ -10,7 +10,7 @@ export const AppBody = ({
 
 
     return (
-        <div className={"relative w-full h-full bg-black  "}>
+        <div className={"relative w-full h-full "}>
 
             <header className={"w-full fixed z-10 "}>
                 <div
@@ -19,13 +19,13 @@ export const AppBody = ({
                         <div className={"mr-18 font-bold text-lg"}>
                             Pol Company
                         </div>
-                        <a className={"cursor-pointer"}>
+                        <a className={"cursor-pointer hover:text-gray-900"}>
                             services
                         </a>
-                        <a className={"cursor-pointer"}>
+                        <a className={"cursor-pointer hover:text-gray-900"}>
                             projects
                         </a>
-                        <a className={"cursor-pointer"}>
+                        <a className={"cursor-pointer hover:text-gray-900"}>
                             blog
                         </a>
                         <a className={"text-gray-800 text-lg font-bold ml-8 cursor-pointer"}
