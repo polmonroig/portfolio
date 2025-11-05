@@ -1,7 +1,5 @@
 'use client'
 import Script from 'next/script';
-import {ChatBubbleLeftIcon} from "@heroicons/react/16/solid";
-import {useEffect, useState} from "react";
 
 
 export const AppBody = ({
@@ -11,40 +9,33 @@ export const AppBody = ({
 }>) => {
 
 
-    const [isScrolling, setIsScrolling] = useState<boolean>(false);
-
-    const handleScroll = () => {
-        setIsScrolling(window.scrollY > 0);
-    }
-
-    useEffect(() => {
-        handleScroll();
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    }, [])
-
-
-    let headerClass = "w-full text-center  fixed top-0 h-16 z-10 transition-shadow duration-300";
-    if (isScrolling) {
-        headerClass += " bg-white shadow-md"
-    } else {
-        headerClass += " bg-white"
-    }
-
     return (
-        <div className={"relative w-full h-full bg-white font-average "}>
+        <div className={"relative w-full h-full bg-black  "}>
 
-            <header className={headerClass}>
-                <div className={"z-20 absolute top-4 right-12"}>
-                    <a className={"text-gray-500 text-lg font-bold flex flex-row gap-2 " +
-                        "cursor-pointer  hover:tracking-widest transition-all hover:text-teal-500" }
-                       href={"/#contact"}>
-                        <span>Hire me</span>
-                        <ChatBubbleLeftIcon width={24} height={24} className={"inline-block my-auto "}/>
-                    </a>
+            <header className={"w-full fixed z-10 "}>
+                <div
+                    className="max-w-2xl mx-auto  text-center mt-4 h-14 transition-shadow duration-300 rounded-full bg-white/40 backdrop-blur-xs">
+                    <div className={"flex flex-row items-center justify-center gap-6 mx-auto text-center h-full"}>
+                        <div className={"mr-18 font-bold text-lg"}>
+                            Pol Company
+                        </div>
+                        <a className={"cursor-pointer"}>
+                            services
+                        </a>
+                        <a className={"cursor-pointer"}>
+                            projects
+                        </a>
+                        <a className={"cursor-pointer"}>
+                            blog
+                        </a>
+                        <a className={"text-gray-800 text-lg font-bold ml-8 cursor-pointer"}
+                           href={"/#contact"}>
+                            Hire me
+                        </a>
+                    </div>
+
                 </div>
+
 
             </header>
             {children}
@@ -53,7 +44,8 @@ export const AppBody = ({
     )
 }
 
-export const UmamiAnalytics = () => {1
+export const UmamiAnalytics = () => {
+    1
     return <Script async src="https://cloud.umami.is/script.js"
                    data-website-id="e6a04351-01ff-487c-bd4e-e829dde57d3e"></Script>
 }

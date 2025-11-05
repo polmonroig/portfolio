@@ -26,30 +26,26 @@ export default function Home() {
     }, [])
 
 
-    console.log(scrollPosition);
-
+    const currentYear = new Date().getFullYear();
 
     return (
         <div>
             <div className="font-sans flex flex-col items-center justify-items-center h-screen relative"
                  style={{paddingTop: "20%"}}>
-                <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-star h-screen">
-                    <div>
+                <div className=" h-screen">
+                    <div className={"pl-80"}>
                         <div
-                            className="text-8xl text-center mb-12 font-average  slide-animation bg-clip-text text-transparent bg-teal-500">
-                            Hi, I'm Pol
+                            className="text-8xl text-right mb-12 font-average  slide-animation text-white">
+                            Web Developer & <br/> Data Scientist
                         </div>
                         <div/>
                         <div
-                            className="text-2xl/10 mt-5 text-center mx-auto text-gray-500 font-average slide-animation-delay"
-                            style={{maxWidth: "600px"}}>
-                            A freelance <span className={"text-teal-500"}>developer</span> with a passion for
-                            building machine learning solutions and software applications.
+                            className="text-2xl mt-5 text-right mx-auto text-white">
+                            Specializing in architecting and building high-performance <br/> solutions, from scalable
+                            full-stack applications and real-time <br/> data dashboards to impactful machine learning methods
                         </div>
                     </div>
                 </div>
-                <ChevronDownIcon
-                    className={"w-12 h-12 mx-auto animate-bounce absolute bottom-24 text-teal-500"}/>
 
             </div>
             <div className={" h-2 bg-teal-500 mx-auto"}
@@ -59,11 +55,11 @@ export default function Home() {
             {/** Projects Section **/}
             <div id={"projects"}
                  className={"w-full  bg-teal-50"}>
-                    <Projects/>
+                <Projects/>
             </div>
 
             {/** About Section **/}
-            <div className={"h-full w-full py-96  flex flex-col items-center justify-center x"}>
+            <div className={"h-full w-full py-96  flex flex-col items-center justify-center bg-gray-100"}>
                 <div className={"flex flex-col lg:flex-row gap-4 mt-12 mx-auto justify-center"}>
                     <div className={"text-xl my-auto mr-12 text-gray-500 max-w-2xl text-justify mx-8"}>
                         <div className={"font-bold text-5xl text-left text-gray-800 mb-12"}>About me 👋</div>
@@ -112,29 +108,39 @@ export default function Home() {
             {/** Contact Section **/}
             <div
                 id={"contact"}
-                className={"h-full w-full py-24 inset-shadow-sm inset-shadow-gray-300 flex flex-col items-center justify-center bg-gray-200"}>
-                <div className={"mx-auto text-4xl text-center text-gray-800"}>
-                    Let's work together
-                    <div className={"text-2xl my-2 text-gray-500"}>
-                        I'm available for freelance projects
+                className={"h-full w-full pt-28 pb-24 flex flex-col items-center justify-center"}>
+                <div className={"mx-auto text-center"}>
+                    <div
+                        className={"bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400 text-6xl font-average"}>
+                        Ready to start your project?
+                    </div>
+                    <div className={"text-xl my-2 text-gray-500 mt-24"}>
+                        Whether you're planning a new digital product or scaling an existing system,<br/>
+                        I'm available to discuss your needs and outline a strategic path forward.
+                    </div>
+
+                    <div className={"text-xl mt-24"}>
+                        contact@pol.company<br/>
+                        +34 617004358
+                    </div>
+
+                    <div className={"flex gap-4 mt-24"}>
+                        <a
+                            href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}
+                            className={"px-6 py-3 bg-gray-800 text-white rounded-lg text-xl hover:bg-teal-600 transition-colors cursor-pointer mx-auto"}>
+                            Write a message
+                        </a>
                     </div>
                     <div className={"flex flex-row gap-4 mt-12 mx-auto justify-center"}>
                         <LinkedinIcon/>
                         <GithubIcon slug={""}/>
-                        <EnvelopeIcon width={30} className={"text-gray-800"}/>
                     </div>
-                    <div className={"flex gap-4 mt-12"}>
-                        <a
-                            href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}
-                            className={"px-6 py-3 bg-teal-500 text-white rounded-lg text-xl hover:bg-teal-600 transition-colors cursor-pointer mx-auto"}>
-                            Contact me
-                        </a>
-                    </div>
+
                 </div>
             </div>
-            <div className={"left-0 bottom-0 w-full text-center "}>
+            <div className={"left-0 bottom-0 w-full text-center"}>
                 <div className="hover:underline-offset-4 py-6  bg-gray-200 text-lg">
-                    Made with ❤️ by Pol Monroig Company
+                    Made with ♥︎ by Pol Company - Copyright © {currentYear}
                 </div>
             </div>
         </div>
