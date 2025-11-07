@@ -1,0 +1,22 @@
+@import 'base.scss';
+@import 'layout.scss';
+
+
+/** Navbar Styling **/
+.component-navbar-item{
+  padding: $padding-small;
+}
+
+.component-navbar-item:hover{
+  text-decoration: underline;
+}
+
+.component-navbar-header{
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.component-navbar{
+
+}

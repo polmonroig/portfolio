@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {GithubIcon} from "@/app/icons";
+import {GithubIcon} from "@/app/_components/icons";
 
 type Project = {
     title: string;
