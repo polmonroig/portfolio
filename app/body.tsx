@@ -12,7 +12,7 @@ export const AppBody = ({
 
 
     return (
-        <div className={".style-app-body"}>
+        <div className={"style-app-body"}>
             <NavBar/>
             {children}
             <Contact/>
