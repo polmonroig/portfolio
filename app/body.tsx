@@ -15,6 +15,7 @@ export const AppBody = ({
         <div className={".style-app-body"}>
             <NavBar/>
             {children}
+            <Contact/>
         </div>
     )
 }

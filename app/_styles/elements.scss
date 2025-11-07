@@ -1,0 +1,11 @@
+@import "base.scss";
+@import "layout.scss";
+
+.element-button{
+  border-radius: calc(infinity * 1px);
+  background-color: $color-gray-dark;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 14px;
+  padding: $padding-small $gap-small;
+}

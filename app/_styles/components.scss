@@ -58,13 +58,37 @@
 
 /** Contact Styling **/
 .component-contact{
+  @extend .layout-flex-col;
   width: 100%;
-
+  padding: $padding-large $padding-sides;
+  background-color: $color-white;
 }
 
 .component-contact-inner{
+  @extend .layout-flex-col;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  gap: $gap-large;
 }
 
+.component-contact-info{
+  @extend .layout-flex-col;
+  color: $color-black-88;
+  gap: $gap-medium;
+}
+
+.component-contact-copyright{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.component-contact-copyright-inner{
+  @extend .style-caption,  .layout-margin-x-auto;
+  gap: $padding-small;
+  background-color: $color-white-broken;
+  color: $color-black-88;
+  padding: $gap-small $padding-sides;
+  text-align: center;
+}

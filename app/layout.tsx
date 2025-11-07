@@ -4,6 +4,7 @@ import './_styles/base.scss';
 import './_styles/components.scss';
 import './_styles/layout.scss';
 import './_styles/animation.scss';
+import './_styles/elements.scss';
 import {AppBody, UmamiAnalytics} from "@/app/body";
 import React from "react";
 
@@ -34,8 +35,8 @@ export default function RootLayout({
         <body
             className={` ${playFairFont.variable} ${interFont.variable} antialiased `}
         >
-        <AppBody children={children}/>
-        <UmamiAnalytics/>
+            <AppBody children={children}/>
+            <UmamiAnalytics/>
         </body>
         </html>
     );

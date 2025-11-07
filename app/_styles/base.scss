@@ -7,15 +7,17 @@ $font-inter: Inter, sans;
 
 /** Color definition**/
 $color-black-88: #1F1F1F;
-$color-gray-dark: #C4C4C4;
+$color-gray-dark: #353535;
 $color-gray-light: #F2F2F2;
 $color-white: #FFFFFF;
+$color-white-broken: #F6F6F6;
 
 
 
 
 /** Global CSS definition **/
 html, body{
+  font-family: $font-inter;
   height: 100%;
   width: 100%
 }
@@ -101,4 +103,10 @@ html, body{
   font-size: 14px;
   line-height: 170%;
   letter-spacing: 0;
+}
+
+.style-gradient-text{
+  color: rgba(0, 0, 0, 0);
+  background-clip: text;
+  background-image: linear-gradient(to right, #161616, rgba(124, 124, 124, 0.7));
 }
