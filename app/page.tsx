@@ -2,7 +2,7 @@
 import {ChevronDownIcon, EnvelopeIcon} from "@heroicons/react/16/solid";
 import {GithubIcon, LinkedinIcon} from "@/app/icons";
 import {useEffect, useState} from "react";
-import Projects from "@/app/projects";
+import Projects from "@/app/_components/projects";
 
 
 export default function Home() {

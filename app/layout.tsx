@@ -1,15 +1,19 @@
 import type {Metadata} from "next";
-import {Average} from "next/font/google";
-import "./globals.css";
+import {Inter, Playfair} from "next/font/google";
+import './_styles/base.scss';
 import {AppBody, UmamiAnalytics} from "@/app/body";
 import React from "react";
 
 
-const averageFont = Average({
-    variable: "--font-average",
+const playFairFont = Playfair({
+    variable: "--font-playfair",
     weight: "400"
 })
 
+const interFont = Inter({
+    variable: "--font-inter",
+    weight: "300"
+})
 
 export const metadata: Metadata = {
     title: "Pol Company",
@@ -25,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={` ${averageFont.variable} antialiased `}
+            className={` ${playFairFont.variable} ${interFont.variable} antialiased `}
         >
         <AppBody children={children}/>
         <UmamiAnalytics/>

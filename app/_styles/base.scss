@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+/** Variable Definition **/
+$font-playfair: Playfair Display, sans-serif;
+$font-inter: Inter, sans;
+
+
+/** Global CSS Definition **/
+html, body{
+  height: 100%;
+  width: 100%
+}
+
