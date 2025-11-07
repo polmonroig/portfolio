@@ -9,7 +9,7 @@ export const Contact = () => {
         <div>
             <div
                 id={"contact"}
-                className={" w-full pt-28 pb-24 flex flex-col items-center justify-center bg-white"}>
+                className={"component-contact"}>
                 <div className={"mx-auto text-center"}>
                     <div
                         className={"bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-400 text-6xl font-average"}>

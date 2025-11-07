@@ -1,6 +1,9 @@
 import type {Metadata} from "next";
 import {Inter, Playfair} from "next/font/google";
 import './_styles/base.scss';
+import './_styles/components.scss';
+import './_styles/layout.scss';
+import './_styles/animation.scss';
 import {AppBody, UmamiAnalytics} from "@/app/body";
 import React from "react";
 

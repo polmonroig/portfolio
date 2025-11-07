@@ -20,7 +20,11 @@ html, body{
   width: 100%
 }
 
-
+.style-app-body{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
 /** Header and text tags **/
 .style-h1{
@@ -83,7 +87,7 @@ html, body{
   letter-spacing: 0;
 }
 
-.style-body{
+.style-paragraph{
   font-family: $font-inter;
   font-style: normal;
   font-size: 16px;

@@ -5,10 +5,17 @@
 /** Navbar Styling **/
 .component-navbar-item{
   padding: $padding-small;
+  font-family: $font-inter;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: $color-white;
+  opacity: 1;
 }
 
 .component-navbar-item:hover{
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .component-navbar-header{
@@ -18,5 +25,36 @@
 }
 
 .component-navbar{
+  width: 467px;
+  height: 50px;
+  backdrop-filter: blur(var(--blur-xs));
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 99999px;
+  display: flex;
+  flex-direction: row;
+  gap: $gap-medium;
+  margin: 15px auto 0 auto;
+}
+
+.component-navbar-logo{
+  padding: 6px 8px;
+  font-family: $font-inter;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+  horiz-align: center;
+}
+
+/** Contact Styling **/
+.component-contact{
+  width: 100%;
 
 }
+
+.component-contact-inner{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+

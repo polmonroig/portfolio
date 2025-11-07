@@ -1,5 +1,7 @@
 'use client'
 import Script from 'next/script';
+import {Contact} from "@/app/_components/contact";
+import {NavBar} from "@/app/_components/navbar";
 
 
 export const AppBody = ({
@@ -10,11 +12,9 @@ export const AppBody = ({
 
 
     return (
-        <div className={"relative w-full h-full "}>
-
-
+        <div className={".style-app-body"}>
+            <NavBar/>
             {children}
-
         </div>
     )
 }
