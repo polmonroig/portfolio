@@ -18,6 +18,11 @@
   text-decoration-line: underline;
 }
 
+.component-navbar-item-strong{
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .component-navbar-header{
   width: 100%;
   position: fixed;
@@ -25,25 +30,30 @@
 }
 
 .component-navbar{
+  @extend .layout-flex-row;
   width: 467px;
   height: 50px;
   backdrop-filter: blur(var(--blur-xs));
   background-color: rgba(255, 255, 255, 0.42);
   border-radius: 99999px;
-  display: flex;
-  flex-direction: row;
   gap: $gap-medium;
   margin: 15px auto 0 auto;
+  padding: 0 20px;
+}
+
+.component-navbar-item-list{
+  @extend .layout-flex-row, .layout-margin-y-auto;
+  gap: $gap-small;
 }
 
 .component-navbar-logo{
+  @extend .layout-margin-y-auto;
   padding: 6px 8px;
   font-family: $font-inter;
   font-weight: 600;
   font-size: 24px;
   line-height: 100%;
   letter-spacing: 0;
-  horiz-align: center;
 }
 
 /** Contact Styling **/

@@ -6,6 +6,24 @@ $padding-medium: 30px;
 $padding-large: 100px;
 $padding-sides: 255px;
 
+.layout-margin-x-auto{
+  margin: 0 auto;
+}
+
+.layout-margin-y-auto{
+  margin: auto 0;
+}
 
 /** Flex and grid gaps **/
+$gap-small: 20px;
 $gap-medium: 50px;
+
+.layout-flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.layout-flex-col{
+  display: flex;
+  flex-direction: column;
+}
