@@ -1,14 +1,100 @@
 @import "tailwindcss";
 
 
-/** Variable Definition **/
+/** Font definition **/
 $font-playfair: Playfair Display, sans-serif;
 $font-inter: Inter, sans;
 
+/** Color definition**/
+$color-black-88: #1F1F1F;
+$color-gray-dark: #C4C4C4;
+$color-gray-light: #F2F2F2;
+$color-white: #FFFFFF;
 
-/** Global CSS Definition **/
+
+
+
+/** Global CSS definition **/
 html, body{
   height: 100%;
   width: 100%
 }
 
+
+
+/** Header and text tags **/
+.style-h1{
+  font-family: $font-playfair;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.style-h2{
+  font-family: $font-playfair;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.style-h3{
+  font-family: $font-playfair;
+  font-style: normal;
+  font-size: 42px;
+  line-height: 55px;
+  letter-spacing: 0;
+}
+
+.style-h4{
+  font-family: $font-inter;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.style-h4-light{
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+
+.style-h5{
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.style-h5-light{
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.style-body{
+  font-family: $font-inter;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 170%;
+  letter-spacing: 0;
+}
+
+.style-caption{
+  font-family: $font-inter;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 170%;
+  letter-spacing: 0;
+}
