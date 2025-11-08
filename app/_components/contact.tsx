@@ -6,7 +6,7 @@ export const Contact = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div>
+        <div id={"contact"}>
             <div  className={"component-contact"}>
                 <div className={"component-contact-inner"}>
                     <div className={"style-h3 style-gradient-text"}>
