@@ -9,3 +9,18 @@
   font-size: 14px;
   padding: $padding-small $gap-small;
 }
+
+.element-line-small{
+  width: 20px;
+  height: 2px;
+  background-color: $color-black-88;
+  margin: auto 6px;
+}
+
+.element-line-large{
+  width: 782px;
+  max-width: 782px;
+  height: 2px;
+  background-image: linear-gradient(to right, #7C7C7C, black 70%);
+  margin: auto 6px;
+}

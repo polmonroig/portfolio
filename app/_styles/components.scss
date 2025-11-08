@@ -103,7 +103,7 @@
 }
 
 
-/** Services Styiling **/
+/** Services Styling **/
 .component-services{
   @extend .layout-flex-col;
   gap: $padding-large;
@@ -118,11 +118,23 @@
 
 .component-services-item-inner{
   @extend .layout-flex-row, .layout-margin-x-auto;
-  max-width: 930px;
+  max-width: 950px;
   gap: $gap-full-column;
+}
+
+.component-services-item-inner-text{
+  @extend .layout-flex-col;
+  gap: $padding-medium;
 }
 
 .component-services-item-image{
   max-height: 500px;
   max-width: 455px;
+}
+
+.component-services-header{
+  @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
+  width: 930px;
+  max-width: 930px;
+  gap: 22px;
 }
