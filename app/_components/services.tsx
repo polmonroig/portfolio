@@ -55,11 +55,11 @@ export const Services = () => {
 
     return (
         <div id={"services"} className={"component-services"}>
-            <div className={"component-services-header"}>
+            <div className={"element-section-header"}>
                 <div className={"style-gradient-text"}>
                     Services
                 </div>
-                <div className={"element-line-large"}></div>
+                <div className={"element-line-full"}></div>
             </div>
             <ServiceItem number={"01"} title="Web Development & Interactive Experiences"
                          src={"images/services-01.jpg"}

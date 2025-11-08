@@ -4,6 +4,7 @@ import {Cover} from "@/app/_components/cover";
 import {Services} from "@/app/_components/services";
 import {Contact} from "@/app/_components/contact";
 import {About} from "@/app/_components/about";
+import {Projects} from "@/app/_components/projects";
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
                    title={"Crafting intuitive interfaces that resonate with users"}/>
             <Services/>
             <About/>
+            <Projects/>
             <Contact/>
         </div>
     );
