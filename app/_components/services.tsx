@@ -54,7 +54,7 @@ const ServiceItem = (props: {
 export const Services = () => {
 
     return (
-        <div className={"component-services"}>
+        <div id={"services"} className={"component-services"}>
             <div className={"component-services-header"}>
                 <div className={"style-gradient-text"}>
                     Services
