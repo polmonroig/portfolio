@@ -1,6 +1,8 @@
 'use client'
 
 import {Cover} from "@/app/_components/cover";
+import {Services} from "@/app/_components/services";
+import {Contact} from "@/app/_components/contact";
 
 export default function Home() {
 
@@ -17,6 +19,8 @@ export default function Home() {
                    align="left"
                    height="80%"
                    title={"Crafting intuitive interfaces that resonate with users"}/>
+            <Services/>
+            <Contact/>
         </div>
     );
 }

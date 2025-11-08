@@ -1,11 +1,11 @@
-import type { ReactNode } from 'react';
+
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
 type CoverProps = {
     src: string;
     align?: CoverAlign;
-    height: string; // e.g. '80%', '60vh', '400px'
+    height: string;
     title?: string;
     subtitle?: string;
 };
@@ -44,7 +44,7 @@ export const Cover = (props: CoverProps) => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 width: '100%',
-                height: height,
+                height: height
             }}
         >
             <div
@@ -73,5 +73,7 @@ export const Cover = (props: CoverProps) => {
                 )}
             </div>
         </div>
+
+
     );
 };

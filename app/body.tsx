@@ -1,6 +1,5 @@
 'use client'
 import Script from 'next/script';
-import {Contact} from "@/app/_components/contact";
 import {NavBar} from "@/app/_components/navbar";
 
 
@@ -15,7 +14,6 @@ export const AppBody = ({
         <div className={"style-app-body"}>
             <NavBar/>
             {children}
-            <Contact/>
         </div>
     )
 }
