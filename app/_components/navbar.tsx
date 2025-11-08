@@ -22,7 +22,7 @@ export const NavBar = () => {
                 <NavbarLogo/>
                 <div className={"component-navbar-item-list"}>
                     <NavbarItem text={"services"} slug={"/#services"} strong={false}/>
-                    <NavbarItem text={"projects"} slug={"/projects"} strong={false}/>
+                    <NavbarItem text={"projects"} slug={"/#projects"} strong={false}/>
                     <NavbarItem text={"blog"} slug={"/blog"} strong={false}/>
                     <NavbarItem text={"Hire Me"} slug={"/#contact"} strong={true}/>
                 </div>

@@ -188,16 +188,33 @@ function categorize(tags: string[]): string {
     return "Other";
 }
 
+const ProjectItem = () => {
+    return(
+        <div>
+            <div>Tags</div>
+        </div>
+    )
+}
+
 
 export const Projects = () => {
     return(
-        <div id={"services"} className={"component-services"}>
+        <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
                 <div className={"style-gradient-text"}>
                     Featured Projects
                 </div>
                 <div className={"element-line-full"}></div>
             </div>
+            <div className={"component-projects-list"}>
+                <div>
+                    Filter by Service: ....
+                </div>
+                <div className={"component-projects-grid"}>
+
+                </div>
+            </div>
+
 
         </div>
     )
