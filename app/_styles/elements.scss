@@ -39,3 +39,10 @@
   gap: 22px;
   white-space: nowrap;
 }
+
+.element-tag{
+  @extend .style-caption;
+  padding: 10.56px;
+  border-radius: 19px;
+  border: 1.06px solid $color-gray-dark;
+}

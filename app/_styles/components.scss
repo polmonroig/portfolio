@@ -179,4 +179,16 @@
 
 .component-projects-grid{
   display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.component-project-item{
+  @extend .layout-flex-col, .layout-margin-x-auto;
+  gap: $padding-small;
+  max-width: 455px;
+}
+
+.component-project-tags{
+  @extend .layout-flex-row;
+  gap: 20px;
 }
