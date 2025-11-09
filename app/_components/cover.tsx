@@ -5,6 +5,7 @@ type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 type CoverProps = {
     src: string;
     align?: CoverAlign;
+    opacity?: number;
     height: string;
     title?: string;
     subtitle?: string;
@@ -14,6 +15,7 @@ export const Cover = (props: CoverProps) => {
     const {
         src,
         align = 'center',
+        opacity = 1,
         height,
         title,
         subtitle,
@@ -39,16 +41,31 @@ export const Cover = (props: CoverProps) => {
         <div
             style={{
                 position: 'relative',
-                backgroundImage,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
                 width: '100%',
-                height: height
+                height: height,
+                backgroundColor: 'black',
+                overflow: 'hidden',
             }}
         >
+            {/* Background layer with brightness filter applied only to the image */}
+            <div
+                aria-hidden
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundImage,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    filter: opacity < 1 ? `brightness(${opacity * 100}%)` : '',
+                    zIndex: 0,
+                }}
+            />
             <div
                 style={{
+                    position: 'relative',
+                    zIndex: 1,
+                    maxWidth: '1424px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: justify === 'flex-start' ? 'flex-start' : justify === 'flex-end' ? 'flex-end' : 'center',
@@ -58,11 +75,12 @@ export const Cover = (props: CoverProps) => {
                     padding: '0 255px', // match $padding-sides from layout.scss
                     boxSizing: 'border-box',
                     textAlign: textAlign,
+                    margin: 'auto',
                     gap: '20px',
                 }}
             >
                 {title && (
-                    <h1 className="style-h1" style={{ color: '#FFFFFF' }}>
+                    <h1 className="style-h1" style={{ color: '#FFFFFF', filter: 'none'}}>
                         {title}
                     </h1>
                 )}
