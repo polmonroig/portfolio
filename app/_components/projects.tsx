@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {Cover} from "@/app/_components/cover";
 import {Button} from "@/app/_components/elements";
+import React, {JSX} from "react";
 
 type Project = {
     id: string;
@@ -208,14 +209,14 @@ const ProjectTag = ({text}: { text: string }) => {
 
 export const ProjectViewHeader = ({id}: { id: string }) => {
     const selectedProject = projects.find(project => project.id === id);
-    
+
     // Handle case where project is not found
     if (!selectedProject) {
         console.error(`Project with id "${id}" not found`);
         return null; // or return a fallback UI
     }
-    
-    return(
+
+    return (
         <>
             <Cover src={`/projects/${id}/cover-large.png`}
                    align="middle"
@@ -286,5 +287,46 @@ export const Projects = () => {
 
 
         </div>
+    )
+}
+
+
+export const ProjectViewTemplate = (props: {
+    id: string,
+    description: string,
+    year: string,
+    client: string,
+    department: string,
+    location: string,
+    children: React.ReactNode
+}) => {
+
+
+    return (
+        <>
+            {/** Project Header **/}
+            <ProjectViewHeader id={props.id}/>
+            {/** Project Content **/}
+            <div className="component-project-view-content">
+                {/** Project Content Highlight **/}
+                <div className={"layout-flex-row"}>
+                    <div>
+                        Year {props.year}
+                        Client {props.client}
+                        Department {props.department}
+                        Location {props.location}
+                    </div>
+                    <div>
+                        {props.description}
+                    </div>
+                </div>
+
+                {/** Specific Content to project **/}
+                {props.children}
+
+                {/** Footer **/}
+                <Button text={"Go to next project →"}/>
+            </div>
+        </>
     )
 }
