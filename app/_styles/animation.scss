@@ -1,23 +1,5 @@
 
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-.slide-animation {
-  animation: 1s ease-out 0s 1 slideInFromBottom;
-  animation-fill-mode: backwards;
-  animation-delay: 0.2s;
-}
-
-.slide-animation-delay{
-  animation: 1s ease-out 0s 1 slideInFromBottom;
-  animation-delay: 0.9s;
-  animation-fill-mode: backwards; /* Keep element at 0% keyframe during the delay */
+.transition-color{
+  transition: color 0.3s ease;
 }

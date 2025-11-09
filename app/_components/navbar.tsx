@@ -1,30 +1,33 @@
-const NavbarItem = (props: { text: string, slug: string, strong: boolean}) => {
+import {useScroll} from "@/app/_components/hooks";
+
+const NavbarItem = (props: { text: string, slug: string, className: string}) => {
     return (
-        <a className={"component-navbar-item" + (props.strong ? " component-navbar-item-strong" : "")} href={props.slug}>
+        <a className={props.className} href={props.slug}>
             {props.text}
         </a>
     )
 }
 
-
-const NavbarLogo = () => {
-    return (
-        <div className={"component-navbar-logo"}>
-            P.
-        </div>
-    )
-}
-
 export const NavBar = () => {
+
+    const scrollRelativePosition = useScroll();
+
+    let linkClassName: string = 'component-navbar-item';
+    let logoClassName: string = 'component-navbar-logo'
+    if(scrollRelativePosition > 0.75){
+        linkClassName += ' component-navbar-dark';
+        logoClassName += ' component-navbar-dark';
+    }
+
     return (
         <header className={"component-navbar-header"}>
             <div className="component-navbar">
-                <NavbarLogo/>
+                <NavbarItem text={"P."} slug={"/"} className={logoClassName}/>
                 <div className={"component-navbar-item-list"}>
-                    <NavbarItem text={"services"} slug={"/#services"} strong={false}/>
-                    <NavbarItem text={"projects"} slug={"/#projects"} strong={false}/>
-                    <NavbarItem text={"blog"} slug={"/blog"} strong={false}/>
-                    <NavbarItem text={"Hire Me"} slug={"/#contact"} strong={true}/>
+                    <NavbarItem text={"services"} slug={"/#services"}  className={linkClassName}/>
+                    <NavbarItem text={"projects"} slug={"/#projects"}  className={linkClassName}/>
+                    <NavbarItem text={"blog"} slug={"/blog"}  className={linkClassName}/>
+                    <NavbarItem text={"Hire Me"} slug={"/#contact"} className={linkClassName + ' component-navbar-item-strong'}/>
                 </div>
             </div>
         </header>

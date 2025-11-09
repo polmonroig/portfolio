@@ -1,9 +1,11 @@
 @import 'base.scss';
 @import 'layout.scss';
+@import 'animation.scss';
 
 
 /** Navbar Styling **/
 .component-navbar-item{
+  @extend .transition-color;
   padding: $padding-small;
   font-family: $font-inter;
   font-weight: normal;
@@ -21,6 +23,10 @@
 .component-navbar-item-strong{
   font-weight: 600;
   font-size: 16px;
+}
+
+.component-navbar-dark{
+    color: $color-black-88 !important;
 }
 
 .component-navbar-header{
@@ -47,7 +53,7 @@
 }
 
 .component-navbar-logo{
-  @extend .layout-margin-y-auto;
+  @extend .layout-margin-y-auto, .transition-color;
   padding: 6px 8px;
   font-family: $font-inter;
   font-weight: 600;
