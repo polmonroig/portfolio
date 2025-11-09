@@ -1,20 +1,24 @@
+
 import {useScroll} from "@/app/_components/hooks";
+import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 const NavbarItem = (props: { text: string, slug: string, className: string}) => {
     return (
-        <a className={props.className} href={props.slug}>
+        <Link className={props.className} href={props.slug}>
             {props.text}
-        </a>
+        </Link>
     )
 }
 
 export const NavBar = () => {
 
     const scrollRelativePosition = useScroll();
+    const pathname = usePathname();
 
     let linkClassName: string = 'component-navbar-item';
     let logoClassName: string = 'component-navbar-logo'
-    if(scrollRelativePosition > 0.75){
+    if(scrollRelativePosition > 0.75 || (pathname !== null && pathname.includes('project'))){
         linkClassName += ' component-navbar-dark';
         logoClassName += ' component-navbar-dark';
     }

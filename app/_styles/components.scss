@@ -198,3 +198,10 @@
   @extend .layout-flex-row;
   gap: 20px;
 }
+
+/** Projects View Styling **/
+.component-project-view{
+  background-color: $color-white-broken;
+  width: 100%;
+  height: 100%;
+}

@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {GithubIcon} from "@/app/_components/icons";
+import Link from "next/link";
+import {Cover} from "@/app/_components/cover";
 
 type Project = {
     id: string;
@@ -9,13 +9,11 @@ type Project = {
     slug: string;
 };
 
-const projects: Project[] = [
-
+export const projects: Project[] = [
     {
         id: "studio",
         title: "BCN Studio",
-        description:
-            "Studio is a VFX cloud infrastructure management platform specifically designed to make the job for artists easier by decoupling the complexity behind a cloud architecture.",
+        description: "Studio is a VFX cloud infrastructure management platform specifically designed to make the job for artists easier by decoupling the complexity behind a cloud architecture.",
         tags: ["Web Development", "Data Visualization"],
         slug: "bcn_studio"
     },
@@ -43,7 +41,7 @@ const projects: Project[] = [
     {
         id: "timelines",
         title: "Timelines",
-        description: "Consultant on project task and Gantt timelines application",
+        description: "Consultant on projects task and Gantt timelines application",
         tags: ["web development", "webgl"],
         slug: "timelines"
     },
@@ -171,7 +169,7 @@ const projects: Project[] = [
     {
         id: "ratings_prediction",
         title: "Ratings Prediction",
-        description: "This project is a webapp connected to an API that estimates rating star ratings using machine learning",
+        description: "This projects is a webapp connected to an API that estimates rating star ratings using machine learning",
         tags: ["machine learning"],
         slug: "ratings_prediction"
     }
@@ -184,14 +182,27 @@ const ProjectTag = ({text}: { text: string }) => {
     )
 }
 
+export const ProjectViewHeader = ({id}: { id: string }) => {
+    return(
+        <>
+            <Cover src={`/projects/${id}/cover-large.png`}
+                   align="middle"
+                   height="40%"
+                   title={"Crafting intuitive interfaces that resonate with users"}/>
+        </>
+    )
+}
+
 
 const ProjectItem = ({project}: { project: Project }) => {
     const coverWidth = 455;
     const coverHeight = 484;
     const {id, title, description, tags} = project;
     const src = `/projects/${id}/cover.png`;
+
+
     return (
-        <div className={"component-project-item"}>
+        <Link className={"component-project-item"} href={`/projects/${id}`}>
             <img src={src} alt={title}
                  width={coverWidth}
                  height={coverHeight}
@@ -208,7 +219,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                     tags.map(tag => <ProjectTag text={tag} key={tag}/>)
                 }
             </div>
-        </div>
+        </Link>
     )
 }
 
