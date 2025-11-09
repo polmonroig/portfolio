@@ -30,7 +30,7 @@ export const Contact = () => {
                             </a>
 
                         </div>
-                        <div className={"flex flex-row gap-4 mt-12 mx-auto justify-center"}>
+                        <div className={"component-contact-icons"}>
                             <LinkedinIcon/>
                             <GithubIcon slug={""}/>
                         </div>
