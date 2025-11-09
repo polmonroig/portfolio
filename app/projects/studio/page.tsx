@@ -1,4 +1,5 @@
 import {ProjectViewHeader} from "@/app/_components/projects";
+import {Button} from "@/app/_components/elements";
 
 export default function ProjectView() {
 
@@ -13,6 +14,7 @@ export default function ProjectView() {
                     </div>
                 </div>
 
+                <Button text={"Go to next project →"}/>
             </div>
         </>
     )

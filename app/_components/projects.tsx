@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {Cover} from "@/app/_components/cover";
+import {Button} from "@/app/_components/elements";
 
 type Project = {
     id: string;
@@ -279,11 +280,7 @@ export const Projects = () => {
                     }
                 </div>
                 <div>
-                    <button
-                        className={"element-button layout-margin-x-auto cursor-pointer"}>
-                        View more projects
-                    </button>
-
+                    <Button text={"View more projects"}/>
                 </div>
             </div>
 

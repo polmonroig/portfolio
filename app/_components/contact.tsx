@@ -1,4 +1,5 @@
 import {GithubIcon, LinkedinIcon} from "@/app/_components/icons";
+import {ButtonLink} from "@/app/_components/elements";
 
 
 export const Contact = () => {
@@ -23,12 +24,7 @@ export const Contact = () => {
                             +34 617004358
                         </div>
                         <div>
-                            <a
-                                href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}
-                                className={"element-button"}>
-                                Write message
-                            </a>
-
+                            <ButtonLink text={"Write message"} href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}/>
                         </div>
                         <div className={"component-contact-icons"}>
                             <LinkedinIcon/>
