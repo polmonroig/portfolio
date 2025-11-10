@@ -228,3 +228,17 @@
   gap: $padding-medium;
   max-width: 930px;
 }
+
+/** Error pages Styling **/
+.component-404{
+  background-color: $color-gray-light;
+  width: 100%;
+  height: 100%;
+}
+
+.component-404-content{
+  @extend .style-h1, .style-align-center, .layout-flex-col;
+  padding: $padding-large*4 $padding-sides;
+  gap: $padding-small;
+  height: 80%;
+}
