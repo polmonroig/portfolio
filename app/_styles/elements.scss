@@ -1,0 +1,76 @@
+@import "base.scss";
+@import "layout.scss";
+
+.element-button{
+  border-radius: calc(infinity * 1px);
+  background-color: $color-gray-dark;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 14px;
+  padding: $padding-small $gap-small;
+}
+
+.element-line-small{
+  width: 20px;
+  height: 2px;
+  background-color: $color-black-88;
+  margin: auto 6px;
+}
+
+.element-line-medium{
+  width: 100px;
+  height: 2px;
+  background-color: $color-white;
+  margin: auto 6px;
+}
+
+.element-line-full{
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, #7C7C7C, black 70%);
+  margin: auto 6px;
+}
+
+
+.element-section-header{
+  @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
+  width: 930px;
+  max-width: 930px;
+  gap: 22px;
+  white-space: nowrap;
+}
+
+.element-tag{
+  @extend .style-caption;
+  padding: 10.56px;
+  border-radius: 19px;
+  border: 1.06px solid $color-gray-dark;
+}
+
+
+.element-card-image{
+  max-height: 400px;
+  max-width: 550px;
+}
+
+.element-card{
+  @extend .layout-flex-row, .layout-margin-x-auto;
+  width: 930px;
+  max-width: 930px;
+  gap: $padding-medium;
+}
+.element-card-large{
+  @extend .layout-flex-col, .layout-margin-x-auto;
+  width: 930px;
+  max-width: 930px;
+  gap: $padding-medium;
+}
+
+.element-card-image-large{
+  max-width: 930px;
+}
+
+.element-card-text{
+  @extend .layout-flex-col, .layout-margin-y-auto;
+  gap: $padding-small;
+}

@@ -1,0 +1,244 @@
+@import 'base.scss';
+@import 'layout.scss';
+@import 'animation.scss';
+
+
+/** Navbar Styling **/
+.component-navbar-item{
+  @extend .transition-color;
+  padding: $padding-small;
+  font-family: $font-inter;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: $color-white;
+  opacity: 1;
+}
+
+.component-navbar-item:hover{
+  text-decoration-line: underline;
+}
+
+.component-navbar-item-strong{
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.component-navbar-dark{
+    color: $color-black-88 !important;
+}
+
+.component-navbar-header{
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.component-navbar{
+  @extend .layout-flex-row;
+  width: 467px;
+  height: 50px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 99999px;
+  gap: $gap-medium;
+  margin: 15px auto 0 auto;
+  padding: 0 20px;
+}
+
+.component-navbar-item-list{
+  @extend .layout-flex-row, .layout-margin-y-auto;
+  gap: $gap-small;
+}
+
+.component-navbar-logo{
+  @extend .layout-margin-y-auto, .transition-color;
+  padding: 6px 8px;
+  font-family: $font-inter;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: $color-white;
+}
+
+/** Contact Styling **/
+.component-contact{
+  @extend .layout-flex-col;
+  width: 100%;
+  padding: $padding-large $padding-sides;
+  background-color: $color-white;
+}
+
+.component-contact-inner{
+  @extend .layout-flex-col;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  gap: $gap-large;
+}
+
+.component-contact-info{
+  @extend .layout-flex-col;
+  color: $color-black-88;
+  gap: $gap-medium;
+}
+
+.component-contact-icons{
+  @extend .layout-flex-row, .layout-margin-x-auto;
+  text-align: center;
+  gap: $gap-small;
+}
+
+.component-contact-copyright{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.component-contact-copyright-inner{
+  @extend .style-caption,  .layout-margin-x-auto;
+  gap: $padding-small;
+  background-color: $color-white-broken;
+  color: $color-black-88;
+  padding: $gap-small $padding-sides;
+  text-align: center;
+}
+
+
+/** Home Styling **/
+.component-home{
+  background-color: $color-black-88;
+  width: 100%;
+  height: 100%;
+}
+
+
+/** Services Styling **/
+.component-services{
+  @extend .layout-flex-col;
+  gap: $padding-large;
+  width: 100%;
+  background-color: $color-white-broken;
+  padding: $padding-large $padding-sides;
+}
+
+.component-services-item{
+  @extend .layout-flex-col, .layout-margin-x-auto;
+  width: 930px;
+  max-width: 930px;
+}
+
+.component-services-item-inner{
+  @extend .layout-flex-row, .layout-margin-x-auto;
+  max-width: 950px;
+  gap: $gap-full-column;
+}
+
+.component-services-item-inner-text{
+  @extend .layout-flex-col;
+  gap: $padding-medium;
+}
+
+.component-services-item-image{
+  max-height: 500px;
+  max-width: 455px;
+  box-shadow: 43px 47px 62.2px -12px rgba(0, 0, 0, 0.11);
+}
+
+
+
+/** About Styling **/
+.component-about{
+  @extend .layout-flex-col, .layout-margin-x-auto;
+  padding: $padding-large $padding-sides;
+  text-align: center;
+  color: $color-white;
+  gap: $gap-small;
+}
+
+.component-about-columns{
+  @extend .layout-flex-row, .layout-margin-x-auto;
+  gap: $gap-medium;
+}
+
+.component-about-header{
+  @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
+  font-size: 20px;
+}
+
+.component-about-content{
+  @extend .style-h3;
+  line-height: 49px;
+
+}
+
+
+/** Projects Styling **/
+.component-projects{
+  @extend .layout-flex-col;
+  gap: $padding-large;
+  width: 100%;
+  background-color: $color-white-broken;
+  padding: $padding-large $padding-sides;
+}
+
+.component-projects-list{
+  @extend .layout-flex-col, .layout-margin-x-auto;
+  gap: $padding-medium;
+}
+
+.component-projects-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: $padding-medium;
+}
+.component-project-item{
+  @extend .layout-flex-col, .layout-margin-x-auto, .transition-opacity;
+  gap: $padding-small;
+  max-width: 455px;
+}
+
+.component-project-item:hover{
+  opacity: 0.7;
+}
+
+.component-project-tags{
+  @extend .layout-flex-row;
+  gap: 20px;
+}
+
+/** Projects View Styling **/
+.component-project-view{
+  background-color: $color-white-broken;
+  width: 100%;
+  height: 100%;
+}
+
+.component-project-view-content{
+  @extend .layout-flex-col, .layout-margin-x-auto;
+  background-color: $color-white-broken;
+  padding: $padding-large $padding-sides;
+  gap: $padding-large;
+}
+
+.component-project-view-content-header{
+  @extend .layout-flex-row, .layout-margin-x-auto;
+  gap: $padding-medium;
+  max-width: 930px;
+}
+
+/** Error pages Styling **/
+.component-404{
+  background-color: $color-gray-light;
+  width: 100%;
+  height: 100%;
+}
+
+.component-404-content{
+  @extend .style-h1, .style-align-center, .layout-flex-col;
+  padding: $padding-large*4 $padding-sides;
+  gap: $padding-small;
+  height: 80%;
+}

@@ -9,18 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'always',
       priority: 1,
-    },
-    {
-      url: 'https://pol.company.com/about',
-      lastModified: new Date(),
-      changeFrequency: 'always',
-      priority: 0.8,
-    },
-    {
-      url: 'https://pol.company.com/projects',
-      lastModified: new Date(),
-      changeFrequency: 'always',
-      priority: 0.5,
-    },
+    }
   ]
 }
