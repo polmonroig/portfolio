@@ -27,7 +27,7 @@ export const projects: Project[] = [
         title: "Collab",
         description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
         header: "Streamlined CMS Integration with Basecamp",
-        tags: ["web development"],
+        tags: ["Web Development"],
         slug: "collab"
     },
     {
@@ -35,7 +35,7 @@ export const projects: Project[] = [
         title: "Web3D",
         description: "Anamorphic 3D platform for billboards",
         header: "Next-Generation 3D Billboard Platform",
-        tags: ["web development", "webgl"],
+        tags: ["Web Development"],
         slug: "web3d"
     },
     {
@@ -43,7 +43,7 @@ export const projects: Project[] = [
         title: "DX Performance Demo",
         description: "Consultant on Borderlands THREE.js app",
         header: "Optimizing Performance for Borderlands Web Experience",
-        tags: ["web development", "webgl"],
+        tags: ["Web Development"],
         slug: "dx_performance_demo"
     },
     {
@@ -51,7 +51,7 @@ export const projects: Project[] = [
         title: "Timelines",
         description: "Consultant on projects task and Gantt timelines application",
         header: "Interactive Project Management Visualization",
-        tags: ["web development", "webgl"],
+        tags: ["Web Development"],
         slug: "timelines"
     },
     {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
         description:
             "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
         header: "Immersive 3D Experience Platform",
-        tags: ["web development", "webgl"],
+        tags: ["Web Development"],
         slug: "cokoon"
     },
     {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
         description:
             "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. With aiart you can instantly obtain a detailed analysis of its composition balance and color harmony.",
         header: "AI-Powered Art Analysis Platform",
-        tags: ["web development", "image segmentation"],
+        tags: ["Web Development", "Machine Learning"],
         slug: "aiart"
     },
     {
@@ -77,7 +77,7 @@ export const projects: Project[] = [
         title: "Network Designer",
         description: "Simple Neural Network designer and exporter to python pytorch code",
         header: "Visual Neural Network Architecture Tool",
-        tags: ["web development"],
+        tags: ["Web Development"],
         slug: "network_designer"
     },
     {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
         description:
             "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
         header: "AI-Driven Digital Art Creation",
-        tags: ["aritificial intelligence"],
+        tags: ["Machine Learning"],
         slug: "genetic_brushes"
     },
     {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
         title: "Baba Is You",
         description: "Tribute to Baba is You game coded in C++ OpenGL",
         header: "Logic Puzzle Game Recreation",
-        tags: ["game development"],
+        tags: ["Game Development"],
         slug: "baba_is_you"
     },
     {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
         title: "StarFox64",
         description: "Tribute to StarFox64 game coded in Unity",
         header: "Classic Space Combat Game Remake",
-        tags: ["game development"],
+        tags: ["Game Development"],
         slug: "starfox64"
     },
     {
@@ -110,7 +110,7 @@ export const projects: Project[] = [
         title: "Light In Solstice",
         description: "Currently in-development 2D Game coded in Godot",
         header: "Atmospheric 2D Adventure Game",
-        tags: ["game development"],
+        tags: ["Game Development"],
         slug: "light_in_solstice"
     },
     {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
         title: "Cloud Segmentation",
         description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
         header: "AI-Powered Cloud Detection System",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "cloud_segmentation"
     },
     {
@@ -127,7 +127,7 @@ export const projects: Project[] = [
         description:
             "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
         header: "ML-Based Seismic Activity Forecasting",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "earthquake_prediction"
     },
     {
@@ -136,7 +136,7 @@ export const projects: Project[] = [
         description:
             "Set of multiple algorithms for LZ4 compression in python, contest on speed and compression ratio",
         header: "High-Performance Data Compression",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "lz4_compression"
     },
     {
@@ -145,7 +145,7 @@ export const projects: Project[] = [
         description:
             "Image compressions library written in C++ which includes multiple compression algorithms",
         header: "Advanced Image Compression Suite",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "sfic_compression"
     },
     {
@@ -153,7 +153,7 @@ export const projects: Project[] = [
         title: "C++ Random Number Generator",
         description: "Multiple random distribution pseudo-random number generators",
         header: "Statistical Random Number Generation",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "cpp_rng"
     },
     {
@@ -161,7 +161,7 @@ export const projects: Project[] = [
         title: "Graph Percolation",
         description: "Graph Connectivity and Percolation experiments in C++",
         header: "Network Connectivity Analysis Tool",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "graph_percolation"
     },
     {
@@ -170,7 +170,7 @@ export const projects: Project[] = [
         description:
             "This is an PyQT app that is connected to Google Calendar, the main purpose of this application is to collect the events of a calendar search them by date, name and color and to receive and analysis of the duration of the events and dates.",
         header: "Smart Calendar Management System",
-        tags: ["algorithms", "desktop app"],
+        tags: ["Algorithms"],
         slug: "calendar_api"
     },
     {
@@ -179,7 +179,7 @@ export const projects: Project[] = [
         description:
             "This is a telegram chatbot design to make polls/quiz to people and save its results.",
         header: "Interactive Telegram Survey System",
-        tags: ["algorithm"],
+        tags: ["Algorithms"],
         slug: "telegram_quiz_bot"
     },
     {
@@ -188,7 +188,7 @@ export const projects: Project[] = [
         description:
             "This is a bayesian code builder that generates stan code, that I built to simplify Media Mix Modeling, it has marketing concepts integrated such as adstock and diminishing returns, it is built with R on top of cmdstan which enables for state-of-art bayesian model.",
         header: "Automated Marketing Analytics Platform",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "bayesian_model_builder"
     },
     {
@@ -196,7 +196,7 @@ export const projects: Project[] = [
         title: "Ratings Prediction",
         description: "This projects is a webapp connected to an API that estimates rating star ratings using machine learning",
         header: "ML-Driven Rating Prediction System",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "ratings_prediction"
     }
 
@@ -241,6 +241,13 @@ const ProjectItem = ({project}: { project: Project }) => {
 
 
 export const Projects = () => {
+
+    let tagList: string[] = [];
+    projects.forEach(project => {
+       tagList = tagList.concat(project.tags);
+    });
+    tagList = [...new Set(tagList)];
+
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
@@ -250,8 +257,18 @@ export const Projects = () => {
                 <div className={"element-line-full"}></div>
             </div>
             <div className={"component-projects-list"}>
-                <div>
-                    Filter by Service: ....
+                <div className={"component-projects-filter"}>
+                    <div>
+                        Filter by Service: {}
+                    </div>
+                    {
+                        tagList.map((tag: string) => {
+                            return (
+                                <ProjectTag text={tag} key={tag}/>
+                            )
+                        })
+                    }
+
                 </div>
                 <div className={"component-projects-grid"}>
                     {

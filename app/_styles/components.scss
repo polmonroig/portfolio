@@ -189,6 +189,12 @@
   gap: $padding-medium;
 }
 
+
+.component-projects-filter{
+  @extend .layout-flex-row;
+  gap: $gap-small;
+}
+
 .component-projects-grid {
   display: grid;
   grid-template-columns: auto auto;
@@ -208,6 +214,7 @@
   @extend .layout-flex-row;
   gap: 20px;
 }
+
 
 /** Projects View Styling **/
 .component-project-view{
