@@ -47,6 +47,14 @@
   border: 1.06px solid $color-gray-dark;
 }
 
+.element-tag-active{
+  color: $color-white-broken;
+  background-color: $color-gray-dark;
+}
+
+.element-tag-interactive{
+  cursor: pointer;
+}
 
 .element-card-image{
   max-height: 400px;

@@ -1,8 +1,10 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button} from "@/app/_components/elements";
-import React, {JSX} from "react";
+import React, {JSX, useState} from "react";
 
 type Project = {
     id: string;
@@ -202,12 +204,27 @@ export const projects: Project[] = [
 
 ];
 
-const ProjectTag = ({text}: { text: string }) => {
+const ProjectTag = ({text, active, interactive, onClick}: {
+    text: string,
+    active: boolean,
+    interactive: boolean,
+    onClick?: () => void
+}) => {
+
+    let className = "element-tag trans";
+    if (active) {
+        className += " element-tag-active";
+    }
+    if (interactive) {
+        className += " element-tag-interactive";
+    }
+
     return (
-        <div className={"element-tag"}>{text}</div>
+        <div className={className} onClick={onClick}>
+            {text}
+        </div>
     )
 }
-
 
 
 const ProjectItem = ({project}: { project: Project }) => {
@@ -220,19 +237,19 @@ const ProjectItem = ({project}: { project: Project }) => {
     return (
         <Link className={"component-project-item"} href={`/projects/${id}`}>
             <Image src={src} alt={title}
-                 width={coverWidth}
-                 height={coverHeight}
-                 style={{
-                     objectFit: "cover",
-                     maxWidth: coverWidth,
-                     maxHeight: coverHeight,
-                     width: coverWidth,
-                     height: coverHeight
-                 }}/>
+                   width={coverWidth}
+                   height={coverHeight}
+                   style={{
+                       objectFit: "cover",
+                       maxWidth: coverWidth,
+                       maxHeight: coverHeight,
+                       width: coverWidth,
+                       height: coverHeight
+                   }}/>
             <div className={"style-paragraph"}>{description}</div>
             <div className={"component-project-tags"}>
                 {
-                    tags.map(tag => <ProjectTag text={tag} key={tag}/>)
+                    tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                 }
             </div>
         </Link>
@@ -242,11 +259,23 @@ const ProjectItem = ({project}: { project: Project }) => {
 
 export const Projects = () => {
 
+
+    const [activeTags, setActiveTags] = useState<string[]>(["Web Development", "Data Visualization"]);
+
     let tagList: string[] = [];
     projects.forEach(project => {
-       tagList = tagList.concat(project.tags);
+        tagList = tagList.concat(project.tags);
     });
     tagList = [...new Set(tagList)];
+
+    const filteredProjects = projects.filter(project => {
+        return activeTags.some(label => project.tags.includes(label));
+    });
+
+    const updateTags = (tag: string) => {
+        setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
+    }
+
 
     return (
         <div id={"projects"} className={"component-projects"}>
@@ -258,13 +287,18 @@ export const Projects = () => {
             </div>
             <div className={"component-projects-list"}>
                 <div className={"component-projects-filter"}>
-                    <div>
-                        Filter by Service: {}
+                    <div style={{padding: "2px 8px"}} className={"style-caption"}>
+                        Filter by Service:
                     </div>
                     {
                         tagList.map((tag: string) => {
                             return (
-                                <ProjectTag text={tag} key={tag}/>
+                                <div className={"layout-margin-y-auto"}>
+                                    <ProjectTag text={tag} key={tag}
+                                                onClick={() => updateTags(tag)}
+                                                active={activeTags.includes(tag)}
+                                                interactive={true}/>
+                                </div>
                             )
                         })
                     }
@@ -272,7 +306,7 @@ export const Projects = () => {
                 </div>
                 <div className={"component-projects-grid"}>
                     {
-                        projects.map((project: Project) => {
+                        filteredProjects.map((project: Project) => {
                             return (
                                 <ProjectItem key={project.id} project={project}/>
                             )
