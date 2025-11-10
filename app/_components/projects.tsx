@@ -304,6 +304,7 @@ export const Projects = () => {
                     }
 
                 </div>
+                {}
                 <div className={"component-projects-grid"}>
                     {
                         filteredProjects.map((project: Project) => {

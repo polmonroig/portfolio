@@ -196,8 +196,7 @@
 }
 
 .component-projects-grid {
-  display: grid;
-  grid-template-columns: auto auto;
+  @extend .layout-grid;
   gap: $padding-medium;
 }
 .component-project-item{
