@@ -207,25 +207,6 @@ const ProjectTag = ({text}: { text: string }) => {
     )
 }
 
-export const ProjectViewHeader = ({id}: { id: string }) => {
-    const selectedProject = projects.find(project => project.id === id);
-
-    // Handle case where project is not found
-    if (!selectedProject) {
-        console.error(`Project with id "${id}" not found`);
-        return null; // or return a fallback UI
-    }
-
-    return (
-        <>
-            <Cover src={`/projects/${id}/cover-large.png`}
-                   align="middle"
-                   height="40%"
-                   opacity={0.5}
-                   title={selectedProject.header}/>
-        </>
-    )
-}
 
 
 const ProjectItem = ({project}: { project: Project }) => {
@@ -291,6 +272,27 @@ export const Projects = () => {
 }
 
 
+export const ProjectViewHeader = ({id}: { id: string }) => {
+    const selectedProject = projects.find(project => project.id === id);
+
+    // Handle case where project is not found
+    if (!selectedProject) {
+        console.error(`Project with id "${id}" not found`);
+        return null; // or return a fallback UI
+    }
+
+    return (
+        <>
+            <Cover src={`/projects/${id}/cover-large.png`}
+                   align="left"
+                   height="40%"
+                   opacity={0.5}
+                   title={selectedProject.header}/>
+        </>
+    )
+}
+
+
 export const ProjectViewTemplate = (props: {
     id: string,
     description: string,
@@ -309,14 +311,34 @@ export const ProjectViewTemplate = (props: {
             {/** Project Content **/}
             <div className="component-project-view-content">
                 {/** Project Content Highlight **/}
-                <div className={"layout-flex-row"}>
-                    <div>
-                        Year {props.year}
-                        Client {props.client}
-                        Department {props.department}
-                        Location {props.location}
+                <div className={"component-project-view-content-header"}>
+                    <div className={"layout-grid style-uppercase"}>
+                        <div className={"style-caption"}>
+                            Year
+                        </div>
+                        <div>
+                            {props.year}
+                        </div>
+                        <div className={"style-caption"}>
+                            Client
+                        </div>
+                        <div>
+                            {props.client}
+                        </div>
+                        <div className={"style-caption"}>
+                            Department
+                        </div>
+                        <div>
+                            {props.department}
+                        </div>
+                        <div className={"style-caption"}>
+                            Location
+                        </div>
+                        <div>
+                            {props.location}
+                        </div>
                     </div>
-                    <div>
+                    <div className={"style-paragraph"}>
                         {props.description}
                     </div>
                 </div>

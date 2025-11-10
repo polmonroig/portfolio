@@ -29,3 +29,16 @@ $gap-full-column: 115px;
   display: flex;
   flex-direction: column;
 }
+
+.layout-flex-col-small{
+  @extend .layout-flex-col;
+  gap: $gap-small;
+}
+
+
+
+.layout-grid{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: $padding-medium;
+}

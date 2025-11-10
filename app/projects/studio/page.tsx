@@ -12,11 +12,15 @@ export default function ProjectView() {
         >
             <>
                 <img src={"/projects/studio/mockup-04.png"} alt={"mockup"} />
-
-                <div className={"style-h1"}>
-                    Reduction in idle compute <br/>
-                    Increased project turnaround time <br/>
-                    Operational visibility and risk mitigation
+                <div className={"layout-flex-col-small"}>
+                    <div className={"style-h5 style-align-center"}>
+                        Value Driven KPIs
+                    </div>
+                    <div className={"style-h1 style-align-center"}>
+                        Reduction in idle compute <br/>
+                        Increased project turnaround time <br/>
+                        Operational visibility and risk mitigation
+                    </div>
                 </div>
             </>
         </ProjectViewTemplate>
