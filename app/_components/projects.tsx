@@ -304,16 +304,23 @@ export const Projects = () => {
                     }
 
                 </div>
-                {}
-                <div className={"component-projects-grid"}>
-                    {
-                        filteredProjects.map((project: Project) => {
-                            return (
-                                <ProjectItem key={project.id} project={project}/>
-                            )
-                        })
-                    }
-                </div>
+                {
+                    filteredProjects.length > 0 ?
+                        <div className={"component-projects-grid"}>
+                            {
+                                filteredProjects.map((project: Project) => {
+                                    return (
+                                        <ProjectItem key={project.id} project={project}/>
+                                    )
+                                })
+                            }
+                        </div>
+                        :
+                        <div className={"component-projects-not-found"}>
+                            No projects found
+                        </div>
+                }
+
                 <div>
                     <Button text={"View more projects"}/>
                 </div>

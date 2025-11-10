@@ -199,6 +199,13 @@
   @extend .layout-grid;
   gap: $padding-medium;
 }
+
+.component-projects-not-found{
+  @extend .layout-flex-col, .layout-margin-x-auto, .style-h4;
+  gap: $padding-medium;
+  padding: $padding-large;
+}
+
 .component-project-item{
   @extend .layout-flex-col, .layout-margin-x-auto, .transition-opacity;
   gap: $padding-small;
