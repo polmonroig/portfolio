@@ -126,13 +126,13 @@
 
 .component-services-item{
   @extend .layout-flex-col, .layout-margin-x-auto;
-  width: 930px;
-  max-width: 930px;
+  width: $size-max-width;
+  max-width: $size-max-width;
 }
 
 .component-services-item-inner{
   @extend .layout-flex-row, .layout-margin-x-auto;
-  max-width: 950px;
+  max-width: $size-max-width;
   gap: $gap-full-column;
 }
 
@@ -226,7 +226,7 @@
 .component-project-view-content-header{
   @extend .layout-flex-row, .layout-margin-x-auto;
   gap: $padding-medium;
-  max-width: 930px;
+  max-width: $size-max-width;
 }
 
 /** Error pages Styling **/
