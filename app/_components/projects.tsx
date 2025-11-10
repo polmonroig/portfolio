@@ -293,8 +293,8 @@ export const Projects = () => {
                     {
                         tagList.map((tag: string) => {
                             return (
-                                <div className={"layout-margin-y-auto"}>
-                                    <ProjectTag text={tag} key={tag}
+                                <div className={"layout-margin-y-auto"} key={tag}>
+                                    <ProjectTag text={tag}
                                                 onClick={() => updateTags(tag)}
                                                 active={activeTags.includes(tag)}
                                                 interactive={true}/>
