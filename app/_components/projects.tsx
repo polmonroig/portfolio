@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button} from "@/app/_components/elements";
 import React, {JSX} from "react";
@@ -218,7 +219,7 @@ const ProjectItem = ({project}: { project: Project }) => {
 
     return (
         <Link className={"component-project-item"} href={`/projects/${id}`}>
-            <img src={src} alt={title}
+            <Image src={src} alt={title}
                  width={coverWidth}
                  height={coverHeight}
                  style={{

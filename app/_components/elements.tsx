@@ -1,7 +1,7 @@
 import React from "react";
+import Image from 'next/image';
 
-
-export const Button = (props : {text : string}) => {
+export const Button = (props: { text: string }) => {
     return (
         <button className={"element-button layout-margin-x-auto cursor-pointer"}>
             {props.text}
@@ -9,7 +9,7 @@ export const Button = (props : {text : string}) => {
     )
 }
 
-export const ButtonLink = (props : {text: string, href: string}) => {
+export const ButtonLink = (props: { text: string, href: string }) => {
     return (
         <a className={"element-button layout-margin-x-auto cursor-pointer"} href={props.href}>
             {props.text}
@@ -32,17 +32,19 @@ export const Card = (props: {
                     <>
                         <div className={"element-card-text"}>
                             <div className={"layout-flex-row style-h5"}>
-                                    {props.title}
+                                {props.title}
                             </div>
                             <div className={"style-paragraph"}>
                                 {props.children}
                             </div>
                         </div>
-                        <img src={props.src} alt={"card-image"} className={"element-card-image"}/>
+                        <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                               height={400}/>
                     </>
                     :
                     <>
-                        <img src={props.src} alt={"card-image"} className={"element-card-image"}/>
+                        <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                               height={400}/>
                         <div className={"element-card-text"}>
                             <div className={"layout-flex-row style-h5"}>
                                 {props.title}
@@ -69,7 +71,7 @@ export const CardLarge = (props: {
             <div className={"element-card-texts style-h3 style-gradient-text style-align-center"}>
                 {props.title}
             </div>
-            <img src={props.src} alt={"card-image"} className={"element-card-image-large"}/>
+            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614} height={1976}/>
         </div>
     )
 }
