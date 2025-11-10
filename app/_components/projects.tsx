@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
-import {Button} from "@/app/_components/elements";
+import {Button, ButtonLink} from "@/app/_components/elements";
 import React, {JSX, useState} from "react";
 
 type Project = {
@@ -287,7 +287,7 @@ export const Projects = () => {
             </div>
             <div className={"component-projects-list"}>
                 <div className={"component-projects-filter"}>
-                    <div style={{padding: "2px 8px"}} className={"style-caption"}>
+                    <div style={{padding: "2px 8px 2px 0px"}} className={"style-caption"}>
                         Filter by Service:
                     </div>
                     {
@@ -321,9 +321,11 @@ export const Projects = () => {
                         </div>
                 }
 
-                <div>
-                    <Button text={"View more projects"}/>
-                </div>
+                {
+                    tagList.length > activeTags.length ?
+                        <Button text={"View more projects"} onClick={() => setActiveTags(tagList)}/>
+                        : null
+                }
             </div>
 
 
@@ -363,6 +365,7 @@ export const ProjectViewTemplate = (props: {
     children: React.ReactNode
 }) => {
 
+    const nextProjectId: string = props.id;
 
     return (
         <>
@@ -407,7 +410,7 @@ export const ProjectViewTemplate = (props: {
                 {props.children}
 
                 {/** Footer **/}
-                <Button text={"Go to next project →"}/>
+                <ButtonLink text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
             </div>
         </>
     )

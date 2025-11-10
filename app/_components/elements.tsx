@@ -1,9 +1,9 @@
 import React from "react";
 import Image from 'next/image';
 
-export const Button = (props: { text: string }) => {
+export const Button = (props: { text: string, onClick: () => void }) => {
     return (
-        <button className={"element-button layout-margin-x-auto cursor-pointer"}>
+        <button className={"element-button layout-margin-x-auto"} onClick={props.onClick}>
             {props.text}
         </button>
     )
