@@ -25,6 +25,15 @@ export const projects: Project[] = [
         slug: "bcn_studio"
     },
     {
+        id: "cokoon",
+        title: "Cokoon",
+        description:
+            "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
+        header: "Immersive 3D Experience Platform",
+        tags: ["Web Development"],
+        slug: "cokoon"
+    },
+    {
         id: "collab",
         title: "Collab",
         description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
@@ -55,15 +64,6 @@ export const projects: Project[] = [
         header: "Interactive Project Management Visualization",
         tags: ["Web Development"],
         slug: "timelines"
-    },
-    {
-        id: "cokoon",
-        title: "Cokoon",
-        description:
-            "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
-        header: "Immersive 3D Experience Platform",
-        tags: ["Web Development"],
-        slug: "cokoon"
     },
     {
         id: "aiart",
@@ -236,16 +236,20 @@ const ProjectItem = ({project}: { project: Project }) => {
 
     return (
         <Link className={"component-project-item"} href={`/projects/${id}`}>
-            <Image src={src} alt={title}
-                   width={coverWidth}
-                   height={coverHeight}
-                   style={{
-                       objectFit: "cover",
-                       maxWidth: coverWidth,
-                       maxHeight: coverHeight,
-                       width: coverWidth,
-                       height: coverHeight
-                   }}/>
+            <div className={"overflow-hidden"}>
+                <Image src={src} alt={title}
+                       width={coverWidth}
+                       height={coverHeight}
+                       className={"transition-zoom-in transform-scale"}
+                       style={{
+                           objectFit: "cover",
+                           maxWidth: coverWidth,
+                           maxHeight: coverHeight,
+                           width: coverWidth,
+                           height: coverHeight
+                       }}/>
+            </div>
+
             <div className={"style-paragraph"}>{description}</div>
             <div className={"component-project-tags"}>
                 {

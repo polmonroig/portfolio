@@ -1,9 +1,27 @@
 
 
+/** Transition elements **/
 .transition-color{
   transition: color 0.3s ease;
 }
 
 .transition-opacity{
   transition: opacity 0.5s ease;
+}
+
+.transition-zoom-in{
+  transition: transform 0.5s ease;
+}
+
+/** Transform elements **/
+.transform-scale:hover{
+  transform: scale(1.05);
+}
+
+.transform-opacity:hover{
+  opacity: 0.7;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
