@@ -243,8 +243,6 @@ const ProjectItem = ({project}: { project: Project }) => {
                        className={"transition-zoom-in transform-scale"}
                        style={{
                            objectFit: "cover",
-                           maxWidth: coverWidth,
-                           maxHeight: coverHeight,
                            width: coverWidth,
                            height: coverHeight
                        }}/>
