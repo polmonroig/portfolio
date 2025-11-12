@@ -31,7 +31,7 @@ export const Card = (props: {
                 props.side === "left" ?
                     <>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-row style-h5"}>
+                            <div className={"layout-flex-col style-h5"}>
                                 {props.title}
                             </div>
                             <div className={"style-paragraph"}>

@@ -62,25 +62,28 @@
 }
 
 .element-card-image{
-  max-height: 400px;
-  max-width: 550px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+
 }
 
 .element-card{
   @extend .layout-flex-row, .layout-margin-x-auto;
-  width: $size-max-width;
   max-width: $size-max-width;
+  max-height: 400px;
   gap: $padding-medium;
 }
 .element-card-large{
   @extend .layout-flex-col, .layout-margin-x-auto;
-  width: $size-max-width;
   max-width: $size-max-width;
   gap: $padding-medium;
 }
 
 .element-card-image-large{
-  max-width: $size-max-width;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .element-card-text{
