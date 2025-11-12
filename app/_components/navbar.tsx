@@ -31,7 +31,7 @@ export const NavBar = () => {
                     <NavbarItem text={"services"} slug={"/#services"}  className={linkClassName}/>
                     <NavbarItem text={"projects"} slug={"/#projects"}  className={linkClassName}/>
                     <NavbarItem text={"blog"} slug={"https://blog.pol.company"} target={"_blank"} className={linkClassName}/>
-                    <NavbarItem text={"Hire Me"} slug={"/#contact"} className={linkClassName + ' component-navbar-item-strong'}/>
+                    <NavbarItem text={"Hire Me"} slug={"#contact"} className={linkClassName + ' component-navbar-item-strong'}/>
                 </div>
             </div>
         </header>

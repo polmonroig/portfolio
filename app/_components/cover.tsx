@@ -1,5 +1,7 @@
 
 
+import Image from 'next/image';
+
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
 type CoverProps = {
@@ -35,7 +37,7 @@ export const Cover = (props: CoverProps) => {
         return 'center';
     })();
 
-    const backgroundImage = `url(${src})`;
+    const imageFilter = opacity < 1 ? `brightness(${opacity * 100}%)` : undefined;
 
     return (
         <div
@@ -47,17 +49,17 @@ export const Cover = (props: CoverProps) => {
                 overflow: 'hidden',
             }}
         >
-            {/* Background layer with brightness filter applied only to the image */}
-            <div
+            {/* Background image using next/image to leverage optimization and proper layout */}
+            <Image
+                src={src}
+                alt=""
                 aria-hidden
+                fill
+                sizes="100vw"
                 style={{
-                    position: 'absolute',
-                    inset: 0,
-                    backgroundImage,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    filter: opacity < 1 ? `brightness(${opacity * 100}%)` : '',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    filter: imageFilter,
                     zIndex: 0,
                 }}
             />
@@ -72,7 +74,7 @@ export const Cover = (props: CoverProps) => {
                     justifyContent: 'center',
                     width: '100%',
                     height: '100%',
-                    padding: '0 255px', // match $padding-sides from layout.scss
+                    padding: '0 0', // match $padding-sides from layout.scss
                     boxSizing: 'border-box',
                     textAlign: textAlign,
                     margin: 'auto',

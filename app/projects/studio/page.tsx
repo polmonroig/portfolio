@@ -1,5 +1,6 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
 import {Card, CardLarge} from "@/app/_components/elements";
+import Image from "next/image";
 
 export default function ProjectView() {
     return (
@@ -12,7 +13,7 @@ export default function ProjectView() {
             location={"Los Angeles, CA"}
         >
             <>
-                <img src={"/projects/studio/mockup-04.png"} alt={"mockup"}/>
+                <Image src={"/projects/studio/mockup-04.png"} alt={"mockup"} width={3856} height={1940}/>
                 <div className={"layout-flex-col-small"}>
                     <div className={"style-h5 style-align-center"}>
                         Value Driven KPIs

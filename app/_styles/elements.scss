@@ -8,6 +8,7 @@
   font-weight: 300;
   font-size: 14px;
   padding: $padding-small $gap-small;
+  cursor: pointer;
 }
 
 .element-line-small{
@@ -34,40 +35,55 @@
 
 .element-section-header{
   @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
-  width: 930px;
-  max-width: 930px;
+  width: $size-max-width;
+  max-width: $size-max-width;
   gap: 22px;
   white-space: nowrap;
 }
 
+.element-section-title{
+  @extend .style-gradient-text;
+}
+
 .element-tag{
   @extend .style-caption;
-  padding: 10.56px;
+  padding: 2px 8px;
   border-radius: 19px;
   border: 1.06px solid $color-gray-dark;
 }
 
+.element-tag-active{
+  color: $color-white-broken;
+  background-color: $color-gray-dark;
+}
+
+.element-tag-interactive{
+  cursor: pointer;
+}
 
 .element-card-image{
-  max-height: 400px;
-  max-width: 550px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+
 }
 
 .element-card{
   @extend .layout-flex-row, .layout-margin-x-auto;
-  width: 930px;
-  max-width: 930px;
+  max-width: $size-max-width;
+  max-height: 400px;
   gap: $padding-medium;
 }
 .element-card-large{
   @extend .layout-flex-col, .layout-margin-x-auto;
-  width: 930px;
-  max-width: 930px;
+  max-width: $size-max-width;
   gap: $padding-medium;
 }
 
 .element-card-image-large{
-  max-width: 930px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .element-card-text{

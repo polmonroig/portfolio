@@ -1,7 +1,10 @@
+'use client';
+
 import Link from "next/link";
+import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
-import {Button} from "@/app/_components/elements";
-import React, {JSX} from "react";
+import {Button, ButtonLink} from "@/app/_components/elements";
+import React, {JSX, useState} from "react";
 
 type Project = {
     id: string;
@@ -22,62 +25,13 @@ export const projects: Project[] = [
         slug: "bcn_studio"
     },
     {
-        id: "collab",
-        title: "Collab",
-        description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
-        header: "Streamlined CMS Integration with Basecamp",
-        tags: ["web development"],
-        slug: "collab"
-    },
-    {
-        id: "web3d",
-        title: "Web3D",
-        description: "Anamorphic 3D platform for billboards",
-        header: "Next-Generation 3D Billboard Platform",
-        tags: ["web development", "webgl"],
-        slug: "web3d"
-    },
-    {
-        id: "dx",
-        title: "DX Performance Demo",
-        description: "Consultant on Borderlands THREE.js app",
-        header: "Optimizing Performance for Borderlands Web Experience",
-        tags: ["web development", "webgl"],
-        slug: "dx_performance_demo"
-    },
-    {
-        id: "timelines",
-        title: "Timelines",
-        description: "Consultant on projects task and Gantt timelines application",
-        header: "Interactive Project Management Visualization",
-        tags: ["web development", "webgl"],
-        slug: "timelines"
-    },
-    {
         id: "cokoon",
         title: "Cokoon",
         description:
             "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
         header: "Immersive 3D Experience Platform",
-        tags: ["web development", "webgl"],
+        tags: ["Web Development"],
         slug: "cokoon"
-    },
-    {
-        id: "aiart",
-        title: "Aiart",
-        description:
-            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. With aiart you can instantly obtain a detailed analysis of its composition balance and color harmony.",
-        header: "AI-Powered Art Analysis Platform",
-        tags: ["web development", "image segmentation"],
-        slug: "aiart"
-    },
-    {
-        id: "network_designer",
-        title: "Network Designer",
-        description: "Simple Neural Network designer and exporter to python pytorch code",
-        header: "Visual Neural Network Architecture Tool",
-        tags: ["web development"],
-        slug: "network_designer"
     },
     {
         id: "genetic_brushes",
@@ -85,39 +39,15 @@ export const projects: Project[] = [
         description:
             "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
         header: "AI-Driven Digital Art Creation",
-        tags: ["aritificial intelligence"],
+        tags: ["Machine Learning"],
         slug: "genetic_brushes"
-    },
-    {
-        id: "baba_is_you",
-        title: "Baba Is You",
-        description: "Tribute to Baba is You game coded in C++ OpenGL",
-        header: "Logic Puzzle Game Recreation",
-        tags: ["game development"],
-        slug: "baba_is_you"
-    },
-    {
-        id: "starfox64",
-        title: "StarFox64",
-        description: "Tribute to StarFox64 game coded in Unity",
-        header: "Classic Space Combat Game Remake",
-        tags: ["game development"],
-        slug: "starfox64"
-    },
-    {
-        id: "light_in_solstice",
-        title: "Light In Solstice",
-        description: "Currently in-development 2D Game coded in Godot",
-        header: "Atmospheric 2D Adventure Game",
-        tags: ["game development"],
-        slug: "light_in_solstice"
     },
     {
         id: "cloud_segmentation",
         title: "Cloud Segmentation",
         description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
         header: "AI-Powered Cloud Detection System",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "cloud_segmentation"
     },
     {
@@ -126,8 +56,81 @@ export const projects: Project[] = [
         description:
             "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
         header: "ML-Based Seismic Activity Forecasting",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "earthquake_prediction"
+    },
+    {
+        id: "collab",
+        title: "Collab",
+        description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
+        header: "Streamlined CMS Integration with Basecamp",
+        tags: ["Web Development"],
+        slug: "collab"
+    },
+    {
+        id: "web3d",
+        title: "Web3D",
+        description: "Anamorphic 3D platform for billboards",
+        header: "Next-Generation 3D Billboard Platform",
+        tags: ["Web Development"],
+        slug: "web3d"
+    },
+    {
+        id: "dx",
+        title: "DX Performance Demo",
+        description: "Consultant on Borderlands THREE.js app",
+        header: "Optimizing Performance for Borderlands Web Experience",
+        tags: ["Web Development"],
+        slug: "dx_performance_demo"
+    },
+    {
+        id: "timelines",
+        title: "Timelines",
+        description: "Consultant on projects task and Gantt timelines application",
+        header: "Interactive Project Management Visualization",
+        tags: ["Web Development"],
+        slug: "timelines"
+    },
+    {
+        id: "aiart",
+        title: "Aiart",
+        description:
+            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. With aiart you can instantly obtain a detailed analysis of its composition balance and color harmony.",
+        header: "AI-Powered Art Analysis Platform",
+        tags: ["Web Development", "Machine Learning"],
+        slug: "aiart"
+    },
+    {
+        id: "network_designer",
+        title: "Network Designer",
+        description: "Simple Neural Network designer and exporter to python pytorch code",
+        header: "Visual Neural Network Architecture Tool",
+        tags: ["Web Development"],
+        slug: "network_designer"
+    },
+    {
+        id: "baba_is_you",
+        title: "Baba Is You",
+        description: "Tribute to Baba is You game coded in C++ OpenGL",
+        header: "Logic Puzzle Game Recreation",
+        tags: ["Game Development"],
+        slug: "baba_is_you"
+    },
+    {
+        id: "starfox64",
+        title: "StarFox64",
+        description: "Tribute to StarFox64 game coded in Unity",
+        header: "Classic Space Combat Game Remake",
+        tags: ["Game Development"],
+        slug: "starfox64"
+    },
+    {
+        id: "light_in_solstice",
+        title: "Light In Solstice",
+        description: "Currently in-development 2D Game coded in Godot",
+        header: "Atmospheric 2D Adventure Game",
+        tags: ["Game Development"],
+        slug: "light_in_solstice"
     },
     {
         id: "lz4_compression",
@@ -135,7 +138,7 @@ export const projects: Project[] = [
         description:
             "Set of multiple algorithms for LZ4 compression in python, contest on speed and compression ratio",
         header: "High-Performance Data Compression",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "lz4_compression"
     },
     {
@@ -144,7 +147,7 @@ export const projects: Project[] = [
         description:
             "Image compressions library written in C++ which includes multiple compression algorithms",
         header: "Advanced Image Compression Suite",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "sfic_compression"
     },
     {
@@ -152,7 +155,7 @@ export const projects: Project[] = [
         title: "C++ Random Number Generator",
         description: "Multiple random distribution pseudo-random number generators",
         header: "Statistical Random Number Generation",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "cpp_rng"
     },
     {
@@ -160,7 +163,7 @@ export const projects: Project[] = [
         title: "Graph Percolation",
         description: "Graph Connectivity and Percolation experiments in C++",
         header: "Network Connectivity Analysis Tool",
-        tags: ["algorithms"],
+        tags: ["Algorithms"],
         slug: "graph_percolation"
     },
     {
@@ -169,7 +172,7 @@ export const projects: Project[] = [
         description:
             "This is an PyQT app that is connected to Google Calendar, the main purpose of this application is to collect the events of a calendar search them by date, name and color and to receive and analysis of the duration of the events and dates.",
         header: "Smart Calendar Management System",
-        tags: ["algorithms", "desktop app"],
+        tags: ["Algorithms"],
         slug: "calendar_api"
     },
     {
@@ -178,7 +181,7 @@ export const projects: Project[] = [
         description:
             "This is a telegram chatbot design to make polls/quiz to people and save its results.",
         header: "Interactive Telegram Survey System",
-        tags: ["algorithm"],
+        tags: ["Algorithms"],
         slug: "telegram_quiz_bot"
     },
     {
@@ -187,7 +190,7 @@ export const projects: Project[] = [
         description:
             "This is a bayesian code builder that generates stan code, that I built to simplify Media Mix Modeling, it has marketing concepts integrated such as adstock and diminishing returns, it is built with R on top of cmdstan which enables for state-of-art bayesian model.",
         header: "Automated Marketing Analytics Platform",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "bayesian_model_builder"
     },
     {
@@ -195,18 +198,33 @@ export const projects: Project[] = [
         title: "Ratings Prediction",
         description: "This projects is a webapp connected to an API that estimates rating star ratings using machine learning",
         header: "ML-Driven Rating Prediction System",
-        tags: ["machine learning"],
+        tags: ["Machine Learning"],
         slug: "ratings_prediction"
     }
 
 ];
 
-const ProjectTag = ({text}: { text: string }) => {
+const ProjectTag = ({text, active, interactive, onClick}: {
+    text: string,
+    active: boolean,
+    interactive: boolean,
+    onClick?: () => void
+}) => {
+
+    let className = "element-tag trans";
+    if (active) {
+        className += " element-tag-active";
+    }
+    if (interactive) {
+        className += " element-tag-interactive";
+    }
+
     return (
-        <div className={"element-tag"}>{text}</div>
+        <div className={className} onClick={onClick}>
+            {text}
+        </div>
     )
 }
-
 
 
 const ProjectItem = ({project}: { project: Project }) => {
@@ -218,20 +236,22 @@ const ProjectItem = ({project}: { project: Project }) => {
 
     return (
         <Link className={"component-project-item"} href={`/projects/${id}`}>
-            <img src={src} alt={title}
-                 width={coverWidth}
-                 height={coverHeight}
-                 style={{
-                     objectFit: "cover",
-                     maxWidth: coverWidth,
-                     maxHeight: coverHeight,
-                     width: coverWidth,
-                     height: coverHeight
-                 }}/>
-            <div className={"style-paragraph"}>{description}</div>
-            <div className={"component-project-tags"}>
+            <div className={"overflow-hidden"}>
+                <Image src={src} alt={title}
+                       width={coverWidth}
+                       height={coverHeight}
+                       className={"transition-zoom-in transform-scale"}
+                       style={{
+                           objectFit: "cover",
+                           width: coverWidth,
+                           height: coverHeight
+                       }}/>
+            </div>
+
+            <div className={"style-paragraph"} style={{padding: "0 5px"}}>{description}</div>
+            <div className={"component-project-tags"} style={{padding: "0 5px"}}>
                 {
-                    tags.map(tag => <ProjectTag text={tag} key={tag}/>)
+                    tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                 }
             </div>
         </Link>
@@ -240,30 +260,74 @@ const ProjectItem = ({project}: { project: Project }) => {
 
 
 export const Projects = () => {
+
+
+    const [activeTags, setActiveTags] = useState<string[]>(["Web Development", "Data Visualization"]);
+
+    let tagList: string[] = [];
+    projects.forEach(project => {
+        tagList = tagList.concat(project.tags);
+    });
+    tagList = [...new Set(tagList)];
+
+    const filteredProjects = projects.filter(project => {
+        return activeTags.some(label => project.tags.includes(label));
+    });
+
+    const updateTags = (tag: string) => {
+        setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
+    }
+
+
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
-                <div className={"style-gradient-text"}>
+                <div className={"element-section-title"}>
                     Featured Projects
                 </div>
-                <div className={"element-line-full"}></div>
+                <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <div className={"component-projects-list"}>
-                <div>
-                    Filter by Service: ....
-                </div>
-                <div className={"component-projects-grid"}>
+                <div className={"component-projects-filter"}>
+                    <div style={{padding: "2px 8px 2px 0px"}} className={"style-caption responsive-hide-desktop"}>
+                        Filter by Service:
+                    </div>
                     {
-                        projects.map((project: Project) => {
+                        tagList.map((tag: string) => {
                             return (
-                                <ProjectItem key={project.id} project={project}/>
+                                <div className={"layout-margin-y-auto"} key={tag}>
+                                    <ProjectTag text={tag}
+                                                onClick={() => updateTags(tag)}
+                                                active={activeTags.includes(tag)}
+                                                interactive={true}/>
+                                </div>
                             )
                         })
                     }
+
                 </div>
-                <div>
-                    <Button text={"View more projects"}/>
-                </div>
+                {
+                    filteredProjects.length > 0 ?
+                        <div className={"component-projects-grid"}>
+                            {
+                                filteredProjects.map((project: Project) => {
+                                    return (
+                                        <ProjectItem key={project.id} project={project}/>
+                                    )
+                                })
+                            }
+                        </div>
+                        :
+                        <div className={"component-projects-not-found"}>
+                            No projects found
+                        </div>
+                }
+
+                {
+                    tagList.length > activeTags.length ?
+                        <Button text={"View more projects"} onClick={() => setActiveTags(tagList)}/>
+                        : null
+                }
             </div>
 
 
@@ -284,7 +348,7 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
     return (
         <>
             <Cover src={`/projects/${id}/cover-large.png`}
-                   align="left"
+                   align="center"
                    height="40%"
                    opacity={0.5}
                    title={selectedProject.header}/>
@@ -303,6 +367,7 @@ export const ProjectViewTemplate = (props: {
     children: React.ReactNode
 }) => {
 
+    const nextProjectId: string = props.id;
 
     return (
         <>
@@ -347,7 +412,7 @@ export const ProjectViewTemplate = (props: {
                 {props.children}
 
                 {/** Footer **/}
-                <Button text={"Go to next project →"}/>
+                <ButtonLink text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
             </div>
         </>
     )
