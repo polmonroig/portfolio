@@ -7,12 +7,15 @@ $breakpoint-mobile: 480px;
 
 /* Desktop Small screens */
 @media (max-width: $breakpoint-desktop) {
+  /** Generic components **/
+  .responsive-hide-desktop{
+    display: none;
+  }
+
+  /** Specific Elements **/
   .layout-grid,
   .component-projects-grid {
     grid-template-columns: 1fr;
-  }
-  .element-line-full{
-    display: none;
   }
   .element-section-title{
     margin-left: auto;

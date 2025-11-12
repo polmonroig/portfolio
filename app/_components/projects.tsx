@@ -287,11 +287,11 @@ export const Projects = () => {
                 <div className={"element-section-title"}>
                     Featured Projects
                 </div>
-                <div className={"element-line-full"}></div>
+                <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <div className={"component-projects-list"}>
                 <div className={"component-projects-filter"}>
-                    <div style={{padding: "2px 8px 2px 0px"}} className={"style-caption"}>
+                    <div style={{padding: "2px 8px 2px 0px"}} className={"style-caption responsive-hide-desktop"}>
                         Filter by Service:
                     </div>
                     {

@@ -189,11 +189,12 @@
 }
 
 
-.component-projects-filter{
+.component-projects-filter {
   @extend .layout-flex-row;
   gap: $gap-small;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
 .component-projects-grid {
   @extend .layout-grid;
   gap: $padding-medium;

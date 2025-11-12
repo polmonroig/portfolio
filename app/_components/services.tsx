@@ -66,7 +66,7 @@ export const Services = () => {
                 <div className={"element-section-title"}>
                     Services
                 </div>
-                <div className={"element-line-full"}></div>
+                <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <ServiceItem number={"01"} title="Web Development & Interactive Experiences"
                          src={"/images/services-01.jpg"}
