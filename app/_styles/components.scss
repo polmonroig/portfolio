@@ -67,7 +67,7 @@
 .component-contact{
   @extend .layout-flex-col;
   width: 100%;
-  padding: $padding-large $padding-sides;
+  padding: $padding-large 0;
   background-color: $color-white;
 }
 
@@ -102,7 +102,7 @@
   gap: $padding-small;
   background-color: $color-white-broken;
   color: $color-black-88;
-  padding: $gap-small $padding-sides;
+  padding: $gap-small 0;
   text-align: center;
 }
 
@@ -121,12 +121,11 @@
   gap: $padding-large;
   width: 100%;
   background-color: $color-white-broken;
-  padding: $padding-large $padding-sides;
+  padding: $padding-large 0;
 }
 
 .component-services-item{
   @extend .layout-flex-col, .layout-margin-x-auto;
-  width: $size-max-width;
   max-width: $size-max-width;
 }
 
@@ -152,7 +151,7 @@
 /** About Styling **/
 .component-about{
   @extend .layout-flex-col, .layout-margin-x-auto;
-  padding: $padding-large $padding-sides;
+  padding: $padding-large 0;
   text-align: center;
   color: $color-white;
   gap: $gap-small;
@@ -181,7 +180,7 @@
   gap: $padding-large;
   width: 100%;
   background-color: $color-white-broken;
-  padding: $padding-large $padding-sides;
+  padding: $padding-large 0;
 }
 
 .component-projects-list{
@@ -227,7 +226,7 @@
 .component-project-view-content{
   @extend .layout-flex-col, .layout-margin-x-auto;
   background-color: $color-white-broken;
-  padding: $padding-large $padding-sides;
+  padding: $padding-large 0;
   gap: $padding-large;
 }
 
@@ -246,7 +245,7 @@
 
 .component-404-content{
   @extend .style-h1, .style-align-center, .layout-flex-col;
-  padding: $padding-large*4 $padding-sides;
+  padding: $padding-large*4 0;
   gap: $padding-small;
   height: 80%;
 }

@@ -34,6 +34,32 @@ export const projects: Project[] = [
         slug: "cokoon"
     },
     {
+        id: "genetic_brushes",
+        title: "Genetic Brushes",
+        description:
+            "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
+        header: "AI-Driven Digital Art Creation",
+        tags: ["Machine Learning"],
+        slug: "genetic_brushes"
+    },
+    {
+        id: "cloud_segmentation",
+        title: "Cloud Segmentation",
+        description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
+        header: "AI-Powered Cloud Detection System",
+        tags: ["Machine Learning"],
+        slug: "cloud_segmentation"
+    },
+    {
+        id: "earthquake_prediction",
+        title: "Earthquake Prediction",
+        description:
+            "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
+        header: "ML-Based Seismic Activity Forecasting",
+        tags: ["Machine Learning"],
+        slug: "earthquake_prediction"
+    },
+    {
         id: "collab",
         title: "Collab",
         description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
@@ -83,15 +109,6 @@ export const projects: Project[] = [
         slug: "network_designer"
     },
     {
-        id: "genetic_brushes",
-        title: "Genetic Brushes",
-        description:
-            "Genetic brushes is an image painter that mimics the process of painting of an image into a canvas.",
-        header: "AI-Driven Digital Art Creation",
-        tags: ["Machine Learning"],
-        slug: "genetic_brushes"
-    },
-    {
         id: "baba_is_you",
         title: "Baba Is You",
         description: "Tribute to Baba is You game coded in C++ OpenGL",
@@ -114,23 +131,6 @@ export const projects: Project[] = [
         header: "Atmospheric 2D Adventure Game",
         tags: ["Game Development"],
         slug: "light_in_solstice"
-    },
-    {
-        id: "cloud_segmentation",
-        title: "Cloud Segmentation",
-        description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
-        header: "AI-Powered Cloud Detection System",
-        tags: ["Machine Learning"],
-        slug: "cloud_segmentation"
-    },
-    {
-        id: "earthquake_prediction",
-        title: "Earthquake Prediction",
-        description:
-            "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
-        header: "ML-Based Seismic Activity Forecasting",
-        tags: ["Machine Learning"],
-        slug: "earthquake_prediction"
     },
     {
         id: "lz4_compression",
@@ -284,7 +284,7 @@ export const Projects = () => {
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
-                <div className={"style-gradient-text"}>
+                <div className={"element-section-title"}>
                     Featured Projects
                 </div>
                 <div className={"element-line-full"}></div>
@@ -350,7 +350,7 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
     return (
         <>
             <Cover src={`/projects/${id}/cover-large.png`}
-                   align="left"
+                   align="center"
                    height="40%"
                    opacity={0.5}
                    title={selectedProject.header}/>

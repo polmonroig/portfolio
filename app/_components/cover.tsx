@@ -74,7 +74,7 @@ export const Cover = (props: CoverProps) => {
                     justifyContent: 'center',
                     width: '100%',
                     height: '100%',
-                    padding: '0 255px', // match $padding-sides from layout.scss
+                    padding: '0 0', // match $padding-sides from layout.scss
                     boxSizing: 'border-box',
                     textAlign: textAlign,
                     margin: 'auto',

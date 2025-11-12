@@ -63,7 +63,7 @@ export const Services = () => {
     return (
         <div id={"services"} className={"component-services"}>
             <div className={"element-section-header"}>
-                <div className={"style-gradient-text"}>
+                <div className={"element-section-title"}>
                     Services
                 </div>
                 <div className={"element-line-full"}></div>
