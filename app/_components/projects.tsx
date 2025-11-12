@@ -249,7 +249,7 @@ const ProjectItem = ({project}: { project: Project }) => {
             </div>
 
             <div className={"style-paragraph"} style={{padding: "0 5px"}}>{description}</div>
-            <div className={"component-project-tags"}style={{padding: "0 5px"}}>
+            <div className={"component-project-tags"} style={{padding: "0 5px"}}>
                 {
                     tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                 }
