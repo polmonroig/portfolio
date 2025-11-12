@@ -29,12 +29,12 @@ const ServiceItem = (props: {
                                 ))}
                             </ul>
                         </div>
-                        <Image src={props.src} alt={"service-image"} className={"component-services-item-image"}
+                        <Image src={props.src} alt={"service-image"} className={"component-services-item-image responsive-hide-desktop"}
                                width={imageWidth} height={imageHeight}/>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
-                        <Image src={props.src} alt={"service-image"} className={"component-services-item-image"}
+                        <Image src={props.src} alt={"service-image"} className={"component-services-item-image responsive-hide-desktop"}
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row style-paragraph"}>
