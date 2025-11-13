@@ -12,6 +12,7 @@ type CoverProps = {
     title?: string;
     subtitle?: string;
     color?: string;
+    hasScrollBanner?: boolean;
 };
 
 export const Cover = (props: CoverProps) => {
@@ -22,7 +23,8 @@ export const Cover = (props: CoverProps) => {
         height,
         title = "",
         subtitle = "",
-        color =  "white"
+        color =  "white",
+        hasScrollBanner = false
     } = props;
 
     let colorStyle = "";
@@ -96,6 +98,16 @@ export const Cover = (props: CoverProps) => {
                         ))}
                     </div>
                 )}
+                {
+                    hasScrollBanner ?
+                        <div className={"element-cover-scroll-banner"} style={{
+                            left: align === "left" ? "100%" : "0",
+                            rotate: align === "left" ? "90deg" : "270deg"
+                        }}>
+                            SCROLL
+                        </div>
+                        : null
+                }
             </div>
         </div>
 

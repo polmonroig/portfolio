@@ -17,12 +17,14 @@ export default function Home() {
                    title={"Web Developer & \n Data Scientist"}
                    subtitle={"Specializing in architecting and building high-performance solutions, " +
                        "from scalable full-stack applications and real-time data dashboards to impactful machine learning models."}
-                   color={"white"}/>
+                   color={"white"}
+                   hasScrollBanner={true}/>
             <Cover src={"/images/cover-image-02.jpg"}
                    align="left"
                    height="80%"
                    title={"Crafting intuitive \n interfaces that \n resonate with users"}
-                   color={"black"}/>
+                   color={"black"}
+                   hasScrollBanner={true}/>
             <Services/>
             <About/>
             <Projects/>
