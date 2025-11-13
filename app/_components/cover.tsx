@@ -103,7 +103,7 @@ export const Cover = (props: CoverProps) => {
                         <div className={"element-cover-scroll-banner"} style={{
                             left: align === "left" ? "100%" : "0"
                         }}>
-                            <div className={"element-line-scroll-banner"}></div>
+                            <div className={"element-arrow-down"}></div>
                             <div>
                                 SCROLL
                             </div>
