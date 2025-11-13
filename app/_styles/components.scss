@@ -200,6 +200,7 @@
   gap: $gap-small;
   flex-wrap: wrap;
   justify-content: left;
+  max-width: $size-max-width;
 }
 .component-projects-grid {
   @extend .layout-grid;
