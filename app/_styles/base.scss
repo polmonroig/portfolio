@@ -120,9 +120,19 @@ html, body{
   color: $color-black-88;
   font-family: $font-inter;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 170%;
   letter-spacing: 0;
+}
+
+.style-paragraph-small{
+  color: $color-black-88;
+  font-family: $font-inter;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 170%;
+  letter-spacing: 0;
+
 }
 
 .style-caption{
