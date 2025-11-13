@@ -170,6 +170,7 @@
 .component-about-header{
   @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
   font-size: 20px;
+  gap: $gap-small;
 }
 
 .component-about-content{
