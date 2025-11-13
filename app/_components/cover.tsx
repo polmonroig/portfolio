@@ -101,10 +101,12 @@ export const Cover = (props: CoverProps) => {
                 {
                     hasScrollBanner ?
                         <div className={"element-cover-scroll-banner"} style={{
-                            left: align === "left" ? "100%" : "0",
-                            rotate: align === "left" ? "90deg" : "270deg"
+                            left: align === "left" ? "100%" : "0"
                         }}>
-                            SCROLL
+                            <div className={"element-line-scroll-banner"}></div>
+                            <div>
+                                SCROLL
+                            </div>
                         </div>
                         : null
                 }

@@ -28,9 +28,9 @@ export const About = () => {
             />
             <div className={"component-about"} style={{ position: 'relative', zIndex: 1 }}>
                 <div className={"component-about-header style-white"}>
-                    <div className={"element-line-medium"}></div>
+                    <div className={"element-line-large"}></div>
                     <div>Beyond the code</div>
-                    <div className={"element-line-medium"}></div>
+                    <div className={"element-line-large"}></div>
                 </div>
                 <div className={"component-about-content style-white"}>
                     My focus is on delivering real <br/>value, offering the professional <br/>assurance that your vision will<br/> be
