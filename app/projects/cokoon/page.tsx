@@ -6,14 +6,13 @@ export default function ProjectView() {
     return (
         <ProjectViewTemplate
             id={"cokoon"}
-            description={"Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space"}
+            description={"A sophisticated, full-featured anamorphic interactive THREE.js application meticulously crafted for NTT Cookon's Immersive Experience Space. This dynamic installation seamlessly blends real-time 3D graphics with user interaction, creating stunning visual illusions and engaging spatial experiences through advanced WebGL technology and custom shaders."}
             year={"2022"}
             client={"BCN Visuals Inc"}
             department={"Technology"}
-            location={"Los Angeles, CA"}
-        >
+            location={"Los Angeles, CA"} mockup={null}>
             <>
-    
+
             </>
         </ProjectViewTemplate>
     )

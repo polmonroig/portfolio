@@ -364,6 +364,7 @@ export const ProjectViewTemplate = (props: {
     client: string,
     department: string,
     location: string,
+    mockup: React.ReactNode,
     children: React.ReactNode
 }) => {
 
@@ -407,9 +408,12 @@ export const ProjectViewTemplate = (props: {
                         {props.description}
                     </div>
                 </div>
+                {props.mockup}
 
                 {/** Specific Content to project **/}
-                {props.children}
+                <div className={"component-project-view-children"}>
+                    {props.children}
+                </div>
 
                 {/** Footer **/}
                 <ButtonLink text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
