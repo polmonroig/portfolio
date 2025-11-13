@@ -1,4 +1,4 @@
-import {GithubIcon, LinkedinIcon} from "@/app/_components/icons";
+import {GithubIcon, HashNodeIcon, LinkedinIcon} from "@/app/_components/icons";
 import {ButtonLink} from "@/app/_components/elements";
 
 
@@ -29,6 +29,7 @@ export const Contact = () => {
                         <div className={"component-contact-icons"}>
                             <LinkedinIcon/>
                             <GithubIcon slug={""}/>
+                            <HashNodeIcon/>
                         </div>
                     </div>
 
