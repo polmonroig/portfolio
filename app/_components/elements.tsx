@@ -65,11 +65,14 @@ export const CardLarge = (props: {
     src: string
 }) => {
 
+    const titleLines = props.title.split('\n');
 
     return (
         <div className={"element-card-large"}>
             <div className={"element-card-texts style-h3 style-gradient-text style-align-center"}>
-                {props.title}
+                {titleLines.map((line, index) => (
+                    <span key={index}>{line}<br/></span>
+                ))}
             </div>
             <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614} height={1976}/>
         </div>

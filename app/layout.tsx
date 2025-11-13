@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Inter, Playfair} from "next/font/google";
+import {Inter, Playfair_Display} from "next/font/google";
 import './_styles/base.scss';
 import './_styles/components.scss';
 import './_styles/layout.scss';
@@ -10,7 +10,7 @@ import {AppBody, UmamiAnalytics} from "@/app/body";
 import React from "react";
 
 
-const playFairFont = Playfair({
+const playFairFont = Playfair_Display({
     variable: "--font-playfair",
     weight: "400"
 })

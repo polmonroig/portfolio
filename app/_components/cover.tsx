@@ -11,6 +11,7 @@ type CoverProps = {
     height: string;
     title?: string;
     subtitle?: string;
+    color?: string;
 };
 
 export const Cover = (props: CoverProps) => {
@@ -19,9 +20,22 @@ export const Cover = (props: CoverProps) => {
         align = 'center',
         opacity = 1,
         height,
-        title,
-        subtitle,
+        title = "",
+        subtitle = "",
+        color =  "white"
     } = props;
+
+    let colorStyle = "";
+    if(color === "white"){
+        colorStyle = "style-white";
+    }
+    else if(color === "black"){
+        colorStyle = "style-black";
+    }
+    else{
+        console.error("Invalid color value. Expected 'white' or 'black'.");
+        colorStyle = "style-white";
+    }
 
     const justify = ((): 'flex-start' | 'center' | 'flex-end' => {
         const a = align === 'middle' ? 'center' : align;
@@ -39,14 +53,14 @@ export const Cover = (props: CoverProps) => {
 
     const imageFilter = opacity < 1 ? `brightness(${opacity * 100}%)` : undefined;
 
+    const titleLines = title.split('\n');
+    const subtitleLines = subtitle.split('\n');
+
     return (
         <div
+            className={"element-cover"}
             style={{
-                position: 'relative',
-                width: '100%',
-                height: height,
-                backgroundColor: 'black',
-                overflow: 'hidden',
+                height: height
             }}
         >
             {/* Background image using next/image to leverage optimization and proper layout */}
@@ -56,39 +70,30 @@ export const Cover = (props: CoverProps) => {
                 aria-hidden
                 fill
                 sizes="100vw"
+                className="element-cover-background"
                 style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    filter: imageFilter,
-                    zIndex: 0,
+                    filter: imageFilter
                 }}
             />
             <div
+                className={"element-cover-content"}
                 style={{
-                    position: 'relative',
-                    zIndex: 1,
-                    maxWidth: '1424px',
-                    display: 'flex',
-                    flexDirection: 'column',
                     alignItems: justify === 'flex-start' ? 'flex-start' : justify === 'flex-end' ? 'flex-end' : 'center',
-                    justifyContent: 'center',
-                    width: '100%',
-                    height: '100%',
-                    padding: '0 0', // match $padding-sides from layout.scss
-                    boxSizing: 'border-box',
-                    textAlign: textAlign,
-                    margin: 'auto',
-                    gap: '20px',
+                    textAlign: textAlign
                 }}
             >
                 {title && (
-                    <h1 className="style-h1" style={{ color: '#FFFFFF', filter: 'none'}}>
-                        {title}
+                    <h1 className={"style-h1 " + colorStyle} style={{filter: 'none'}}>
+                        {titleLines.map((line, index) => (
+                            <span key={index}>{line}<br/></span>
+                        ))}
                     </h1>
                 )}
                 {subtitle && (
-                    <div className="style-h4-light" style={{ color: '#FFFFFF'}}>
-                        {subtitle}
+                    <div className={"style-h4-light " + colorStyle} >
+                        {subtitleLines.map((line, index) => (
+                            <span key={index}>{line}<br/></span>
+                        ))}
                     </div>
                 )}
             </div>

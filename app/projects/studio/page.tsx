@@ -59,7 +59,7 @@ export default function ProjectView() {
                     This delivers enhanced quality control and proactive issue resolution.
                 </Card>
 
-                <CardLarge title={"Comprehensive control for every aspect of cloud infrastructure."}
+                <CardLarge title={"Comprehensive control for \n every aspect of cloud infrastructure."}
                            src={"/projects/studio/bcn_studio_08.png"}/>
             </>
         </ProjectViewTemplate>

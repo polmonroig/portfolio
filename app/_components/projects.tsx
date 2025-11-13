@@ -19,8 +19,8 @@ export const projects: Project[] = [
     {
         id: "studio",
         title: "BCN Studio",
-        description: "Studio is a VFX cloud infrastructure management platform specifically designed to make the job for artists easier by decoupling the complexity behind a cloud architecture.",
-        header: "Centralized Cloud Infrastructure for VFX Production",
+        description: "BCN Studio: Centralized Cloud Infrastructure Platform for VFX Production Company",
+        header: "Centralized Cloud \n Infrastructure for VFX \n Production",
         tags: ["Web Development", "Data Visualization"],
         slug: "bcn_studio"
     },
@@ -248,8 +248,8 @@ const ProjectItem = ({project}: { project: Project }) => {
                        }}/>
             </div>
 
-            <div className={"style-paragraph"} style={{padding: "0 5px"}}>{description}</div>
-            <div className={"component-project-tags"} style={{padding: "0 5px"}}>
+            <div className={"style-paragraph"}>{description}</div>
+            <div className={"component-project-tags"}>
                 {
                     tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                 }
@@ -348,8 +348,8 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
     return (
         <>
             <Cover src={`/projects/${id}/cover-large.png`}
-                   align="center"
-                   height="40%"
+                   align="left"
+                   height="50%"
                    opacity={0.5}
                    title={selectedProject.header}/>
         </>

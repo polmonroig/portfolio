@@ -137,11 +137,12 @@
 }
 
 .component-services-item-inner-text{
-  @extend .layout-flex-col;
+  @extend .layout-flex-col, .layout-margin-y-auto;
   gap: $padding-medium;
 }
 
 .component-services-item-image{
+  height: 500px;
   max-height: 500px;
   max-width: 455px;
   box-shadow: 43px 47px 62.2px -12px rgba(0, 0, 0, 0.11);
@@ -194,11 +195,11 @@
   @extend .layout-flex-row;
   gap: $gap-small;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 .component-projects-grid {
   @extend .layout-grid;
-  gap: $padding-medium;
+  gap: $gap-small;
 }
 
 .component-projects-not-found{
