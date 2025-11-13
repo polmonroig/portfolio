@@ -27,7 +27,7 @@ export const Cover = (props: CoverProps) => {
         hasScrollBanner = false
     } = props;
 
-    let colorStyle = "";
+    let colorStyle;
     if(color === "white"){
         colorStyle = "style-white";
     }

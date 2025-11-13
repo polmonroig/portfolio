@@ -1,6 +1,4 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import {Card, CardLarge} from "@/app/_components/elements";
-import Image from "next/image";
 
 export default function ProjectView() {
     return (

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button, ButtonLink} from "@/app/_components/elements";
-import React, {JSX, useState} from "react";
+import React, {useState} from "react";
 
 type Project = {
     id: string;
