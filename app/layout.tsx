@@ -11,13 +11,11 @@ import React from "react";
 
 
 const playFairFont = Playfair_Display({
-    variable: "--font-playfair",
-    weight: "400"
+    variable: "--font-playfair"
 })
 
 const interFont = Inter({
-    variable: "--font-inter",
-    weight: "300"
+    variable: "--font-inter"
 })
 
 export const metadata: Metadata = {
