@@ -38,7 +38,7 @@ const ServiceItem = (props: {
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row style-paragraph-small"}>
-                                <div className={"layout-margin-y-auto"}>{props.number}</div>
+                                <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
                                     {props.title}
