@@ -34,6 +34,23 @@ export const projects: Project[] = [
         slug: "cokoon"
     },
     {
+        id: "aiart",
+        title: "Aiart",
+        description:
+            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. ",
+        header: "AI-Powered Art Analysis Platform",
+        tags: ["Web Development", "Machine Learning"],
+        slug: "aiart"
+    },
+    {
+        id: "dx",
+        title: "DX Performance Demo",
+        description: "Consultant on Borderlands THREE.js app",
+        header: "Optimizing Performance for Borderlands Web Experience",
+        tags: ["Web Development"],
+        slug: "dx_performance_demo"
+    },
+    {
         id: "genetic_brushes",
         title: "Genetic Brushes",
         description:
@@ -76,29 +93,12 @@ export const projects: Project[] = [
         slug: "web3d"
     },
     {
-        id: "dx",
-        title: "DX Performance Demo",
-        description: "Consultant on Borderlands THREE.js app",
-        header: "Optimizing Performance for Borderlands Web Experience",
-        tags: ["Web Development"],
-        slug: "dx_performance_demo"
-    },
-    {
         id: "timelines",
         title: "Timelines",
         description: "Consultant on projects task and Gantt timelines application",
         header: "Interactive Project Management Visualization",
         tags: ["Web Development"],
         slug: "timelines"
-    },
-    {
-        id: "aiart",
-        title: "Aiart",
-        description:
-            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. With aiart you can instantly obtain a detailed analysis of its composition balance and color harmony.",
-        header: "AI-Powered Art Analysis Platform",
-        tags: ["Web Development", "Machine Learning"],
-        slug: "aiart"
     },
     {
         id: "network_designer",
@@ -408,7 +408,9 @@ export const ProjectViewTemplate = (props: {
                         {props.description}
                     </div>
                 </div>
-                {props.mockup}
+                <div className={"layout-margin-x-auto"}>
+                    {props.mockup}
+                </div>
 
                 {/** Specific Content to project **/}
                 <div className={"component-project-view-children"}>
