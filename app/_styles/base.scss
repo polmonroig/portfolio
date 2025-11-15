@@ -8,6 +8,7 @@ $font-inter: Inter, sans;
 /** Color definition**/
 $color-black-88: #1F1F1F;
 $color-gray-dark: #353535;
+$color-gray: #959595;
 $color-gray-light: #F2F2F2;
 $color-gray-lighter: #DDDDDD;
 $color-white: #FFFFFF;
@@ -46,6 +47,9 @@ html, body{
   color: $color-white !important;
 }
 
+.style-gray{
+  color: $color-gray !important;
+}
 
 
 /** Header and text tags **/

@@ -379,25 +379,25 @@ export const ProjectViewTemplate = (props: {
                 {/** Project Content Highlight **/}
                 <div className={"component-project-view-content-header"}>
                     <div className={"layout-grid style-uppercase style-text-nowrap"} style={{gap: "8px"}}>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Year
                         </div>
                         <div>
                             {props.year}
                         </div>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Client
                         </div>
                         <div>
                             {props.client}
                         </div>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Department
                         </div>
                         <div>
                             {props.department}
                         </div>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Location
                         </div>
                         <div>
