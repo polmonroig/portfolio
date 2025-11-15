@@ -144,20 +144,22 @@
 }
 
 .element-arrow-down {
-  margin: auto 6px auto 0;
+  width: 70px;
+  height: 2px;
+  background-color: $color-white;
+  margin: auto 12px auto 0;
   position: relative;
-  transform: rotate(90deg);
 }
 
 .element-arrow-down:after {
   content: '';
   display: block;
-  width: 8px;
-  height: 8px;
-  border-top: 1px solid $color-white;
-  border-right: 1px solid $color-white;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid $color-white;
+  border-right: 2px solid $color-white;
   transform: rotate(225deg);
   position: absolute;
   left: 0;
-  bottom: -3.2px;
+  bottom: -4px;
 }

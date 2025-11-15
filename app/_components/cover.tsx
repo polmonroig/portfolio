@@ -1,7 +1,6 @@
 
 
 import Image from 'next/image';
-import {ArrowIcon} from "@/app/_components/icons";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
@@ -117,7 +116,7 @@ export const Cover = (props: CoverProps) => {
                         <div className={"element-cover-scroll-banner"} style={{
                             left: align === "left" ? "100%" : "0"
                         }}>
-                            <ArrowIcon/>
+                            <div className={"element-arrow-down"}></div>
                             <div>
                                 SCROLL
                             </div>
