@@ -250,6 +250,7 @@
   @extend .layout-flex-row, .layout-margin-x-auto;
   gap: $padding-medium;
   max-width: $size-max-width;
+  width: 100%;
 }
 
 /** Error pages Styling **/
