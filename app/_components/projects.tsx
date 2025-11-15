@@ -211,7 +211,7 @@ const ProjectTag = ({text, active, interactive, onClick}: {
     onClick?: () => void
 }) => {
 
-    let className = "element-tag trans";
+    let className = "element-tag";
     if (active) {
         className += " element-tag-active";
     }
@@ -351,7 +351,8 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
                    align="left"
                    height="50%"
                    opacity={0.5}
-                   title={selectedProject.header}/>
+                   title={selectedProject.header}
+                   tags={selectedProject.tags}/>
         </>
     )
 }

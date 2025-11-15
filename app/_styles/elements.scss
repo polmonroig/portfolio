@@ -54,6 +54,11 @@
   user-select: none;
 }
 
+.element-tag-white{
+  color: $color-white;
+  border-color: $color-white;
+}
+
 .element-tag-active{
   color: $color-gray-lighter;
   background-color: $color-gray-dark;
@@ -139,11 +144,9 @@
 }
 
 .element-arrow-down {
-  width: 70px;
-  height: 1px;
-  background-color: $color-white;
   margin: auto 6px auto 0;
   position: relative;
+  transform: rotate(90deg);
 }
 
 .element-arrow-down:after {

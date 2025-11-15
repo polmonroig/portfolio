@@ -1,6 +1,7 @@
 
 
 import Image from 'next/image';
+import {ArrowIcon} from "@/app/_components/icons";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
@@ -11,6 +12,7 @@ type CoverProps = {
     height: string;
     title?: string;
     subtitle?: string;
+    tags?: string[];
     color?: string;
     hasScrollBanner?: boolean;
 };
@@ -23,6 +25,7 @@ export const Cover = (props: CoverProps) => {
         height,
         title = "",
         subtitle = "",
+        tags = [],
         color =  "white",
         hasScrollBanner = false
     } = props;
@@ -99,11 +102,22 @@ export const Cover = (props: CoverProps) => {
                     </div>
                 )}
                 {
+                    tags.length > 0 && (
+                        <div className={"component-project-tags"}>
+                            {tags.map((tag, index) => (
+                                <div key={index} className={"element-tag element-tag-white"}>
+                                    {tag}
+                                </div>
+                            ))}
+                        </div>
+                    )
+                }
+                {
                     hasScrollBanner ?
                         <div className={"element-cover-scroll-banner"} style={{
                             left: align === "left" ? "100%" : "0"
                         }}>
-                            <div className={"element-arrow-down"}></div>
+                            <ArrowIcon/>
                             <div>
                                 SCROLL
                             </div>
