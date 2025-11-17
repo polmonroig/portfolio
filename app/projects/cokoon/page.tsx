@@ -24,6 +24,18 @@ export default function ProjectView() {
                     environment where visitors can naturally engage with the installation through various interaction
                     modalities.
                 </Card>
+
+                <Card
+                    src={"/projects/cokoon/anamorphic.png"}
+                    title={"Anamorphic Space"}
+                    side={"right"}
+                >
+                    Anamorphic display technology is a key feature of this installation, creating stunning visual
+                    illusions through precisely calculated distortions that appear correctly when viewed from specific
+                    angles. The implementation leverages advanced WebGL techniques and custom shader programming to
+                    achieve seamless perspective corrections and maintain visual fidelity across the curved display
+                    surface.
+                </Card>
             </>
         </ProjectViewTemplate>
     )

@@ -51,6 +51,14 @@ export const projects: Project[] = [
         slug: "dx_performance_demo"
     },
     {
+        id: "bayesian_model_builder",
+        title: "Bayesian Model Builder",
+        description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
+        header: "Automated Marketing Analytics Platform",
+        tags: ["Machine Learning"],
+        slug: "bayesian_model_builder"
+    },
+    {
         id: "genetic_brushes",
         title: "Genetic Brushes",
         description:
@@ -183,15 +191,6 @@ export const projects: Project[] = [
         header: "Interactive Telegram Survey System",
         tags: ["Algorithms"],
         slug: "telegram_quiz_bot"
-    },
-    {
-        id: "bayesian_model_builder",
-        title: "Bayesian Model Builder",
-        description:
-            "This is a bayesian code builder that generates stan code, that I built to simplify Media Mix Modeling, it has marketing concepts integrated such as adstock and diminishing returns, it is built with R on top of cmdstan which enables for state-of-art bayesian model.",
-        header: "Automated Marketing Analytics Platform",
-        tags: ["Machine Learning"],
-        slug: "bayesian_model_builder"
     },
     {
         id: "ratings_prediction",
