@@ -1,4 +1,5 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
+import {Card} from "@/app/_components/elements";
 
 export default function ProjectView() {
     return (
@@ -10,7 +11,19 @@ export default function ProjectView() {
             department={"Technology"}
             location={"Los Angeles, CA"} mockup={null}>
             <>
-
+                <Card
+                    src={"/projects/cokoon/kinect.png"}
+                    title={"Interactive Experience"}
+                    side={"left"}
+                >
+                    The Cokoon experience delivers a comprehensive interactive journey, seamlessly integrating
+                    touch-sensitive elements, full-body motion tracking through Kinect technology, and sophisticated
+                    environment detection systems.
+                    <br></br>
+                    This multi-layered approach creates an immersive and responsive
+                    environment where visitors can naturally engage with the installation through various interaction
+                    modalities.
+                </Card>
             </>
         </ProjectViewTemplate>
     )

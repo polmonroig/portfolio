@@ -29,7 +29,7 @@ export const projects: Project[] = [
         title: "Cokoon",
         description:
             "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
-        header: "Immersive \n 3D Experience \n Platform",
+        header: "Immersive \n Anamorphic \n Experience",
         tags: ["Web Development"],
         slug: "cokoon"
     },
@@ -112,7 +112,7 @@ export const projects: Project[] = [
         id: "baba_is_you",
         title: "Baba Is You",
         description: "Tribute to Baba is You game coded in C++ OpenGL",
-        header: "Logic Puzzle Game Recreation",
+        header: "Baba Is You \n Tribute",
         tags: ["Game Development"],
         slug: "baba_is_you"
     },
