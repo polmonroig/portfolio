@@ -29,7 +29,7 @@ export const projects: Project[] = [
         title: "Cokoon",
         description:
             "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
-        header: "Immersive 3D Experience Platform",
+        header: "Immersive \n 3D Experience \n Platform",
         tags: ["Web Development"],
         slug: "cokoon"
     },
