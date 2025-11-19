@@ -4,7 +4,7 @@
 .element-button{
   border-radius: calc(infinity * 1px);
   background-color: $color-gray-dark;
-  color: $color-white;
+  color: $color-gray-lighter;
   font-weight: 300;
   font-size: 14px;
   padding: $padding-small $gap-small;
@@ -13,22 +13,22 @@
 
 .element-line-small{
   width: 20px;
-  height: 2px;
+  height: 1px;
   background-color: $color-black-88;
   margin: auto 6px;
 }
 
-.element-line-medium{
+.element-line-large{
   width: 100px;
-  height: 2px;
+  height: 1px;
   background-color: $color-white;
   margin: auto 6px;
 }
 
 .element-line-full{
   width: 100%;
-  height: 2px;
-  background-image: linear-gradient(to right, #7C7C7C, black 70%);
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(124, 124, 124, 0.7), rgba(0, 0, 0, 0.11));
   margin: auto 6px;
 }
 
@@ -47,14 +47,28 @@
 
 .element-tag{
   @extend .style-caption;
-  padding: 2px 8px;
+  padding: 1px 10px;
   border-radius: 19px;
+  color: $color-gray-dark;
   border: 1.06px solid $color-gray-dark;
+  user-select: none;
+}
+
+.element-tag-white{
+  color: $color-white;
+  border-color: $color-white;
 }
 
 .element-tag-active{
-  color: $color-white-broken;
+  color: $color-gray-lighter;
   background-color: $color-gray-dark;
+}
+
+.element-tag-active:after{
+  display: inline-block;
+  margin-left: 5.28px;
+  font-size: 16.89px;
+  content: "\00d7"; /* This will render the 'X' */
 }
 
 .element-tag-interactive{
@@ -89,4 +103,63 @@
 .element-card-text{
   @extend .layout-flex-col, .layout-margin-y-auto;
   gap: $padding-small;
+}
+
+.element-cover{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.element-cover-background{
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.element-cover-content{
+  @extend .layout-flex-col;
+  position: relative;
+  z-index: 1;
+  max-width: $size-max-width;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  gap: 20px;
+}
+
+.element-cover-scroll-banner {
+  @extend .layout-flex-row;
+  color: $color-white;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 0;
+  transform: rotate(270deg);
+  transform-origin: left;
+}
+
+.element-arrow-down {
+  width: 70px;
+  height: 2px;
+  background-color: $color-white;
+  margin: auto 12px auto 0;
+  position: relative;
+}
+
+.element-arrow-down:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid $color-white;
+  border-right: 2px solid $color-white;
+  transform: rotate(225deg);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
 }

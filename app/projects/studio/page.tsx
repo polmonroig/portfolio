@@ -11,14 +11,14 @@ export default function ProjectView() {
             client={"BCN Visuals Inc"}
             department={"Technology"}
             location={"Los Angeles, CA"}
+            mockup={<Image src={"/projects/studio/mockup-04.png"} alt={"mockup"} width={3856} height={1940}/>}
         >
             <>
-                <Image src={"/projects/studio/mockup-04.png"} alt={"mockup"} width={3856} height={1940}/>
                 <div className={"layout-flex-col-small"}>
                     <div className={"style-h5 style-align-center"}>
                         Value Driven KPIs
                     </div>
-                    <div className={"style-h1 style-align-center"}>
+                    <div className={"style-h3 style-align-center"}>
                         Reduction in idle compute <br/>
                         Increased project turnaround time <br/>
                         Operational visibility and risk mitigation
@@ -59,7 +59,7 @@ export default function ProjectView() {
                     This delivers enhanced quality control and proactive issue resolution.
                 </Card>
 
-                <CardLarge title={"Comprehensive control for every aspect of cloud infrastructure."}
+                <CardLarge title={"Comprehensive control for \n every aspect of cloud infrastructure."}
                            src={"/projects/studio/bcn_studio_08.png"}/>
             </>
         </ProjectViewTemplate>

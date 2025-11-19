@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button, ButtonLink} from "@/app/_components/elements";
-import React, {JSX, useState} from "react";
+import React, {useState} from "react";
 
 type Project = {
     id: string;
@@ -19,8 +19,8 @@ export const projects: Project[] = [
     {
         id: "studio",
         title: "BCN Studio",
-        description: "Studio is a VFX cloud infrastructure management platform specifically designed to make the job for artists easier by decoupling the complexity behind a cloud architecture.",
-        header: "Centralized Cloud Infrastructure for VFX Production",
+        description: "BCN Studio: Centralized Cloud Infrastructure Platform for VFX Production Company",
+        header: "Centralized Cloud \n Infrastructure for VFX \n Production",
         tags: ["Web Development", "Data Visualization"],
         slug: "bcn_studio"
     },
@@ -29,9 +29,34 @@ export const projects: Project[] = [
         title: "Cokoon",
         description:
             "Full-fetched anamorphic interactive THREE.js app designed for NTT Cookon Inmesirve Experience Space",
-        header: "Immersive 3D Experience Platform",
+        header: "Immersive \n Anamorphic \n Experience",
         tags: ["Web Development"],
         slug: "cokoon"
+    },
+    {
+        id: "aiart",
+        title: "Aiart",
+        description:
+            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. ",
+        header: "AI-Powered Art Analysis Platform",
+        tags: ["Web Development", "Machine Learning"],
+        slug: "aiart"
+    },
+    {
+        id: "dx",
+        title: "DX Performance Demo",
+        description: "Consultant on Borderlands THREE.js app",
+        header: "Optimizing Performance for Borderlands Web Experience",
+        tags: ["Web Development"],
+        slug: "dx_performance_demo"
+    },
+    {
+        id: "bayesian_model_builder",
+        title: "Bayesian Model Builder",
+        description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
+        header: "Automated Marketing Analytics Platform",
+        tags: ["Machine Learning"],
+        slug: "bayesian_model_builder"
     },
     {
         id: "genetic_brushes",
@@ -76,29 +101,12 @@ export const projects: Project[] = [
         slug: "web3d"
     },
     {
-        id: "dx",
-        title: "DX Performance Demo",
-        description: "Consultant on Borderlands THREE.js app",
-        header: "Optimizing Performance for Borderlands Web Experience",
-        tags: ["Web Development"],
-        slug: "dx_performance_demo"
-    },
-    {
         id: "timelines",
         title: "Timelines",
         description: "Consultant on projects task and Gantt timelines application",
         header: "Interactive Project Management Visualization",
         tags: ["Web Development"],
         slug: "timelines"
-    },
-    {
-        id: "aiart",
-        title: "Aiart",
-        description:
-            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. With aiart you can instantly obtain a detailed analysis of its composition balance and color harmony.",
-        header: "AI-Powered Art Analysis Platform",
-        tags: ["Web Development", "Machine Learning"],
-        slug: "aiart"
     },
     {
         id: "network_designer",
@@ -112,7 +120,7 @@ export const projects: Project[] = [
         id: "baba_is_you",
         title: "Baba Is You",
         description: "Tribute to Baba is You game coded in C++ OpenGL",
-        header: "Logic Puzzle Game Recreation",
+        header: "Baba Is You \n Tribute",
         tags: ["Game Development"],
         slug: "baba_is_you"
     },
@@ -185,15 +193,6 @@ export const projects: Project[] = [
         slug: "telegram_quiz_bot"
     },
     {
-        id: "bayesian_model_builder",
-        title: "Bayesian Model Builder",
-        description:
-            "This is a bayesian code builder that generates stan code, that I built to simplify Media Mix Modeling, it has marketing concepts integrated such as adstock and diminishing returns, it is built with R on top of cmdstan which enables for state-of-art bayesian model.",
-        header: "Automated Marketing Analytics Platform",
-        tags: ["Machine Learning"],
-        slug: "bayesian_model_builder"
-    },
-    {
         id: "ratings_prediction",
         title: "Ratings Prediction",
         description: "This projects is a webapp connected to an API that estimates rating star ratings using machine learning",
@@ -211,7 +210,7 @@ const ProjectTag = ({text, active, interactive, onClick}: {
     onClick?: () => void
 }) => {
 
-    let className = "element-tag trans";
+    let className = "element-tag";
     if (active) {
         className += " element-tag-active";
     }
@@ -248,8 +247,8 @@ const ProjectItem = ({project}: { project: Project }) => {
                        }}/>
             </div>
 
-            <div className={"style-paragraph"} style={{padding: "0 5px"}}>{description}</div>
-            <div className={"component-project-tags"} style={{padding: "0 5px"}}>
+            <div className={"style-paragraph"}>{description}</div>
+            <div className={"component-project-tags"}>
                 {
                     tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                 }
@@ -348,10 +347,11 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
     return (
         <>
             <Cover src={`/projects/${id}/cover-large.png`}
-                   align="center"
-                   height="40%"
+                   align="left"
+                   height="50%"
                    opacity={0.5}
-                   title={selectedProject.header}/>
+                   title={selectedProject.header}
+                   tags={selectedProject.tags}/>
         </>
     )
 }
@@ -364,6 +364,7 @@ export const ProjectViewTemplate = (props: {
     client: string,
     department: string,
     location: string,
+    mockup: React.ReactNode,
     children: React.ReactNode
 }) => {
 
@@ -377,39 +378,44 @@ export const ProjectViewTemplate = (props: {
             <div className="component-project-view-content">
                 {/** Project Content Highlight **/}
                 <div className={"component-project-view-content-header"}>
-                    <div className={"layout-grid style-uppercase"}>
-                        <div className={"style-caption"}>
+                    <div className={"layout-grid style-uppercase style-text-nowrap"} style={{gap: "8px"}}>
+                        <div className={"style-caption style-gray"}>
                             Year
                         </div>
                         <div>
                             {props.year}
                         </div>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Client
                         </div>
                         <div>
                             {props.client}
                         </div>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Department
                         </div>
                         <div>
                             {props.department}
                         </div>
-                        <div className={"style-caption"}>
+                        <div className={"style-caption style-gray"}>
                             Location
                         </div>
                         <div>
                             {props.location}
                         </div>
                     </div>
-                    <div className={"style-paragraph"}>
+                    <div className={"style-paragraph"} style={{maxWidth: "516px", marginLeft: "auto"}}>
                         {props.description}
                     </div>
                 </div>
+                <div className={"layout-margin-x-auto"}>
+                    {props.mockup}
+                </div>
 
                 {/** Specific Content to project **/}
-                {props.children}
+                <div className={"component-project-view-children"}>
+                    {props.children}
+                </div>
 
                 {/** Footer **/}
                 <ButtonLink text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>

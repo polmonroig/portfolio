@@ -16,8 +16,8 @@ const ServiceItem = (props: {
                 props.side === "left" ?
                     <div className={"component-services-item-inner"}>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph"}>
-                                <div className={"layout-margin-y-auto"}>{props.number}</div>
+                            <div className={"layout-flex-row style-paragraph-small"}>
+                                <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
                                     {props.title}
@@ -37,8 +37,8 @@ const ServiceItem = (props: {
                         <Image src={props.src} alt={"service-image"} className={"component-services-item-image responsive-hide-desktop"}
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph"}>
-                                <div className={"layout-margin-y-auto"}>{props.number}</div>
+                            <div className={"layout-flex-row style-paragraph-small"}>
+                                <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
                                     {props.title}
