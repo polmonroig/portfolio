@@ -5,6 +5,7 @@ import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button, ButtonLink} from "@/app/_components/elements";
 import React, {useState} from "react";
+import {motion} from "motion/react";
 
 type Project = {
     id: string;
@@ -213,8 +214,7 @@ const ProjectTag = ({text, active, interactive, onClick}: {
     let className = "element-tag";
     if (active) {
         className += " element-tag-active";
-    }
-    else if(interactive) {
+    } else if (interactive) {
         className += " element-tag-inactive";
     }
     if (interactive) {
@@ -239,15 +239,22 @@ const ProjectItem = ({project}: { project: Project }) => {
     return (
         <Link className={"component-project-item"} href={`/projects/${id}`}>
             <div className={"overflow-hidden"}>
-                <Image src={src} alt={title}
-                       width={coverWidth}
-                       height={coverHeight}
-                       className={"transition-zoom-out transform-scale"}
-                       style={{
-                           objectFit: "cover",
-                           width: coverWidth,
-                           height: coverHeight
-                       }}/>
+                <motion.div
+                    whileHover={{
+                        scale: 1.1,
+                        transition: {duration: 0.5}
+                    }} transition={{duration: 0.2}}>
+                    <Image src={src} alt={title}
+                           width={coverWidth}
+                           height={coverHeight}
+                           className={""}
+                           style={{
+                               objectFit: "cover",
+                               width: coverWidth,
+                               height: coverHeight
+                           }}/>
+
+                </motion.div>
             </div>
 
             <div className={"style-paragraph"}>{description}</div>
