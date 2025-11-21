@@ -34,7 +34,7 @@
 
 
 .element-section-header{
-  @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
+  @extend .style-h2-italic, .layout-flex-row, .layout-margin-x-auto;
   width: $size-max-width;
   max-width: $size-max-width;
   height: 48px;

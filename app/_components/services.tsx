@@ -25,7 +25,7 @@ const ServiceItem = (props: {
                             </div>
                             <ul>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h3"}>{service}</li>
+                                    <li key={index} className={"style-h2"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
@@ -46,7 +46,7 @@ const ServiceItem = (props: {
                             </div>
                             <ul>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h3"}>{service}</li>
+                                    <li key={index} className={"style-h2"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
