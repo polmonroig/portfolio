@@ -11,10 +11,6 @@ export default function ProjectView() {
             department={"Technology"}
             location={"Los Angeles, CA"} mockup={null}>
             <>
-                <video width="1920" height="1080" controls preload="none" poster="/projects/baba_is_you/video-placeholder.png">
-                    <source src="/projects/baba_is_you/demo.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
             </>
         </ProjectViewTemplate>
     )
