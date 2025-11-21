@@ -26,7 +26,7 @@ export const Contact = () => {
 
                         <div className={"style-paragraph"}>
                             contact@pol.company<br/>
-                            +34 617004358
+                            +34 617 00 43 58
                         </div>
                         <div>
                             {
