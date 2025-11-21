@@ -31,14 +31,14 @@
 }
 
 .component-navbar-header{
-  width: 100%;
   position: fixed;
+  width: 100%;
+  display: flex;
   z-index: 10;
 }
 
 .component-navbar{
   @extend .layout-flex-row;
-  width: 470px;
   height: 50px;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4);
