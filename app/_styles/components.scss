@@ -111,6 +111,25 @@
 }
 
 
+.component-contact-form{
+  @extend .layout-flex-col, .layout-margin-x-auto, .style-paragraph;
+  gap: $gap-small;
+
+}
+
+
+.component-contact-input{
+  @extend .transition-shadow;
+  border-radius: 8px;
+  border: 1px solid $color-black-88;
+  padding: $padding-small;
+}
+
+.component-contact-input:hover, .component-contact-input:focus{
+  box-shadow: 0 4px 4px rgba(12, 12, 12, 0.5);
+  outline: none;
+}
+
 /** Home Styling **/
 .component-home{
   background-color: $color-black-88;

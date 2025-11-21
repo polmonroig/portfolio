@@ -1,10 +1,15 @@
+'use client';
+
 import {GithubIcon, HashNodeIcon, LinkedinIcon} from "@/app/_components/icons";
-import {ButtonLink} from "@/app/_components/elements";
+import {Button, ButtonLink} from "@/app/_components/elements";
+import {useState} from "react";
 
 
 export const Contact = () => {
 
     const currentYear = new Date().getFullYear();
+
+    const [formOpen, setFormOpen] = useState(false);
 
     return (
         <div id={"contact"}>
@@ -24,8 +29,23 @@ export const Contact = () => {
                             +34 617004358
                         </div>
                         <div>
-                            <ButtonLink text={"Write message"} href={"mailto:hello@pol.company?subject=Hey Pol, I'd like to hire you"}/>
+                            {
+                                formOpen ? (
+                                    <form className={"component-contact-form"}>
+                                        <input className={"component-contact-input"} type="text" placeholder="Name*"/>
+                                        <input className={"component-contact-input"} type="email" placeholder="Email*"/>
+                                        <textarea className={"component-contact-input"} placeholder="Message"></textarea>
+                                        <div>
+                                            <button className={"element-button"} type="submit">Send message</button>
+                                        </div>
+                                    </form>
+
+                                ) : (
+                                    <Button text={"Write message"} onClick={() => setFormOpen(true)}/>
+                                )
+                            }
                         </div>
+
                         <div className={"component-contact-icons"}>
                             <LinkedinIcon/>
                             <GithubIcon slug={""}/>
