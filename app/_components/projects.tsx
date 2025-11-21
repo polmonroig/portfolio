@@ -239,7 +239,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                 <Image src={src} alt={title}
                        width={coverWidth}
                        height={coverHeight}
-                       className={"transition-zoom-in transform-scale"}
+                       className={"transition-zoom-out transform-scale"}
                        style={{
                            objectFit: "cover",
                            width: coverWidth,

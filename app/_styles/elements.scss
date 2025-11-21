@@ -37,12 +37,14 @@
   @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
   width: $size-max-width;
   max-width: $size-max-width;
+  height: 48px;
   gap: 22px;
   white-space: nowrap;
 }
 
 .element-section-title{
   @extend .style-gradient-text;
+  padding-right: 4px;
 }
 
 .element-tag{
