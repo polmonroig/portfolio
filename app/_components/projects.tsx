@@ -324,7 +324,10 @@ export const Projects = () => {
 
                 {
                     tagList.length > activeTags.length ?
-                        <Button text={"View more projects"} onClick={() => setActiveTags(tagList)}/>
+                        <div style={{margin: "60px auto 0 auto"}}>
+                            <Button text={"View more projects"}
+                                    onClick={() => setActiveTags(tagList)}/>
+                        </div>
                         : null
                 }
             </div>
