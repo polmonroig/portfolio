@@ -214,6 +214,9 @@ const ProjectTag = ({text, active, interactive, onClick}: {
     if (active) {
         className += " element-tag-active";
     }
+    else if(interactive) {
+        className += " element-tag-inactive";
+    }
     if (interactive) {
         className += " element-tag-interactive";
     }

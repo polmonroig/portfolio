@@ -66,6 +66,15 @@
   background-color: $color-gray-dark;
 }
 
+
+.element-tag-inactive:after{
+  display: inline-block;
+  margin-left: 5.28px;
+  font-size: 16.89px;
+  content: "\00d7"; /* This will render the 'X' */
+  color: white;
+}
+
 .element-tag-active:after{
   display: inline-block;
   margin-left: 5.28px;
