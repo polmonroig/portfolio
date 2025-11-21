@@ -243,7 +243,6 @@
 .component-project-view-children{
   @extend .layout-flex-col, .layout-margin-x-auto;
   background-color: $color-white-broken;
-  padding: $padding-large 0;
   gap: $padding-large;
   max-width: $size-max-width;
 }

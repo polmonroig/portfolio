@@ -15,8 +15,8 @@ export default function Home() {
                    align="right"
                    height="80%"
                    title={"Web Developer & \n Data Scientist"}
-                   subtitle={"Specializing in architecting and building high-performance solutions, " +
-                       "from scalable full-stack applications and real-time data dashboards to impactful machine learning models."}
+                   subtitle={"Specializing in architecting and building high-performance \n solutions, " +
+                       "from scalable full-stack applications and real-time \n data dashboards to impactful machine learning models."}
                    color={"white"}
                    hasScrollBanner={true}/>
             <Cover src={"/images/cover-image-02.jpg"}

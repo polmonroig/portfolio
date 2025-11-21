@@ -94,7 +94,7 @@ export const Cover = (props: CoverProps) => {
                     </h1>
                 )}
                 {subtitle && (
-                    <div className={"style-h4-light " + colorStyle} >
+                    <div className={"style-h5-light " + colorStyle}>
                         {subtitleLines.map((line, index) => (
                             <span key={index}>{line}<br/></span>
                         ))}
