@@ -38,10 +38,12 @@
 
 .component-navbar{
   @extend .layout-flex-row;
-  width: 467px;
+  width: 470px;
   height: 50px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 99999px;
   gap: $gap-medium;
   margin: 15px auto 0 auto;
@@ -213,7 +215,7 @@
 }
 
 .component-project-item{
-  @extend .layout-flex-col, .layout-margin-x-auto, .transition-opacity;
+  @extend .layout-flex-col, .layout-margin-x-auto;
   gap: $padding-small;
   max-width: 455px;
 }
