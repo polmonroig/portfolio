@@ -10,7 +10,8 @@ export const Contact = () => {
     const currentYear = new Date().getFullYear();
 
     const [formOpen, setFormOpen] = useState(false);
-    const [result, setResult] = useState<boolean>(false);
+    const [submitResult, setSubmitResult] = useState<boolean>(false);
+    const [submitted, setSubmitted] = useState(false);
 
     const submitForm = async (formData: FormData) => {
         formData.append("access_key", "502d8b4c-17cc-4dde-b379-38a3421313b7");
@@ -21,7 +22,8 @@ export const Contact = () => {
         });
 
         const data = await response.json();
-        setResult(data.success);
+        setSubmitResult(data.success);
+        setSubmitted(true);
     }
 
     return (
@@ -43,6 +45,14 @@ export const Contact = () => {
                         </div>
                         <div>
                             {
+                                submitted ?
+                                    <div>
+                                        {
+                                            submitResult ? <div> Thank you for your message! I'll get in touch as soon as possible.</div>
+                                                : <div> Sorry there was an error submitting your message, please try again later or send me an email.</div>
+                                        }
+                                    </div>
+                                    :
                                 formOpen ? (
                                     <form className={"component-contact-form"} action={submitForm}>
                                         <input name="name" className={"component-contact-input"} type="text"
