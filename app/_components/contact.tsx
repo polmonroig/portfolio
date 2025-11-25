@@ -5,6 +5,21 @@ import {Button} from "@/app/_components/elements";
 import {useState} from "react";
 
 
+const HoverPopup = ({text = "", children}: { text?: string, children: React.ReactNode }) => {
+
+    const [hover, setHover] = useState(false);
+
+
+    return (
+        <div className={"element-hover-popup"} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+            {children}
+            <div className={"element-hover-popup-text"} style={{display: hover ? "block" : "none"}}>
+                {text}
+            </div>
+        </div>
+    )
+}
+
 export const Contact = () => {
 
     const currentYear = new Date().getFullYear();
@@ -48,27 +63,32 @@ export const Contact = () => {
                                 submitted ?
                                     <div>
                                         {
-                                            submitResult ? <div> Thank you for your message! I'll get in touch as soon as possible.</div>
-                                                : <div> Sorry there was an error submitting your message, please try again later or send me an email.</div>
+                                            submitResult ?
+                                                <div> Thank you for your message! I'll get in touch as soon as
+                                                    possible.</div>
+                                                :
+                                                <div> Sorry there was an error submitting your message, please try again
+                                                    later or send me an email.</div>
                                         }
                                     </div>
                                     :
-                                formOpen ? (
-                                    <form className={"component-contact-form"} action={submitForm}>
-                                        <input name="name" className={"component-contact-input"} type="text"
-                                               placeholder="Name*" required={true}/>
-                                        <input name="email" className={"component-contact-input"} type="email"
-                                               placeholder="Email*" required={true}/>
-                                        <textarea name="message" className={"component-contact-input"}
-                                                  placeholder="Message" style={{height: 200, minHeight: 200}}></textarea>
-                                        <div>
-                                            <button className={"element-button"} type="submit">Send message</button>
-                                        </div>
-                                    </form>
+                                    formOpen ? (
+                                        <form className={"component-contact-form"} action={submitForm}>
+                                            <input name="name" className={"component-contact-input"} type="text"
+                                                   placeholder="Name*" required={true}/>
+                                            <input name="email" className={"component-contact-input"} type="email"
+                                                   placeholder="Email*" required={true}/>
+                                            <textarea name="message" className={"component-contact-input"}
+                                                      placeholder="Message"
+                                                      style={{height: 200, minHeight: 200}}></textarea>
+                                            <div>
+                                                <button className={"element-button"} type="submit">Send message</button>
+                                            </div>
+                                        </form>
 
-                                ) : (
-                                    <Button text={"Write message"} onClick={() => setFormOpen(true)}/>
-                                )
+                                    ) : (
+                                        <Button text={"Write message"} onClick={() => setFormOpen(true)}/>
+                                    )
                             }
                         </div>
 

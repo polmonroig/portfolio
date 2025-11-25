@@ -175,3 +175,20 @@
   left: 0;
   bottom: -4px;
 }
+
+.element-hover-popup{
+  position: relative;
+}
+
+.element-hover-popup-text{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: calc(infinity * 1px);
+  background-color: $color-gray-dark;
+  color: $color-gray-lighter;
+  font-weight: 300;
+  font-size: 14px;
+  padding: $padding-small $gap-small;
+  cursor: pointer;
+}
