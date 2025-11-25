@@ -19,21 +19,20 @@ const ServiceItem = (props: {
 
     useGSAP(() => {
 
-
+        // service lines animations
         let servicesListSplit = SplitText.create('.animation-text-line', {
             type: 'lines',
         })
 
-
         gsap.from(
-            servicesListSplit.lines,
+            [".animation-title", servicesListSplit.lines],
             {
                 duration: 1,
                 stagger: 0.05,
                 autoAlpha: 0,
                 y: 100,
                 scrollTrigger: {
-                    start: 'top center',
+                    start: 'top 80%',
                     trigger: containerRef.current,
                     toggleActions: 'play none none none',
                     markers: true
@@ -49,10 +48,10 @@ const ServiceItem = (props: {
                 props.side === "left" ?
                     <div className={"component-services-item-inner"}>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small"}>
+                            <div className={"layout-flex-row style-paragraph-small animation-title"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto animation-text-line"}>
+                                <div className={"layout-margin-y-auto"}>
                                     {props.title}
                                 </div>
                             </div>
@@ -73,7 +72,7 @@ const ServiceItem = (props: {
                             <div className={"layout-flex-row style-paragraph-small"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto animation-text-line"}>
+                                <div className={"layout-margin-y-auto"}>
                                     {props.title}
                                 </div>
                             </div>
