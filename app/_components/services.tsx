@@ -16,7 +16,6 @@ const ServiceItem = (props: {
     const containerRef = useRef(null);
 
 
-
     useGSAP(() => {
 
         // service lines animations
@@ -39,6 +38,37 @@ const ServiceItem = (props: {
                 },
             }
         )
+
+        gsap.from(
+            ".animation-image-right",
+            {
+                x: 100,
+                duration: 1,
+                autoAlpha: 0,
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none',
+                    markers: true
+                },
+            }
+        )
+
+        gsap.from(
+            ".animation-image-left",
+            {
+                x: -100,
+                duration: 1,
+                autoAlpha: 0,
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none',
+                    markers: true
+                },
+            }
+        )
+
     }, {scope: containerRef})
 
 
@@ -61,15 +91,17 @@ const ServiceItem = (props: {
                                 ))}
                             </ul>
                         </div>
-                        <Image src={props.src} alt={"service-image"} className={"component-services-item-image responsive-hide-desktop"}
+                        <Image src={props.src} alt={"service-image"}
+                               className={"component-services-item-image responsive-hide-desktop animation-image-right"}
                                width={imageWidth} height={imageHeight}/>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
-                        <Image src={props.src} alt={"service-image"} className={"component-services-item-image responsive-hide-desktop"}
+                        <Image src={props.src} alt={"service-image"}
+                               className={"component-services-item-image responsive-hide-desktop animation-image-left"}
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small"}>
+                            <div className={"layout-flex-row style-paragraph-small animationt-title"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
