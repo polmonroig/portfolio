@@ -38,24 +38,14 @@ const ServiceItem = (props: {
             }
         )
 
-        gsap.from(
-            ".animation-image-right",
-            {
-                x: 100,
-                duration: 1,
-                autoAlpha: 0,
-                scrollTrigger: {
-                    start: 'top 80%',
-                    trigger: containerRef.current,
-                    toggleActions: 'play none none none'
-                },
-            }
-        )
+
+        let animatedImageSide = `.animation-image-${props.side}`;
+
 
         gsap.from(
-            ".animation-image-left",
+            animatedImageSide,
             {
-                x: -100,
+                x: props.side === "left" ? 100 : -100,
                 duration: 1,
                 autoAlpha: 0,
                 scrollTrigger: {
@@ -67,7 +57,7 @@ const ServiceItem = (props: {
         )
 
         gsap.to(
-            [".animation-image-left", ".animation-image-right"],
+            animatedImageSide,
             {
                 y: -20,
                 duration: 2,
@@ -102,13 +92,13 @@ const ServiceItem = (props: {
                             </ul>
                         </div>
                         <Image src={props.src} alt={"service-image"}
-                               className={"component-services-item-image responsive-hide-desktop animation-image-right"}
+                               className={"component-services-item-image responsive-hide-desktop animation-image-left"}
                                width={imageWidth} height={imageHeight}/>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
                         <Image src={props.src} alt={"service-image"}
-                               className={"component-services-item-image responsive-hide-desktop animation-image-left"}
+                               className={"component-services-item-image responsive-hide-desktop animation-image-right"}
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row style-paragraph-small animation-title"}>

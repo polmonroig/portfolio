@@ -43,7 +43,8 @@ export const NavBar = () => {
             text: {
                 value: onNameHover ? "Pol Company" : "P.",
                 speed: 2
-            }
+            },
+            ease: "ease.out",
         })
     }, [onNameHover])
 

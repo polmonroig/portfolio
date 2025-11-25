@@ -56,8 +56,10 @@ const AnimatedIntro = (props : {onComplete: () => void}) => {
                 opacity: 0,
                 y: -90,
                 duration: 1.5,
-                stagger: 0.01,
-                from: "random",
+                stagger: {
+                    amount: 0.05,
+                    from: "center"
+                },
                 ease: "bounce.out"
             });
 
