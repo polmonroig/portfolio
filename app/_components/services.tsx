@@ -66,6 +66,23 @@ const ServiceItem = (props: {
             }
         )
 
+        gsap.to(
+            [".animation-image-left", ".animation-image-right"],
+            {
+                y: -20,
+                duration: 2,
+                delay: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top bottom",
+                    toggleActions: 'play pause play pause'
+                }
+            }
+        )
+
     }, {scope: containerRef})
 
 
