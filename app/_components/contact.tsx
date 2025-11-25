@@ -11,6 +11,10 @@ export const Contact = () => {
 
     const [formOpen, setFormOpen] = useState(false);
 
+    const submitForm = () => {
+        alert("Form submitted");
+    }
+
     return (
         <div id={"contact"}>
             <div  className={"component-contact"}>
@@ -31,9 +35,9 @@ export const Contact = () => {
                         <div>
                             {
                                 formOpen ? (
-                                    <form className={"component-contact-form"}>
-                                        <input className={"component-contact-input"} type="text" placeholder="Name*"/>
-                                        <input className={"component-contact-input"} type="email" placeholder="Email*"/>
+                                    <form className={"component-contact-form"} action={submitForm}>
+                                        <input className={"component-contact-input"} type="text" placeholder="Name*" required={true}/>
+                                        <input className={"component-contact-input"} type="email" placeholder="Email*" required={true}/>
                                         <textarea className={"component-contact-input"} placeholder="Message"></textarea>
                                         <div>
                                             <button className={"element-button"} type="submit">Send message</button>
