@@ -60,7 +60,7 @@ export const Contact = () => {
                                         <input name="email" className={"component-contact-input"} type="email"
                                                placeholder="Email*" required={true}/>
                                         <textarea name="message" className={"component-contact-input"}
-                                                  placeholder="Message" style={{height: 200}}></textarea>
+                                                  placeholder="Message" style={{height: 200, minHeight: 200}}></textarea>
                                         <div>
                                             <button className={"element-button"} type="submit">Send message</button>
                                         </div>

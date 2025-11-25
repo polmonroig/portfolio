@@ -78,7 +78,7 @@ export const Cover = (props: CoverProps) => {
         });
 
         gsap.from(
-            [textCharsSplit.chars, textLinesSplit.lines],
+            [textCharsSplit.chars, textLinesSplit.lines, ".element-tag"],
             {
                 y: 100,
                 duration: 1,
