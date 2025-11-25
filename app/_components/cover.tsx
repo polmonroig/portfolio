@@ -1,6 +1,10 @@
 
 
 import Image from 'next/image';
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
+import {useRef} from "react";
+import {SplitText} from "gsap/SplitText";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
@@ -60,8 +64,38 @@ export const Cover = (props: CoverProps) => {
     const titleLines = title.split('\n');
     const subtitleLines = subtitle.split('\n');
 
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+
+
+        let textCharsSplit = SplitText.create('.animation-text-chars', {
+            type: 'chars',
+        });
+
+        let textLinesSplit =  SplitText.create('.animation-text-lines', {
+            type: 'lines',
+        });
+
+        gsap.from(
+            [textCharsSplit.chars, textLinesSplit.lines],
+            {
+                y: 100,
+                duration: 1,
+                autoAlpha: 0,
+                stagger: 0.02,
+                scrollTrigger: {
+                    start: 'top 50%',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none'
+                },
+            }
+        )
+    }, {scope: containerRef})
+
     return (
         <div
+            ref={containerRef}
             className={"element-cover"}
             style={{
                 height: height
@@ -89,14 +123,14 @@ export const Cover = (props: CoverProps) => {
                 {title && (
                     <h1 className={"style-h1 " + colorStyle} style={{filter: 'none'}}>
                         {titleLines.map((line, index) => (
-                            <span key={index}>{line}<br/></span>
+                            <span key={index} className={"animation-text-chars"}>{line}<br/></span>
                         ))}
                     </h1>
                 )}
                 {subtitle && (
                     <div className={"style-h5-light " + colorStyle}>
                         {subtitleLines.map((line, index) => (
-                            <span key={index}>{line}<br/></span>
+                            <span key={index} className={"animation-text-lines"}>{line}<br/></span>
                         ))}
                     </div>
                 )}

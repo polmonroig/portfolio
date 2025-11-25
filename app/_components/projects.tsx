@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button, ButtonLink} from "@/app/_components/elements";
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
 
 type Project = {
     id: string;
@@ -281,6 +283,27 @@ export const Projects = () => {
     }
 
 
+    useGSAP(() => {
+
+
+        gsap.from(
+            ".component-project-item",
+            {
+                y: 100,
+                duration: 2,
+                stagger: {
+                    each: 0.1
+                },
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: ".component-projects",
+                    toggleActions: 'play none none none'
+                }
+            }
+        )
+    });
+
+
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
@@ -314,7 +337,7 @@ export const Projects = () => {
                             {
                                 filteredProjects.map((project: Project) => {
                                     return (
-                                        <ProjectItem key={project.id} project={project}/>
+                                        <ProjectItem key={project.id} project={project} />
                                     )
                                 })
                             }

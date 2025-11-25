@@ -14,6 +14,7 @@ export default function Home() {
             <Cover src={"/images/cover-image-01.png"}
                    align="right"
                    height="80%"
+                   opacity={0.3}
                    title={"Web Developer & \n Data Scientist"}
                    subtitle={"Specializing in architecting and building high-performance \n solutions, " +
                        "from scalable full-stack applications and real-time \n data dashboards to impactful machine learning models."}

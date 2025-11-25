@@ -98,7 +98,7 @@ const ServiceItem = (props: {
                                className={"component-services-item-image responsive-hide-desktop animation-image-left"}
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small animationt-title"}>
+                            <div className={"layout-flex-row style-paragraph-small animation-title"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
