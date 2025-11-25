@@ -75,11 +75,7 @@ const ServiceItem = (props: {
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut",
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top bottom",
-                    toggleActions: 'play pause play pause'
-                }
+                boxShadow: "43px 47px 62.2px -12px rgba(0, 0, 0, 0.05)"
             }
         )
 
