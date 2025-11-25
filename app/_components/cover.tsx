@@ -208,7 +208,7 @@ export const Cover = (props: CoverProps) => {
             <div
                 className={"element-cover-content"}
                 style={{
-                    alignItems: justify === 'flex-start' ? 'flex-start' : justify === 'flex-end' ? 'flex-end' : 'center',
+                    alignItems: showText ? (justify === 'flex-start' ? 'flex-start' : justify === 'flex-end' ? 'flex-end' : 'center') : '',
                     textAlign: textAlign
                 }}
             >
