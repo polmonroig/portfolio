@@ -5,7 +5,6 @@ import {usePathname} from 'next/navigation'
 import {useState} from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
-import {SplitText} from "gsap/SplitText";
 
 
 const NavbarItem = (props: {

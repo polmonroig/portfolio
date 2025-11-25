@@ -1,7 +1,7 @@
 'use client';
 
 import {GithubIcon, HashNodeIcon, LinkedinIcon} from "@/app/_components/icons";
-import {Button, ButtonLink} from "@/app/_components/elements";
+import {Button} from "@/app/_components/elements";
 import {useState} from "react";
 
 
