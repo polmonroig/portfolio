@@ -289,10 +289,11 @@ export const Projects = () => {
         gsap.from(
             ".component-project-item",
             {
-                y: 100,
-                duration: 2,
+                y: 200,
+                opacity: 0,
+                duration: 1,
                 stagger: {
-                    each: 0.1
+                    each: 0.2
                 },
                 scrollTrigger: {
                     start: 'top 80%',
