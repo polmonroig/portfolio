@@ -291,13 +291,8 @@
 /** Animated intro **/
 .component-animated-intro{
   font-family: $font-inter;
-  position: absolute;
   font-weight: bold;
-  top: 15%;
-  left: 35%;
+  text-align: center;
   color: $color-white-broken;
   font-size: 100px;
-  padding: $padding-large 0;
-  gap: $padding-large;
-  z-index: 9;
 }

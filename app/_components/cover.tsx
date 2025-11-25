@@ -5,8 +5,97 @@ import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {useRef} from "react";
 import {SplitText} from "gsap/SplitText";
+import  {useState} from "react";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
+
+
+const AnimatedIntro = (props : {onComplete: () => void}) => {
+
+    useGSAP(() => {
+        // define series of steps in timeline
+        const timeline = gsap.timeline({
+            onComplete: props.onComplete
+        });
+
+        const elementClass = ".component-animated-intro";
+        let split = SplitText.create(elementClass, { type: "chars" });
+        let chars = split.chars;
+
+        // initial lift animations on the placeholder char(s)
+        timeline.to(
+            chars,
+            {
+                y: -100,
+                duration: 0.5,
+                ease: "ease.out"
+            }
+        );
+
+        timeline.to(
+            chars,
+            {
+                y: -90,
+                duration: 0.1
+            }
+        );
+
+        // Replace typing effect with wave-style character-by-character reveal
+        timeline.add(() => {
+            // revert previous split to avoid nested spans
+            split.revert();
+            const el = document.querySelector(elementClass) as HTMLElement | null;
+            if (!el) return;
+            el.textContent = "POL COMPANY";
+            // re-split the new text into characters
+            split = SplitText.create(elementClass, { type: "chars" });
+            chars = split.chars;
+
+            // set initial state for wave reveal
+            gsap.from(chars, {
+                opacity: 0,
+                y: -90,
+                duration: 1.5,
+                stagger: 0.01,
+                from: "random",
+                ease: "bounce.out"
+            });
+
+
+            //Keep scale animations applied to the current chars
+            timeline.to(
+                elementClass,
+                {
+                    delay: 1.5,
+                    scale: 4,
+                    ease: "ease.out"
+                }
+            );
+
+            timeline.to(
+                elementClass,
+                {
+                    scale: 2,
+                    duration: 1.5,
+                    ease: "elastic.out(1,0.5)"
+                }
+            );
+
+            timeline.to(
+                elementClass,
+                {
+                    x: -4000
+                }
+            )
+        });
+    })
+
+    return (
+        <div className={"component-animated-intro"} >
+            .
+        </div>
+    );
+}
 
 type CoverProps = {
     src: string;
@@ -18,6 +107,7 @@ type CoverProps = {
     tags?: string[];
     color?: string;
     hasScrollBanner?: boolean;
+    intro?: boolean;
 };
 
 export const Cover = (props: CoverProps) => {
@@ -30,7 +120,8 @@ export const Cover = (props: CoverProps) => {
         subtitle = "",
         tags = [],
         color =  "white",
-        hasScrollBanner = false
+        hasScrollBanner = false,
+        intro = false
     } = props;
 
     let colorStyle;
@@ -65,6 +156,7 @@ export const Cover = (props: CoverProps) => {
     const subtitleLines = subtitle.split('\n');
 
     const containerRef = useRef(null);
+    const [showText, setShowText] = useState(!intro);
 
     useGSAP(() => {
 
@@ -91,7 +183,7 @@ export const Cover = (props: CoverProps) => {
                 },
             }
         )
-    }, {scope: containerRef})
+    },{dependencies: [showText], scope: containerRef})
 
     return (
         <div
@@ -120,14 +212,19 @@ export const Cover = (props: CoverProps) => {
                     textAlign: textAlign
                 }}
             >
-                {title && (
+
+                {!showText && (
+                    <AnimatedIntro onComplete={() => setShowText(true)}/>
+                )}
+
+                {(title && showText) && (
                     <h1 className={"style-h1 " + colorStyle} style={{filter: 'none'}}>
                         {titleLines.map((line, index) => (
                             <span key={index} className={"animation-text-chars"}>{line}<br/></span>
                         ))}
                     </h1>
                 )}
-                {subtitle && (
+                {(subtitle && showText) && (
                     <div className={"style-h5-light " + colorStyle}>
                         {subtitleLines.map((line, index) => (
                             <span key={index} className={"animation-text-lines"}>{line}<br/></span>
