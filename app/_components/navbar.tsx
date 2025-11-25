@@ -41,8 +41,10 @@ export const NavBar = () => {
 
     useGSAP(() => {
         gsap.to(".component-navbar-logo", {
-            duration: 0.4,
-            text: onNameHover ? "Pol Company" : "P."
+            text: {
+                value: onNameHover ? "Pol Company" : "P.",
+                speed: 2
+            }
         })
     }, [onNameHover])
 
