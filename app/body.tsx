@@ -34,8 +34,6 @@ export const AppBody = ({
                     toggleActions: 'play none none none',
                     markers: true
                 },
-                // If you want to animate the text content itself, set
-                // text: "Your target text here"
             }
         )
     })

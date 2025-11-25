@@ -40,7 +40,7 @@ const ServiceItem = (props: {
                             <div className={"layout-flex-row style-paragraph-small"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto"}>
+                                <div className={"layout-margin-y-auto animation-service-title"}>
                                     {props.title}
                                 </div>
                             </div>

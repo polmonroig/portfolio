@@ -10,14 +10,23 @@ export const Contact = () => {
     const currentYear = new Date().getFullYear();
 
     const [formOpen, setFormOpen] = useState(false);
+    const [result, setResult] = useState<boolean>(false);
 
-    const submitForm = () => {
-        alert("Form submitted");
+    const submitForm = async (formData: FormData) => {
+        formData.append("access_key", "502d8b4c-17cc-4dde-b379-38a3421313b7");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        setResult(data.success);
     }
 
     return (
         <div id={"contact"}>
-            <div  className={"component-contact"}>
+            <div className={"component-contact"}>
                 <div className={"component-contact-inner"}>
                     <div className={"style-h3 style-gradient-text"}>
                         Ready to start your project?
@@ -36,9 +45,12 @@ export const Contact = () => {
                             {
                                 formOpen ? (
                                     <form className={"component-contact-form"} action={submitForm}>
-                                        <input className={"component-contact-input"} type="text" placeholder="Name*" required={true}/>
-                                        <input className={"component-contact-input"} type="email" placeholder="Email*" required={true}/>
-                                        <textarea className={"component-contact-input"} placeholder="Message"></textarea>
+                                        <input name="name" className={"component-contact-input"} type="text"
+                                               placeholder="Name*" required={true}/>
+                                        <input name="email" className={"component-contact-input"} type="email"
+                                               placeholder="Email*" required={true}/>
+                                        <textarea name="message" className={"component-contact-input"}
+                                                  placeholder="Message"></textarea>
                                         <div>
                                             <button className={"element-button"} type="submit">Send message</button>
                                         </div>
