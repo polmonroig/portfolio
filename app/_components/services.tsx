@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import {useGSAP} from "@gsap/react";
+import {SplitText} from "gsap/SplitText";
+import gsap from "gsap";
+import {useRef} from "react";
 
 const ServiceItem = (props: {
     number: string, title: string, serviceList: string[],
@@ -9,9 +13,38 @@ const ServiceItem = (props: {
     const imageWidth: number = 500;
     const imageHeight: number = 455;
 
+    const containerRef = useRef(null);
+
+
+
+    useGSAP(() => {
+
+
+        let servicesListSplit = SplitText.create('.animation-text-line', {
+            type: 'lines',
+        })
+
+
+        gsap.from(
+            servicesListSplit.lines,
+            {
+                duration: 1,
+                stagger: 0.05,
+                autoAlpha: 0,
+                y: 100,
+                scrollTrigger: {
+                    start: 'top center',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none',
+                    markers: true
+                },
+            }
+        )
+    }, {scope: containerRef})
+
 
     return (
-        <div className={"component-services-item"}>
+        <div className={"component-services-item"} ref={containerRef}>
             {
                 props.side === "left" ?
                     <div className={"component-services-item-inner"}>
@@ -19,13 +52,13 @@ const ServiceItem = (props: {
                             <div className={"layout-flex-row style-paragraph-small"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto animation-service-title"}>
+                                <div className={"layout-margin-y-auto animation-text-line"}>
                                     {props.title}
                                 </div>
                             </div>
                             <ul>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h2"}>{service}</li>
+                                    <li key={index} className={"style-h2 animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
@@ -40,13 +73,13 @@ const ServiceItem = (props: {
                             <div className={"layout-flex-row style-paragraph-small"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto animation-service-title"}>
+                                <div className={"layout-margin-y-auto animation-text-line"}>
                                     {props.title}
                                 </div>
                             </div>
                             <ul>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h2"}>{service}</li>
+                                    <li key={index} className={"style-h2 animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>

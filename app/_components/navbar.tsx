@@ -3,6 +3,9 @@ import {useScroll} from "@/app/_components/hooks";
 import Link from "next/link";
 import {usePathname} from 'next/navigation'
 import {useState} from "react";
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
+
 
 const NavbarItem = (props: {
     text: string,
@@ -35,15 +38,23 @@ export const NavBar = () => {
         logoClassName += ' component-navbar-dark';
     }
 
-    let nameText: string = "P.";
-    if(onNameHover) {
-        nameText = "Pol Company";
-    }
+    useGSAP(() => {
+        // animation on hover
+        gsap.to(".component-navbar-logo", {
+            duration: 2,
+            text: "Pol Company",
+            paused: true,
+            onStart: () => setOnNameHover(true),
+            onReverseComplete: () => setOnNameHover(false)
+        }).reversed(!onNameHover)
+    })
 
+    let nameText: string = "P.";
     return (
         <header className={"component-navbar-header"}>
             <div className="component-navbar">
-                <NavbarItem text={nameText} slug={"/"} className={logoClassName} onMouseEnter={() => setOnNameHover(true)}
+                <NavbarItem text={nameText} slug={"/"} className={logoClassName}
+                            onMouseEnter={() => setOnNameHover(true)}
                             onMouseLeave={() => setOnNameHover(false)}/>
                 <div className={"component-navbar-item-list"}>
                     <NavbarItem text={"services"} slug={"/#services"} className={linkClassName}/>

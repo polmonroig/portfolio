@@ -14,31 +14,6 @@ export const AppBody = ({
                         }: Readonly<{
     children: React.ReactNode;
 }>) => {
-
-    useGSAP(() => {
-
-        let split = SplitText.create('.animation-service-title', {
-            type: 'words'
-        })
-
-        gsap.from(
-            split.words,
-            {
-                duration: 1,
-                stagger: 0.05,
-                autoAlpha: 0,
-                y: 100,
-                scrollTrigger: {
-                    start: 'top center+=100',
-                    trigger: '.animation-service-title',
-                    toggleActions: 'play none none none',
-                    markers: true
-                },
-            }
-        )
-    })
-
-
     return (
         <div className={"style-app-body"}>
             <NavBar/>
