@@ -5,6 +5,7 @@ import {usePathname} from 'next/navigation'
 import {useState} from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
+import {SplitText} from "gsap/SplitText";
 
 
 const NavbarItem = (props: {
@@ -39,15 +40,11 @@ export const NavBar = () => {
     }
 
     useGSAP(() => {
-        // animation on hover
         gsap.to(".component-navbar-logo", {
-            duration: 2,
-            text: "Pol Company",
-            paused: true,
-            onStart: () => setOnNameHover(true),
-            onReverseComplete: () => setOnNameHover(false)
-        }).reversed(!onNameHover)
-    })
+            duration: 0.4,
+            text: onNameHover ? "Pol Company" : "P."
+        })
+    }, [onNameHover])
 
     let nameText: string = "P.";
     return (
