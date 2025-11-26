@@ -37,7 +37,7 @@ export const Button = (props: { text: string, onClick: () => void }) => {
         scope: buttonRef
     });
 
-    const onMouseInteraction = (hovering: boolean, event: MouseEvent) => {
+    const onMouseInteraction = (hovering: boolean, event: React.MouseEvent) => {
         setHovering(hovering);
         const button = buttonRef.current;
         if(button){
