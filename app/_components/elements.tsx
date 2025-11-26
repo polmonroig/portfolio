@@ -40,9 +40,11 @@ export const Button = (props: { text: string, onClick: () => void }) => {
     const onMouseInteraction = (hovering: boolean, event: MouseEvent) => {
         setHovering(hovering);
         const button = buttonRef.current;
-        const bounds = button.getBoundingClientRect();
-        setXPos(event.clientX - bounds.left);
-        setYPos(event.clientY - bounds.top);
+        if(button){
+            const bounds = button.getBoundingClientRect();
+            setXPos(event.clientX - bounds.left);
+            setYPos(event.clientY - bounds.top);
+        }
     }
 
 
