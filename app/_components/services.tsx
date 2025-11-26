@@ -92,13 +92,13 @@ const ServiceItem = (props: {
                             </ul>
                         </div>
                         <Image src={props.src} alt={"service-image"}
-                               className={"component-services-item-image responsive-hide-desktop animation-image-left"}
+                               className={"component-services-item-image animation-image-left"}
                                width={imageWidth} height={imageHeight}/>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
                         <Image src={props.src} alt={"service-image"}
-                               className={"component-services-item-image responsive-hide-desktop animation-image-right"}
+                               className={"component-services-item-image animation-image-right"}
                                width={imageWidth} height={imageHeight}/>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row style-paragraph-small animation-title"}>

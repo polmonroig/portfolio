@@ -29,6 +29,12 @@ $breakpoint-mobile: 480px;
     justify-content: center;
   }
 
+  .component-services-item-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 
 
