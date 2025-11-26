@@ -1,10 +1,81 @@
-import React from "react";
+'use client'
+
+import React, {useRef} from "react";
+import {useState} from "react";
 import Image from 'next/image';
+import {useGSAP} from "@gsap/react";
+import gsap from 'gsap';
 
 export const Button = (props: { text: string, onClick: () => void }) => {
+
+    const [isHovering, setHovering] = useState(false);
+    const [xPos, setXPos] = useState(0);
+    const [yPos, setYPos] = useState(0);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+
+    useGSAP(() => {
+        const fillClass = ".animation-button-fill";
+
+        gsap.set(fillClass, {
+            left: xPos,
+            top: yPos,
+        });
+
+        gsap.to(fillClass, {
+            scale: isHovering ? 1 : 0,
+            duration: 0.5,
+            ease: isHovering ? "power1.in" : "power1.out"
+        });
+
+        gsap.to(buttonRef.current, {
+            duration: 0.5,
+            color: "#1F1F1F",
+            ease: isHovering ? "power1.in" : "power1.out"
+        })
+
+
+    }, {
+        dependencies: [isHovering],
+        scope: buttonRef
+    });
+
+    const onMouseInteraction = (hovering: boolean, event: MouseEvent) => {
+        setHovering(hovering);
+        const button = buttonRef.current;
+        const bounds = button.getBoundingClientRect();
+        setXPos(event.clientX - bounds.left);
+        setYPos(event.clientY - bounds.top);
+    }
+
+
     return (
-        <button className={"element-button layout-margin-x-auto"} onClick={props.onClick}>
-            {props.text}
+        <button
+            ref={buttonRef}
+            onMouseEnter={(e) => onMouseInteraction(true, e)}
+            onMouseLeave={(e) => onMouseInteraction(false, e)}
+            onClick={props.onClick}
+            className={"element-button layout-margin-x-auto"}
+            style={{
+                position: 'relative',
+                overflow: 'hidden',
+            } as React.CSSProperties}
+        >
+            <span
+                className={"animation-button-fill"}
+                style={{
+                    top: 0,
+                    left: 0,
+                    position: 'absolute',
+                    transform: 'translate(-50%, -50%) scale(0)',
+                    width: '300px',
+                    height: '300px',
+                    background: '#F6F6F6',
+                    borderRadius: '50%',
+                    pointerEvents: 'none'
+                }}/>
+            <span>
+                {props.text}
+            </span>
         </button>
     )
 }
@@ -74,7 +145,8 @@ export const CardLarge = (props: {
                     <span key={index}>{line}<br/></span>
                 ))}
             </div>
-            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614} height={1976}/>
+            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
+                   height={1976}/>
         </div>
     )
 }
