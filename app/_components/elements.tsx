@@ -15,21 +15,19 @@ export const Button = (props: { text: string, onClick: () => void }) => {
 
     useGSAP(() => {
         const fillClass = ".animation-button-fill";
-
-        gsap.set(fillClass, {
-            left: xPos,
-            top: yPos,
-        });
+        const textClass = ".animation-button-text";
 
         gsap.to(fillClass, {
+            left: xPos,
+            top: yPos,
             scale: isHovering ? 1 : 0,
-            duration: 0.5,
+            duration: 0.25,
             ease: isHovering ? "power1.in" : "power1.out"
         });
 
-        gsap.to(buttonRef.current, {
-            duration: 0.5,
-            color: "#1F1F1F",
+        gsap.to(textClass, {
+            duration: 0.25,
+            color: isHovering ? "#353535" : "#DDDDDD",
             ease: isHovering ? "power1.in" : "power1.out"
         })
 
@@ -71,9 +69,10 @@ export const Button = (props: { text: string, onClick: () => void }) => {
                     height: '300px',
                     background: '#F6F6F6',
                     borderRadius: '50%',
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    zIndex: 3
                 }}/>
-            <span>
+            <span className={"animation-button-text"} style={{zIndex: 5, position: "relative"}}>
                 {props.text}
             </span>
         </button>
