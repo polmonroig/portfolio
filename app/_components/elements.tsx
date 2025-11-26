@@ -14,8 +14,8 @@ export const Button = (props: { text: string, onClick: () => void }) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
 
     useGSAP(() => {
-        const fillClass = ".animation-button-fill";
-        const textClass = ".animation-button-text";
+        const fillClass = ".element-button-fill";
+        const textClass = ".element-button-text";
 
         gsap.to(fillClass, {
             left: xPos,
@@ -53,26 +53,10 @@ export const Button = (props: { text: string, onClick: () => void }) => {
             onMouseLeave={(e) => onMouseInteraction(false, e)}
             onClick={props.onClick}
             className={"element-button layout-margin-x-auto"}
-            style={{
-                position: 'relative',
-                overflow: 'hidden',
-            } as React.CSSProperties}
         >
             <span
-                className={"animation-button-fill"}
-                style={{
-                    top: 0,
-                    left: 0,
-                    position: 'absolute',
-                    transform: 'translate(-50%, -50%) scale(0)',
-                    width: '400px',
-                    height: '400px',
-                    background: '#F6F6F6',
-                    borderRadius: '50%',
-                    pointerEvents: 'none',
-                    zIndex: 3
-                }}/>
-            <span className={"animation-button-text"} style={{zIndex: 5, position: "relative"}}>
+                className={"element-button-fill"}/>
+            <span className={"element-button-text"}>
                 {props.text}
             </span>
         </button>

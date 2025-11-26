@@ -10,6 +10,26 @@
   font-size: 14px;
   padding: $padding-small $gap-small;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.element-button-fill{
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  width: 400px;
+  height: 400px;
+  background: #F6F6F6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.element-button-text{
+  z-index: 5;
+  position: relative;
 }
 
 .element-line-small{
