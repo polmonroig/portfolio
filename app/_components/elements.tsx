@@ -6,12 +6,18 @@ import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import gsap from 'gsap';
 
-export const Button = (props: { text: string, onClick?: () => void, href?: string, type?: string}) => {
+export const Button = (props: {
+    text: string,
+    onClick?: () => void,
+    href?: string,
+    type?: 'button' | 'submit' | 'reset'
+}) => {
 
     const [isHovering, setHovering] = useState(false);
     const [xPos, setXPos] = useState(0);
     const [yPos, setYPos] = useState(0);
-    const buttonRef = useRef<HTMLButtonElement|HTMLAnchorElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const anchorRef = useRef<HTMLAnchorElement>(null);
 
     useGSAP(() => {
         const fillClass = ".element-button-fill";
@@ -34,23 +40,23 @@ export const Button = (props: { text: string, onClick?: () => void, href?: strin
 
     }, {
         dependencies: [isHovering],
-        scope: buttonRef
+        scope: props.href ? anchorRef : buttonRef
     });
 
     const onMouseInteraction = (hovering: boolean, event: React.MouseEvent) => {
         setHovering(hovering);
-        const button = buttonRef.current;
-        if(button){
+        const button = props.href ? anchorRef.current : buttonRef.current;
+        if (button) {
             const bounds = button.getBoundingClientRect();
             setXPos(event.clientX - bounds.left);
             setYPos(event.clientY - bounds.top);
         }
     }
 
-    if(props.href){
-        return(
+    if (props.href) {
+        return (
             <a
-                ref={buttonRef}
+                ref={anchorRef}
                 href={props.href}
                 onMouseEnter={(e) => onMouseInteraction(true, e)}
                 onMouseLeave={(e) => onMouseInteraction(false, e)}
@@ -62,12 +68,10 @@ export const Button = (props: { text: string, onClick?: () => void, href?: strin
                 </span>
             </a>
         )
-    }
-    else{
-        return(
+    } else {
+        return (
             <button
                 ref={buttonRef}
-                href={props.href}
                 onMouseEnter={(e) => onMouseInteraction(true, e)}
                 onMouseLeave={(e) => onMouseInteraction(false, e)}
                 onClick={props.onClick}
