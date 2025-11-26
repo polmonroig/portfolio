@@ -4,6 +4,7 @@
 .element-button{
   border-radius: calc(infinity * 1px);
   background-color: $color-gray-dark;
+  border: 1px solid $color-gray-dark;
   color: $color-gray-lighter;
   font-weight: 300;
   font-size: 14px;
