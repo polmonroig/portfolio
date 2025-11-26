@@ -82,7 +82,7 @@ export const Contact = () => {
                                                       placeholder="Message"
                                                       style={{height: 200, minHeight: 200}}></textarea>
                                             <div>
-                                                <button className={"element-button"} type="submit">Send message</button>
+                                                <Button text={"Send message"} type="submit"/>
                                             </div>
                                         </form>
 

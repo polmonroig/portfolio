@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
-import {Button, ButtonLink} from "@/app/_components/elements";
+import {Button} from "@/app/_components/elements";
 import React, {useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
@@ -448,7 +448,7 @@ export const ProjectViewTemplate = (props: {
                 </div>
 
                 {/** Footer **/}
-                <ButtonLink text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
+                <Button text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
             </div>
         </>
     )
