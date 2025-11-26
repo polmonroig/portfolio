@@ -5,8 +5,48 @@ import {useState} from "react";
 import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import gsap from 'gsap';
+import Link from "next/link";
 
-export const Button = (props: { text: string, onClick: () => void }) => {
+const ButtonLinkWrapper = (props: {
+    ref,
+    onMouseEnter: (e: React.MouseEvent) => void,
+    onMouseLeave: (e: React.MouseEvent) => void,
+    onClick?: () => void,
+    href?: string,
+    type?: string,
+    children?: React.ReactNode
+}) => {
+
+    if(props.href){
+        return(
+            <a ref={props.ref}
+                onMouseEnter={props.onMouseEnter}
+                onMouseLeave={props.onMouseLeave}
+                href={props.href}
+                className={"element-button layout-margin-x-auto"}
+            >
+                {props.children}
+            </a>
+        )
+    }
+    else{
+        return(
+            <button
+                ref={props.ref}
+                onMouseEnter={props.onMouseEnter}
+                onMouseLeave={props.onMouseLeave}
+                onClick={props.onClick}
+                className={"element-button layout-margin-x-auto"}
+                type={props.type}
+            >
+                {props.children}
+            </button>
+        )
+    }
+
+}
+
+export const Button = (props: { text: string, onClick?: () => void, href?: string, type?: string}) => {
 
     const [isHovering, setHovering] = useState(false);
     const [xPos, setXPos] = useState(0);
@@ -49,29 +89,23 @@ export const Button = (props: { text: string, onClick: () => void }) => {
 
 
     return (
-        <button
+        <ButtonLinkWrapper
             ref={buttonRef}
+            href={props.href}
             onMouseEnter={(e) => onMouseInteraction(true, e)}
             onMouseLeave={(e) => onMouseInteraction(false, e)}
             onClick={props.onClick}
-            className={"element-button layout-margin-x-auto"}
+            type={props.type}
         >
             <span
                 className={"element-button-fill"}/>
             <span className={"element-button-text"}>
                 {props.text}
             </span>
-        </button>
+        </ButtonLinkWrapper>
     )
 }
 
-export const ButtonLink = (props: { text: string, href: string }) => {
-    return (
-        <a className={"element-button layout-margin-x-auto cursor-pointer"} href={props.href}>
-            {props.text}
-        </a>
-    )
-}
 
 export const Card = (props: {
     title: string,
