@@ -2,9 +2,6 @@
 import {useScroll} from "@/app/_components/hooks";
 import Link from "next/link";
 import {usePathname} from 'next/navigation'
-import {useState} from "react";
-import gsap from "gsap";
-import {useGSAP} from "@gsap/react";
 
 
 const NavbarItem = (props: {
@@ -25,7 +22,6 @@ const NavbarItem = (props: {
 }
 export const NavBar = () => {
 
-    const [onNameHover, setOnNameHover] = useState<boolean>(false);
 
 
     const scrollRelativePosition = useScroll();
@@ -38,23 +34,12 @@ export const NavBar = () => {
         logoClassName += ' component-navbar-dark';
     }
 
-    useGSAP(() => {
-        gsap.to(".component-navbar-logo", {
-            text: {
-                value: onNameHover ? "Pol Company" : "P.",
-                speed: 2
-            },
-            ease: "ease.out",
-        })
-    }, [onNameHover])
 
     let nameText: string = "P.";
     return (
         <header className={"component-navbar-header"}>
             <div className="component-navbar">
-                <NavbarItem text={nameText} slug={"/"} className={logoClassName}
-                            onMouseEnter={() => setOnNameHover(true)}
-                            onMouseLeave={() => setOnNameHover(false)}/>
+                <NavbarItem text={nameText} slug={"/"} className={logoClassName}/>
                 <div className={"component-navbar-item-list"}>
                     <NavbarItem text={"services"} slug={"/#services"} className={linkClassName}/>
                     <NavbarItem text={"projects"} slug={"/#projects"} className={linkClassName}/>

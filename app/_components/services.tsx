@@ -29,6 +29,7 @@ const ServiceItem = (props: {
                 duration: 1,
                 stagger: 0.05,
                 autoAlpha: 0,
+                ease: "power3.out",
                 y: 100,
                 scrollTrigger: {
                     start: 'top 80%',

@@ -20,14 +20,13 @@ export default function Home() {
                    subtitle={"Specializing in architecting and building high-performance \n solutions, " +
                        "from scalable full-stack applications and real-time \n data dashboards to impactful machine learning models."}
                    color={"white"}
-                   hasScrollBanner={true}
-                   intro={true}/>
+                   hasScrollBanner={false}/>
             <Cover src={"/images/cover-image-02.jpg"}
                    align="left"
                    height="80%"
                    title={"Crafting intuitive \n interfaces that \n resonate with users"}
                    color={"black"}
-                   hasScrollBanner={true}/>
+                   hasScrollBanner={false}/>
             <Services/>
             <About/>
             <Projects/>

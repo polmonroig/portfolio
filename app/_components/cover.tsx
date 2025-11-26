@@ -110,6 +110,7 @@ type CoverProps = {
     color?: string;
     hasScrollBanner?: boolean;
     intro?: boolean;
+    animationTextSplit?: "chars" | "lines";
 };
 
 export const Cover = (props: CoverProps) => {
@@ -123,7 +124,8 @@ export const Cover = (props: CoverProps) => {
         tags = [],
         color =  "white",
         hasScrollBanner = false,
-        intro = false
+        intro = false,
+        animationTextSplit = "chars"
     } = props;
 
     let colorStyle;
@@ -164,19 +166,21 @@ export const Cover = (props: CoverProps) => {
 
 
         let textCharsSplit = SplitText.create('.animation-text-chars', {
-            type: 'chars',
+            type: animationTextSplit,
         });
 
         let textLinesSplit =  SplitText.create('.animation-text-lines', {
             type: 'lines',
         });
+        console.log(textCharsSplit);
 
         gsap.from(
-            [textCharsSplit.chars, textLinesSplit.lines, ".element-tag"],
+            [textCharsSplit[animationTextSplit], textLinesSplit.lines, ".element-tag"],
             {
                 y: 100,
                 duration: 1,
                 autoAlpha: 0,
+                ease: "power3.out",
                 stagger: 0.02,
                 scrollTrigger: {
                     start: 'top 50%',

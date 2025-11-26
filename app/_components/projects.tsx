@@ -215,8 +215,7 @@ const ProjectTag = ({text, active, interactive, onClick}: {
     let className = "element-tag";
     if (active) {
         className += " element-tag-active";
-    }
-    else if(interactive) {
+    } else if (interactive) {
         className += " element-tag-inactive";
     }
     if (interactive) {
@@ -338,7 +337,7 @@ export const Projects = () => {
                             {
                                 filteredProjects.map((project: Project) => {
                                     return (
-                                        <ProjectItem key={project.id} project={project} />
+                                        <ProjectItem key={project.id} project={project}/>
                                     )
                                 })
                             }
@@ -381,7 +380,8 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
                    height="50%"
                    opacity={0.5}
                    title={selectedProject.header}
-                   tags={selectedProject.tags}/>
+                   tags={selectedProject.tags}
+                   animationTextSplit={"lines"}/>
         </>
     )
 }
