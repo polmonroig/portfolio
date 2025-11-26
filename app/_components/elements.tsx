@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {useState} from "react";
 import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
@@ -21,12 +21,12 @@ export const Button = (props: { text: string, onClick: () => void }) => {
             left: xPos,
             top: yPos,
             scale: isHovering ? 1 : 0,
-            duration: 0.25,
+            duration: 0.3,
             ease: isHovering ? "power1.in" : "power1.out"
         });
 
         gsap.to(textClass, {
-            duration: 0.25,
+            duration: 0.3,
             color: isHovering ? "#353535" : "#DDDDDD",
             ease: isHovering ? "power1.in" : "power1.out"
         })
@@ -65,8 +65,8 @@ export const Button = (props: { text: string, onClick: () => void }) => {
                     left: 0,
                     position: 'absolute',
                     transform: 'translate(-50%, -50%) scale(0)',
-                    width: '300px',
-                    height: '300px',
+                    width: '400px',
+                    height: '400px',
                     background: '#F6F6F6',
                     borderRadius: '50%',
                     pointerEvents: 'none',
