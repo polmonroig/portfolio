@@ -141,8 +141,8 @@ export const Services = () => {
             <ServiceItem number={"02"} title="Machine Learning & Data Science Solutions"
                          src={"/images/services-02.jpg"}
                          side={"right"}
-                         serviceList={["Model", "Development", "Predictive", "Analytics Data",
-                             "Bayesian", "Algorithm Design", "Deep Learning"]}/>
+                         serviceList={["Model Development", "Predictive Analytics",
+                             "Data Modeling", "Algorithm Design", "Deep Learning"]}/>
             <ServiceItem number={"03"} title="Real-Time Data Visualization & Dashboards"
                          src={"/images/services-03.jpg"}
                          side={"left"}
