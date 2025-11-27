@@ -25,6 +25,7 @@ export const About = () => {
                 y: 100,
                 duration: 1,
                 autoAlpha: 0,
+                ease: "power3.out",
                 stagger: 0.1,
                 scrollTrigger: {
                     start: 'top 80%',

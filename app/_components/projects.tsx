@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button} from "@/app/_components/elements";
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {SplitText} from "gsap/SplitText";
@@ -238,27 +238,53 @@ const ProjectItem = ({project}: { project: Project }) => {
     const src = `/projects/${id}/cover.png`;
 
 
-    return (
-        <Link className={"component-project-item"} href={`/projects/${id}`}>
-            <div className={"overflow-hidden"}>
-                <Image src={src} alt={title}
-                       width={coverWidth}
-                       height={coverHeight}
-                       className={"transition-zoom-out transform-scale"}
-                       style={{
-                           objectFit: "cover",
-                           width: coverWidth,
-                           height: coverHeight
-                       }}/>
-            </div>
+    const containerRef = useRef(null);
 
-            <div className={"style-paragraph"}>{description}</div>
-            <div className={"component-project-tags"}>
-                {
-                    tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
+    useGSAP(() => {
+
+
+        gsap.from(
+            ".component-project-item",
+            {
+                y: 200,
+                autoAlpha: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none',
+                    markers: true
                 }
-            </div>
-        </Link>
+            }
+        )
+    }, {scope: containerRef});
+
+
+    return (
+
+        <div ref={containerRef}>
+            <Link href={`/projects/${id}`}  className={"component-project-item"}>
+                <div className={"overflow-hidden"}>
+                    <Image src={src} alt={title}
+                           width={coverWidth}
+                           height={coverHeight}
+                           className={"transition-zoom-out transform-scale"}
+                           style={{
+                               objectFit: "cover",
+                               width: coverWidth,
+                               height: coverHeight
+                           }}/>
+                </div>
+
+                <div className={"style-paragraph"}>{description}</div>
+                <div className={"component-project-tags"}>
+                    {
+                        tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
+                    }
+                </div>
+            </Link>
+        </div>
     )
 }
 
@@ -281,28 +307,6 @@ export const Projects = () => {
     const updateTags = (tag: string) => {
         setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
     }
-
-
-    useGSAP(() => {
-
-
-        gsap.from(
-            ".component-project-item",
-            {
-                y: 200,
-                opacity: 0,
-                duration: 1,
-                stagger: {
-                    each: 0.2
-                },
-                scrollTrigger: {
-                    start: 'top 80%',
-                    trigger: ".component-projects",
-                    toggleActions: 'play none none none'
-                }
-            }
-        )
-    });
 
 
     return (

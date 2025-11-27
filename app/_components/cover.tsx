@@ -172,7 +172,6 @@ export const Cover = (props: CoverProps) => {
         let textLinesSplit =  SplitText.create('.animation-text-lines', {
             type: 'lines',
         });
-        console.log(textCharsSplit);
 
         gsap.from(
             [textCharsSplit[animationTextSplit], textLinesSplit.lines, ".element-tag"],

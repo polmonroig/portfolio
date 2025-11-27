@@ -126,6 +126,7 @@ export const Card = (props: {
             {
                 x: props.side === "left" ? 100 : -100,
                 duration: 1,
+                ease: "power3.out",
                 autoAlpha: 0,
                 scrollTrigger: {
                     start: 'top 80%',

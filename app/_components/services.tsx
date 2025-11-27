@@ -49,6 +49,7 @@ const ServiceItem = (props: {
                 x: props.side === "left" ? 100 : -100,
                 duration: 1,
                 autoAlpha: 0,
+                ease: "power3.out",
                 scrollTrigger: {
                     start: 'top 80%',
                     trigger: containerRef.current,
