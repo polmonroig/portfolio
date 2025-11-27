@@ -63,8 +63,7 @@ const ServiceItem = (props: {
                     start: 'top 80%',
                     end: '50%',
                     trigger: containerRef.current,
-                    scrub: true,
-                    markers: true
+                    scrub: true
                 },
             }
         )
