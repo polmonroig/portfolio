@@ -4,6 +4,7 @@ import React, {useRef} from "react";
 import {useState} from "react";
 import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
+import {SplitText} from "gsap/SplitText";
 import gsap from 'gsap';
 
 export const Button = (props: {
@@ -98,16 +99,55 @@ export const Card = (props: {
 }) => {
 
 
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+
+        const childrenLines = SplitText.create(".animation-text-lines", {
+           type: "lines"
+        });
+
+        gsap.from([childrenLines.lines], {
+            duration: 1,
+            stagger: 0.01,
+            autoAlpha: 0,
+            ease: "power3.out",
+            y: 100,
+            scrollTrigger: {
+                start: 'top 80%',
+                trigger: cardRef.current,
+                toggleActions: 'play none none none'
+            },
+        });
+
+
+        gsap.from(
+            ".element-card-image",
+            {
+                x: props.side === "left" ? 100 : -100,
+                duration: 1,
+                autoAlpha: 0,
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: cardRef.current,
+                    toggleActions: 'play none none none'
+                },
+            }
+        );
+
+    }, {scope: cardRef});
+
+
     return (
-        <div className={"element-card"}>
+        <div className={"element-card"} ref={cardRef}>
             {
                 props.side === "left" ?
                     <>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-col style-h5"}>
+                            <div className={"layout-flex-col style-h5 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph"}>
+                            <div className={"style-paragraph animation-text-lines"}>
                                 {props.children}
                             </div>
                         </div>
@@ -123,10 +163,10 @@ export const Card = (props: {
                                    height={400}/>
                         </div>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-row style-h5"}>
+                            <div className={"layout-flex-row style-h5 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph"}>
+                            <div className={"style-paragraph animation-text-lines"}>
                                 {props.children}
                             </div>
                         </div>
