@@ -31,11 +31,10 @@ const ServiceItem = (props: {
                 stagger: 0.05,
                 autoAlpha: 0,
                 ease: "power3.out",
-                y: 100,
+                x: props.side === "left" ? -100 : 100,
                 scrollTrigger: {
                     start: 'top 80%',
-                    trigger: containerRef.current,
-                    toggleActions: 'play none none none'
+                    trigger: containerRef.current
                 },
             }
         )
@@ -43,37 +42,33 @@ const ServiceItem = (props: {
 
         let animatedImageSide = `.animation-image-${props.side}`;
 
-
         gsap.from(
             animatedImageSide,
             {
-                x: props.side === "left" ? 100 : -100,
-                duration: 1,
                 autoAlpha: 0,
                 ease: "power3.out",
                 scrollTrigger: {
                     start: 'top 80%',
                     trigger: containerRef.current,
-                    toggleActions: 'play none none none'
                 },
             }
         )
 
-        // gsap.to(
-        //     animatedImageSide,
-        //     {
-        //         y: -100,
-        //         duration: 2,
-        //         delay: 1,
-        //         ease: "sine.inOut",
-        //         boxShadow: "43px 47px 62.2px -12px rgba(0, 0, 0, 0.05)",
-        //         scrollTrigger: {
-        //             trigger: animatedImageSide,
-        //             markers: true,
-        //             toggleActions: 'restart pause reverse pause'
-        //         }
-        //     }
-        // )
+        gsap.from(
+            animatedImageSide,
+            {
+                x: props.side === "left" ? 100 : -100,
+                ease: "power3.out",
+                scrollTrigger: {
+                    start: 'top 80%',
+                    end: '50%',
+                    trigger: containerRef.current,
+                    scrub: true,
+                    markers: true
+                },
+            }
+        )
+
 
     }, {scope: containerRef})
 
