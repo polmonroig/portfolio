@@ -46,24 +46,12 @@ const ServiceItem = (props: {
             animatedImageSide,
             {
                 autoAlpha: 0,
-                ease: "power3.out",
-                scrollTrigger: {
-                    start: 'top 80%',
-                    trigger: containerRef.current,
-                },
-            }
-        )
-
-        gsap.from(
-            animatedImageSide,
-            {
+                duration: 1,
                 x: props.side === "left" ? 100 : -100,
                 ease: "power3.out",
                 scrollTrigger: {
                     start: 'top 80%',
-                    end: '50%',
                     trigger: containerRef.current,
-                    scrub: true
                 },
             }
         )
