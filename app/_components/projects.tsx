@@ -8,6 +8,7 @@ import React, {useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {SplitText} from "gsap/SplitText";
+import {sort} from "next/dist/build/webpack/loaders/css-loader/src/utils";
 
 type Project = {
     id: string;
@@ -303,6 +304,27 @@ export const Projects = () => {
         return activeTags.some(label => project.tags.includes(label));
     });
 
+    const sortedProjects = filteredProjects.sort((a: Project, b: Project) => {
+        let sortValue = 0;
+        for(const tag of activeTags){
+            const aContainsTag = a.tags.includes(tag);
+            const bContainsTag = b.tags.includes(tag);
+            if(aContainsTag && bContainsTag){
+                sortValue = 0;
+                break;
+            }
+            else if(aContainsTag && !bContainsTag){
+                sortValue = -1;
+                break;
+            }
+            else if(!aContainsTag && bContainsTag){
+                sortValue = 1;
+                break;
+            }
+        }
+        return sortValue;
+    })
+
     const updateTags = (tag: string) => {
         setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
     }
@@ -336,10 +358,10 @@ export const Projects = () => {
 
                 </div>
                 {
-                    filteredProjects.length > 0 ?
+                    sortedProjects.length > 0 ?
                         <div className={"component-projects-grid"}>
                             {
-                                filteredProjects.map((project: Project) => {
+                                sortedProjects.map((project: Project) => {
                                     return (
                                         <ProjectItem key={project.id} project={project}/>
                                     )
@@ -348,7 +370,7 @@ export const Projects = () => {
                         </div>
                         :
                         <div className={"component-projects-not-found"}>
-                            No projects found
+                            No projects selected
                         </div>
                 }
 
