@@ -7,7 +7,7 @@ export default function Custom404() {
                 <div>
                     404
                 </div>
-                <div className={"style-h2"}>
+                <div className={"style-h2-italic"}>
                     Page Not Found
                 </div>
             </div>

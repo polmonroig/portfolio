@@ -6,6 +6,7 @@ import {Contact} from "@/app/_components/contact";
 import {About} from "@/app/_components/about";
 import {Projects} from "@/app/_components/projects";
 
+
 export default function Home() {
 
 
@@ -14,17 +15,18 @@ export default function Home() {
             <Cover src={"/images/cover-image-01.png"}
                    align="right"
                    height="80%"
+                   opacity={0.3}
                    title={"Web Developer & \n Data Scientist"}
-                   subtitle={"Specializing in architecting and building high-performance solutions, " +
-                       "from scalable full-stack applications and real-time data dashboards to impactful machine learning models."}
+                   subtitle={"Specializing in architecting and building high-performance \n solutions, " +
+                       "from scalable full-stack applications and real-time \n data dashboards to impactful machine learning models."}
                    color={"white"}
-                   hasScrollBanner={true}/>
+                   hasScrollBanner={false}/>
             <Cover src={"/images/cover-image-02.jpg"}
                    align="left"
                    height="80%"
                    title={"Crafting intuitive \n interfaces that \n resonate with users"}
                    color={"black"}
-                   hasScrollBanner={true}/>
+                   hasScrollBanner={false}/>
             <Services/>
             <About/>
             <Projects/>

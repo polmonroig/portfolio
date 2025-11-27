@@ -1,12 +1,44 @@
+'use client';
 import Image from 'next/image';
+import {useRef} from "react";
+import {useGSAP} from "@gsap/react";
+import {SplitText} from "gsap/SplitText";
+import gsap from "gsap";
 
 export const About = () => {
 
     const height = "600px";
     const src = "/images/cover-image-03.png";
 
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+
+
+        let textLinesSplit =  SplitText.create('.animation-text-lines', {
+            type: 'lines',
+        });
+
+        gsap.from(
+            [textLinesSplit.lines],
+            {
+                y: 100,
+                duration: 1,
+                autoAlpha: 0,
+                ease: "power3.out",
+                stagger: 0.1,
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none'
+                },
+            }
+        )
+    }, {scope: containerRef})
+
+
     return (
-        <div style={{
+        <div ref={containerRef} style={{
             position: 'relative',
             width: '100%',
             maxHeight: "600px",
@@ -32,18 +64,18 @@ export const About = () => {
                     <div>Beyond the code</div>
                     <div className={"element-line-large"}></div>
                 </div>
-                <div className={"component-about-content style-white"}>
+                <div className={"component-about-content style-white animation-text-lines"}>
                     My focus is on delivering real <br/>value, offering the professional <br/>assurance that your vision will<br/> be
                     delivered.
                 </div>
                 <div className={"component-about-columns style-white"}>
-                    <div>
+                    <div className={"animation-text-lines"}>
                         Based in Barcelona
                     </div>
-                    <div>
+                    <div className={"animation-text-lines"}>
                         10+ years of experience
                     </div>
-                    <div>
+                    <div className={"animation-text-lines"}>
                         Cooking enthusiast
                     </div>
                 </div>

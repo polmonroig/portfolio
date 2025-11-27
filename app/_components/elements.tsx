@@ -1,21 +1,95 @@
-import React from "react";
+'use client'
+
+import React, {useRef} from "react";
+import {useState} from "react";
 import Image from 'next/image';
+import {useGSAP} from "@gsap/react";
+import {SplitText} from "gsap/SplitText";
+import gsap from 'gsap';
 
-export const Button = (props: { text: string, onClick: () => void }) => {
-    return (
-        <button className={"element-button layout-margin-x-auto"} onClick={props.onClick}>
-            {props.text}
-        </button>
-    )
+export const Button = (props: {
+    text: string,
+    onClick?: () => void,
+    href?: string,
+    type?: 'button' | 'submit' | 'reset'
+}) => {
+
+    const [isHovering, setHovering] = useState(false);
+    const [xPos, setXPos] = useState(0);
+    const [yPos, setYPos] = useState(0);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const anchorRef = useRef<HTMLAnchorElement>(null);
+
+    useGSAP(() => {
+        const fillClass = ".element-button-fill";
+        const textClass = ".element-button-text";
+
+        gsap.to(fillClass, {
+            left: xPos,
+            top: yPos,
+            scale: isHovering ? 1 : 0,
+            duration: 0.3,
+            ease: isHovering ? "power1.in" : "power1.out"
+        });
+
+        gsap.to(textClass, {
+            duration: 0.3,
+            color: isHovering ? "#353535" : "#DDDDDD",
+            ease: isHovering ? "power1.in" : "power1.out"
+        })
+
+
+    }, {
+        dependencies: [isHovering],
+        scope: props.href ? anchorRef : buttonRef
+    });
+
+    const onMouseInteraction = (hovering: boolean, event: React.MouseEvent) => {
+        setHovering(hovering);
+        const button = props.href ? anchorRef.current : buttonRef.current;
+        if (button) {
+            const bounds = button.getBoundingClientRect();
+            setXPos(event.clientX - bounds.left);
+            setYPos(event.clientY - bounds.top);
+        }
+    }
+
+    if (props.href) {
+        return (
+            <a
+                ref={anchorRef}
+                href={props.href}
+                onMouseEnter={(e) => onMouseInteraction(true, e)}
+                onMouseLeave={(e) => onMouseInteraction(false, e)}
+                className={"element-button layout-margin-x-auto"}
+            >
+                <span className={"element-button-fill"}/>
+                <span className={"element-button-text"}>
+                    {props.text}
+                </span>
+            </a>
+        )
+    } else {
+        return (
+            <button
+                ref={buttonRef}
+                onMouseEnter={(e) => onMouseInteraction(true, e)}
+                onMouseLeave={(e) => onMouseInteraction(false, e)}
+                onClick={props.onClick}
+                type={props.type ?? "button"}
+                className={"element-button layout-margin-x-auto"}
+            >
+                <span className={"element-button-fill"}/>
+                <span className={"element-button-text"}>
+                    {props.text}
+                </span>
+            </button>
+        )
+    }
+
+
 }
 
-export const ButtonLink = (props: { text: string, href: string }) => {
-    return (
-        <a className={"element-button layout-margin-x-auto cursor-pointer"} href={props.href}>
-            {props.text}
-        </a>
-    )
-}
 
 export const Card = (props: {
     title: string,
@@ -25,31 +99,75 @@ export const Card = (props: {
 }) => {
 
 
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+
+        const childrenLines = SplitText.create(".animation-text-lines", {
+           type: "lines"
+        });
+
+        gsap.from([childrenLines.lines], {
+            duration: 1,
+            stagger: 0.01,
+            autoAlpha: 0,
+            ease: "power3.out",
+            y: 100,
+            scrollTrigger: {
+                start: 'top 80%',
+                trigger: cardRef.current,
+                toggleActions: 'play none none none'
+            },
+        });
+
+
+        gsap.from(
+            ".element-card-image",
+            {
+                x: props.side === "left" ? 100 : -100,
+                duration: 1,
+                ease: "power3.out",
+                autoAlpha: 0,
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: cardRef.current,
+                    toggleActions: 'play none none none'
+                },
+            }
+        );
+
+    }, {scope: cardRef});
+
+
     return (
-        <div className={"element-card"}>
+        <div className={"element-card"} ref={cardRef}>
             {
                 props.side === "left" ?
                     <>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-col style-h5"}>
+                            <div className={"layout-flex-col style-h5 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph"}>
+                            <div className={"style-paragraph animation-text-lines"} style={{textOverflow: "ellipsis"}}>
                                 {props.children}
                             </div>
                         </div>
-                        <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
-                               height={400}/>
+                        <div>
+                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                                   height={400}/>
+                        </div>
                     </>
                     :
                     <>
-                        <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
-                               height={400}/>
+                        <div>
+                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                                   height={400}/>
+                        </div>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-row style-h5"}>
+                            <div className={"layout-flex-row style-h5 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph"}>
+                            <div className={"style-paragraph animation-text-lines"}>
                                 {props.children}
                             </div>
                         </div>
@@ -74,7 +192,8 @@ export const CardLarge = (props: {
                     <span key={index}>{line}<br/></span>
                 ))}
             </div>
-            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614} height={1976}/>
+            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
+                   height={1976}/>
         </div>
     )
 }

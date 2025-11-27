@@ -3,8 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
-import {Button, ButtonLink} from "@/app/_components/elements";
-import React, {useState} from "react";
+import {Button} from "@/app/_components/elements";
+import React, {useRef, useState} from "react";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
+import {SplitText} from "gsap/SplitText";
+import {sort} from "next/dist/build/webpack/loaders/css-loader/src/utils";
 
 type Project = {
     id: string;
@@ -213,6 +217,8 @@ const ProjectTag = ({text, active, interactive, onClick}: {
     let className = "element-tag";
     if (active) {
         className += " element-tag-active";
+    } else if (interactive) {
+        className += " element-tag-inactive";
     }
     if (interactive) {
         className += " element-tag-interactive";
@@ -233,27 +239,52 @@ const ProjectItem = ({project}: { project: Project }) => {
     const src = `/projects/${id}/cover.png`;
 
 
-    return (
-        <Link className={"component-project-item"} href={`/projects/${id}`}>
-            <div className={"overflow-hidden"}>
-                <Image src={src} alt={title}
-                       width={coverWidth}
-                       height={coverHeight}
-                       className={"transition-zoom-in transform-scale"}
-                       style={{
-                           objectFit: "cover",
-                           width: coverWidth,
-                           height: coverHeight
-                       }}/>
-            </div>
+    const containerRef = useRef(null);
 
-            <div className={"style-paragraph"}>{description}</div>
-            <div className={"component-project-tags"}>
-                {
-                    tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
+    useGSAP(() => {
+
+
+        gsap.from(
+            ".component-project-item",
+            {
+                y: 200,
+                autoAlpha: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    start: 'top 80%',
+                    trigger: containerRef.current,
+                    toggleActions: 'play none none none'
                 }
-            </div>
-        </Link>
+            }
+        )
+    }, {scope: containerRef});
+
+
+    return (
+
+        <div ref={containerRef}>
+            <Link href={`/projects/${id}`}  className={"component-project-item"}>
+                <div className={"overflow-hidden"}>
+                    <Image src={src} alt={title}
+                           width={coverWidth}
+                           height={coverHeight}
+                           className={"transition-zoom-out transform-scale"}
+                           style={{
+                               objectFit: "cover",
+                               width: coverWidth,
+                               height: coverHeight
+                           }}/>
+                </div>
+
+                <div className={"style-paragraph"}>{description}</div>
+                <div className={"component-project-tags"}>
+                    {
+                        tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
+                    }
+                </div>
+            </Link>
+        </div>
     )
 }
 
@@ -272,6 +303,27 @@ export const Projects = () => {
     const filteredProjects = projects.filter(project => {
         return activeTags.some(label => project.tags.includes(label));
     });
+
+    const sortedProjects = filteredProjects.sort((a: Project, b: Project) => {
+        let sortValue = 0;
+        for(const tag of activeTags){
+            const aContainsTag = a.tags.includes(tag);
+            const bContainsTag = b.tags.includes(tag);
+            if(aContainsTag && bContainsTag){
+                sortValue = 0;
+                break;
+            }
+            else if(aContainsTag && !bContainsTag){
+                sortValue = -1;
+                break;
+            }
+            else if(!aContainsTag && bContainsTag){
+                sortValue = 1;
+                break;
+            }
+        }
+        return sortValue;
+    })
 
     const updateTags = (tag: string) => {
         setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
@@ -306,10 +358,10 @@ export const Projects = () => {
 
                 </div>
                 {
-                    filteredProjects.length > 0 ?
+                    sortedProjects.length > 0 ?
                         <div className={"component-projects-grid"}>
                             {
-                                filteredProjects.map((project: Project) => {
+                                sortedProjects.map((project: Project) => {
                                     return (
                                         <ProjectItem key={project.id} project={project}/>
                                     )
@@ -318,13 +370,16 @@ export const Projects = () => {
                         </div>
                         :
                         <div className={"component-projects-not-found"}>
-                            No projects found
+                            No projects selected
                         </div>
                 }
 
                 {
                     tagList.length > activeTags.length ?
-                        <Button text={"View more projects"} onClick={() => setActiveTags(tagList)}/>
+                        <div style={{margin: "60px auto 0 auto"}}>
+                            <Button text={"View more projects"}
+                                    onClick={() => setActiveTags(tagList)}/>
+                        </div>
                         : null
                 }
             </div>
@@ -351,7 +406,8 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
                    height="50%"
                    opacity={0.5}
                    title={selectedProject.header}
-                   tags={selectedProject.tags}/>
+                   tags={selectedProject.tags}
+                   animationTextSplit={"lines"}/>
         </>
     )
 }
@@ -369,6 +425,25 @@ export const ProjectViewTemplate = (props: {
 }) => {
 
     const nextProjectId: string = props.id;
+
+    useGSAP(() => {
+
+
+        gsap.from('.animation-mockup', {
+            duration: 1,
+            delay: 0.25,
+            autoAlpha: 0,
+            ease: "power3.out",
+            y: 50,
+            scrollTrigger: {
+                start: 'top 60%',
+                trigger: ".animation-mockup",
+                toggleActions: 'play none none none'
+            },
+        })
+
+
+    })
 
     return (
         <>
@@ -408,7 +483,7 @@ export const ProjectViewTemplate = (props: {
                         {props.description}
                     </div>
                 </div>
-                <div className={"layout-margin-x-auto"}>
+                <div className={"layout-margin-x-auto animation-mockup"}>
                     {props.mockup}
                 </div>
 
@@ -418,7 +493,7 @@ export const ProjectViewTemplate = (props: {
                 </div>
 
                 {/** Footer **/}
-                <ButtonLink text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
+                <Button text={"Go to next project →"} href={`/projects/${nextProjectId}`}/>
             </div>
         </>
     )

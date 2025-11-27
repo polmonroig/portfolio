@@ -4,11 +4,32 @@
 .element-button{
   border-radius: calc(infinity * 1px);
   background-color: $color-gray-dark;
+  border: 1px solid $color-gray-dark;
   color: $color-gray-lighter;
   font-weight: 300;
   font-size: 14px;
   padding: $padding-small $gap-small;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.element-button-fill{
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  width: 400px;
+  height: 400px;
+  background: #F6F6F6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.element-button-text{
+  z-index: 5;
+  position: relative;
 }
 
 .element-line-small{
@@ -34,15 +55,17 @@
 
 
 .element-section-header{
-  @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
+  @extend .style-h2-italic, .layout-flex-row, .layout-margin-x-auto;
   width: $size-max-width;
   max-width: $size-max-width;
+  height: 48px;
   gap: 22px;
   white-space: nowrap;
 }
 
 .element-section-title{
   @extend .style-gradient-text;
+  padding-right: 4px;
 }
 
 .element-tag{
@@ -64,6 +87,15 @@
   background-color: $color-gray-dark;
 }
 
+
+.element-tag-inactive:after{
+  display: inline-block;
+  margin-left: 5.28px;
+  font-size: 16.89px;
+  content: "\00d7"; /* This will render the 'X' */
+  color: $color-white-broken;
+}
+
 .element-tag-active:after{
   display: inline-block;
   margin-left: 5.28px;
@@ -76,10 +108,11 @@
 }
 
 .element-card-image{
-  max-width: 100%;
-  height: auto;
-  width: auto;
-
+  max-width: 550px;
+  max-height: 400px;
+  width: 550px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .element-card{
@@ -162,4 +195,21 @@
   position: absolute;
   left: 0;
   bottom: -4px;
+}
+
+.element-hover-popup{
+  position: relative;
+}
+
+.element-hover-popup-text{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: calc(infinity * 1px);
+  background-color: $color-gray-dark;
+  color: $color-gray-lighter;
+  font-weight: 300;
+  font-size: 14px;
+  padding: $padding-small $gap-small;
+  cursor: pointer;
 }

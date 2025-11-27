@@ -62,12 +62,21 @@ html, body{
   letter-spacing: 0;
 }
 
-.style-h2{
+.style-h2-italic{
   color: $color-black-88;
   font-family: $font-playfair;
   font-style: italic;
   font-size: 36px;
   line-height: 100%;
+  letter-spacing: 0;
+}
+
+.style-h2{
+  color: $color-black-88;
+  font-family: $font-playfair;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 55px;
   letter-spacing: 0;
 }
 

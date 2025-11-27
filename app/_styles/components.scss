@@ -31,17 +31,19 @@
 }
 
 .component-navbar-header{
-  width: 100%;
   position: fixed;
+  width: 100%;
+  display: flex;
   z-index: 10;
 }
 
 .component-navbar{
   @extend .layout-flex-row;
-  width: 467px;
   height: 50px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 99999px;
   gap: $gap-medium;
   margin: 15px auto 0 auto;
@@ -109,6 +111,25 @@
 }
 
 
+.component-contact-form{
+  @extend .layout-flex-col, .layout-margin-x-auto, .style-paragraph;
+  gap: $gap-small;
+
+}
+
+
+.component-contact-input{
+  @extend .transition-border;
+  border-radius: 8px;
+  border: 1px solid $color-gray;
+  padding: $padding-small;
+}
+
+.component-contact-input:hover, .component-contact-input:focus{
+  border-color: $color-black-88;
+  outline: none;
+}
+
 /** Home Styling **/
 .component-home{
   background-color: $color-black-88;
@@ -146,9 +167,11 @@
 
 .component-services-item-image{
   height: 500px;
+  width: 455px;
+  object-fit: cover;
   max-height: 500px;
   max-width: 455px;
-  box-shadow: 43px 47px 62.2px -12px rgba(0, 0, 0, 0.11);
+  box-shadow: 43px 47px 62.2px -12px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -168,7 +191,7 @@
 }
 
 .component-about-header{
-  @extend .style-h2, .layout-flex-row, .layout-margin-x-auto;
+  @extend .style-h2-italic, .layout-flex-row, .layout-margin-x-auto;
   font-size: 20px;
   gap: $gap-small;
 }
@@ -213,7 +236,7 @@
 }
 
 .component-project-item{
-  @extend .layout-flex-col, .layout-margin-x-auto, .transition-opacity;
+  @extend .layout-flex-col, .layout-margin-x-auto;
   gap: $padding-small;
   max-width: 455px;
 }
@@ -241,7 +264,6 @@
 .component-project-view-children{
   @extend .layout-flex-col, .layout-margin-x-auto;
   background-color: $color-white-broken;
-  padding: $padding-large 0;
   gap: $padding-large;
   max-width: $size-max-width;
 }
@@ -265,4 +287,15 @@
   padding: $padding-large*4 0;
   gap: $padding-small;
   height: 80%;
+}
+
+
+/** Animated intro **/
+.component-animated-intro{
+  font-family: $font-inter;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  color: $color-white-broken;
+  font-size: 100px;
 }
