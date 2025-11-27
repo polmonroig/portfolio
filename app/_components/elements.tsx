@@ -111,13 +111,17 @@ export const Card = (props: {
                                 {props.children}
                             </div>
                         </div>
-                        <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
-                               height={400}/>
+                        <div>
+                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                                   height={400}/>
+                        </div>
                     </>
                     :
                     <>
-                        <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
-                               height={400}/>
+                        <div>
+                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                                   height={400}/>
+                        </div>
                         <div className={"element-card-text"}>
                             <div className={"layout-flex-row style-h5"}>
                                 {props.title}

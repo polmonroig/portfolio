@@ -57,18 +57,21 @@ const ServiceItem = (props: {
             }
         )
 
-        gsap.to(
-            animatedImageSide,
-            {
-                y: -20,
-                duration: 2,
-                delay: 1,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                boxShadow: "43px 47px 62.2px -12px rgba(0, 0, 0, 0.05)"
-            }
-        )
+        // gsap.to(
+        //     animatedImageSide,
+        //     {
+        //         y: -100,
+        //         duration: 2,
+        //         delay: 1,
+        //         ease: "sine.inOut",
+        //         boxShadow: "43px 47px 62.2px -12px rgba(0, 0, 0, 0.05)",
+        //         scrollTrigger: {
+        //             trigger: animatedImageSide,
+        //             markers: true,
+        //             toggleActions: 'restart pause reverse pause'
+        //         }
+        //     }
+        // )
 
     }, {scope: containerRef})
 
@@ -92,15 +95,19 @@ const ServiceItem = (props: {
                                 ))}
                             </ul>
                         </div>
-                        <Image src={props.src} alt={"service-image"}
-                               className={"component-services-item-image animation-image-left"}
-                               width={imageWidth} height={imageHeight}/>
+                        <div>
+                            <Image src={props.src} alt={"service-image"}
+                                  className={"component-services-item-image animation-image-left"}
+                                  width={imageWidth} height={imageHeight}/>
+                        </div>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
-                        <Image src={props.src} alt={"service-image"}
-                               className={"component-services-item-image animation-image-right"}
-                               width={imageWidth} height={imageHeight}/>
+                        <div>
+                            <Image src={props.src} alt={"service-image"}
+                                   className={"component-services-item-image animation-image-right"}
+                                   width={imageWidth} height={imageHeight}/>
+                        </div>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row style-paragraph-small animation-title"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>

@@ -7,6 +7,7 @@ import {Button} from "@/app/_components/elements";
 import React, {useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
+import {SplitText} from "gsap/SplitText";
 
 type Project = {
     id: string;
@@ -400,6 +401,25 @@ export const ProjectViewTemplate = (props: {
 
     const nextProjectId: string = props.id;
 
+    useGSAP(() => {
+
+
+        gsap.from('.animation-mockup', {
+            duration: 1,
+            delay: 0.25,
+            autoAlpha: 0,
+            ease: "power3.out",
+            y: 50,
+            scrollTrigger: {
+                start: 'top 60%',
+                trigger: ".animation-mockup",
+                toggleActions: 'play none none none'
+            },
+        })
+
+
+    })
+
     return (
         <>
             {/** Project Header **/}
@@ -438,7 +458,7 @@ export const ProjectViewTemplate = (props: {
                         {props.description}
                     </div>
                 </div>
-                <div className={"layout-margin-x-auto"}>
+                <div className={"layout-margin-x-auto animation-mockup"}>
                     {props.mockup}
                 </div>
 
