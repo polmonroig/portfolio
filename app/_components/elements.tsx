@@ -147,7 +147,7 @@ export const Card = (props: {
                             <div className={"layout-flex-col style-h5 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph animation-text-lines"}>
+                            <div className={"style-paragraph animation-text-lines"} style={{textOverflow: "ellipsis"}}>
                                 {props.children}
                             </div>
                         </div>
