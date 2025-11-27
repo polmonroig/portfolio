@@ -17,6 +17,10 @@
   transition: box-shadow 0.3s ease;
 }
 
+.transition-border{
+  transition: border 0.3s ease;
+}
+
 .transition-zoom-out{
   transition: transform 0.2s ease-out;
 }
