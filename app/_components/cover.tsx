@@ -6,6 +6,7 @@ import gsap from "gsap";
 import {useRef} from "react";
 import {SplitText} from "gsap/SplitText";
 import  {useState} from "react";
+import {getBlurURL} from "@/app/_components/utils";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
@@ -205,6 +206,8 @@ export const Cover = (props: CoverProps) => {
                 aria-hidden
                 fill
                 sizes="100vw"
+                blurDataURL={getBlurURL(src)}
+                placeholder={"blur"}
                 className="element-cover-background"
                 style={{
                     filter: imageFilter

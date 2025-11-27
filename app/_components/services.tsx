@@ -3,6 +3,7 @@ import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from "gsap";
 import {useRef} from "react";
+import {getBlurURL} from "@/app/_components/utils";
 
 const ServiceItem = (props: {
     number: string, title: string, serviceList: string[],
@@ -98,14 +99,18 @@ const ServiceItem = (props: {
                         </div>
                         <div>
                             <Image src={props.src} alt={"service-image"}
-                                  className={"component-services-item-image animation-image-left"}
-                                  width={imageWidth} height={imageHeight}/>
+                                   blurDataURL={getBlurURL(props.src)}
+                                   placeholder={"blur"}
+                                   className={"component-services-item-image animation-image-left"}
+                                   width={imageWidth} height={imageHeight}/>
                         </div>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
                         <div>
                             <Image src={props.src} alt={"service-image"}
+                                   blurDataURL={getBlurURL(props.src)}
+                                   placeholder={"blur"}
                                    className={"component-services-item-image animation-image-right"}
                                    width={imageWidth} height={imageHeight}/>
                         </div>
