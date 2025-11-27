@@ -253,8 +253,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                 scrollTrigger: {
                     start: 'top 80%',
                     trigger: containerRef.current,
-                    toggleActions: 'play none none none',
-                    markers: true
+                    toggleActions: 'play none none none'
                 }
             }
         )
