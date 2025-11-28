@@ -277,7 +277,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                            }}/>
                 </div>
 
-                <div className={"text-paragraph"}>{description}</div>
+                <div className={"component-project-description"}>{description}</div>
                 <div className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
@@ -357,6 +357,7 @@ export const Projects = () => {
                     }
 
                 </div>
+
                 {
                     sortedProjects.length > 0 ?
                         <div className={"component-projects-grid"}>

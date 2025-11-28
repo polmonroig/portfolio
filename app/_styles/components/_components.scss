@@ -249,6 +249,10 @@
   gap: 20px;
 }
 
+.component-project-description{
+  @extend .text-paragraph;
+}
+
 
 /** Projects View Styling **/
 .component-project-view{

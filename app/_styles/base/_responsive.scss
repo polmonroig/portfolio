@@ -34,7 +34,23 @@
   }
 
   .component-projects-filter{
-    justify-content: center;
+    justify-content: center !important;
+  }
+
+
+
+  .element-cover-content-left, .element-cover-content-right{
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .element-cover-content-title, .element-cover-content-subtitle{
+    margin: 0 auto;
+  }
+
+
+  .component-project-description, .component-project-tags{
+    margin: 0 variables.$padding-small;
   }
 
   .component-services-item-inner{

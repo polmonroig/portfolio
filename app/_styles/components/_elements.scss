@@ -160,6 +160,24 @@
   gap: 20px;
 }
 
+.element-cover-content-left{
+  align-items: flex-start;
+  text-align: left;
+}
+
+.element-cover-content-right{
+  align-items: flex-end;
+  text-align: right;
+}
+
+.element-cover-content-title{
+  @extend .text-h1;
+}
+
+.element-cover-content-subtitle{
+  @extend .text-h5;
+}
+
 .element-cover-scroll-banner {
   @extend .layout-flex-row;
   color: variables.$color-white;
