@@ -39,6 +39,15 @@
 
   .component-navbar{
     gap: 0;
+    flex-direction: column;
+  }
+
+  .component-navbar-logo{
+    margin: auto;
+  }
+
+  .component-navbar-item-list{
+    flex-direction: column;
   }
 
 
