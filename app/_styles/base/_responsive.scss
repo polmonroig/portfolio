@@ -42,6 +42,12 @@
     flex-direction: column;
   }
 
+  .component-navbar-responsive{
+    height: 100%;
+    border-radius: 30px;
+    padding: 10px 20px;
+  }
+
   .component-navbar-logo{
     margin: auto;
   }
@@ -69,6 +75,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+  }
+  .component-services-item-image{
+    box-shadow: none;
   }
 
 }

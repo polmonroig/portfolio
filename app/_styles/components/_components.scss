@@ -56,6 +56,10 @@
   gap: variables.$gap-small;
 }
 
+.component-navbar-item-list-hidden{
+  display: none;
+}
+
 .component-navbar-logo{
   @extend .layout-margin-y-auto, .transition-color;
   padding: 6px 8px;
@@ -64,6 +68,8 @@
   font-size: 24px;
   line-height: 100%;
   letter-spacing: 0;
+  cursor: pointer;
+  user-select: none;
   color: variables.$color-white;
 }
 

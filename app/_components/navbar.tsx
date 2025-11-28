@@ -2,6 +2,7 @@
 import {useScroll} from "@/app/_components/hooks";
 import Link from "next/link";
 import {usePathname} from 'next/navigation'
+import {useState} from "react";
 
 
 const NavbarItem = (props: {
@@ -28,7 +29,7 @@ const NavbarIcon = (props: {
     className: string
 }) => {
     return (
-        <div className={props.className}>
+        <div className={props.className} onClick={props.onClick}>
             {props.text}
         </div>
     )
@@ -36,6 +37,7 @@ const NavbarIcon = (props: {
 export const NavBar = () => {
 
 
+    const [navbarOpen, setNavbarOpen] = useState(false);
 
     const scrollRelativePosition = useScroll();
     const pathname = usePathname();
@@ -47,15 +49,16 @@ export const NavBar = () => {
         logoClassName += ' component-navbar-dark';
     }
 
-    const onClickCallback = () => {};
+
+    const onClickCallback = () => setNavbarOpen(!navbarOpen);
 
 
     let nameText: string = "P.";
     return (
         <header className={"component-navbar-header"}>
-            <div className="component-navbar">
+            <div className={"component-navbar " + (navbarOpen ? "component-navbar-responsive" : "")}>
                 <NavbarIcon text={nameText} onClick={onClickCallback} className={logoClassName}/>
-                <div className={"component-navbar-item-list responsive-hide-desktop"}>
+                <div className={"component-navbar-item-list " + (navbarOpen ? "" : "component-navbar-item-list-hidden")}>
                     <NavbarItem text={"services"} slug={"/#services"} className={linkClassName}/>
                     <NavbarItem text={"projects"} slug={"/#projects"} className={linkClassName}/>
                     <NavbarItem text={"blog"} slug={"https://blog.pol.company"} target={"_blank"}
