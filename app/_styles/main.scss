@@ -6,7 +6,6 @@
 @use "base/base";
 @use "base/typography";
 @use "base/animations";
-@use "base/responsive";
 
 /** Components **/
 @use "components/elements";
@@ -14,6 +13,9 @@
 
 /** Layout **/
 @use "layout/layout";
+
+/** Responsive to bottom **/
+@use "base/responsive";
 
 /** Vendor **/
 @use "vendors/normalize";

@@ -34,14 +34,17 @@
   }
 
   .component-projects-filter{
-    justify-content: center !important;
+    justify-content: center;
+  }
+
+  .component-navbar{
+    gap: 0;
   }
 
 
-
   .element-cover-content-left, .element-cover-content-right{
-    justify-content: center !important;
-    text-align: center !important;
+    justify-content: center;
+    text-align: center;
   }
 
   .element-cover-content-title, .element-cover-content-subtitle{
