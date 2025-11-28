@@ -55,9 +55,9 @@ export const Contact = () => {
                         </div>
 
                         <div className={"style-paragraph"}>
-                            <a href={"mailto:hello@pol.company"}>hello@pol.company</a>
+                            <a href={"mailto:hello@pol.company"} className={"component-contact-links"}>hello@pol.company</a>
                             <br/>
-                            <a href={"tel:+34617004358"}>+34 617 00 43 58</a>
+                            <a href={"tel:+34617004358"} className={"component-contact-links"}>+34 617 00 43 58</a>
                         </div>
                         <div>
                             {

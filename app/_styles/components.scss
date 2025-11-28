@@ -89,6 +89,11 @@
   padding: 0 5px;
 }
 
+.component-contact-links:hover{
+  text-decoration-line: underline;
+  text-underline-offset: 2.7px;
+}
+
 .component-contact-icons{
   @extend .layout-flex-row, .layout-margin-x-auto;
   text-align: center;
