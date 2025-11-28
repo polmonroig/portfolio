@@ -1,0 +1,99 @@
+@use '../abstracts/placeholders';
+@use "../abstracts/variables";
+
+
+/** Text styling **/
+.text-base{
+  @extend %text-base;
+}
+
+
+/** Header and text tags **/
+.text-h1{
+  @extend %text-h1;
+}
+
+
+
+.text-h2{
+  @extend %text-h2;
+}
+
+.text-h2-italic{
+  @extend %text-h2-italic;
+}
+
+.text-h3{
+  @extend %text-h3;
+}
+
+.text-h4{
+  @extend %text-h4;
+}
+
+.text-h4-light{
+  @extend %text-h4-light;
+}
+
+
+.text-h5{
+  @extend %text-h5;
+}
+
+.text-h6{
+  @extend %text-h6;
+}
+
+.text-paragraph{
+  @extend %text-paragraph;
+}
+
+.text-line{
+  @extend %text-line;
+}
+
+.text-caption{
+  @extend %text-caption;
+}
+
+
+/** Text styling helpers **/
+
+.text-weight-bold{
+  font-weight: 700;
+}
+
+.text-style-italic{
+  font-style: italic;
+}
+
+.text-color-black{
+  color: variables.$color-black-88 !important;
+}
+
+.text-color-white{
+  color: variables.$color-white !important;
+}
+
+.text-color-gray{
+  color: variables.$color-gray !important;
+}
+
+
+.text-style-gradient{
+  color: rgba(0, 0, 0, 0);
+  background-clip: text;
+  background-image: linear-gradient(to right, #161616, rgba(124, 124, 124, 0.7) 70%);
+}
+
+.text-transform-uppercase{
+  text-transform: uppercase;
+}
+
+.text-align-center{
+  text-align: center;
+}
+
+.text-wrap-nowrap{
+  text-wrap: nowrap;
+}

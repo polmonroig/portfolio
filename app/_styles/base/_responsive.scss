@@ -1,12 +1,8 @@
-
-/** Media breakpoints **/
-$breakpoint-desktop: 1024px;
-$breakpoint-tablet: 768px;
-$breakpoint-mobile: 480px;
+@use "../abstracts/variables";
 
 
 /* Desktop Small screens */
-@media (max-width: $breakpoint-desktop) {
+@media (max-width: variables.$breakpoint-desktop) {
   /** Generic components **/
   .responsive-hide-desktop{
     display: none;
@@ -39,7 +35,7 @@ $breakpoint-mobile: 480px;
 
 
 /* Mobile first: 1 column on tablet and below */
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: variables.$breakpoint-tablet) {
   .layout-grid,
   .component-projects-grid {
     grid-template-columns: 1fr;
@@ -47,7 +43,7 @@ $breakpoint-mobile: 480px;
 }
 
 /* Extra: keep 1 column on smaller mobile widths as well */
-@media (max-width: $breakpoint-mobile) {
+@media (max-width: variables.$breakpoint-mobile) {
   .layout-grid,
   .component-projects-grid {
     grid-template-columns: 1fr;

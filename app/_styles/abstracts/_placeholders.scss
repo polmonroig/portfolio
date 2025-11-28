@@ -1,0 +1,91 @@
+@use 'variables';
+
+
+/** Text styling **/
+%text-base{
+  color: variables.$color-black-88;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+%text-h1{
+  @extend %text-base;
+  font-family: variables.$font-playfair;
+  font-size: variables.$font-size-h1;
+  line-height: variables.$line-height-normal;
+}
+
+
+
+%text-h2{
+  @extend %text-base;
+  font-family: variables.$font-playfair;
+  font-size: variables.$font-size-h2;
+  line-height: variables.$line-height-small;
+}
+
+%text-h2-italic{
+  @extend %text-h2;
+  font-style: italic;
+  line-height: variables.$line-height-normal;
+}
+
+%text-h3{
+  font-family: variables.$font-playfair;
+  font-size: variables.$font-size-h3;
+  line-height: variables.$line-height-small;
+}
+
+%text-h4{
+  font-family: variables.$font-inter;
+  font-size: variables.$font-size-h4;
+  line-height: variables.$line-height-normal;
+}
+
+%text-h4-light{
+  @extend %text-h4;
+  font-weight: 300;
+  font-size: variables.$font-size-h4;
+}
+
+
+%text-h5{
+  @extend %text-base;
+  font-family: variables.$font-inter;
+  font-weight: 300;
+  font-size: variables.$font-size-h5;
+  line-height: variables.$line-height-large;
+}
+
+
+%text-h6{
+  @extend %text-base;
+  font-family: variables.$font-inter;
+  font-weight: bold;
+  font-size: variables.$font-size-h6;
+  line-height: variables.$line-height-normal;
+}
+
+
+%text-paragraph{
+  @extend %text-base;
+  font-family: variables.$font-inter;
+  font-size: variables.$font-size-paragraph;
+  line-height: variables.$line-height-xl;
+}
+
+%text-line{
+  @extend %text-base;
+  font-family: variables.$font-inter;
+  font-size: variables.$font-size-line;
+  line-height: variables.$line-height-xl;
+
+}
+
+%text-caption{
+  @extend %text-base;
+  font-family: variables.$font-inter;
+  font-size: variables.$font-size-caption;
+  line-height: variables.$line-height-xl;
+}
+

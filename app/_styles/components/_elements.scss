@@ -1,14 +1,15 @@
-@import "base.scss";
-@import "layout.scss";
+@use "../abstracts/variables";
+@use "../base/typography";
+@use "../layout/layout";
 
 .element-button{
   border-radius: calc(infinity * 1px);
-  background-color: $color-gray-dark;
-  border: 1px solid $color-gray-dark;
-  color: $color-gray-lighter;
+  background-color: variables.$color-gray-dark;
+  border: 1px solid variables.$color-gray-dark;
+  color: variables.$color-gray-lighter;
   font-weight: 300;
   font-size: 14px;
-  padding: $padding-small $gap-small;
+  padding: variables.$padding-small variables.$gap-small;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -35,14 +36,14 @@
 .element-line-small{
   width: 20px;
   height: 1px;
-  background-color: $color-black-88;
+  background-color: variables.$color-black-88;
   margin: auto 6px;
 }
 
 .element-line-large{
   width: 100px;
   height: 1px;
-  background-color: $color-white;
+  background-color: variables.$color-white;
   margin: auto 6px;
 }
 
@@ -56,8 +57,8 @@
 
 .element-section-header{
   @extend .text-h2-italic, .layout-flex-row, .layout-margin-x-auto;
-  width: $size-max-width;
-  max-width: $size-max-width;
+  width: variables.$size-max-width;
+  max-width: variables.$size-max-width;
   height: 48px;
   gap: 22px;
   white-space: nowrap;
@@ -72,19 +73,19 @@
   @extend .text-caption;
   padding: 1px 10px;
   border-radius: 19px;
-  color: $color-gray-dark;
-  border: 1.06px solid $color-gray-dark;
+  color: variables.$color-gray-dark;
+  border: 1.06px solid variables.$color-gray-dark;
   user-select: none;
 }
 
 .element-tag-white{
-  color: $color-white;
-  border-color: $color-white;
+  color: variables.$color-white;
+  border-color: variables.$color-white;
 }
 
 .element-tag-active{
-  color: $color-gray-lighter;
-  background-color: $color-gray-dark;
+  color: variables.$color-gray-lighter;
+  background-color: variables.$color-gray-dark;
 }
 
 
@@ -93,7 +94,7 @@
   margin-left: 5.28px;
   font-size: 16.89px;
   content: "\00d7"; /* This will render the 'X' */
-  color: $color-white-broken;
+  color: variables.$color-white-broken;
 }
 
 .element-tag-active:after{
@@ -117,14 +118,14 @@
 
 .element-card{
   @extend .layout-flex-row, .layout-margin-x-auto;
-  max-width: $size-max-width;
+  max-width: variables.$size-max-width;
   max-height: 400px;
-  gap: $padding-medium;
+  gap: variables.$padding-medium;
 }
 .element-card-large{
   @extend .layout-flex-col, .layout-margin-x-auto;
-  max-width: $size-max-width;
-  gap: $padding-medium;
+  max-width: variables.$size-max-width;
+  gap: variables.$padding-medium;
 }
 
 .element-card-image-large{
@@ -135,7 +136,7 @@
 
 .element-card-text{
   @extend .layout-flex-col, .layout-margin-y-auto;
-  gap: $padding-small;
+  gap: variables.$padding-small;
 }
 
 .element-cover{
@@ -154,7 +155,7 @@
   @extend .layout-flex-col;
   position: relative;
   z-index: 1;
-  max-width: $size-max-width;
+  max-width: variables.$size-max-width;
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -165,7 +166,7 @@
 
 .element-cover-scroll-banner {
   @extend .layout-flex-row;
-  color: $color-white;
+  color: variables.$color-white;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
@@ -179,7 +180,7 @@
 .element-arrow-down {
   width: 70px;
   height: 2px;
-  background-color: $color-white;
+  background-color: variables.$color-white;
   margin: auto 12px auto 0;
   position: relative;
 }
@@ -189,8 +190,8 @@
   display: block;
   width: 10px;
   height: 10px;
-  border-top: 2px solid $color-white;
-  border-right: 2px solid $color-white;
+  border-top: 2px solid variables.$color-white;
+  border-right: 2px solid variables.$color-white;
   transform: rotate(225deg);
   position: absolute;
   left: 0;
@@ -206,10 +207,10 @@
   top: 0;
   bottom: 0;
   border-radius: calc(infinity * 1px);
-  background-color: $color-gray-dark;
-  color: $color-gray-lighter;
+  background-color: variables.$color-gray-dark;
+  color: variables.$color-gray-lighter;
   font-weight: 300;
   font-size: 14px;
-  padding: $padding-small $gap-small;
+  padding: variables.$padding-small variables.$gap-small;
   cursor: pointer;
 }

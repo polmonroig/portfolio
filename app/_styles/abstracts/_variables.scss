@@ -1,0 +1,55 @@
+
+/** Font definition **/
+$font-playfair: Playfair Display, sans-serif;
+$font-inter: Inter, sans;
+
+/** Color definition**/
+$color-black-88: #1F1F1F;
+$color-gray-dark: #353535;
+$color-gray: #959595;
+$color-gray-light: #F2F2F2;
+$color-gray-lighter: #DDDDDD;
+$color-white: #FFFFFF;
+$color-white-broken: #F6F6F6;
+
+/** Font sizes **/
+$font-size-h1: 72px;
+$font-size-h2: 36px;
+$font-size-h3: 42px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-size-h6: 15px;
+$font-size-paragraph: 16px;
+$font-size-line: 14px;
+$font-size-caption: 14px;
+
+
+/** Line heights **/
+$line-height-small: 55px;
+$line-height-normal: 100%;
+$line-height-large: 130%;
+$line-height-xl: 170%;
+
+/** Media breakpoints **/
+$breakpoint-desktop-large: 1440px;
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+
+/** Sizes definition **/
+$size-max-width: 930px;
+$size-max-width-large: 1200px;
+
+/** Padding and margins **/
+$padding-small: 10px;
+$padding-medium: 30px;
+$padding-large: 100px;
+$padding-sides: 255px;
+
+
+/** Flex and grid gaps **/
+$gap-small: 20px;
+$gap-medium: 50px;
+$gap-large: 73px;
+$gap-full-column: 115px;

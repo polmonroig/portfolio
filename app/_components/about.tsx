@@ -45,6 +45,7 @@ export const About = () => {
             height: height,
             backgroundColor: 'black',
             overflow: 'hidden',
+            display: 'flex',
         }}>
             <Image
                 src={src}
