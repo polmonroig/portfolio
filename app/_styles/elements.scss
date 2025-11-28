@@ -55,7 +55,7 @@
 
 
 .element-section-header{
-  @extend .style-h2-italic, .layout-flex-row, .layout-margin-x-auto;
+  @extend .text-h2-italic, .layout-flex-row, .layout-margin-x-auto;
   width: $size-max-width;
   max-width: $size-max-width;
   height: 48px;
@@ -69,7 +69,7 @@
 }
 
 .element-tag{
-  @extend .style-caption;
+  @extend .text-caption;
   padding: 1px 10px;
   border-radius: 19px;
   color: $color-gray-dark;

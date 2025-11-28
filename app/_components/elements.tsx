@@ -145,10 +145,10 @@ export const Card = (props: {
                 props.side === "left" ?
                     <>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-col style-h5 animation-text-lines"}>
+                            <div className={"layout-flex-col text-h6 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph animation-text-lines"} style={{textOverflow: "ellipsis"}}>
+                            <div className={"text-paragraph animation-text-lines"} style={{textOverflow: "ellipsis"}}>
                                 {props.children}
                             </div>
                         </div>
@@ -164,10 +164,10 @@ export const Card = (props: {
                                    height={400}/>
                         </div>
                         <div className={"element-card-text"}>
-                            <div className={"layout-flex-row style-h5 animation-text-lines"}>
+                            <div className={"layout-flex-row text-h6 animation-text-lines"}>
                                 {props.title}
                             </div>
-                            <div className={"style-paragraph animation-text-lines"}>
+                            <div className={"text-paragraph animation-text-lines"}>
                                 {props.children}
                             </div>
                         </div>
@@ -187,7 +187,7 @@ export const CardLarge = (props: {
 
     return (
         <div className={"element-card-large"}>
-            <div className={"element-card-texts style-h3 style-gradient-text style-align-center"}>
+            <div className={"element-card-texts text-h3 style-gradient-text style-align-center"}>
                 {titleLines.map((line, index) => (
                     <span key={index}>{line}<br/></span>
                 ))}

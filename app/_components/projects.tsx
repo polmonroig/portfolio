@@ -277,7 +277,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                            }}/>
                 </div>
 
-                <div className={"style-paragraph"}>{description}</div>
+                <div className={"text-paragraph"}>{description}</div>
                 <div className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
@@ -340,7 +340,7 @@ export const Projects = () => {
             </div>
             <div className={"component-projects-list"}>
                 <div className={"component-projects-filter"}>
-                    <div style={{padding: "2px 8px 2px 0px"}} className={"style-caption responsive-hide-desktop"}>
+                    <div style={{padding: "2px 8px 2px 0px"}} className={"text-caption responsive-hide-desktop"}>
                         Filter by Service:
                     </div>
                     {
@@ -454,32 +454,32 @@ export const ProjectViewTemplate = (props: {
                 {/** Project Content Highlight **/}
                 <div className={"component-project-view-content-header"}>
                     <div className={"layout-grid style-uppercase style-text-nowrap"} style={{gap: "8px"}}>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption style-gray"}>
                             Year
                         </div>
                         <div>
                             {props.year}
                         </div>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption style-gray"}>
                             Client
                         </div>
                         <div>
                             {props.client}
                         </div>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption style-gray"}>
                             Department
                         </div>
                         <div>
                             {props.department}
                         </div>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption style-gray"}>
                             Location
                         </div>
                         <div>
                             {props.location}
                         </div>
                     </div>
-                    <div className={"style-paragraph"} style={{maxWidth: "516px", marginLeft: "auto"}}>
+                    <div className={"text-paragraph"} style={{maxWidth: "516px", marginLeft: "auto"}}>
                         {props.description}
                     </div>
                 </div>

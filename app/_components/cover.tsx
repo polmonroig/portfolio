@@ -226,14 +226,14 @@ export const Cover = (props: CoverProps) => {
                 )}
 
                 {(title && showText) && (
-                    <h1 className={"style-h1 " + colorStyle} style={{filter: 'none'}}>
+                    <h1 className={"text-h1 " + colorStyle} style={{filter: 'none'}}>
                         {titleLines.map((line, index) => (
                             <span key={index} className={"animation-text-chars"}>{line}<br/></span>
                         ))}
                     </h1>
                 )}
                 {(subtitle && showText) && (
-                    <div className={"style-h5-light " + colorStyle}>
+                    <div className={"text-h5 " + colorStyle}>
                         {subtitleLines.map((line, index) => (
                             <span key={index} className={"animation-text-lines"}>{line}<br/></span>
                         ))}

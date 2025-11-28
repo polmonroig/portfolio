@@ -17,6 +17,23 @@ $color-white-broken: #F6F6F6;
 /** Sizes definition **/
 $size-max-width: 930px;
 
+/** Font sizes **/
+$font-size-h1: 72px;
+$font-size-h2: 36px;
+$font-size-h3: 42px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-size-h6: 15px;
+$font-size-paragraph: 16px;
+$font-size-line: 14px;
+$font-size-caption: 14px;
+
+
+/** Line heights **/
+$line-height-small: 55px;
+$line-height-normal: 100%;
+$line-height-large: 130%;
+$line-height-xl: 170%;
 
 /** Global CSS definition **/
 html, body{
@@ -51,110 +68,94 @@ html, body{
   color: $color-gray !important;
 }
 
+/** Text styling **/
+.text-base{
+  color: $color-black-88;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
 
 /** Header and text tags **/
-.style-h1{
-  color: $color-black-88;
+.text-h1{
+  @extend .text-base;
   font-family: $font-playfair;
-  font-style: normal;
-  font-size: 72px;
-  line-height: 100%;
-  letter-spacing: 0;
+  font-size: $font-size-h1;
+  line-height: $line-height-normal;
 }
 
-.style-h2-italic{
-  color: $color-black-88;
+
+
+.text-h2{
+  @extend .text-base;
   font-family: $font-playfair;
+  font-size: $font-size-h2;
+  line-height: $line-height-small;
+}
+
+.text-h2-italic{
+  @extend .text-h2;
   font-style: italic;
-  font-size: 36px;
-  line-height: 100%;
-  letter-spacing: 0;
+  line-height: $line-height-normal;
 }
 
-.style-h2{
-  color: $color-black-88;
+.text-h3{
   font-family: $font-playfair;
-  font-style: normal;
-  font-size: 36px;
-  line-height: 55px;
-  letter-spacing: 0;
+  font-size: $font-size-h3;
+  line-height: $line-height-small;
 }
 
-.style-h3{
-  color: $color-black-88;
-  font-family: $font-playfair;
-  font-style: normal;
-  font-size: 42px;
-  line-height: 55px;
-  letter-spacing: 0;
-}
-
-.style-h4{
-  color: $color-black-88;
+.text-h4{
   font-family: $font-inter;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 0;
+  font-size: $font-size-h4;
+  line-height: $line-height-normal;
 }
 
-.style-h4-light{
-  color: $color-black-88;
-  font-family: $font-inter;
-  font-style: normal;
+.text-h4-light{
+  @extend .text-h4;
   font-weight: 300;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 0;
+  font-size: $font-size-h4;
 }
 
 
-.style-h5{
-  color: $color-black-88;
+.text-h5{
+  @extend .text-base;
   font-family: $font-inter;
-  font-style: normal;
+  font-weight: 300;
+  font-size: $font-size-h5;
+  line-height: $line-height-large;
+}
+
+
+.text-h6{
+  @extend .text-base;
+  font-family: $font-inter;
   font-weight: bold;
-  font-size: 15px;
-  line-height: 100%;
-  letter-spacing: 0;
+  font-size: $font-size-h6;
+  line-height: $line-height-normal;
 }
 
-.style-h5-light{
-  color: $color-black-88;
+
+.text-paragraph{
+  @extend .text-base;
   font-family: $font-inter;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0;
+  font-size: $font-size-paragraph;
+  line-height: $line-height-xl;
 }
 
-.style-paragraph{
-  color: $color-black-88;
+.text-line{
+  @extend .text-base;
   font-family: $font-inter;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 170%;
-  letter-spacing: 0;
-}
-
-.style-paragraph-small{
-  color: $color-black-88;
-  font-family: $font-inter;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 170%;
-  letter-spacing: 0;
+  font-size: $font-size-line;
+  line-height: $line-height-xl;
 
 }
 
-.style-caption{
-  color: $color-black-88;
+.text-caption{
+  @extend .text-base;
   font-family: $font-inter;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 170%;
-  letter-spacing: 0;
+  font-size: $font-size-caption;
+  line-height: $line-height-xl;
 }
 
 .style-gradient-text{

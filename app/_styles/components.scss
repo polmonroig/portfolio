@@ -107,7 +107,7 @@
 }
 
 .component-contact-copyright-inner{
-  @extend .style-caption,  .layout-margin-x-auto;
+  @extend .text-caption,  .layout-margin-x-auto;
   gap: $padding-small;
   background-color: $color-white-broken;
   color: $color-black-88;
@@ -117,7 +117,7 @@
 
 
 .component-contact-form{
-  @extend .layout-flex-col, .layout-margin-x-auto, .style-paragraph;
+  @extend .layout-flex-col, .layout-margin-x-auto, .text-paragraph;
   gap: $gap-small;
 
 }
@@ -196,13 +196,13 @@
 }
 
 .component-about-header{
-  @extend .style-h2-italic, .layout-flex-row, .layout-margin-x-auto;
+  @extend .text-h2-italic, .layout-flex-row, .layout-margin-x-auto;
   font-size: 20px;
   gap: $gap-small;
 }
 
 .component-about-content{
-  @extend .style-h3;
+  @extend .text-h3;
   line-height: 49px;
 
 }
@@ -236,7 +236,7 @@
 }
 
 .component-projects-not-found{
-  @extend .layout-flex-col, .layout-margin-x-auto, .style-h4;
+  @extend .layout-flex-col, .layout-margin-x-auto, .text-h4;
   padding: $padding-large;
 }
 
@@ -288,7 +288,7 @@
 }
 
 .component-404-content{
-  @extend .style-h1, .style-align-center, .layout-flex-col;
+  @extend .text-h1, .style-align-center, .layout-flex-col;
   padding: $padding-large*4 0;
   gap: $padding-small;
   height: 80%;

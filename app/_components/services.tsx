@@ -66,7 +66,7 @@ const ServiceItem = (props: {
                 props.side === "left" ?
                     <div className={"component-services-item-inner"}>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small animation-title"}>
+                            <div className={"layout-flex-row text-line animation-title"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
@@ -75,7 +75,7 @@ const ServiceItem = (props: {
                             </div>
                             <ul>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h2 animation-text-line"}>{service}</li>
+                                    <li key={index} className={"text-h2 animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
@@ -97,7 +97,7 @@ const ServiceItem = (props: {
                                    width={imageWidth} height={imageHeight}/>
                         </div>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small animation-title"}>
+                            <div className={"layout-flex-row text-line animation-title"}>
                                 <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <div className={"layout-margin-y-auto"}>
@@ -106,7 +106,7 @@ const ServiceItem = (props: {
                             </div>
                             <ul>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h2 animation-text-line"}>{service}</li>
+                                    <li key={index} className={"text-h2 animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
