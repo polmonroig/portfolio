@@ -56,9 +56,8 @@
 
 
 .element-section-header{
-  @extend .text-h2-italic, .layout-flex-row, .layout-margin-x-auto;
-  width: variables.$size-max-width;
-  max-width: variables.$size-max-width;
+  @extend .text-h2-italic, .layout-flex-row, .layout-margin-x-auto, .layout-content-width;
+  width: 100%;
   height: 48px;
   gap: 22px;
   white-space: nowrap;
@@ -117,14 +116,12 @@
 }
 
 .element-card{
-  @extend .layout-flex-row, .layout-margin-x-auto;
-  max-width: variables.$size-max-width;
+  @extend .layout-flex-row, .layout-margin-x-auto, .layout-content-width;
   max-height: 400px;
   gap: variables.$padding-medium;
 }
 .element-card-large{
-  @extend .layout-flex-col, .layout-margin-x-auto;
-  max-width: variables.$size-max-width;
+  @extend .layout-flex-col, .layout-margin-x-auto, .layout-content-width;
   gap: variables.$padding-medium;
 }
 
@@ -152,10 +149,9 @@
 }
 
 .element-cover-content{
-  @extend .layout-flex-col;
+  @extend .layout-flex-col, .layout-content-width;
   position: relative;
   z-index: 1;
-  max-width: variables.$size-max-width;
   justify-content: center;
   width: 100%;
   height: 100%;
