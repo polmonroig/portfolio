@@ -16,6 +16,22 @@ const interFont = Inter({
 export const metadata: Metadata = {
     title: "Pol Company",
     description: "Pol Monroig Company portfolio website. Web Developer and Data Scientist.",
+    applicationName: "Pol Company",
+    keywords: [
+        "Pol Company",
+        "Pol Monroig",
+        "portfolio",
+        "web developer",
+        "frontend",
+        "full-stack",
+        "data scientist",
+        "Next.js",
+        "React",
+    ],
+    authors: [{ name: "Pol Company", url: "https://pol.company" }],
+    creator: "Pol Company",
+    publisher: "Pol Company",
+    metadataBase: new URL("https://pol.company"),
 };
 
 export default function RootLayout({
