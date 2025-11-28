@@ -25,6 +25,9 @@ const ServiceItem = (props: {
         if(windowWidth <= breakpoints.desktop){
             setImageSide("left");
         }
+        else{
+            setImageSide(props.side);
+        }
     }, [windowWidth]);
 
 

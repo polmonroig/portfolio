@@ -27,7 +27,7 @@ export const NavBar = () => {
     const scrollRelativePosition = useScroll();
     const pathname = usePathname();
 
-    let linkClassName: string = 'component-navbar-item';
+    let linkClassName: string = 'component-navbar-item responsive-hide-desktop';
     let logoClassName: string = 'component-navbar-logo'
     if (scrollRelativePosition > 0.75 || (pathname !== null && pathname.includes('project'))) {
         linkClassName += ' component-navbar-dark';
