@@ -1,8 +1,9 @@
 'use client';
-import {useScroll} from "@/app/_components/hooks";
+import {useScroll, useWindowWidth} from "@/app/_components/hooks";
 import Link from "next/link";
 import {usePathname} from 'next/navigation'
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {breakpoints} from "@/app/_components/utils";
 
 
 const NavbarItem = (props: {
@@ -36,8 +37,13 @@ const NavbarIcon = (props: {
 }
 export const NavBar = () => {
 
+    const windowWidth = useWindowWidth();
+    const [navbarOpen, setNavbarOpen] = useState(true);
 
-    const [navbarOpen, setNavbarOpen] = useState(false);
+
+    useEffect(() => {
+        setNavbarOpen(windowWidth > breakpoints.desktop);
+    }, [windowWidth]);
 
     const scrollRelativePosition = useScroll();
     const pathname = usePathname();
