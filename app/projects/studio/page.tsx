@@ -15,10 +15,10 @@ export default function ProjectView() {
         >
             <>
                 <div className={"layout-flex-col-small"}>
-                    <div className={"text-h6 style-align-center"}>
+                    <div className={"text-h6 text-align-center"}>
                         Value Driven KPIs
                     </div>
-                    <div className={"text-h3 style-align-center"}>
+                    <div className={"text-h3 text-align-center"}>
                         Reduction in idle compute <br/>
                         Increased project turnaround time <br/>
                         Operational visibility and risk mitigation

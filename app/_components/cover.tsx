@@ -131,14 +131,14 @@ export const Cover = (props: CoverProps) => {
 
     let colorStyle;
     if(color === "white"){
-        colorStyle = "style-white";
+        colorStyle = "text-color-white";
     }
     else if(color === "black"){
-        colorStyle = "style-black";
+        colorStyle = "text-color-black";
     }
     else{
         console.error("Invalid color value. Expected 'white' or 'black'.");
-        colorStyle = "style-white";
+        colorStyle = "text-color-white";
     }
 
     const justify = ((): 'flex-start' | 'center' | 'flex-end' => {

@@ -288,7 +288,7 @@
 }
 
 .component-404-content{
-  @extend .text-h1, .style-align-center, .layout-flex-col;
+  @extend .text-h1, .text-align-center, .layout-flex-col;
   padding: $padding-large*4 0;
   gap: $padding-small;
   height: 80%;

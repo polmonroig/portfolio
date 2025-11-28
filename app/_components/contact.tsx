@@ -45,7 +45,7 @@ export const Contact = () => {
         <div id={"contact"}>
             <div className={"component-contact"}>
                 <div className={"component-contact-inner"}>
-                    <div className={"text-h3 style-gradient-text"}>
+                    <div className={"text-h3 text-style-gradient"}>
                         Ready to start your project?
                     </div>
                     <div className={"component-contact-info"}>

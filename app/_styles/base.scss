@@ -48,26 +48,6 @@ html, body{
 }
 
 
-.style-bold{
-  font-weight: 700;
-}
-
-.style-italic{
-  font-style: italic;
-}
-
-.style-black{
-  color: $color-black-88 !important;
-}
-
-.style-white{
-  color: $color-white !important;
-}
-
-.style-gray{
-  color: $color-gray !important;
-}
-
 /** Text styling **/
 .text-base{
   color: $color-black-88;
@@ -158,20 +138,44 @@ html, body{
   line-height: $line-height-xl;
 }
 
-.style-gradient-text{
+
+/** Text styling helpers **/
+
+.text-weight-bold{
+  font-weight: 700;
+}
+
+.text-style-italic{
+  font-style: italic;
+}
+
+.text-color-black{
+  color: $color-black-88 !important;
+}
+
+.text-color-white{
+  color: $color-white !important;
+}
+
+.text-color-gray{
+  color: $color-gray !important;
+}
+
+
+.text-style-gradient{
   color: rgba(0, 0, 0, 0);
   background-clip: text;
   background-image: linear-gradient(to right, #161616, rgba(124, 124, 124, 0.7) 70%);
 }
 
-.style-uppercase{
+.text-transform-uppercase{
   text-transform: uppercase;
 }
 
-.style-align-center{
+.text-align-center{
   text-align: center;
 }
 
-.style-text-nowrap{
+.text-wrap-nowrap{
   text-wrap: nowrap;
 }
