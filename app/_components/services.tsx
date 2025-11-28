@@ -2,8 +2,9 @@ import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from "gsap";
-import {useRef} from "react";
-import {getBlurURL} from "@/app/_components/utils";
+import {useEffect, useRef, useState} from "react";
+import {breakpoints, getBlurURL} from "@/app/_components/utils";
+import {useWindowWidth} from "@/app/_components/hooks";
 
 const ServiceItem = (props: {
     number: string, title: string, serviceList: string[],
@@ -11,10 +12,20 @@ const ServiceItem = (props: {
     src: string,
 }) => {
 
+    const [imageSide, setImageSide] = useState<string>(props.side);
+
     const imageWidth: number = 500;
     const imageHeight: number = 455;
 
     const containerRef = useRef(null);
+
+    const windowWidth = useWindowWidth();
+
+    useEffect(() => {
+        if(windowWidth <= breakpoints.desktop){
+            setImageSide("left");
+        }
+    }, [windowWidth]);
 
 
     useGSAP(() => {
@@ -31,7 +42,7 @@ const ServiceItem = (props: {
                 stagger: 0.05,
                 autoAlpha: 0,
                 ease: "power3.out",
-                x: props.side === "left" ? -100 : 100,
+                x: imageSide === "left" ? -100 : 100,
                 scrollTrigger: {
                     start: 'top 80%',
                     trigger: containerRef.current
@@ -40,14 +51,14 @@ const ServiceItem = (props: {
         )
 
 
-        let animatedImageSide = `.animation-image-${props.side}`;
+        let animatedImageSide = `.animation-image-${imageSide}`;
 
         gsap.from(
             animatedImageSide,
             {
                 autoAlpha: 0,
                 duration: 1,
-                x: props.side === "left" ? 100 : -100,
+                x: imageSide === "left" ? 100 : -100,
                 ease: "power3.out",
                 scrollTrigger: {
                     start: 'top 80%',
@@ -63,7 +74,7 @@ const ServiceItem = (props: {
     return (
         <div className={"component-services-item"} ref={containerRef}>
             {
-                props.side === "left" ?
+                imageSide === "left" ?
                     <div className={"component-services-item-inner"}>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row text-line animation-title"}>

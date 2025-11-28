@@ -2,16 +2,21 @@
 @use "../layout/layout";
 
 /* Desktop Large screens */
-@media (max-width: #{variables.$breakpoint-desktop-large}) {
+@media (max-width: variables.$breakpoint-desktop-large) {
   .layout-content-width {
-    max-width: #{variables.$size-max-width};
+    max-width: variables.$size-max-width-large;
   }
 }
 
 /* Desktop Small screens */
 @media (max-width: variables.$breakpoint-desktop) {
+
+  .layout-content-width {
+    max-width: variables.$size-max-width;
+  }
+
   /** Generic components **/
-  .responsive-hide-desktop {
+  .responsive-hide-desktop{
     display: none;
   }
 
@@ -20,19 +25,19 @@
   .component-projects-grid {
     grid-template-columns: 1fr;
   }
-  .element-section-title {
+  .element-section-title{
     margin-left: auto;
     margin-right: auto;
   }
-  .element-section-header {
+  .element-section-header{
     width: auto;
   }
 
-  .component-projects-filter {
+  .component-projects-filter{
     justify-content: center;
   }
 
-  .component-services-item-inner {
+  .component-services-item-inner{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +48,11 @@
 
 /* Mobile first: 1 column on tablet and below */
 @media (max-width: variables.$breakpoint-tablet) {
+
+  .layout-content-width {
+    max-width: 100%;
+  }
+
   .layout-grid,
   .component-projects-grid {
     grid-template-columns: 1fr;
@@ -51,6 +61,11 @@
 
 /* Extra: keep 1 column on smaller mobile widths as well */
 @media (max-width: variables.$breakpoint-mobile) {
+
+  .layout-content-width {
+    max-width: 100%;
+  }
+
   .layout-grid,
   .component-projects-grid {
     grid-template-columns: 1fr;
