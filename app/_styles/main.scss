@@ -17,5 +17,8 @@
 /** Responsive to bottom **/
 @use "base/responsive";
 
+/** Theme **/
+@use "themes/dark";
+
 /** Vendor **/
 @use "vendors/normalize";
