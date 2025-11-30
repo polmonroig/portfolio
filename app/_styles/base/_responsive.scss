@@ -92,6 +92,11 @@
     margin-right: auto;
   }
 
+  .element-header-lines{
+    font-size: variables.$font-size-h3*0.8;
+    line-height: variables.$line-height-xs * 1.2;
+  }
+
 }
 
 
@@ -120,6 +125,10 @@
     line-height: variables.$line-height-xs;
   }
 
+  .element-header-lines{
+    font-size: variables.$font-size-h4;
+    line-height: variables.$line-height-xs * 1;
+  }
 
 }
 

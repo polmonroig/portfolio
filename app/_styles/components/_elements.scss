@@ -233,3 +233,7 @@
   padding: variables.$padding-small variables.$gap-small;
   cursor: pointer;
 }
+
+.element-header-lines{
+  @extend .text-h3, .text-align-center;
+}
