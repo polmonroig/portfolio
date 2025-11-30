@@ -74,6 +74,8 @@ const ServiceItem = (props: {
     }, {scope: containerRef})
 
 
+    const altText = `${props.title} service image`;
+
     return (
         <div className={"component-services-item"} ref={containerRef}>
             {
@@ -83,9 +85,9 @@ const ServiceItem = (props: {
                             <div className={"layout-flex-row text-line animation-title"}>
                                 <div className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto"}>
+                                <h2 className={"layout-margin-y-auto"}>
                                     {props.title}
-                                </div>
+                                </h2>
                             </div>
                             <ul className={"component-services-item-list"}>
                                 {props.serviceList.map((service, index) => (
@@ -94,7 +96,7 @@ const ServiceItem = (props: {
                             </ul>
                         </div>
                         <div>
-                            <Image src={props.src} alt={"service-image"}
+                            <Image src={props.src} alt={altText}
                                    blurDataURL={getBlurURL(props.src)}
                                    placeholder={"blur"}
                                    className={"component-services-item-image animation-image-left"}
@@ -104,7 +106,7 @@ const ServiceItem = (props: {
                     :
                     <div className={"component-services-item-inner"}>
                         <div>
-                            <Image src={props.src} alt={"service-image"}
+                            <Image src={props.src} alt={altText}
                                    blurDataURL={getBlurURL(props.src)}
                                    placeholder={"blur"}
                                    className={"component-services-item-image animation-image-right"}
@@ -114,9 +116,9 @@ const ServiceItem = (props: {
                             <div className={"layout-flex-row text-line animation-title"}>
                                 <div className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto"}>
+                                <h2 className={"layout-margin-y-auto"}>
                                     {props.title}
-                                </div>
+                                </h2>
                             </div>
                             <ul className={"component-services-item-list"}>
                                 {props.serviceList.map((service, index) => (
@@ -137,9 +139,9 @@ export const Services = () => {
     return (
         <div id={"services"} className={"component-services"}>
             <div className={"element-section-header"}>
-                <div className={"element-section-title"}>
+                <h1 className={"element-section-title"}>
                     Services
-                </div>
+                </h1>
                 <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <ServiceItem number={"01"} title="Web Development & Interactive Experiences"

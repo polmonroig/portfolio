@@ -260,13 +260,14 @@ const ProjectItem = ({project}: { project: Project }) => {
         )
     }, {scope: containerRef});
 
+    const altText = `${title} project ${description} `;
 
     return (
 
         <div ref={containerRef}>
             <Link href={`/projects/${id}`}  className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
-                    <Image src={src} alt={title}
+                    <Image src={src} alt={altText}
                            width={coverWidth}
                            height={coverHeight}
                            className={"transition-zoom-out transform-scale"}
@@ -277,12 +278,12 @@ const ProjectItem = ({project}: { project: Project }) => {
                            }}/>
                 </div>
 
-                <div className={"component-project-description"}>{description}</div>
-                <div className={"component-project-tags"}>
+                <h3 className={"component-project-description"}>{description}</h3>
+                <h4 className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                     }
-                </div>
+                </h4>
             </Link>
         </div>
     )
@@ -333,9 +334,9 @@ export const Projects = () => {
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
-                <div className={"element-section-title"}>
+                <h1 className={"element-section-title"}>
                     Featured Projects
-                </div>
+                </h1>
                 <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <div className={"component-projects-list"}>
@@ -480,9 +481,9 @@ export const ProjectViewTemplate = (props: {
                             {props.location}
                         </div>
                     </div>
-                    <div className={"component-project-view-description"}>
+                    <h3 className={"component-project-view-description"}>
                         {props.description}
-                    </div>
+                    </h3>
                 </div>
                 <div className={"layout-margin-x-auto animation-mockup"}>
                     {props.mockup}
