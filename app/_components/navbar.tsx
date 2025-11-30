@@ -1,7 +1,9 @@
 'use client';
-import {useScroll} from "@/app/_components/hooks";
+import {useScroll, useWindowWidth} from "@/app/_components/hooks";
 import Link from "next/link";
 import {usePathname} from 'next/navigation'
+import {useEffect, useState} from "react";
+import {breakpoints} from "@/app/_components/utils";
 
 
 const NavbarItem = (props: {
@@ -20,9 +22,28 @@ const NavbarItem = (props: {
         </Link>
     )
 }
+
+
+const NavbarIcon = (props: {
+    text: string,
+    onClick: () => void,
+    className: string
+}) => {
+    return (
+        <div className={props.className} onClick={props.onClick}>
+            {props.text}
+        </div>
+    )
+}
 export const NavBar = () => {
 
+    const windowWidth = useWindowWidth();
+    const [navbarOpen, setNavbarOpen] = useState(true);
 
+
+    useEffect(() => {
+        setNavbarOpen(windowWidth > breakpoints.desktop);
+    }, [windowWidth]);
 
     const scrollRelativePosition = useScroll();
     const pathname = usePathname();
@@ -35,12 +56,15 @@ export const NavBar = () => {
     }
 
 
+    const onClickCallback = () => setNavbarOpen(!navbarOpen);
+
+
     let nameText: string = "P.";
     return (
         <header className={"component-navbar-header"}>
-            <div className="component-navbar">
-                <NavbarItem text={nameText} slug={"/"} className={logoClassName}/>
-                <div className={"component-navbar-item-list"}>
+            <div className={"component-navbar " + (navbarOpen ? "component-navbar-responsive" : "")}>
+                <NavbarIcon text={nameText} onClick={onClickCallback} className={logoClassName}/>
+                <div className={"component-navbar-item-list " + (navbarOpen ? "" : "component-navbar-item-list-hidden")}>
                     <NavbarItem text={"services"} slug={"/#services"} className={linkClassName}/>
                     <NavbarItem text={"projects"} slug={"/#projects"} className={linkClassName}/>
                     <NavbarItem text={"blog"} slug={"https://blog.pol.company"} target={"_blank"}

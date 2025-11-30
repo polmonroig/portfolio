@@ -131,29 +131,19 @@ export const Cover = (props: CoverProps) => {
 
     let colorStyle;
     if(color === "white"){
-        colorStyle = "style-white";
+        colorStyle = "text-color-white";
     }
     else if(color === "black"){
-        colorStyle = "style-black";
+        colorStyle = "text-color-black";
     }
     else{
         console.error("Invalid color value. Expected 'white' or 'black'.");
-        colorStyle = "style-white";
+        colorStyle = "text-color-white";
     }
 
-    const justify = ((): 'flex-start' | 'center' | 'flex-end' => {
-        const a = align === 'middle' ? 'center' : align;
-        if (a === 'left') return 'flex-start';
-        if (a === 'right') return 'flex-end';
-        return 'center';
-    })();
 
-    const textAlign = ((): 'left' | 'center' | 'right' => {
-        const a = align === 'middle' ? 'center' : align;
-        if (a === 'left') return 'left';
-        if (a === 'right') return 'right';
-        return 'center';
-    })();
+    const elementCoverContentClassName = `element-cover-content-${align}`;
+
 
     const imageFilter = opacity < 1 ? `brightness(${opacity * 100}%)` : undefined;
 
@@ -161,7 +151,6 @@ export const Cover = (props: CoverProps) => {
     const subtitleLines = subtitle.split('\n');
 
     const containerRef = useRef(null);
-    const [showText, setShowText] = useState(!intro);
 
     useGSAP(() => {
 
@@ -189,7 +178,7 @@ export const Cover = (props: CoverProps) => {
                 },
             }
         )
-    },{dependencies: [showText], scope: containerRef})
+    },{scope: containerRef})
 
     return (
         <div
@@ -214,26 +203,18 @@ export const Cover = (props: CoverProps) => {
                 }}
             />
             <div
-                className={"element-cover-content"}
-                style={{
-                    alignItems: showText ? (justify === 'flex-start' ? 'flex-start' : justify === 'flex-end' ? 'flex-end' : 'center') : '',
-                    textAlign: textAlign
-                }}
+                className={"element-cover-content " + elementCoverContentClassName}
             >
 
-                {!showText && (
-                    <AnimatedIntro onComplete={() => setShowText(true)}/>
-                )}
-
-                {(title && showText) && (
-                    <h1 className={"style-h1 " + colorStyle} style={{filter: 'none'}}>
+                {(title) && (
+                    <h1 className={"element-cover-content-title " + colorStyle} style={{filter: 'none'}}>
                         {titleLines.map((line, index) => (
                             <span key={index} className={"animation-text-chars"}>{line}<br/></span>
                         ))}
                     </h1>
                 )}
-                {(subtitle && showText) && (
-                    <div className={"style-h5-light " + colorStyle}>
+                {(subtitle) && (
+                    <div className={"element-cover-content-subtitle " + colorStyle}>
                         {subtitleLines.map((line, index) => (
                             <span key={index} className={"animation-text-lines"}>{line}<br/></span>
                         ))}
@@ -241,7 +222,7 @@ export const Cover = (props: CoverProps) => {
                 )}
                 {
                     tags.length > 0 && (
-                        <div className={"component-project-tags"}>
+                        <div className={"element-cover-content-tags"}>
                             {tags.map((tag, index) => (
                                 <div key={index} className={"element-tag element-tag-white"}>
                                     {tag}

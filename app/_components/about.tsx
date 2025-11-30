@@ -45,6 +45,7 @@ export const About = () => {
             height: height,
             backgroundColor: 'black',
             overflow: 'hidden',
+            display: 'flex',
         }}>
             <Image
                 src={src}
@@ -59,16 +60,16 @@ export const About = () => {
                 }}
             />
             <div className={"component-about"} style={{ position: 'relative', zIndex: 1 }}>
-                <div className={"component-about-header style-white"}>
+                <div className={"component-about-header text-color-white"}>
                     <div className={"element-line-large"}></div>
                     <div>Beyond the code</div>
                     <div className={"element-line-large"}></div>
                 </div>
-                <div className={"component-about-content style-white animation-text-lines"}>
+                <div className={"component-about-content text-color-white animation-text-lines"}>
                     My focus is on delivering real <br/>value, offering the professional <br/>assurance that your vision will<br/> be
                     delivered.
                 </div>
-                <div className={"component-about-columns style-white"}>
+                <div className={"component-about-columns text-color-white"}>
                     <div className={"animation-text-lines"}>
                         Based in Barcelona
                     </div>

@@ -2,8 +2,9 @@ import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from "gsap";
-import {useRef} from "react";
-import {getBlurURL} from "@/app/_components/utils";
+import {useEffect, useRef, useState} from "react";
+import {breakpoints, getBlurURL} from "@/app/_components/utils";
+import {useWindowWidth} from "@/app/_components/hooks";
 
 const ServiceItem = (props: {
     number: string, title: string, serviceList: string[],
@@ -11,10 +12,23 @@ const ServiceItem = (props: {
     src: string,
 }) => {
 
+    const [imageSide, setImageSide] = useState<string>(props.side);
+
     const imageWidth: number = 500;
     const imageHeight: number = 455;
 
     const containerRef = useRef(null);
+
+    const windowWidth = useWindowWidth();
+
+    useEffect(() => {
+        if(windowWidth <= breakpoints.desktop){
+            setImageSide("left");
+        }
+        else{
+            setImageSide(props.side);
+        }
+    }, [windowWidth]);
 
 
     useGSAP(() => {
@@ -31,7 +45,7 @@ const ServiceItem = (props: {
                 stagger: 0.05,
                 autoAlpha: 0,
                 ease: "power3.out",
-                x: props.side === "left" ? -100 : 100,
+                x: imageSide === "left" ? -100 : 100,
                 scrollTrigger: {
                     start: 'top 80%',
                     trigger: containerRef.current
@@ -40,14 +54,14 @@ const ServiceItem = (props: {
         )
 
 
-        let animatedImageSide = `.animation-image-${props.side}`;
+        let animatedImageSide = `.animation-image-${imageSide}`;
 
         gsap.from(
             animatedImageSide,
             {
                 autoAlpha: 0,
                 duration: 1,
-                x: props.side === "left" ? 100 : -100,
+                x: imageSide === "left" ? 100 : -100,
                 ease: "power3.out",
                 scrollTrigger: {
                     start: 'top 80%',
@@ -60,27 +74,29 @@ const ServiceItem = (props: {
     }, {scope: containerRef})
 
 
+    const altText = `${props.title} service image`;
+
     return (
         <div className={"component-services-item"} ref={containerRef}>
             {
-                props.side === "left" ?
+                imageSide === "left" ?
                     <div className={"component-services-item-inner"}>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small animation-title"}>
-                                <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
+                            <div className={"layout-flex-row text-line animation-title"}>
+                                <div className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto"}>
+                                <h2 className={"layout-margin-y-auto"}>
                                     {props.title}
-                                </div>
+                                </h2>
                             </div>
-                            <ul>
+                            <ul className={"component-services-item-list"}>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h2 animation-text-line"}>{service}</li>
+                                    <li key={index} className={"animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
                         <div>
-                            <Image src={props.src} alt={"service-image"}
+                            <Image src={props.src} alt={altText}
                                    blurDataURL={getBlurURL(props.src)}
                                    placeholder={"blur"}
                                    className={"component-services-item-image animation-image-left"}
@@ -90,23 +106,23 @@ const ServiceItem = (props: {
                     :
                     <div className={"component-services-item-inner"}>
                         <div>
-                            <Image src={props.src} alt={"service-image"}
+                            <Image src={props.src} alt={altText}
                                    blurDataURL={getBlurURL(props.src)}
                                    placeholder={"blur"}
                                    className={"component-services-item-image animation-image-right"}
                                    width={imageWidth} height={imageHeight}/>
                         </div>
                         <div className={"component-services-item-inner-text"}>
-                            <div className={"layout-flex-row style-paragraph-small animation-title"}>
-                                <div className={"layout-margin-y-auto style-bold style-italic"}>{props.number}</div>
+                            <div className={"layout-flex-row text-line animation-title"}>
+                                <div className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
-                                <div className={"layout-margin-y-auto"}>
+                                <h2 className={"layout-margin-y-auto"}>
                                     {props.title}
-                                </div>
+                                </h2>
                             </div>
-                            <ul>
+                            <ul className={"component-services-item-list"}>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"style-h2 animation-text-line"}>{service}</li>
+                                    <li key={index} className={"animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
@@ -123,9 +139,9 @@ export const Services = () => {
     return (
         <div id={"services"} className={"component-services"}>
             <div className={"element-section-header"}>
-                <div className={"element-section-title"}>
+                <h1 className={"element-section-title"}>
                     Services
-                </div>
+                </h1>
                 <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <ServiceItem number={"01"} title="Web Development & Interactive Experiences"

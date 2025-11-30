@@ -7,8 +7,6 @@ import {Button} from "@/app/_components/elements";
 import React, {useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
-import {SplitText} from "gsap/SplitText";
-import {sort} from "next/dist/build/webpack/loaders/css-loader/src/utils";
 
 type Project = {
     id: string;
@@ -260,13 +258,14 @@ const ProjectItem = ({project}: { project: Project }) => {
         )
     }, {scope: containerRef});
 
+    const altText = `${title} project ${description} `;
 
     return (
 
         <div ref={containerRef}>
             <Link href={`/projects/${id}`}  className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
-                    <Image src={src} alt={title}
+                    <Image src={src} alt={altText}
                            width={coverWidth}
                            height={coverHeight}
                            className={"transition-zoom-out transform-scale"}
@@ -277,12 +276,12 @@ const ProjectItem = ({project}: { project: Project }) => {
                            }}/>
                 </div>
 
-                <div className={"style-paragraph"}>{description}</div>
-                <div className={"component-project-tags"}>
+                <h3 className={"component-project-description"}>{description}</h3>
+                <h4 className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                     }
-                </div>
+                </h4>
             </Link>
         </div>
     )
@@ -333,14 +332,14 @@ export const Projects = () => {
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
-                <div className={"element-section-title"}>
+                <h1 className={"element-section-title"}>
                     Featured Projects
-                </div>
+                </h1>
                 <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <div className={"component-projects-list"}>
                 <div className={"component-projects-filter"}>
-                    <div style={{padding: "2px 8px 2px 0px"}} className={"style-caption responsive-hide-desktop"}>
+                    <div style={{padding: "2px 8px 2px 0px"}} className={"text-caption responsive-hide-desktop"}>
                         Filter by Service:
                     </div>
                     {
@@ -357,6 +356,7 @@ export const Projects = () => {
                     }
 
                 </div>
+
                 {
                     sortedProjects.length > 0 ?
                         <div className={"component-projects-grid"}>
@@ -453,35 +453,35 @@ export const ProjectViewTemplate = (props: {
             <div className="component-project-view-content">
                 {/** Project Content Highlight **/}
                 <div className={"component-project-view-content-header"}>
-                    <div className={"layout-grid style-uppercase style-text-nowrap"} style={{gap: "8px"}}>
-                        <div className={"style-caption style-gray"}>
+                    <div className={"component-project-view-metadata"}>
+                        <div className={"text-caption text-color-gray"}>
                             Year
                         </div>
                         <div>
                             {props.year}
                         </div>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption text-color-gray"}>
                             Client
                         </div>
                         <div>
                             {props.client}
                         </div>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption text-color-gray"}>
                             Department
                         </div>
                         <div>
                             {props.department}
                         </div>
-                        <div className={"style-caption style-gray"}>
+                        <div className={"text-caption text-color-gray"}>
                             Location
                         </div>
                         <div>
                             {props.location}
                         </div>
                     </div>
-                    <div className={"style-paragraph"} style={{maxWidth: "516px", marginLeft: "auto"}}>
+                    <h3 className={"component-project-view-description"}>
                         {props.description}
-                    </div>
+                    </h3>
                 </div>
                 <div className={"layout-margin-x-auto animation-mockup"}>
                     {props.mockup}

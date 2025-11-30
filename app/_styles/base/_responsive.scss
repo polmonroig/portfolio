@@ -1,0 +1,156 @@
+@use "../abstracts/variables";
+@use "../layout/layout";
+
+/* Desktop Large screens */
+@media (max-width: variables.$breakpoint-desktop-large) {
+  .layout-content-width {
+    max-width: variables.$size-max-width-large;
+  }
+}
+
+/* Desktop Small screens */
+@media (max-width: variables.$breakpoint-desktop) {
+
+  .layout-content-width {
+    max-width: variables.$size-max-width;
+  }
+
+  /** Generic components **/
+  .responsive-hide-desktop{
+    display: none;
+  }
+
+  /** Specific Elements **/
+  .layout-grid,
+  .component-projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .element-section-title{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .element-section-header{
+    width: auto;
+  }
+
+  .component-projects-filter{
+    justify-content: center;
+  }
+
+  .component-navbar{
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .component-navbar-responsive{
+    height: 100%;
+    border-radius: 30px;
+    padding: 10px 20px;
+  }
+
+  .component-navbar-logo{
+    margin: auto;
+  }
+
+  .component-navbar-item-list{
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .element-cover-content-left, .element-cover-content-right{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .element-cover-content-title, .element-cover-content-subtitle, .element-cover-content-tags{
+    margin: 0 auto;
+  }
+
+
+  .component-project-description, .component-project-tags{
+    margin: 0 variables.$padding-small;
+  }
+
+  .component-services-item-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .component-services-item-image{
+    box-shadow: none;
+  }
+
+  .component-project-view-content-header{
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .component-project-view-description, .component-project-view-metadata{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .element-header-lines{
+    font-size: variables.$font-size-h3*0.8;
+    line-height: variables.$line-height-xs * 1.2;
+  }
+
+}
+
+
+/* Mobile first: 1 column on tablet and below */
+@media (max-width: variables.$breakpoint-tablet) {
+
+  .layout-content-width {
+    max-width: 100%;
+  }
+
+  .layout-grid,
+  .component-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .element-cover-content-title{
+    font-size: variables.$font-size-h3;
+  }
+
+  .element-cover-content-subtitle{
+    font-size: variables.$font-size-h6;
+  }
+
+  .component-about-content{
+    font-size: variables.$font-size-h4;
+    line-height: variables.$line-height-xs;
+  }
+
+  .element-header-lines{
+    font-size: variables.$font-size-h4;
+    line-height: variables.$line-height-xs * 1;
+  }
+
+}
+
+/* Extra: keep 1 column on smaller mobile widths as well */
+@media (max-width: variables.$breakpoint-mobile) {
+
+  .layout-content-width {
+    max-width: 100%;
+  }
+
+  .layout-grid,
+  .component-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .component-contact-inner{
+    font-size: variables.$font-size-h4 * 1.2;
+  }
+
+  .component-contact-info{
+    font-size: variables.$font-size-line * 0.8;
+  }
+
+
+}

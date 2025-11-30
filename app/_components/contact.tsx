@@ -45,19 +45,19 @@ export const Contact = () => {
         <div id={"contact"}>
             <div className={"component-contact"}>
                 <div className={"component-contact-inner"}>
-                    <div className={"style-h3 style-gradient-text"}>
+                    <div className={"text-style-gradient"}>
                         Ready to start your project?
                     </div>
                     <div className={"component-contact-info"}>
-                        <div className={"style-paragraph"}>
+                        <div >
                             Whether you're planning a new digital product or scaling an existing system,<br/>
                             I'm available to discuss your needs and outline a strategic path forward.
                         </div>
 
-                        <div className={"style-paragraph"}>
-                            <a href={"mailto:hello@pol.company"}>hello@pol.company</a>
+                        <div>
+                            <a href={"mailto:hello@pol.company"} className={"component-contact-links"}>hello@pol.company</a>
                             <br/>
-                            <a href={"tel:+34617004358"}>+34 617 00 43 58</a>
+                            <a href={"tel:+34617004358"} className={"component-contact-links"}>+34 617 00 43 58</a>
                         </div>
                         <div>
                             {

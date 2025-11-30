@@ -1,11 +1,6 @@
 import type {Metadata} from "next";
 import {Inter, Playfair_Display} from "next/font/google";
-import './_styles/base.scss';
-import './_styles/components.scss';
-import './_styles/layout.scss';
-import './_styles/animation.scss';
-import './_styles/elements.scss';
-import './_styles/responsive.scss';
+import './_styles/main.scss';
 import {AppBody, UmamiAnalytics} from "@/app/body";
 import React from "react";
 
@@ -20,7 +15,23 @@ const interFont = Inter({
 
 export const metadata: Metadata = {
     title: "Pol Company",
-    description: "Portfolio",
+    description: "Pol Monroig Company portfolio website. Web Developer and Data Scientist.",
+    applicationName: "Pol Company",
+    keywords: [
+        "Pol Company",
+        "Pol Monroig",
+        "portfolio",
+        "web developer",
+        "frontend",
+        "full-stack",
+        "data scientist",
+        "Next.js",
+        "React",
+    ],
+    authors: [{ name: "Pol Company", url: "https://pol.company" }],
+    creator: "Pol Company",
+    publisher: "Pol Company",
+    metadataBase: new URL("https://pol.company"),
 };
 
 export default function RootLayout({
