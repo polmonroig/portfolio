@@ -7,8 +7,6 @@ import {Button} from "@/app/_components/elements";
 import React, {useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
-import {SplitText} from "gsap/SplitText";
-import {sort} from "next/dist/build/webpack/loaders/css-loader/src/utils";
 
 type Project = {
     id: string;
