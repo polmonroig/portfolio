@@ -178,6 +178,11 @@
   @extend .text-h5;
 }
 
+.element-cover-content-tags{
+  @extend .layout-flex-row;
+  gap: 20px;
+}
+
 .element-cover-scroll-banner {
   @extend .layout-flex-row;
   color: variables.$color-white;

@@ -87,9 +87,9 @@ const ServiceItem = (props: {
                                     {props.title}
                                 </div>
                             </div>
-                            <ul>
+                            <ul className={"component-services-item-list"}>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"text-h2 animation-text-line"}>{service}</li>
+                                    <li key={index} className={"animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>
@@ -118,9 +118,9 @@ const ServiceItem = (props: {
                                     {props.title}
                                 </div>
                             </div>
-                            <ul>
+                            <ul className={"component-services-item-list"}>
                                 {props.serviceList.map((service, index) => (
-                                    <li key={index} className={"text-h2 animation-text-line"}>{service}</li>
+                                    <li key={index} className={"animation-text-line"}>{service}</li>
                                 ))}
                             </ul>
                         </div>

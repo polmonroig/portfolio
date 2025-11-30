@@ -222,7 +222,7 @@ export const Cover = (props: CoverProps) => {
                 )}
                 {
                     tags.length > 0 && (
-                        <div className={"component-project-tags"}>
+                        <div className={"element-cover-content-tags"}>
                             {tags.map((tag, index) => (
                                 <div key={index} className={"element-tag element-tag-white"}>
                                     {tag}

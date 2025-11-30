@@ -82,7 +82,7 @@
 }
 
 .component-contact-inner{
-  @extend .layout-flex-col;
+  @extend .layout-flex-col, .text-h3;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -90,7 +90,7 @@
 }
 
 .component-contact-info{
-  @extend .layout-flex-col;
+  @extend .layout-flex-col, .text-paragraph;
   color: variables.$color-black-88;
   gap: variables.$gap-medium;
   padding: 0 5px;
@@ -168,6 +168,10 @@
   @extend .layout-flex-row, .layout-content-width;
   width: 100%;
   gap: variables.$gap-full-column;
+}
+
+.component-services-item-list{
+  @extend .text-h2;
 }
 
 .component-services-item-inner-text{
@@ -284,6 +288,17 @@
   @extend .layout-flex-row, .layout-margin-x-auto, .layout-content-width;
   gap: variables.$padding-medium;
   width: 100%;
+}
+
+.component-project-view-description{
+  @extend .text-paragraph;
+  max-width: 516px;
+  margin-left: auto;
+}
+
+.component-project-view-metadata{
+  @extend .layout-grid, .text-transform-uppercase, .text-wrap-nowrap;
+  gap: 8px;
 }
 
 /** Error pages Styling **/
