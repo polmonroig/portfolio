@@ -2,7 +2,6 @@
 
 import React, {useRef} from "react";
 import {useState} from "react";
-import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from 'gsap';
@@ -153,14 +152,14 @@ export const Card = (props: {
                             </div>
                         </div>
                         <div>
-                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                            <img src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
                                    height={400}/>
                         </div>
                     </>
                     :
                     <>
                         <div>
-                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                            <img src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
                                    height={400}/>
                         </div>
                         <div className={"element-card-text"}>
@@ -192,7 +191,7 @@ export const CardLarge = (props: {
                     <span key={index}>{line}<br/></span>
                 ))}
             </div>
-            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
+            <img src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
                    height={1976}/>
         </div>
     )

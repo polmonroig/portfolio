@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import {useRef} from "react";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
@@ -47,17 +46,11 @@ export const About = () => {
             overflow: 'hidden',
             display: 'flex',
         }}>
-            <Image
+            <img
                 src={src}
                 alt=""
-                aria-hidden
-                fill
                 sizes="100vw"
-                style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    zIndex: 0,
-                }}
+                className={"element-cover-background"}
             />
             <div className={"component-about"} style={{ position: 'relative', zIndex: 1 }}>
                 <div className={"component-about-header text-color-white"}>

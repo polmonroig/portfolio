@@ -1,11 +1,7 @@
-
-
-import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {useRef} from "react";
 import {SplitText} from "gsap/SplitText";
-import  {useState} from "react";
 import {getBlurURL} from "@/app/_components/utils";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
@@ -188,15 +184,11 @@ export const Cover = (props: CoverProps) => {
                 height: height
             }}
         >
-            {/* Background image using next/image to leverage optimization and proper layout */}
-            <Image
+            {/* Background image */}
+            <img
                 src={src}
                 alt=""
-                aria-hidden
-                fill
                 sizes="100vw"
-                blurDataURL={getBlurURL(src)}
-                placeholder={"blur"}
                 className="element-cover-background"
                 style={{
                     filter: imageFilter
