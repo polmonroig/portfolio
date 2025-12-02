@@ -1,5 +1,4 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import Image from "next/image";
 import {Card} from "@/app/_components/elements";
 
 export default function ProjectView() {
@@ -11,7 +10,7 @@ export default function ProjectView() {
             client={"Aiart"}
             department={"Technology"}
             location={"Los Angeles, CA"}
-            mockup={<Image src={"/projects/aiart/mockup.png"} alt={"mockup"} width={2030} height={1300}/>}>
+            mockup={<img src={"/projects/aiart/mockup.png"} alt={"mockup"} width={2030} height={1300}/>}>
             <>
                 <Card
                     src={"/projects/aiart/harmony.png"}

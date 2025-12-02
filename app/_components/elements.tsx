@@ -152,14 +152,14 @@ export const Card = (props: {
                             </div>
                         </div>
                         <div>
-                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                            <img src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
                                    height={400}/>
                         </div>
                     </>
                     :
                     <>
                         <div>
-                            <Image src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
+                            <img src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
                                    height={400}/>
                         </div>
                         <div className={"element-card-text"}>
@@ -191,26 +191,8 @@ export const CardLarge = (props: {
                     <span key={index}>{line}<br/></span>
                 ))}
             </div>
-            <Image src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
+            <img src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
                    height={1976}/>
         </div>
-    )
-}
-
-export const Image = (props: {
-    src: string,
-    alt?: string,
-    width: number,
-    height: number,
-    className?: string
-}) => {
-    return (
-        <img
-            src={props.src}
-            alt={props.alt ?? "image"}
-            width={props.width}
-            height={props.height}
-            className={props.className}
-        />
     )
 }
