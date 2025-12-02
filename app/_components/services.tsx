@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from "gsap";
@@ -96,9 +95,7 @@ const ServiceItem = (props: {
                             </ul>
                         </div>
                         <div>
-                            <Image src={props.src} alt={altText}
-                                   blurDataURL={getBlurURL(props.src)}
-                                   placeholder={"blur"}
+                            <img src={props.src} alt={altText}
                                    className={"component-services-item-image animation-image-left"}
                                    width={imageWidth} height={imageHeight}/>
                         </div>
@@ -106,9 +103,7 @@ const ServiceItem = (props: {
                     :
                     <div className={"component-services-item-inner"}>
                         <div>
-                            <Image src={props.src} alt={altText}
-                                   blurDataURL={getBlurURL(props.src)}
-                                   placeholder={"blur"}
+                            <img src={props.src} alt={altText}
                                    className={"component-services-item-image animation-image-right"}
                                    width={imageWidth} height={imageHeight}/>
                         </div>

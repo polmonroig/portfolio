@@ -1,7 +1,6 @@
 'use client';
 
 import Link from "next/link";
-import Image from "next/image";
 import {Cover} from "@/app/_components/cover";
 import {Button} from "@/app/_components/elements";
 import React, {useRef, useState} from "react";
@@ -265,7 +264,7 @@ const ProjectItem = ({project}: { project: Project }) => {
         <div ref={containerRef}>
             <Link href={`/projects/${id}`}  className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
-                    <Image src={src} alt={altText}
+                    <img src={src} alt={altText}
                            width={coverWidth}
                            height={coverHeight}
                            className={"transition-zoom-out transform-scale"}
