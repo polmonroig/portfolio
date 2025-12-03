@@ -140,17 +140,17 @@ export const Services = () => {
                 <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <ServiceItem number={"01"} title="Web Development & Interactive Experiences"
-                         src={"/images/services-01.jpg"}
+                         src={"/images/generic/services-01.webp"}
                          side={"left"}
                          serviceList={["Full-Stack", "Frontend", "Backend Architecture",
                              "3D Web with WebGL", "Scalable APIs"]}/>
             <ServiceItem number={"02"} title="Machine Learning & Data Science Solutions"
-                         src={"/images/services-02.jpg"}
+                         src={"/images/generic/services-02.webp"}
                          side={"right"}
                          serviceList={["Model Development", "Predictive Analytics",
                              "Data Modeling", "Algorithm Design", "Deep Learning"]}/>
             <ServiceItem number={"03"} title="Real-Time Data Visualization & Dashboards"
-                         src={"/images/services-03.jpg"}
+                         src={"/images/generic/services-03.webp"}
                          side={"left"}
                          serviceList={["Custom Dashboards", "Real-Time Data",
                              "Interactive Charts", "Analytics Platforms", "BI Tools"]}/>

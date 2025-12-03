@@ -176,6 +176,8 @@ export const Cover = (props: CoverProps) => {
         )
     },{scope: containerRef})
 
+    const altText = `Cover image for ${title}`;
+
     return (
         <div
             ref={containerRef}
@@ -187,7 +189,7 @@ export const Cover = (props: CoverProps) => {
             {/* Background image */}
             <img
                 src={src}
-                alt=""
+                alt={altText}
                 sizes="100vw"
                 className="element-cover-background"
                 style={{

@@ -12,7 +12,7 @@ export default function Home() {
 
     return (
         <div className={"component-home"}>
-            <Cover src={"/images/cover-image-01.png"}
+            <Cover src={"/images/generic/cover-image-01.webp"}
                    align="right"
                    height="80%"
                    opacity={0.3}
@@ -21,7 +21,7 @@ export default function Home() {
                        "from scalable full-stack applications and real-time \n data dashboards to impactful machine learning models."}
                    color={"white"}
                    hasScrollBanner={false}/>
-            <Cover src={"/images/cover-image-02.jpg"}
+            <Cover src={"/images/generic/cover-image-02.webp"}
                    align="left"
                    height="80%"
                    title={"Crafting intuitive \n interfaces that \n resonate with users"}

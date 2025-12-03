@@ -10,10 +10,10 @@ export default function ProjectView() {
             client={"Aiart"}
             department={"Technology"}
             location={"Los Angeles, CA"}
-            mockup={<img src={"/projects/aiart/mockup.png"} alt={"mockup"} width={2030} height={1300}/>}>
+            mockup={<img src={"/images/projects/aiart/mockup.webp"} alt={"mockup"} width={2030} height={1300}/>}>
             <>
                 <Card
-                    src={"/projects/aiart/harmony.png"}
+                    src={"/images/projects/aiart/harmony.webp"}
                     title={"Image harmonization"}
                     side={"left"}
                 >
@@ -31,7 +31,7 @@ export default function ProjectView() {
                     Aiart, you can perfectly balance your image with just one click.
                 </Card>
                 <Card
-                    src={"/projects/aiart/color-01.png"}
+                    src={"/images/projects/aiart/color-01.webp"}
                     title={"Color palette"}
                     side={"right"}
                 >
