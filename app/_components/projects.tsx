@@ -276,12 +276,12 @@ const ProjectItem = ({project}: { project: Project }) => {
                          }}/>
                 </div>
 
-                <h3 className={"component-project-description"}>{description}</h3>
-                <h4 className={"component-project-tags"}>
+                <h4 className={"component-project-description"}>{description}</h4>
+                <h5 className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
                     }
-                </h4>
+                </h5>
             </Link>
         </div>
     )
@@ -330,9 +330,9 @@ export const Projects = () => {
     return (
         <div id={"projects"} className={"component-projects"}>
             <div className={"element-section-header"}>
-                <h1 className={"element-section-title"}>
+                <h2 className={"element-section-title"}>
                     Featured Projects
-                </h1>
+                </h2>
                 <div className={"element-line-full responsive-hide-desktop"}></div>
             </div>
             <div className={"component-projects-list"}>

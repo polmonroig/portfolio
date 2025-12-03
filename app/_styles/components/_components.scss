@@ -42,9 +42,8 @@
   @extend .layout-flex-row;
   height: 50px;
   background: rgba(255, 255, 255, 0.55);
-  box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4), 0 0 1px 1px rgb(0 0 0 / 0.05);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 99999px;
   gap: variables.$gap-medium;
   margin: 15px auto 0 auto;

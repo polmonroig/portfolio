@@ -200,11 +200,11 @@ export const Cover = (props: CoverProps) => {
             >
 
                 {(title) && (
-                    <h1 className={"element-cover-content-title " + colorStyle} style={{filter: 'none'}}>
+                    <h2 className={"element-cover-content-title " + colorStyle} style={{filter: 'none'}}>
                         {titleLines.map((line, index) => (
                             <span key={index} className={"animation-text-chars"}>{line}<br/></span>
                         ))}
-                    </h1>
+                    </h2>
                 )}
                 {(subtitle) && (
                     <div className={"element-cover-content-subtitle " + colorStyle}>
