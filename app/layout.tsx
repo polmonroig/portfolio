@@ -14,8 +14,9 @@ const interFont = Inter({
 })
 
 export const metadata: Metadata = {
-    title: "Pol Company",
-    description: "Pol Monroig Company portfolio website. Web Developer and Data Scientist Freelance for hire.",
+    title: "Pol Company - Web developer and Data Scientist",
+    description: "Pol Monroig Company - Expert Web Developer and Data Scientist offering freelance services. " +
+        "Specializing in modern web development, data analytics and machine learning solutions.",
     applicationName: "Pol Company",
     keywords: [
         "Pol Company",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         "Next.js",
         "React",
     ],
-    authors: [{ name: "Pol Company", url: "https://pol.company" }],
+    authors: [{name: "Pol Company", url: "https://pol.company"}],
     creator: "Pol Company",
     publisher: "Pol Company",
     metadataBase: new URL("https://pol.company"),
@@ -45,8 +46,8 @@ export default function RootLayout({
         <body
             className={` ${playFairFont.variable} ${interFont.variable} antialiased `}
         >
-            <AppBody children={children}/>
-            <UmamiAnalytics/>
+        <AppBody children={children}/>
+        <UmamiAnalytics/>
         </body>
         </html>
     );
