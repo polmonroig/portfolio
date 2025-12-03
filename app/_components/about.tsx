@@ -7,7 +7,7 @@ import gsap from "gsap";
 export const About = () => {
 
     const height = "600px";
-    const src = "/images/cover-image-03.png";
+    const src = "/images/generic/cover-image-03.png";
 
     const containerRef = useRef(null);
 

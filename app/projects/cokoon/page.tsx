@@ -12,7 +12,7 @@ export default function ProjectView() {
             location={"Los Angeles, CA"} mockup={null}>
             <>
                 <Card
-                    src={"/projects/cokoon/kinect.png"}
+                    src={"/images/projects/cokoon/kinect.png"}
                     title={"Interactive Experience"}
                     side={"left"}
                 >
@@ -26,7 +26,7 @@ export default function ProjectView() {
                 </Card>
 
                 <Card
-                    src={"/projects/cokoon/anamorphic.png"}
+                    src={"/images/projects/cokoon/anamorphic.png"}
                     title={"Anamorphic Space"}
                     side={"right"}
                 >

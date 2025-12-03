@@ -233,7 +233,7 @@ const ProjectItem = ({project}: { project: Project }) => {
     const coverWidth = 455;
     const coverHeight = 484;
     const {id, title, description, tags} = project;
-    const src = `/projects/${id}/cover.png`;
+    const src = `/images/projects/${id}/cover.png`;
 
 
     const containerRef = useRef(null);
@@ -262,7 +262,7 @@ const ProjectItem = ({project}: { project: Project }) => {
     return (
 
         <div ref={containerRef}>
-            <Link href={`/projects/${id}`}  className={"component-project-item"}>
+            <Link href={`/projects/${id}`} className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
                     <img src={src} alt={altText}
                            width={coverWidth}
@@ -400,7 +400,7 @@ export const ProjectViewHeader = ({id}: { id: string }) => {
 
     return (
         <>
-            <Cover src={`/projects/${id}/cover-large.png`}
+            <Cover src={`/images/projects/${id}/cover-large.png`}
                    align="left"
                    height="50%"
                    opacity={0.5}
