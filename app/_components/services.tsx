@@ -4,6 +4,7 @@ import gsap from "gsap";
 import {useEffect, useRef, useState} from "react";
 import {breakpoints, getBlurURL} from "@/app/_components/utils";
 import {useWindowWidth} from "@/app/_components/hooks";
+import {ResponsiveImage} from "@/app/_components/elements";
 
 const ServiceItem = (props: {
     number: string, title: string, serviceList: string[],
@@ -95,8 +96,7 @@ const ServiceItem = (props: {
                             </ul>
                         </div>
                         <div>
-                            <img src={props.src}
-                                 loading={"lazy"}
+                            <ResponsiveImage src={props.src}
                                  alt={altText}
                                  className={"component-services-item-image animation-image-left"}
                                  width={imageWidth} height={imageHeight}/>
@@ -105,8 +105,7 @@ const ServiceItem = (props: {
                     :
                     <div className={"component-services-item-inner"}>
                         <div>
-                            <img src={props.src}
-                                 loading={"lazy"}
+                            <ResponsiveImage src={props.src}
                                  alt={altText}
                                  className={"component-services-item-image animation-image-right"}
                                  width={imageWidth} height={imageHeight}/>

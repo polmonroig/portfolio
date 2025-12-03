@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {Cover} from "@/app/_components/cover";
-import {Button} from "@/app/_components/elements";
+import {Button, ResponsiveImage} from "@/app/_components/elements";
 import React, {useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
@@ -264,8 +264,7 @@ const ProjectItem = ({project}: { project: Project }) => {
         <div ref={containerRef}>
             <Link href={`/projects/${id}`} className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
-                    <img src={src}
-                         loading={"lazy"}
+                    <ResponsiveImage src={src}
                          alt={altText}
                          width={coverWidth}
                          height={coverHeight}

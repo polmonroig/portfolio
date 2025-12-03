@@ -1,5 +1,5 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import {Card} from "@/app/_components/elements";
+import {Card, ResponsiveImage} from "@/app/_components/elements";
 
 export default function ProjectView() {
     return (
@@ -10,8 +10,7 @@ export default function ProjectView() {
             client={"Aiart"}
             department={"Technology"}
             location={"Los Angeles, CA"}
-            mockup={<img
-                loading={"lazy"}
+            mockup={<ResponsiveImage
                 src={"/images/projects/aiart/mockup.webp"} alt={"mockup"} width={2030} height={1300}/>}>
             <>
                 <Card

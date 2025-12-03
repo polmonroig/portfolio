@@ -2,7 +2,7 @@ import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {useRef} from "react";
 import {SplitText} from "gsap/SplitText";
-import {getBlurURL} from "@/app/_components/utils";
+import {ResponsiveImage} from "@/app/_components/elements";
 
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
@@ -187,11 +187,9 @@ export const Cover = (props: CoverProps) => {
             }}
         >
             {/* Background image */}
-            <img
+            <ResponsiveImage
                 src={src}
-                loading={"lazy"}
                 alt={altText}
-                sizes="100vw"
                 className="element-cover-background"
                 style={{
                     filter: imageFilter
