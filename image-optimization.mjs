@@ -26,10 +26,9 @@ for(const imagePath of imagesRaw) {
         .webp()
         .toFile(outputPath);
 
-    // // blurred version of original
-    // await sharp(imagePath)
-    //     .webp()
-    //     .blur(10)
-    //     .resize(10)
-    //     .toFile(outputPath.replace(".webp", "-blur.webp"));
+    // blurred version of original
+    await sharp(imagePath)
+        .webp()
+        .resize(16)
+        .toFile(outputPath.replace(".webp", "-blur.webp"));
 }
