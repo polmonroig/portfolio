@@ -37,10 +37,7 @@
     justify-content: center;
   }
 
-  .component-navbar{
-    gap: 0;
-    flex-direction: column;
-  }
+
 
   .component-navbar-responsive{
     height: 100%;
@@ -52,10 +49,6 @@
     margin: auto;
   }
 
-  .component-navbar-item-list{
-    flex-direction: column;
-    text-align: center;
-  }
 
 
   .element-cover-content-left, .element-cover-content-right{
@@ -105,6 +98,15 @@
 
   .layout-content-width {
     max-width: 100%;
+  }
+
+  .component-navbar{
+    gap: variables.$gap-small;
+  }
+
+
+  .component-navbar-item-list{
+    gap: 0;
   }
 
   .layout-grid,

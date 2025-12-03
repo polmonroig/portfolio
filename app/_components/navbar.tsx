@@ -30,9 +30,9 @@ const NavbarIcon = (props: {
     className: string
 }) => {
     return (
-        <div className={props.className} onClick={props.onClick}>
+        <h1 className={props.className} onClick={props.onClick}>
             {props.text}
-        </div>
+        </h1>
     )
 }
 export const NavBar = () => {
