@@ -3,6 +3,7 @@ import {useRef} from "react";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from "gsap";
+import {ResponsiveImage} from "@/app/_components/elements";
 
 export const About = () => {
 
@@ -46,10 +47,9 @@ export const About = () => {
             overflow: 'hidden',
             display: 'flex',
         }}>
-            <img
+            <ResponsiveImage
                 src={src}
-                alt=""
-                sizes="100vw"
+                alt="About image background"
                 className={"element-cover-background"}
             />
             <div className={"component-about"} style={{ position: 'relative', zIndex: 1 }}>

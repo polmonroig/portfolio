@@ -4,6 +4,7 @@ import gsap from "gsap";
 import {useEffect, useRef, useState} from "react";
 import {breakpoints, getBlurURL} from "@/app/_components/utils";
 import {useWindowWidth} from "@/app/_components/hooks";
+import {ResponsiveImage} from "@/app/_components/elements";
 
 const ServiceItem = (props: {
     number: string, title: string, serviceList: string[],
@@ -21,10 +22,9 @@ const ServiceItem = (props: {
     const windowWidth = useWindowWidth();
 
     useEffect(() => {
-        if(windowWidth <= breakpoints.desktop){
+        if (windowWidth <= breakpoints.desktop) {
             setImageSide("left");
-        }
-        else{
+        } else {
             setImageSide(props.side);
         }
     }, [windowWidth]);
@@ -82,7 +82,8 @@ const ServiceItem = (props: {
                     <div className={"component-services-item-inner"}>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row text-line animation-title"}>
-                                <div className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
+                                <div
+                                    className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <h2 className={"layout-margin-y-auto"}>
                                     {props.title}
@@ -95,21 +96,24 @@ const ServiceItem = (props: {
                             </ul>
                         </div>
                         <div>
-                            <img src={props.src} alt={altText}
-                                   className={"component-services-item-image animation-image-left"}
-                                   width={imageWidth} height={imageHeight}/>
+                            <ResponsiveImage src={props.src}
+                                 alt={altText}
+                                 className={"component-services-item-image animation-image-left"}
+                                 width={imageWidth} height={imageHeight}/>
                         </div>
                     </div>
                     :
                     <div className={"component-services-item-inner"}>
                         <div>
-                            <img src={props.src} alt={altText}
-                                   className={"component-services-item-image animation-image-right"}
-                                   width={imageWidth} height={imageHeight}/>
+                            <ResponsiveImage src={props.src}
+                                 alt={altText}
+                                 className={"component-services-item-image animation-image-right"}
+                                 width={imageWidth} height={imageHeight}/>
                         </div>
                         <div className={"component-services-item-inner-text"}>
                             <div className={"layout-flex-row text-line animation-title"}>
-                                <div className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
+                                <div
+                                    className={"layout-margin-y-auto text-weight-bold text-style-italic"}>{props.number}</div>
                                 <div className={"element-line-small"}></div>
                                 <h2 className={"layout-margin-y-auto"}>
                                     {props.title}

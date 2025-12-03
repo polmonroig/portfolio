@@ -103,7 +103,7 @@ export const Card = (props: {
     useGSAP(() => {
 
         const childrenLines = SplitText.create(".animation-text-lines", {
-           type: "lines"
+            type: "lines"
         });
 
         gsap.from([childrenLines.lines], {
@@ -152,15 +152,21 @@ export const Card = (props: {
                             </div>
                         </div>
                         <div>
-                            <img src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
-                                   height={400}/>
+                            <ResponsiveImage src={props.src}
+                                 alt={"card-image"}
+                                 className={"element-card-image"}
+                                 width={550}
+                                 height={400}/>
                         </div>
                     </>
                     :
                     <>
                         <div>
-                            <img src={props.src} alt={"card-image"} className={"element-card-image"} width={550}
-                                   height={400}/>
+                            <ResponsiveImage src={props.src}
+                                 alt={"card-image"}
+                                 className={"element-card-image"}
+                                 width={550}
+                                 height={400}/>
                         </div>
                         <div className={"element-card-text"}>
                             <div className={"layout-flex-row text-h6 animation-text-lines"}>
@@ -191,8 +197,34 @@ export const CardLarge = (props: {
                     <span key={index}>{line}<br/></span>
                 ))}
             </div>
-            <img src={props.src} alt={"card-image"} className={"element-card-image-large"} width={2614}
-                   height={1976}/>
+            <ResponsiveImage
+                 src={props.src}
+                 alt={"card-image"}
+                 className={"element-card-image-large"} width={2614}
+                 height={1976}/>
         </div>
     )
+}
+
+
+export const ResponsiveImage = (props: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    className?: string;
+    style?: React.CSSProperties;
+}) => {
+
+    return (
+        <img
+            src={props.src}
+            loading="lazy"
+            alt={props.alt}
+            width={props.width ?? undefined}
+            height={props.height ?? undefined}
+            className={props.className ?? ""}
+            style={props.style ?? {}}
+        />
+    );
 }

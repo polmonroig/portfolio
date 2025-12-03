@@ -1,6 +1,5 @@
 export const getBlurURL = (url: string) => {
-    url = url.replace(".png", "-blur.png");
-    url = url.replace(".jpg", "-blur.jpg");
+    url = url.replace(".webp", "-blur.webp");
     return url;
 }
 
