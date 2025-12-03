@@ -15,7 +15,7 @@ const interFont = Inter({
 
 export const metadata: Metadata = {
     title: "Pol Company",
-    description: "Pol Monroig Company portfolio website. Web Developer and Data Scientist.",
+    description: "Pol Monroig Company portfolio website. Web Developer and Data Scientist Freelance for hire.",
     applicationName: "Pol Company",
     keywords: [
         "Pol Company",
