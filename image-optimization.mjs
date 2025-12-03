@@ -20,7 +20,16 @@ for(const imagePath of imagesRaw) {
     fs.mkdirSync(outputDir, {recursive: true});
 
     // create multiple optimized image versions
+
+    // exact copy, compresses and transformed to webp
     await sharp(imagePath)
         .webp()
         .toFile(outputPath);
+
+    // // blurred version of original
+    // await sharp(imagePath)
+    //     .webp()
+    //     .blur(10)
+    //     .resize(10)
+    //     .toFile(outputPath.replace(".webp", "-blur.webp"));
 }
