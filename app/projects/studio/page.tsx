@@ -10,7 +10,7 @@ export default function ProjectView() {
             client={"BCN Visuals Inc"}
             department={"Technology"}
             location={"Los Angeles, CA"}
-            mockup={<img src={"/images/projects/studio/mockup-04.png"} alt={"mockup"} width={3856} height={1940}/>}
+            mockup={<img src={"/images/projects/studio/mockup-04.webp"} alt={"mockup"} width={3856} height={1940}/>}
         >
             <>
                 <div className={"layout-flex-col-small"}>
@@ -24,7 +24,7 @@ export default function ProjectView() {
                     </div>
                 </div>
                 <Card
-                    src={"/images/projects/studio/desktop_mockup.png"}
+                    src={"/images/projects/studio/desktop_mockup.webp"}
                     title={"Centralized Infrastructure Automation"}
                     side={"right"}
                 >
@@ -36,7 +36,7 @@ export default function ProjectView() {
                     costly, unused compute time or license wastage.
                 </Card>
                 <Card
-                    src={"/images/projects/studio/carbon_mockup.jpg"}
+                    src={"/images/projects/studio/carbon_mockup.webp"}
                     title={"Comprehensive Data Analytics"}
                     side={"left"}
                 >
@@ -47,7 +47,7 @@ export default function ProjectView() {
                     Analytics allow managers to forecast needs accurately and optimize infrastructure spending.
                 </Card>
                 <Card
-                    src={"/images/projects/studio/artists_desktop.png"}
+                    src={"/images/projects/studio/artists_desktop.webp"}
                     title={"Real-Time Supervision"}
                     side={"right"}
                 >
@@ -59,7 +59,7 @@ export default function ProjectView() {
                 </Card>
 
                 <CardLarge title={"Comprehensive control for \n every aspect of cloud infrastructure."}
-                           src={"/images/projects/studio/bcn_studio_08.png"}/>
+                           src={"/images/projects/studio/bcn_studio_08.webp"}/>
             </>
         </ProjectViewTemplate>
     )

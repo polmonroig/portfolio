@@ -21,7 +21,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "glob": "^13.0.0",
     "sass": "^1.93.3",
+    "sharp": "^0.34.5",
     "typescript": "^5"
   }
 }
