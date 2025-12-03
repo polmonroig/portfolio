@@ -48,7 +48,8 @@ export const About = () => {
         }}>
             <img
                 src={src}
-                alt=""
+                loading={"lazy"}
+                alt="About image background"
                 sizes="100vw"
                 className={"element-cover-background"}
             />

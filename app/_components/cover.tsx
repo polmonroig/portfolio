@@ -189,6 +189,7 @@ export const Cover = (props: CoverProps) => {
             {/* Background image */}
             <img
                 src={src}
+                loading={"lazy"}
                 alt={altText}
                 sizes="100vw"
                 className="element-cover-background"

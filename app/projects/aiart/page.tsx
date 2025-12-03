@@ -10,7 +10,9 @@ export default function ProjectView() {
             client={"Aiart"}
             department={"Technology"}
             location={"Los Angeles, CA"}
-            mockup={<img src={"/images/projects/aiart/mockup.webp"} alt={"mockup"} width={2030} height={1300}/>}>
+            mockup={<img
+                loading={"lazy"}
+                src={"/images/projects/aiart/mockup.webp"} alt={"mockup"} width={2030} height={1300}/>}>
             <>
                 <Card
                     src={"/images/projects/aiart/harmony.webp"}

@@ -264,15 +264,17 @@ const ProjectItem = ({project}: { project: Project }) => {
         <div ref={containerRef}>
             <Link href={`/projects/${id}`} className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
-                    <img src={src} alt={altText}
-                           width={coverWidth}
-                           height={coverHeight}
-                           className={"transition-zoom-out transform-scale"}
-                           style={{
-                               objectFit: "cover",
-                               width: coverWidth,
-                               height: coverHeight
-                           }}/>
+                    <img src={src}
+                         loading={"lazy"}
+                         alt={altText}
+                         width={coverWidth}
+                         height={coverHeight}
+                         className={"transition-zoom-out transform-scale"}
+                         style={{
+                             objectFit: "cover",
+                             width: coverWidth,
+                             height: coverHeight
+                         }}/>
                 </div>
 
                 <h3 className={"component-project-description"}>{description}</h3>
@@ -304,18 +306,16 @@ export const Projects = () => {
 
     const sortedProjects = filteredProjects.sort((a: Project, b: Project) => {
         let sortValue = 0;
-        for(const tag of activeTags){
+        for (const tag of activeTags) {
             const aContainsTag = a.tags.includes(tag);
             const bContainsTag = b.tags.includes(tag);
-            if(aContainsTag && bContainsTag){
+            if (aContainsTag && bContainsTag) {
                 sortValue = 0;
                 break;
-            }
-            else if(aContainsTag && !bContainsTag){
+            } else if (aContainsTag && !bContainsTag) {
                 sortValue = -1;
                 break;
-            }
-            else if(!aContainsTag && bContainsTag){
+            } else if (!aContainsTag && bContainsTag) {
                 sortValue = 1;
                 break;
             }
