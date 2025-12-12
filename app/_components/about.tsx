@@ -51,6 +51,7 @@ export const About = () => {
                 src={src}
                 alt="About image background"
                 className={"element-cover-background"}
+                style={{objectPosition: "right center"}}
             />
             <div className={"component-about"} style={{ position: 'relative', zIndex: 1 }}>
                 <div className={"component-about-header text-color-white"}>
