@@ -45,7 +45,6 @@
   box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4), 0 0 1px 1px rgb(0 0 0 / 0.05);
   backdrop-filter: blur(4px);
   border-radius: 99999px;
-  gap: variables.$gap-medium;
   margin: 15px auto 0 auto;
   padding: 0 20px;
 }
@@ -53,10 +52,25 @@
 .component-navbar-item-list{
   @extend .layout-flex-row, .layout-margin-y-auto;
   gap: variables.$gap-small;
+  /* Enable smooth open/close animation */
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 420px; /* expanded state */
+  opacity: 1;
+  margin-left: variables.$gap-medium;
+  transition-property: max-width, opacity, margin-left;
+  transition-duration: 0.5s, 0.5s, 0.25s;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+  transition-delay: 0ms, 0ms, 0ms;
 }
 
+
 .component-navbar-item-list-hidden{
-  display: none;
+  /* Use animatable properties instead of display:none so we can animate */
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0 !important;
+  pointer-events: none; /* avoid interacting while hidden */
 }
 
 .component-navbar-logo{

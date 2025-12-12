@@ -94,13 +94,10 @@
     max-width: 100%;
   }
 
-  .component-navbar{
-    gap: variables.$gap-small;
-  }
-
 
   .component-navbar-item-list{
     gap: 0;
+    margin-left: variables.$gap-small;
   }
 
   .layout-grid,
