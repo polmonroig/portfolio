@@ -11,7 +11,7 @@ export const LinkedinIcon = () => {
             rel="noopener noreferrer"
             aria-label="Visit Pol's LinkedIn profile"
         >
-            <FaLinkedin/>
+            <FaLinkedin style={{fontSize: "20px"}}/>
         </a>
     )
 }
@@ -25,7 +25,7 @@ export const GithubIcon = (props: { slug: string }) => {
             rel="noopener noreferrer"
             aria-label="Visit GitHub profile"
         >
-            <FaGithub/>
+            <FaGithub style={{fontSize: "20px"}}/>
         </a>
     )
 }
@@ -38,7 +38,7 @@ export const HashNodeIcon = () => {
             rel="noopener noreferrer"
             aria-label="Visit Pol's Blog profile"
         >
-            <FaHashnode/>
+            <FaHashnode style={{fontSize: "20px"}}/>
         </a>
     )
 }
