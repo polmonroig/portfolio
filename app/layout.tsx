@@ -25,6 +25,7 @@ export const metadata: Metadata = {
         "Pol Company",
         "Pol Monroig",
         "portfolio",
+        "freelance",
         "web developer",
         "frontend",
         "full-stack",
@@ -86,6 +87,8 @@ const personSchema = {
     "@type": "Person",
     name: "Pol Monroig Company",
     url: "https://pol.company",
+    email: "mailto:hello@pol.company",
+    telephone: "+34617004358",
     jobTitle: ["Web Developer", "Data Scientist"],
     worksFor: {
         "@type": "Organization",

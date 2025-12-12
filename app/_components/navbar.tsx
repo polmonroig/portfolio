@@ -38,7 +38,7 @@ const NavbarIcon = (props: {
 export const NavBar = () => {
 
     const windowWidth = useWindowWidth();
-    const [navbarOpen, setNavbarOpen] = useState(true);
+    const [navbarOpen, setNavbarOpen] = useState(false);
 
 
     useEffect(() => {
@@ -62,7 +62,7 @@ export const NavBar = () => {
     let nameText: string = "P.";
     return (
         <header className={"component-navbar-header"}>
-            <div className={"component-navbar " + (navbarOpen ? "component-navbar-responsive" : "")}>
+            <div className={"component-navbar " + (navbarOpen ? "" : "component-navbar-hidden")}>
                 <NavbarIcon text={nameText} onClick={onClickCallback} className={logoClassName}/>
                 <div className={"component-navbar-item-list " + (navbarOpen ? "" : "component-navbar-item-list-hidden")}>
                     <NavbarItem text={"services"} slug={"/#services"} className={linkClassName}/>

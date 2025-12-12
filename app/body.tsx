@@ -6,10 +6,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {SplitText} from "gsap/SplitText";
 import {TextPlugin} from "gsap/TextPlugin";
+import {DrawSVGPlugin} from "gsap/DrawSVGPlugin";
 
 
 // Register GSAP plugins properly
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, TextPlugin);
+gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, TextPlugin, DrawSVGPlugin);
 
 export const AppBody = ({
                             children,

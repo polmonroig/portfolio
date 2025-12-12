@@ -2,7 +2,7 @@ import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from "gsap";
 import {useEffect, useRef, useState} from "react";
-import {breakpoints, getBlurURL} from "@/app/_components/utils";
+import {breakpoints} from "@/app/_components/utils";
 import {useWindowWidth} from "@/app/_components/hooks";
 import {ResponsiveImage} from "@/app/_components/elements";
 

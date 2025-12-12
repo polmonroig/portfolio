@@ -1,8 +1,10 @@
 'use client';
 
-import {GithubIcon, HashNodeIcon, LinkedinIcon} from "@/app/_components/icons";
+import {CircleLineIcon, GithubIcon, HashNodeIcon, LinkedinIcon} from "@/app/_components/icons";
 import {Button} from "@/app/_components/elements";
 import {useState} from "react";
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
 
 
 const HoverPopup = ({text = "", children}: { text?: string, children: React.ReactNode }) => {
@@ -41,6 +43,23 @@ export const Contact = () => {
         setSubmitted(true);
     }
 
+    useGSAP(() => {
+        gsap.from(
+            ".component-contact-circle-path",
+            {
+                duration: 2,
+                delay: 0.2,
+                drawSVG: 0,
+                ease: "power3.out",
+                scrollTrigger: {
+                    start: 'bottom bottom',
+                    trigger: ".component-contact-circle-path",
+                    toggleActions: 'play none none none'
+                },
+            }
+        );
+    }, []);
+
     return (
         <div id={"contact"}>
             <div className={"component-contact"}>
@@ -49,13 +68,16 @@ export const Contact = () => {
                         Ready to start your project?
                     </div>
                     <div className={"component-contact-info"}>
-                        <div >
+                        <div>
                             Whether you're planning a new digital product or scaling an existing system,<br/>
                             I'm available to discuss your needs and outline a strategic path forward.
                         </div>
 
-                        <div>
-                            <a href={"mailto:hello@pol.company"} className={"component-contact-links"}>hello@pol.company</a>
+                        <div style={{position: "relative"}}>
+                            <CircleLineIcon className={"component-contact-circle"}
+                                            classNamePath={"component-contact-circle-path"}/>
+                            <a href={"mailto:hello@pol.company"}
+                               className={"component-contact-links"}>hello@pol.company</a>
                             <br/>
                             <a href={"tel:+34617004358"} className={"component-contact-links"}>+34 617 00 43 58</a>
                         </div>

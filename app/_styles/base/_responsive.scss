@@ -39,12 +39,6 @@
 
 
 
-  .component-navbar-responsive{
-    height: 100%;
-    border-radius: 30px;
-    padding: 10px 20px;
-  }
-
   .component-navbar-logo{
     margin: auto;
   }
@@ -71,6 +65,15 @@
     align-items: center;
     overflow: hidden;
   }
+
+  .element-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    max-width: 550px;
+  }
+
   .component-services-item-image{
     box-shadow: none;
   }
@@ -100,13 +103,10 @@
     max-width: 100%;
   }
 
-  .component-navbar{
-    gap: variables.$gap-small;
-  }
-
 
   .component-navbar-item-list{
     gap: 0;
+    margin-left: variables.$gap-small;
   }
 
   .layout-grid,
@@ -152,6 +152,11 @@
 
   .component-contact-info{
     font-size: variables.$font-size-line * 0.8;
+  }
+
+  .component-contact-circle{
+    height: 100px;
+    left: 50px;
   }
 
 

@@ -26,9 +26,20 @@ for(const imagePath of imagesRaw) {
         .webp()
         .toFile(outputPath);
 
-    // blurred version of original
-    await sharp(imagePath)
-        .webp()
-        .resize(16)
-        .toFile(outputPath.replace(".webp", "-blur.webp"));
+    // create multiple optimized image versions (responsive widths)
+    const responsiveWidths = [320, 480, 640, 768, 1024, 1280, 1600, 1920];
+
+    for (const w of responsiveWidths) {
+        const sizedOut = outputPath.replace(".webp", `-w${w}.webp`);
+        await sharp(imagePath)
+            .resize({ width: w, withoutEnlargement: true })
+            .webp()
+            .toFile(sizedOut);
+    }
+
+    // blurred placeholder (tiny)
+    // await sharp(imagePath)
+    //     .resize({ width: 16})
+    //     .webp()
+    //     .toFile(outputPath.replace(".webp", "-blur.webp"));
 }

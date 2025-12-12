@@ -1,10 +1,12 @@
 'use client'
 
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from 'gsap';
+import {breakpoints, getWidthImageURL} from "@/app/_components/utils";
+import {useWindowWidth} from "@/app/_components/hooks";
 
 export const Button = (props: {
     text: string,
@@ -97,21 +99,32 @@ export const Card = (props: {
     children: React.ReactNode
 }) => {
 
+    const [imageSide, setImageSide] = useState<string>(props.side);
+
+
+    const windowWidth = useWindowWidth();
+
+    useEffect(() => {
+        if (windowWidth <= breakpoints.desktop) {
+            setImageSide("left");
+        } else {
+            setImageSide(props.side);
+        }
+    }, [windowWidth]);
+
+
 
     const cardRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
 
-        const childrenLines = SplitText.create(".animation-text-lines", {
-            type: "lines"
-        });
 
-        gsap.from([childrenLines.lines], {
+        gsap.from([".animation-text-lines"], {
             duration: 1,
             stagger: 0.01,
             autoAlpha: 0,
             ease: "power3.out",
-            y: 100,
+            x: imageSide === "left" ? -100 : 100,
             scrollTrigger: {
                 start: 'top 80%',
                 trigger: cardRef.current,
@@ -123,7 +136,7 @@ export const Card = (props: {
         gsap.from(
             ".element-card-image",
             {
-                x: props.side === "left" ? 100 : -100,
+                x: imageSide === "left" ? 100 : -100,
                 duration: 1,
                 ease: "power3.out",
                 autoAlpha: 0,
@@ -141,7 +154,7 @@ export const Card = (props: {
     return (
         <div className={"element-card"} ref={cardRef}>
             {
-                props.side === "left" ?
+                imageSide === "left" ?
                     <>
                         <div className={"element-card-text"}>
                             <div className={"layout-flex-col text-h6 animation-text-lines"}>
@@ -216,15 +229,22 @@ export const ResponsiveImage = (props: {
     style?: React.CSSProperties;
 }) => {
 
+    const responsiveWidths = [320, 480, 640, 768, 1024, 1280, 1600, 1920];
+
     return (
-        <img
-            src={props.src}
-            loading="lazy"
-            alt={props.alt}
-            width={props.width ?? undefined}
-            height={props.height ?? undefined}
-            className={props.className ?? ""}
-            style={props.style ?? {}}
-        />
+        <picture>
+            {responsiveWidths.map(w => (
+                <source key={w} media={`(max-width: ${w}px)`} srcSet={getWidthImageURL(props.src, w)}/>
+            ))}
+            <img
+                src={props.src}
+                loading="lazy"
+                alt={props.alt}
+                width={props.width ?? undefined}
+                height={props.height ?? undefined}
+                className={props.className ?? ""}
+                style={props.style ?? {}}
+            />
+        </picture>
     );
 }
