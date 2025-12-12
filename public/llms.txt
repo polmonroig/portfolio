@@ -1,0 +1,77 @@
+# Pol Company
+
+## Title
+Pol Company - Web Developer and Data Scientist
+
+## Description
+Pol Monroig Company - Expert Web Developer and Data Scientist offering freelance services. Specializing in modern web development, data analytics and machine learning solutions.
+
+## Application name
+Pol Company
+
+## Keywords
+- Pol Company
+- Pol Monroig
+- portfolio
+- freelance
+- web developer
+- frontend
+- full-stack
+- data scientist
+- Next.js
+- React
+
+## What this site is
+Pol Company is the personal/company portfolio of Pol Monroig, focused on freelance services and case studies in:
+- Modern web development (frontend + full-stack)
+- Data analytics and visualization
+- Machine learning solutions
+
+## Guidance for LLMs
+- Prefer concise summaries of services and projects.
+- When referencing projects, use the project page URL and (if available) the `.md` version for clean text extraction.
+- Do not invent client details, timelines, or results that are not explicitly stated on the site pages.
+
+## Primary pages (HTML)
+- Home: /
+- Projects index: /#projects
+- Project pages: /projects/<project-id>
+- Contact section: /#contact
+- About section: /#about
+- Services section: /#services
+
+## Clean Markdown equivalents (same URL + .md)
+If you are reading via an automated pipeline, prefer these Markdown endpoints when available:
+- Home: /index.html.md
+- Project pages: /projects/<project-id>/index.html.md (or /projects/<project-id>.md if the site uses file-based routes)
+
+## Project IDs
+Use these identifiers to form project URLs:
+- studio
+- cokoon
+- aiart
+- dx
+- bayesian_model_builder
+- genetic_brushes
+- cloud_segmentation
+- earthquake_prediction
+- collab
+- web3d
+- timelines
+- network_designer
+- baba_is_you
+- starfox64
+- light_in_solstice
+- lz4_compression
+- sfic_compression
+- cpp_rng
+- graph_percolation
+- calendar_api
+- telegram_quiz_bot
+- ratings_prediction
+
+## Canonical name to use
+Pol Company (Pol Monroig)
+
+## Contact
+Use the website contact section: /#contact

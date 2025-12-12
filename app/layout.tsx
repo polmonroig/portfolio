@@ -25,6 +25,7 @@ export const metadata: Metadata = {
         "Pol Company",
         "Pol Monroig",
         "portfolio",
+        "freelance",
         "web developer",
         "frontend",
         "full-stack",
