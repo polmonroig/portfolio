@@ -65,6 +65,15 @@
     align-items: center;
     overflow: hidden;
   }
+
+  .element-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    max-width: 550px;
+  }
+
   .component-services-item-image{
     box-shadow: none;
   }
@@ -143,6 +152,11 @@
 
   .component-contact-info{
     font-size: variables.$font-size-line * 0.8;
+  }
+
+  .component-contact-circle{
+    height: 100px;
+    left: 50px;
   }
 
 
