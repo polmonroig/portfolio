@@ -5,6 +5,7 @@ import {useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from 'gsap';
+import {getWidthImageURL} from "@/app/_components/utils";
 
 export const Button = (props: {
     text: string,
@@ -216,15 +217,22 @@ export const ResponsiveImage = (props: {
     style?: React.CSSProperties;
 }) => {
 
+    const responsiveWidths = [320, 480, 640, 768, 1024, 1280, 1600, 1920];
+
     return (
-        <img
-            src={props.src}
-            loading="lazy"
-            alt={props.alt}
-            width={props.width ?? undefined}
-            height={props.height ?? undefined}
-            className={props.className ?? ""}
-            style={props.style ?? {}}
-        />
+        <picture>
+            {responsiveWidths.map(w => (
+                <source key={w} media={`(max-width: ${w}px)`} srcSet={getWidthImageURL(props.src, w)}/>
+            ))}
+            <img
+                src={props.src}
+                loading="lazy"
+                alt={props.alt}
+                width={props.width ?? undefined}
+                height={props.height ?? undefined}
+                className={props.className ?? ""}
+                style={props.style ?? {}}
+            />
+        </picture>
     );
 }
