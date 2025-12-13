@@ -294,6 +294,7 @@
   @extend .layout-flex-col, .layout-margin-x-auto;
   background-color: variables.$color-white-broken;
   padding: variables.$padding-large 0;
+  overflow: hidden;
   gap: variables.$padding-large;
 }
 
