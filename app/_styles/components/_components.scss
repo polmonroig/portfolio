@@ -115,6 +115,10 @@
   left: 0;
 }
 
+.component-contact-links{
+  position: relative;
+}
+
 .component-contact-links:hover{
   text-decoration-line: underline;
   text-underline-offset: 2.7px;
@@ -294,6 +298,7 @@
   @extend .layout-flex-col, .layout-margin-x-auto;
   background-color: variables.$color-white-broken;
   padding: variables.$padding-large 0;
+  overflow: hidden;
   gap: variables.$padding-large;
 }
 

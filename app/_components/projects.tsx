@@ -265,15 +265,15 @@ const ProjectItem = ({project}: { project: Project }) => {
             <Link href={`/projects/${id}`} className={"component-project-item"}>
                 <div className={"overflow-hidden"}>
                     <ResponsiveImage src={src}
-                         alt={altText}
-                         width={coverWidth}
-                         height={coverHeight}
-                         className={"transition-zoom-out transform-scale"}
-                         style={{
-                             objectFit: "cover",
-                             width: coverWidth,
-                             height: coverHeight
-                         }}/>
+                                     alt={altText}
+                                     width={coverWidth}
+                                     height={coverHeight}
+                                     className={"transition-zoom-out transform-scale"}
+                                     style={{
+                                         objectFit: "cover",
+                                         width: coverWidth,
+                                         height: coverHeight
+                                     }}/>
                 </div>
 
                 <h4 className={"component-project-description"}>{description}</h4>
@@ -422,7 +422,8 @@ export const ProjectViewTemplate = (props: {
     children: React.ReactNode
 }) => {
 
-    const nextProjectId: string = props.id;
+    const currentProjectIndex: number = projects.findIndex(p => p.id === props.id);
+    const nextProjectId = currentProjectIndex + 1 >= projects.length ? projects[0].id : projects[currentProjectIndex + 1].id;
 
     useGSAP(() => {
 

@@ -1,5 +1,5 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import {Card, ResponsiveImage} from "@/app/_components/elements";
+import {Card, CardLarge, ResponsiveImage} from "@/app/_components/elements";
 
 export default function ProjectView() {
     return (
@@ -9,7 +9,7 @@ export default function ProjectView() {
             year={"2020"}
             client={"Aiart"}
             department={"Technology"}
-            location={"Los Angeles, CA"}
+            location={"Barcelona"}
             mockup={<ResponsiveImage
                 src={"/images/projects/aiart/mockup.webp"} alt={"mockup"} width={2030} height={1300}/>}>
             <>
@@ -24,12 +24,18 @@ export default function ProjectView() {
                     identifying key focal points and areas that draw attention. This comprehensive analysis helps
                     artists
                     understand the visual flow and balance of their compositions.
-                    <br/><br/>
-                    For more complex images, our accuracy mode leverages a deep neural network to analyze precise
-                    details
-                    such as faces and small but significant objects. The AI can detect subtle nuances in textures,
-                    patterns, and compositional elements that might be overlooked by traditional analysis methods. With
-                    Aiart, you can perfectly balance your image with just one click.
+                </Card>
+                <Card
+                    src={"/images/projects/aiart/harmony.webp"}
+                    title={"Image harmonization"}
+                    side={"left"}
+                >
+                    Using graph-based image segmentation, we can accurately calculate the weight of each segment in the
+                    image. Our advanced algorithms analyze the visual hierarchy and structural composition of the
+                    artwork,
+                    identifying key focal points and areas that draw attention. This comprehensive analysis helps
+                    artists
+                    understand the visual flow and balance of their compositions.
                 </Card>
                 <Card
                     src={"/images/projects/aiart/color-01.webp"}
@@ -45,6 +51,9 @@ export default function ProjectView() {
                     Aiart helps you visualize the color distribution and understand how adjusting
                     different colors can enhance the overall harmony.
                 </Card>
+
+
+                <CardLarge title={"Get AI insights on your images"} src={"/images/projects/aiart/color.webp"}/>
 
             </>
         </ProjectViewTemplate>

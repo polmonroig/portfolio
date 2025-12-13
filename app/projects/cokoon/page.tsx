@@ -1,5 +1,5 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import {Card} from "@/app/_components/elements";
+import {Card, CardLarge} from "@/app/_components/elements";
 
 export default function ProjectView() {
     return (
@@ -12,7 +12,7 @@ export default function ProjectView() {
             location={"Los Angeles, CA"} mockup={null}>
             <>
                 <Card
-                    src={"/images/projects/cokoon/kinect.png"}
+                    src={"/images/projects/cokoon/kinect.webp"}
                     title={"Interactive Experience"}
                     side={"left"}
                 >
@@ -26,7 +26,7 @@ export default function ProjectView() {
                 </Card>
 
                 <Card
-                    src={"/images/projects/cokoon/anamorphic.png"}
+                    src={"/images/projects/cokoon/anamorphic.webp"}
                     title={"Anamorphic Space"}
                     side={"right"}
                 >
