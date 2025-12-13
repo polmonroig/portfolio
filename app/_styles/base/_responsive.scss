@@ -79,8 +79,9 @@
   }
 
   .component-project-view-content-header{
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin: auto;
+    padding: 0 10px;
   }
 
   .component-project-view-description, .component-project-view-metadata{
@@ -141,6 +142,7 @@
     max-width: 100%;
   }
 
+
   .layout-grid,
   .component-projects-grid {
     grid-template-columns: 1fr;
@@ -159,5 +161,16 @@
     left: 50px;
   }
 
-
 }
+
+@media (max-width: variables.$breakpoint-mobile-small) {
+
+  .component-navbar{
+    padding: 0 8px;
+  }
+
+  .component-navbar-item-list{
+    margin-left: 0;
+  }
+}
+
