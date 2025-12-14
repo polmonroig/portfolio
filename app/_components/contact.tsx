@@ -75,7 +75,8 @@ export const Contact = () => {
 
                         <div style={{position: "relative"}}>
                             <CircleLineIcon className={"component-contact-circle"}
-                                            classNamePath={"component-contact-circle-path"}/>
+                                            classNamePath={"component-contact-circle-path"}
+                                            style={{display: formOpen ? "none" : ""}}/>
                             <a href={"mailto:hello@pol.company"}
                                className={"component-contact-links"}>hello@pol.company</a>
                             <br/>
