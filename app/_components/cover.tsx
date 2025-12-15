@@ -1,5 +1,7 @@
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import {useRef} from "react";
 import {SplitText} from "gsap/SplitText";
 import {ResponsiveImage} from "@/app/_components/elements";
@@ -7,94 +9,6 @@ import {ResponsiveImage} from "@/app/_components/elements";
 type CoverAlign = 'left' | 'right' | 'center' | 'middle';
 
 
-const AnimatedIntro = (props : {onComplete: () => void}) => {
-
-    useGSAP(() => {
-        // define series of steps in timeline
-        const timeline = gsap.timeline({
-            onComplete: props.onComplete
-        });
-
-        const elementClass = ".component-animated-intro";
-        let split = SplitText.create(elementClass, { type: "chars" });
-        let chars = split.chars;
-
-        // initial lift animations on the placeholder char(s)
-        timeline.to(
-            chars,
-            {
-                y: -100,
-                duration: 0.5,
-                ease: "ease.out"
-            }
-        );
-
-        timeline.to(
-            chars,
-            {
-                y: -90,
-                duration: 0.1
-            }
-        );
-
-        // Replace typing effect with wave-style character-by-character reveal
-        timeline.add(() => {
-            // revert previous split to avoid nested spans
-            split.revert();
-            const el = document.querySelector(elementClass) as HTMLElement | null;
-            if (!el) return;
-            el.textContent = "POL COMPANY";
-            // re-split the new text into characters
-            split = SplitText.create(elementClass, { type: "chars" });
-            chars = split.chars;
-
-            // set initial state for wave reveal
-            gsap.from(chars, {
-                opacity: 0,
-                y: -90,
-                duration: 1.5,
-                stagger: {
-                    amount: 0.05,
-                    from: "center"
-                },
-                ease: "bounce.out"
-            });
-
-
-            //Keep scale animations applied to the current chars
-            timeline.to(
-                elementClass,
-                {
-                    delay: 1.5,
-                    scale: 4,
-                    ease: "ease.out"
-                }
-            );
-
-            timeline.to(
-                elementClass,
-                {
-                    scale: 2,
-                    duration: 1.5,
-                    ease: "elastic.out(1,0.5)"
-                }
-            );
-
-            timeline.to(
-                elementClass,
-                {
-                    x: -4000
-                }
-            )
-        });
-    })
-
-    return (
-        <div className={"component-animated-intro"} >
-            .
-        </div>
-    );
-}
 
 type CoverProps = {
     src: string;
@@ -174,6 +88,41 @@ export const Cover = (props: CoverProps) => {
                 },
             }
         )
+        // Parallax effect: text content lags behind background
+        // If a global ScrollSmoother is present, data-speed attributes (set in JSX) will take effect.
+        // Otherwise, we fall back to ScrollTrigger-based parallax tweens scoped to the cover container.
+        const smoother = (typeof window !== 'undefined') ? (ScrollSmoother.get?.()) : null;
+        if (!smoother) {
+            // Background moves slightly with scroll
+            gsap.to(
+                ".element-cover-background",
+                {
+                    yPercent: 10,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true,
+                    },
+                }
+            );
+
+            // Text/content lags (moves opposite direction to feel slower)
+            gsap.to(
+                ".element-cover-content",
+                {
+                    yPercent: -30,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true,
+                    },
+                }
+            );
+        }
     },{scope: containerRef})
 
     const altText = `Cover image for ${title}`;
@@ -191,12 +140,14 @@ export const Cover = (props: CoverProps) => {
                 src={src}
                 alt={altText}
                 className="element-cover-background"
+                data-speed={1.1}
                 style={{
                     filter: imageFilter
                 }}
             />
             <div
                 className={"element-cover-content " + elementCoverContentClassName}
+                data-speed={0.85}
             >
 
                 {(title) && (
