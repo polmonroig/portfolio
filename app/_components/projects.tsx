@@ -38,8 +38,8 @@ export const projects: Project[] = [
         id: "aiart",
         title: "Aiart",
         description:
-            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. ",
-        header: "AI-Powered Art Analysis Platform",
+            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. Science backed graph-based analysis.",
+        header: "AI Powered \n Art Analysis Platform",
         tags: ["Web Development", "Machine Learning"],
         slug: "aiart"
     },
