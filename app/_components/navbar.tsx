@@ -50,9 +50,17 @@ export const NavBar = () => {
 
     let linkClassName: string = 'component-navbar-item';
     let logoClassName: string = 'component-navbar-logo'
-    if (scrollRelativePosition > 0.75 || (pathname !== null && pathname.includes('project'))) {
-        linkClassName += ' component-navbar-dark';
-        logoClassName += ' component-navbar-dark';
+    let wrapperClassName: string = 'component-navbar';
+    let itemListClassName: string = 'component-navbar-item-list';
+    const darkMode = scrollRelativePosition <= 0.75 &&  !(pathname !== null && pathname.includes('project'));
+    if (darkMode) {
+        linkClassName += ' component-navbar-item-dark';
+        logoClassName += ' component-navbar-item-dark';
+        wrapperClassName += ' component-navbar-dark';
+    }
+    if(!navbarOpen){
+        wrapperClassName += ' component-navbar-hidden';
+        itemListClassName += ' component-navbar-item-list-hidden';
     }
 
 
@@ -62,9 +70,9 @@ export const NavBar = () => {
     let nameText: string = "P.";
     return (
         <header className={"component-navbar-header"}>
-            <div className={"component-navbar " + (navbarOpen ? "" : "component-navbar-hidden")}>
+            <div className={wrapperClassName}>
                 <NavbarIcon text={nameText} onClick={onClickCallback} className={logoClassName}/>
-                <div className={"component-navbar-item-list " + (navbarOpen ? "" : "component-navbar-item-list-hidden")}>
+                <div className={itemListClassName}>
                     <NavbarItem text={"services"} slug={"/#services"} className={linkClassName}/>
                     <NavbarItem text={"projects"} slug={"/#projects"} className={linkClassName}/>
                     <NavbarItem text={"blog"} slug={"https://blog.pol.company"} target={"_blank"}
