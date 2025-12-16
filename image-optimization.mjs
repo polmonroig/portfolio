@@ -21,21 +21,26 @@ for(const imagePath of imagesRaw) {
 
     // create multiple optimized image versions
 
-    // exact copy, compresses and transformed to webp
-    await sharp(imagePath)
-        .webp()
-        .toFile(outputPath);
-
-    // create multiple optimized image versions (responsive widths)
-    const responsiveWidths = [320, 480, 640, 768, 1024, 1280, 1600, 1920];
-
-    for (const w of responsiveWidths) {
-        const sizedOut = outputPath.replace(".webp", `-w${w}.webp`);
+    const overwrite = false;
+    if(!fs.existsSync(outputPath) || overwrite) {
+        // exact copy, compresses and transformed to webp
         await sharp(imagePath)
-            .resize({ width: w, withoutEnlargement: true })
             .webp()
-            .toFile(sizedOut);
+            .toFile(outputPath);
+
+        // create multiple optimized image versions (responsive widths)
+        const responsiveWidths = [320, 480, 640, 768, 1024, 1280, 1600, 1920];
+
+        for (const w of responsiveWidths) {
+            const sizedOut = outputPath.replace(".webp", `-w${w}.webp`);
+            await sharp(imagePath)
+                .resize({ width: w, withoutEnlargement: true })
+                .webp()
+                .toFile(sizedOut);
+        }
+
     }
+
 
     // blurred placeholder (tiny)
     // await sharp(imagePath)

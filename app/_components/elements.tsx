@@ -248,3 +248,23 @@ export const ResponsiveImage = (props: {
         </picture>
     );
 }
+
+export const CardText = (props : {title: string, content: string}) => {
+
+    const lines = props.content.split('\n')
+
+    return(
+        <div className={"layout-flex-col-small"}>
+            <div className={"text-h6 text-align-center"}>
+                {props.title}
+            </div>
+            <ul className={"element-header-lines"}>
+                {
+                    lines.map((line, index) => (
+                        <li key={index}>{line}</li>
+                    ))
+                }
+            </ul>
+        </div>
+    )
+}

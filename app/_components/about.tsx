@@ -38,7 +38,7 @@ export const About = () => {
 
 
     return (
-        <div ref={containerRef} style={{
+        <div ref={containerRef} className={"navbar-dark-transform"} style={{
             position: 'relative',
             width: '100%',
             maxHeight: "600px",

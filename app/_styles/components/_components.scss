@@ -13,7 +13,7 @@
   font-size: 14px;
   line-height: 100%;
   letter-spacing: 0;
-  color: variables.$color-white;
+  color: variables.$color-black-88;
   opacity: 1;
 }
 
@@ -27,9 +27,15 @@
   font-size: 16px;
 }
 
-.component-navbar-dark{
-    color: variables.$color-black-88 !important;
+.component-navbar-item-dark{
+  color: variables.$color-white !important;
 }
+
+.component-navbar-dark{
+  background: rgba(31, 31, 31, 0.55) !important;
+  box-shadow: inset 1px 1px 0.12px rgba(200, 200, 200, 0.4), 0 0 1px 1px rgb(255 255 255 / 0.05) !important;
+}
+
 
 .component-navbar-header{
   position: fixed;
@@ -39,11 +45,11 @@
 }
 
 .component-navbar{
-  @extend .layout-flex-row;
+  @extend .layout-flex-row, .transition-shadow, .transition-background;
   height: 50px;
+  backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.55);
   box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4), 0 0 1px 1px rgb(0 0 0 / 0.05);
-  backdrop-filter: blur(4px);
   border-radius: 99999px;
   margin: 15px auto 0 auto;
   padding: 0 20px;
@@ -82,8 +88,8 @@
   line-height: 100%;
   letter-spacing: 0;
   cursor: pointer;
+  color: variables.$color-black-88;
   user-select: none;
-  color: variables.$color-white;
 }
 
 /** Contact Styling **/
@@ -154,7 +160,7 @@
 
 
 .component-contact-input{
-  @extend .transition-border;
+  @extend .transition-border, .text-caption;
   border-radius: 8px;
   border: 1px solid variables.$color-gray;
   padding: variables.$padding-small;

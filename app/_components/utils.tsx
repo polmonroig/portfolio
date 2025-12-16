@@ -9,6 +9,8 @@ export const getWidthImageURL = (url: string, width: number) => {
 }
 
 
+
+
 export const breakpoints = {
     desktopLarge: 1440,
     desktop: 1024,

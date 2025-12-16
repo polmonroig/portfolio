@@ -38,10 +38,18 @@ export const projects: Project[] = [
         id: "aiart",
         title: "Aiart",
         description:
-            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. ",
-        header: "AI-Powered Art Analysis Platform",
+            "Intelligent adviser for your drawings and paintings with and personal art advisor powered with AI. Science backed graph-based analysis.",
+        header: "AI Powered \n Art Analysis Platform",
         tags: ["Web Development", "Machine Learning"],
         slug: "aiart"
+    },
+    {
+        id: "web3d",
+        title: "Web3D",
+        description: "Interactive web-based tool for creating and manipulating anamorphic media content. Features real-time preview, multiple export formats, and intuitive controls for achieving stunning visual effects.",
+        header: "Anamorphic Media Creator",
+        tags: ["Web Development"],
+        slug: "web3d"
     },
     {
         id: "dx",
@@ -92,14 +100,6 @@ export const projects: Project[] = [
         header: "Streamlined CMS Integration with Basecamp",
         tags: ["Web Development"],
         slug: "collab"
-    },
-    {
-        id: "web3d",
-        title: "Web3D",
-        description: "Anamorphic 3D platform for billboards",
-        header: "Next-Generation 3D Billboard Platform",
-        tags: ["Web Development"],
-        slug: "web3d"
     },
     {
         id: "timelines",
@@ -326,6 +326,11 @@ export const Projects = () => {
         setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
     }
 
+    const addAllTags = () => {
+        setActiveTags(currentTags => {
+            return [...currentTags, ...tagList.filter(t => !currentTags.includes(t))];
+        })
+    }
 
     return (
         <div id={"projects"} className={"component-projects"}>
@@ -376,7 +381,7 @@ export const Projects = () => {
                     tagList.length > activeTags.length ?
                         <div style={{margin: "60px auto 0 auto"}}>
                             <Button text={"View more projects"}
-                                    onClick={() => setActiveTags(tagList)}/>
+                                    onClick={() => addAllTags()}/>
                         </div>
                         : null
                 }
