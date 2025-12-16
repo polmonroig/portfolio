@@ -160,7 +160,7 @@
 
 
 .component-contact-input{
-  @extend .transition-border;
+  @extend .transition-border, .text-caption;
   border-radius: 8px;
   border: 1px solid variables.$color-gray;
   padding: variables.$padding-small;

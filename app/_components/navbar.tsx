@@ -91,8 +91,6 @@ export const NavBar = () => {
     let logoClassName: string = 'component-navbar-logo'
     let wrapperClassName: string = 'component-navbar';
     let itemListClassName: string = 'component-navbar-item-list';
-    // Determine dark mode based on detected background behind the navbar.
-    // Fallback to previous heuristic if detection is unavailable.
     const darkMode = (bgIsDark !== null) ? bgIsDark : false;
     if (darkMode) {
         linkClassName += ' component-navbar-item-dark';
