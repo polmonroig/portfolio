@@ -1,9 +1,8 @@
 'use client';
 import {useScroll, useWindowWidth} from "@/app/_components/hooks";
 import Link from "next/link";
-import {usePathname} from 'next/navigation'
-import {useEffect, useLayoutEffect, useRef, useState} from "react";
-import {breakpoints, getColorLuminance} from "@/app/_components/utils";
+import {useEffect, useRef, useState} from "react";
+import {breakpoints} from "@/app/_components/utils";
 
 
 const NavbarItem = (props: {
