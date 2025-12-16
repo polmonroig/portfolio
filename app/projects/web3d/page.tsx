@@ -14,7 +14,14 @@ export default function ProjectView() {
         >
             <>
                 <CardText title={"Key Features"} content={"Real-time anamorphic preview \nMultiple export format options \nIntuitive visual effect controls"}/>
-
+                <Card
+                    src={"/images/projects/web3d/export.webp"}
+                    title={"Custom export"}
+                    side={"right"}
+                >
+                    Custom export options with support for RGB and sRGB color spaces. Web-based rendering engine enables
+                    fast and efficient processing of anamorphic effects directly in the browser.
+                </Card>
             </>
         </ProjectViewTemplate>
     )
