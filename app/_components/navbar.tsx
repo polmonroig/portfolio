@@ -91,7 +91,7 @@ export const NavBar = () => {
     let logoClassName: string = 'component-navbar-logo'
     let wrapperClassName: string = 'component-navbar';
     let itemListClassName: string = 'component-navbar-item-list';
-    const darkMode = (bgIsDark !== null) ? bgIsDark : false;
+    const darkMode = (bgIsDark !== null) ? bgIsDark : true;
     if (darkMode) {
         linkClassName += ' component-navbar-item-dark';
         logoClassName += ' component-navbar-item-dark';
