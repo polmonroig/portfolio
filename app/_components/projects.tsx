@@ -326,6 +326,11 @@ export const Projects = () => {
         setActiveTags(currentTags => currentTags.includes(tag) ? currentTags.filter(t => t !== tag) : [...currentTags, tag]);
     }
 
+    const addAllTags = () => {
+        setActiveTags(currentTags => {
+            return [...currentTags, ...tagList.filter(t => !currentTags.includes(t))];
+        })
+    }
 
     return (
         <div id={"projects"} className={"component-projects"}>
@@ -376,7 +381,7 @@ export const Projects = () => {
                     tagList.length > activeTags.length ?
                         <div style={{margin: "60px auto 0 auto"}}>
                             <Button text={"View more projects"}
-                                    onClick={() => setActiveTags(tagList)}/>
+                                    onClick={() => addAllTags()}/>
                         </div>
                         : null
                 }
