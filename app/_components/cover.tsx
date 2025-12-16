@@ -52,8 +52,11 @@ export const Cover = (props: CoverProps) => {
     }
 
 
-    const elementCoverContentClassName = `element-cover-content-${align}`;
-
+    let elementCoverContentClassName = `element-cover-content-${align}`;
+    let elementCoverClassName = "element-cover";
+    if(color == "white"){
+        elementCoverClassName += " navbar-dark-transform";
+    }
 
     const imageFilter = opacity < 1 ? `brightness(${opacity * 100}%)` : undefined;
 
@@ -130,7 +133,7 @@ export const Cover = (props: CoverProps) => {
     return (
         <div
             ref={containerRef}
-            className={"element-cover"}
+            className={elementCoverClassName}
             style={{
                 height: height
             }}
