@@ -1,5 +1,5 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import {Card, CardLarge, ResponsiveImage} from "@/app/_components/elements";
+import {Card, CardLarge, CardText, ResponsiveImage} from "@/app/_components/elements";
 
 export default function ProjectView() {
     return (
@@ -14,16 +14,8 @@ export default function ProjectView() {
                          alt={"mockup"} width={3856} height={1940}/>}
         >
             <>
-                <div className={"layout-flex-col-small"}>
-                    <div className={"text-h6 text-align-center"}>
-                        Value Driven KPIs
-                    </div>
-                    <div className={"element-header-lines"}>
-                        Reduction in idle compute <br/>
-                        Increased project turnaround time <br/>
-                        Operational visibility and risk mitigation
-                    </div>
-                </div>
+                <CardText title={"Value Driven KPIs"}
+                          content={"Reduction in idle compute \nIncreased project turnaround time \nOperational visibility and risk mitigation"}/>
                 <Card
                     src={"/images/projects/studio/desktop_mockup.webp"}
                     title={"Centralized Infrastructure Automation"}

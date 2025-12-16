@@ -44,6 +44,14 @@ export const projects: Project[] = [
         slug: "aiart"
     },
     {
+        id: "web3d",
+        title: "Web3D",
+        description: "Interactive web-based tool for creating and manipulating anamorphic media content. Features real-time preview, multiple export formats, and intuitive controls for achieving stunning visual effects.",
+        header: "Anamorphic Media Creator",
+        tags: ["Web Development"],
+        slug: "web3d"
+    },
+    {
         id: "dx",
         title: "DX Performance Demo",
         description: "Consultant on Borderlands THREE.js app",
@@ -92,14 +100,6 @@ export const projects: Project[] = [
         header: "Streamlined CMS Integration with Basecamp",
         tags: ["Web Development"],
         slug: "collab"
-    },
-    {
-        id: "web3d",
-        title: "Web3D",
-        description: "Anamorphic 3D platform for billboards",
-        header: "Next-Generation 3D Billboard Platform",
-        tags: ["Web Development"],
-        slug: "web3d"
     },
     {
         id: "timelines",

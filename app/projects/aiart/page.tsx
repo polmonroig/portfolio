@@ -1,5 +1,5 @@
 import {ProjectViewTemplate} from "@/app/_components/projects";
-import {Card, CardLarge, ResponsiveImage} from "@/app/_components/elements";
+import {Card, CardLarge, CardText, ResponsiveImage} from "@/app/_components/elements";
 
 export default function ProjectView() {
     return (
@@ -13,6 +13,8 @@ export default function ProjectView() {
             mockup={<ResponsiveImage
                 src={"/images/projects/aiart/mockup.webp"} alt={"mockup"} width={2030} height={1300}/>}>
             <>
+                <CardText title={"Key Features"}
+                          content={"Detailed composition analysis \nColor harmony evaluation \nAI-powered art advisory"}/>
                 <Card
                     src={"/images/projects/aiart/general_stats.webp"}
                     title={"Overall analysis"}
