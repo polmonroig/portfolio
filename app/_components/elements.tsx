@@ -6,7 +6,7 @@ import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import gsap from 'gsap';
 import {breakpoints, getWidthImageURL} from "@/app/_components/utils";
-import {useWindowWidth} from "@/app/_components/hooks";
+import {useDevicePixelRatio, useWindowWidth} from "@/app/_components/hooks";
 
 export const Button = (props: {
     text: string,
@@ -229,12 +229,13 @@ export const ResponsiveImage = (props: {
     style?: React.CSSProperties;
 }) => {
 
+    const devicePixelRatio = useDevicePixelRatio();
     const responsiveWidths = [320, 480, 640, 768, 1024, 1280, 1600, 1920];
 
     return (
         <picture>
             {responsiveWidths.map(w => (
-                <source key={w} media={`(max-width: ${w}px)`} srcSet={getWidthImageURL(props.src, w)}/>
+                <source key={w} media={`(max-width: ${w / devicePixelRatio}px)`} srcSet={getWidthImageURL(props.src, w)}/>
             ))}
             <img
                 src={props.src}
