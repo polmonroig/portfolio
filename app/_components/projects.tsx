@@ -52,14 +52,6 @@ export const projects: Project[] = [
         slug: "web3d"
     },
     {
-        id: "dx",
-        title: "DX Performance Demo",
-        description: "Consultant on Borderlands THREE.js app",
-        header: "Optimizing Performance for Borderlands Web Experience",
-        tags: ["Web Development"],
-        slug: "dx_performance_demo"
-    },
-    {
         id: "bayesian_model_builder",
         title: "Bayesian Model Builder",
         description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
@@ -110,14 +102,6 @@ export const projects: Project[] = [
         slug: "timelines"
     },
     {
-        id: "network_designer",
-        title: "Network Designer",
-        description: "Simple Neural Network designer and exporter to python pytorch code",
-        header: "Visual Neural Network Architecture Tool",
-        tags: ["Web Development"],
-        slug: "network_designer"
-    },
-    {
         id: "baba_is_you",
         title: "Baba Is You",
         description: "Tribute to Baba is You game coded in C++ OpenGL",
@@ -141,66 +125,7 @@ export const projects: Project[] = [
         tags: ["Game Development"],
         slug: "light_in_solstice"
     },
-    {
-        id: "lz4_compression",
-        title: "LZ4 Compression algorithm",
-        description:
-            "Set of multiple algorithms for LZ4 compression in python, contest on speed and compression ratio",
-        header: "High-Performance Data Compression",
-        tags: ["Algorithms"],
-        slug: "lz4_compression"
-    },
-    {
-        id: "sfic_compression",
-        title: "SFIC Compression Library",
-        description:
-            "Image compressions library written in C++ which includes multiple compression algorithms",
-        header: "Advanced Image Compression Suite",
-        tags: ["Algorithms"],
-        slug: "sfic_compression"
-    },
-    {
-        id: "cpp_rng",
-        title: "C++ Random Number Generator",
-        description: "Multiple random distribution pseudo-random number generators",
-        header: "Statistical Random Number Generation",
-        tags: ["Algorithms"],
-        slug: "cpp_rng"
-    },
-    {
-        id: "graph_percolation",
-        title: "Graph Percolation",
-        description: "Graph Connectivity and Percolation experiments in C++",
-        header: "Network Connectivity Analysis Tool",
-        tags: ["Algorithms"],
-        slug: "graph_percolation"
-    },
-    {
-        id: "calendar_api",
-        title: "Calendar API",
-        description:
-            "This is an PyQT app that is connected to Google Calendar, the main purpose of this application is to collect the events of a calendar search them by date, name and color and to receive and analysis of the duration of the events and dates.",
-        header: "Smart Calendar Management System",
-        tags: ["Algorithms"],
-        slug: "calendar_api"
-    },
-    {
-        id: "telegram_quiz_bot",
-        title: "Telegram Quiz Bot",
-        description:
-            "This is a telegram chatbot design to make polls/quiz to people and save its results.",
-        header: "Interactive Telegram Survey System",
-        tags: ["Algorithms"],
-        slug: "telegram_quiz_bot"
-    },
-    {
-        id: "ratings_prediction",
-        title: "Ratings Prediction",
-        description: "This projects is a webapp connected to an API that estimates rating star ratings using machine learning",
-        header: "ML-Driven Rating Prediction System",
-        tags: ["Machine Learning"],
-        slug: "ratings_prediction"
-    }
+
 
 ];
 
