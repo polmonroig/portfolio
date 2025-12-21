@@ -51,14 +51,14 @@ export const projects: Project[] = [
         tags: ["Web Development"],
         slug: "web3d"
     },
-    {
-        id: "bayesian_model_builder",
-        title: "Bayesian Model Builder",
-        description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
-        header: "Automated Marketing Analytics Platform",
-        tags: ["Machine Learning"],
-        slug: "bayesian_model_builder"
-    },
+    // {
+    //     id: "bayesian_model_builder",
+    //     title: "Bayesian Model Builder",
+    //     description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
+    //     header: "Automated Marketing Analytics Platform",
+    //     tags: ["Machine Learning"],
+    //     slug: "bayesian_model_builder"
+    // },
     {
         id: "genetic_brushes",
         title: "Genetic Brushes",
@@ -68,23 +68,23 @@ export const projects: Project[] = [
         tags: ["Machine Learning"],
         slug: "genetic_brushes"
     },
-    {
-        id: "cloud_segmentation",
-        title: "Cloud Segmentation",
-        description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
-        header: "AI-Powered Cloud Detection System",
-        tags: ["Machine Learning"],
-        slug: "cloud_segmentation"
-    },
-    {
-        id: "earthquake_prediction",
-        title: "Earthquake Prediction",
-        description:
-            "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
-        header: "ML-Based Seismic Activity Forecasting",
-        tags: ["Machine Learning"],
-        slug: "earthquake_prediction"
-    },
+    // {
+    //     id: "cloud_segmentation",
+    //     title: "Cloud Segmentation",
+    //     description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
+    //     header: "AI-Powered Cloud Detection System",
+    //     tags: ["Machine Learning"],
+    //     slug: "cloud_segmentation"
+    // },
+    // {
+    //     id: "earthquake_prediction",
+    //     title: "Earthquake Prediction",
+    //     description:
+    //         "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
+    //     header: "ML-Based Seismic Activity Forecasting",
+    //     tags: ["Machine Learning"],
+    //     slug: "earthquake_prediction"
+    // },
     {
         id: "collab",
         title: "Collab",
@@ -93,14 +93,14 @@ export const projects: Project[] = [
         tags: ["Web Development"],
         slug: "collab"
     },
-    {
-        id: "timelines",
-        title: "Timelines",
-        description: "Consultant on projects task and Gantt timelines application",
-        header: "Interactive Project Management Visualization",
-        tags: ["Web Development"],
-        slug: "timelines"
-    },
+    // {
+    //     id: "timelines",
+    //     title: "Timelines",
+    //     description: "Consultant on projects task and Gantt timelines application",
+    //     header: "Interactive Project Management Visualization",
+    //     tags: ["Web Development"],
+    //     slug: "timelines"
+    // },
     {
         id: "baba_is_you",
         title: "Baba Is You",
