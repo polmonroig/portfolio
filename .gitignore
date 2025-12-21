@@ -43,3 +43,6 @@ next-env.d.ts
 # firebase
 .firebase/
 firebase-debug.log
+
+# optimized images
+public/images

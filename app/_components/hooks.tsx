@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 export const useScroll = () => {
     const [scrollRelativePosition, setScrollRelativePosition] = useState<number>(0);
@@ -44,3 +44,26 @@ export const useWindowWidth = () => {
 
   return screenSize;
 };
+
+
+export const useDevicePixelRatio = () => {
+    const [pixelRatio, setPixelRatio] = useState<number>(1)
+
+    const observe = useCallback(() => {
+        if (!window) return
+        setPixelRatio(window.devicePixelRatio)
+        const media = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+        const handleChange = () => {
+            observe()
+        }
+        media.addEventListener('change', handleChange, { once: true })
+
+        return () => {
+            media.removeEventListener('change', handleChange)
+        }
+    }, [])
+
+    useEffect(observe, [observe])
+
+    return pixelRatio
+}

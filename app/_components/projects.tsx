@@ -20,7 +20,7 @@ export const projects: Project[] = [
     {
         id: "studio",
         title: "BCN Studio",
-        description: "BCN Studio: Centralized Cloud Infrastructure Platform for VFX Production Company",
+        description: "Centralized Cloud Infrastructure Platform for VFX Production Company",
         header: "Centralized Cloud \n Infrastructure for VFX \n Production",
         tags: ["Web Development", "Data Visualization"],
         slug: "bcn_studio"
@@ -51,22 +51,14 @@ export const projects: Project[] = [
         tags: ["Web Development"],
         slug: "web3d"
     },
-    {
-        id: "dx",
-        title: "DX Performance Demo",
-        description: "Consultant on Borderlands THREE.js app",
-        header: "Optimizing Performance for Borderlands Web Experience",
-        tags: ["Web Development"],
-        slug: "dx_performance_demo"
-    },
-    {
-        id: "bayesian_model_builder",
-        title: "Bayesian Model Builder",
-        description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
-        header: "Automated Marketing Analytics Platform",
-        tags: ["Machine Learning"],
-        slug: "bayesian_model_builder"
-    },
+    // {
+    //     id: "bayesian_model_builder",
+    //     title: "Bayesian Model Builder",
+    //     description: "A bayesian code builder in R that generates stan code for Media Mix Modeling with integrated marketing concepts like adstock and diminishing returns.",
+    //     header: "Automated Marketing Analytics Platform",
+    //     tags: ["Machine Learning"],
+    //     slug: "bayesian_model_builder"
+    // },
     {
         id: "genetic_brushes",
         title: "Genetic Brushes",
@@ -76,23 +68,23 @@ export const projects: Project[] = [
         tags: ["Machine Learning"],
         slug: "genetic_brushes"
     },
-    {
-        id: "cloud_segmentation",
-        title: "Cloud Segmentation",
-        description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
-        header: "AI-Powered Cloud Detection System",
-        tags: ["Machine Learning"],
-        slug: "cloud_segmentation"
-    },
-    {
-        id: "earthquake_prediction",
-        title: "Earthquake Prediction",
-        description:
-            "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
-        header: "ML-Based Seismic Activity Forecasting",
-        tags: ["Machine Learning"],
-        slug: "earthquake_prediction"
-    },
+    // {
+    //     id: "cloud_segmentation",
+    //     title: "Cloud Segmentation",
+    //     description: "Deep learning CNN cloud segmentation algorithm for Kaggle contest",
+    //     header: "AI-Powered Cloud Detection System",
+    //     tags: ["Machine Learning"],
+    //     slug: "cloud_segmentation"
+    // },
+    // {
+    //     id: "earthquake_prediction",
+    //     title: "Earthquake Prediction",
+    //     description:
+    //         "Machine Learning ensemble model for earthquake forecast for Kaggle contest",
+    //     header: "ML-Based Seismic Activity Forecasting",
+    //     tags: ["Machine Learning"],
+    //     slug: "earthquake_prediction"
+    // },
     {
         id: "collab",
         title: "Collab",
@@ -101,22 +93,14 @@ export const projects: Project[] = [
         tags: ["Web Development"],
         slug: "collab"
     },
-    {
-        id: "timelines",
-        title: "Timelines",
-        description: "Consultant on projects task and Gantt timelines application",
-        header: "Interactive Project Management Visualization",
-        tags: ["Web Development"],
-        slug: "timelines"
-    },
-    {
-        id: "network_designer",
-        title: "Network Designer",
-        description: "Simple Neural Network designer and exporter to python pytorch code",
-        header: "Visual Neural Network Architecture Tool",
-        tags: ["Web Development"],
-        slug: "network_designer"
-    },
+    // {
+    //     id: "timelines",
+    //     title: "Timelines",
+    //     description: "Consultant on projects task and Gantt timelines application",
+    //     header: "Interactive Project Management Visualization",
+    //     tags: ["Web Development"],
+    //     slug: "timelines"
+    // },
     {
         id: "baba_is_you",
         title: "Baba Is You",
@@ -141,66 +125,7 @@ export const projects: Project[] = [
         tags: ["Game Development"],
         slug: "light_in_solstice"
     },
-    {
-        id: "lz4_compression",
-        title: "LZ4 Compression algorithm",
-        description:
-            "Set of multiple algorithms for LZ4 compression in python, contest on speed and compression ratio",
-        header: "High-Performance Data Compression",
-        tags: ["Algorithms"],
-        slug: "lz4_compression"
-    },
-    {
-        id: "sfic_compression",
-        title: "SFIC Compression Library",
-        description:
-            "Image compressions library written in C++ which includes multiple compression algorithms",
-        header: "Advanced Image Compression Suite",
-        tags: ["Algorithms"],
-        slug: "sfic_compression"
-    },
-    {
-        id: "cpp_rng",
-        title: "C++ Random Number Generator",
-        description: "Multiple random distribution pseudo-random number generators",
-        header: "Statistical Random Number Generation",
-        tags: ["Algorithms"],
-        slug: "cpp_rng"
-    },
-    {
-        id: "graph_percolation",
-        title: "Graph Percolation",
-        description: "Graph Connectivity and Percolation experiments in C++",
-        header: "Network Connectivity Analysis Tool",
-        tags: ["Algorithms"],
-        slug: "graph_percolation"
-    },
-    {
-        id: "calendar_api",
-        title: "Calendar API",
-        description:
-            "This is an PyQT app that is connected to Google Calendar, the main purpose of this application is to collect the events of a calendar search them by date, name and color and to receive and analysis of the duration of the events and dates.",
-        header: "Smart Calendar Management System",
-        tags: ["Algorithms"],
-        slug: "calendar_api"
-    },
-    {
-        id: "telegram_quiz_bot",
-        title: "Telegram Quiz Bot",
-        description:
-            "This is a telegram chatbot design to make polls/quiz to people and save its results.",
-        header: "Interactive Telegram Survey System",
-        tags: ["Algorithms"],
-        slug: "telegram_quiz_bot"
-    },
-    {
-        id: "ratings_prediction",
-        title: "Ratings Prediction",
-        description: "This projects is a webapp connected to an API that estimates rating star ratings using machine learning",
-        header: "ML-Driven Rating Prediction System",
-        tags: ["Machine Learning"],
-        slug: "ratings_prediction"
-    }
+
 
 ];
 
@@ -276,7 +201,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                                      }}/>
                 </div>
 
-                <h4 className={"component-project-description"}>{description}</h4>
+                <h4 className={"component-project-description"}><b>{title}:</b> {description}</h4>
                 <h5 className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
