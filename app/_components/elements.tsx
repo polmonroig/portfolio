@@ -205,11 +205,7 @@ export const CardLarge = (props: {
 
     return (
         <div className={"element-card-large"}>
-            <div className={"element-card-texts text-h3 text-style-gradient text-align-center"}>
-                {titleLines.map((line, index) => (
-                    <span key={index}>{line}<br/></span>
-                ))}
-            </div>
+            <TextHeader titleLines={titleLines}/>
             <ResponsiveImage
                  src={props.src}
                  alt={"card-image"}
@@ -266,6 +262,18 @@ export const CardText = (props : {title: string, content: string}) => {
                     ))
                 }
             </ul>
+        </div>
+    )
+}
+
+export const TextHeader = (props : {titleLines: string[]}) => {
+    const titleLines = props.titleLines;
+
+    return (
+        <div className={"element-card-texts text-h3 text-style-gradient text-align-center"}>
+            {titleLines.map((line, index) => (
+                <span key={index}>{line}<br/></span>
+            ))}
         </div>
     )
 }

@@ -11,6 +11,9 @@ const imagesOutputPath = 'public/images';
 const imagesRaw = await glob.glob(`${imagesInputPath}/**/*.*`);
 
 for(const imagePath of imagesRaw) {
+    if(!(imagePath.endsWith(".png") || imagePath.endsWith(".jpg") || imagePath.endsWith(".jpeg"))){
+        continue;
+    }
     console.log("Optimizing image ", imagePath)
     // replace upper level path and extension
     let outputPath = imagePath.replace("resources", "public");

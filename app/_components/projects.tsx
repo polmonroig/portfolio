@@ -85,14 +85,14 @@ export const projects: Project[] = [
     //     tags: ["Machine Learning"],
     //     slug: "earthquake_prediction"
     // },
-    {
-        id: "collab",
-        title: "Collab",
-        description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
-        header: "Streamlined CMS Integration with Basecamp",
-        tags: ["Web Development"],
-        slug: "collab"
-    },
+    // {
+    //     id: "collab",
+    //     title: "Collab",
+    //     description: "CMS Platform Connected with Basecamp editor, built with Ruby on Rails",
+    //     header: "Streamlined CMS Integration with Basecamp",
+    //     tags: ["Web Development"],
+    //     slug: "collab"
+    // },
     // {
     //     id: "timelines",
     //     title: "Timelines",
