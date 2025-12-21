@@ -7,9 +7,9 @@ export default function ProjectView() {
             id={"web3d"}
             description={"Interactive web-based tool for creating and manipulating anamorphic media content. Features real-time preview, multiple export formats, and intuitive controls for achieving stunning visual effects."}
             year={"2024"}
-            client={"BCN Visuals Inc"}
+            client={"Clear Channel"}
             department={"Technology"}
-            location={"Los Angeles, CA"}
+            location={"New York, US"}
             mockup={<ResponsiveImage src={"/images/projects/web3d/mockup.webp"} alt={"Web3D Mockup"} />}
         >
             <>
