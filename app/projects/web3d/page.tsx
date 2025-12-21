@@ -10,7 +10,7 @@ export default function ProjectView() {
             client={"BCN Visuals Inc"}
             department={"Technology"}
             location={"Los Angeles, CA"}
-            mockup={null}
+            mockup={<ResponsiveImage src={"/images/projects/web3d/mockup.webp"} alt={"Web3D Mockup"} />}
         >
             <>
                 <CardText title={"Key Features"} content={"Real-time anamorphic preview \nMultiple export format options \nIntuitive visual effect controls"}/>
