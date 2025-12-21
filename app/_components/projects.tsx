@@ -20,7 +20,7 @@ export const projects: Project[] = [
     {
         id: "studio",
         title: "BCN Studio",
-        description: "BCN Studio: Centralized Cloud Infrastructure Platform for VFX Production Company",
+        description: "Centralized Cloud Infrastructure Platform for VFX Production Company",
         header: "Centralized Cloud \n Infrastructure for VFX \n Production",
         tags: ["Web Development", "Data Visualization"],
         slug: "bcn_studio"
@@ -201,7 +201,7 @@ const ProjectItem = ({project}: { project: Project }) => {
                                      }}/>
                 </div>
 
-                <h4 className={"component-project-description"}>{description}</h4>
+                <h4 className={"component-project-description"}><b>{title}:</b> {description}</h4>
                 <h5 className={"component-project-tags"}>
                     {
                         tags.map(tag => <ProjectTag text={tag} key={tag} active={false} interactive={false}/>)
